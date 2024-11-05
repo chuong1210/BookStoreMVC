@@ -1,0 +1,87 @@
+﻿@using WebStore.Models
+@model dynamic
+
+@{
+    ViewData["Title"] = "DetailsBook";
+    Layout = "~/Views/Shared/_ManagerLayout.cshtml";
+}
+
+<div>
+    <h2>chi tiết sách</h2>
+    <hr />
+    <div class="row">
+        <div class="col-sm-4">
+            <img src="/images/@Model.book.Image" class="img-fluid" alt="">
+        </div>
+        <div class="col-sm-8">
+            <div class="row">
+                <div class="col-sm-3">
+                    BookID:
+                </div>
+                <div class="col-sm-9">
+                    @Model.book.BookID
+                </div>
+                <div class="col-sm-3">
+                    BookName:
+                </div>
+                <div class="col-sm-9">
+                    @Model.book.BookName
+                </div>
+                <div class="col-sm-3">
+                    BookType:
+                </div>
+                <div class="col-sm-9">
+                    @Model.bookType.BookTypeName
+                </div>
+                <div class="col-sm-3">
+                    Author:
+                </div>
+                <div class="col-sm-9">
+                    @Model.book.Author
+                </div>
+                <div class="col-sm-3">
+                    Nhà xuất bản:
+                </div>
+                <div class="col-sm-9">
+                    @Model.book.Nxb
+                </div>
+                <div class="col-sm-3">
+                    Price:
+                </div>
+                <div class="col-sm-9">
+                    @Model.book.Price
+                </div>
+                <div class="col-sm-3">
+                    Quantity:
+                </div>
+                <div class="col-sm-9">
+                    @Model.book.Quantity
+                </div>
+                <div class="col-sm-3">
+                    Ordered:
+                </div>
+                <div class="col-sm-9">
+                    @Model.book.OrderedQuantity
+                </div>
+                <div class="col-sm-3">
+                    Description:
+                </div>
+                <div class="col-sm-9">
+                    @Model.book.Description
+                </div>
+                <br/>
+                <div class="col-sm-1"></div>
+                <div class="col-sm-6">
+                    <a class="button" href="@Url.Action("EditBook",new { id = @Model.book.BookID })" >Edit</a>
+                    <a class="button" asp-action="ManagerBook">Back to List</a>
+                </div>
+                <div class="col-sm-5"></div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+

@@ -1,0 +1,59 @@
+﻿@using WebStore.Models
+@model dynamic
+
+@{
+    ViewData["Title"] = "Checkout";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="main">
+    <div class="inner">
+        <h1>Thông tin đơn hàng</h1>
+        <section>
+            <form asp-controller="Order" asp-action="Checkout" id="Checkout_submit">
+                <span data-valmsg-for="Checkout" class="text-danger field-validation-error" id="Check_alert" data-valmsg-replace="true">Vui lòng nhập đủ thông tin</span>
+                <div class="fields">
+
+                    <div class="field half">
+                        <label for="Name">Họ Tên</label>
+                        <input type="text" name="Name" id="Checkout_name" placeholder="Name" value="@Model.account.FullName">
+                    </div>
+
+                    <div class="field half">
+                        <label for="Email">Email</label>
+                        <input type="text" name="Email" id="Checkout_email" placeholder="Email" value="@Model.account.Email">
+                    </div>
+
+                    <div class="field col-md-3">
+                        <label for="Phone">Số điện thoại</label>
+                        <input type="text" name="Phone" id="Checkout_phone"  placeholder="Phone" value="@Model.account.Phone">
+                    </div>
+
+                    <div class="field col-md-6">
+                        <label for="Address">Địa chỉ</label>
+
+                        <input type="text" name="Address" id="Checkout_address" placeholder="Address" value="@Model.account.Address">
+                    </div>
+
+                    <div class="field col-md-3">
+                        <label for="ship">Phí giao hàng</label>
+                        <input type="number" name="ship" placeholder="ShipCost" value="20000" disabled>
+                    </div>
+
+                    <div class="field half">
+                        <label for="TotalPrice">Tổng cộng </label>
+
+                        <input type="number" name="TotalPrice" placeholder="TotalPrice" value="@Model.totalPrice" disabled>
+                    </div>
+
+                    <div class="field text-right">
+                        <ul class="actions">
+                            <li><input type="submit" value="Đặt hàng" class="primary"></li>
+                        </ul>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </div>
+</div>
+

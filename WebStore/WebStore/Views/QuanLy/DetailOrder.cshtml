@@ -1,0 +1,108 @@
+﻿@using WebStore.Models
+@model dynamic
+
+@{
+    ViewData["Title"] = "DeleteOrder";
+    Layout = "~/Views/Shared/_ManagerLayout.cshtml";
+}
+
+<h1>Detail</h1>
+
+<div>
+    <h4>InfoOrder</h4>
+    <hr />
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="row">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th class="col-md-2"></th>
+                            <th class="col-md-6">
+                                Tên sách
+                            </th>
+                            <th class="col-md-4">
+                                Số lượng
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach (var item in @Model.orderItem)
+                        {
+                            <tr>
+                                @foreach (var book in Model.lstBook)
+                                {
+                                    if (item.BookID == book.BookID)
+                                    {
+                                        <td>
+                                            <span class="image">
+                                                <img src="/images/@book.Image" height="120" width="110" alt="" />
+                                            </span>
+                                        </td>
+                                        <td>
+                                            @book.BookName
+                                        </td>
+                                    }
+                                }
+                                <td>
+                                    @item.Quantity
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="row">
+                <label class="col-sm-3">
+                    InfoOrderID
+                </label>
+                <div class="col-sm-9">
+                    @Model.infoOrder.InfoOrderID
+                </div>
+                <label class="col-sm-3">
+                    Name
+                </label>
+                <div class="col-sm-9">
+                    @Model.infoOrder.Name
+                </div>
+                <label class="col-sm-3">
+                    Email
+                </label>
+                <div class="col-sm-9">
+                    @Model.infoOrder.Email
+                </div>
+                <label class="col-sm-3">
+                    Phone
+                </label>
+                <div class="col-sm-9">
+                    @Model.infoOrder.Phone
+                </div>
+                <label class="col-sm-3">
+                    Address
+                </label>
+                <div class="col-sm-9">
+                    @Model.infoOrder.Address
+                </div>
+                <label class="col-sm-3">
+                    TotalPrice
+                </label>
+                <div class="col-sm-9">
+                    @Model.infoOrder.TotalPrice
+                </div>
+                <label class="col-sm-3">
+                    Status
+                </label>
+                <div class="col-sm-9">
+                    @Model.infoOrder.Status
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a class="button" href="@Url.Action("EditOrder",new { id = @Model.infoOrder.InfoOrderID })">Edit</a>
+    <a class="button" asp-action="ManagerOrder">Back to List</a>
+</div>

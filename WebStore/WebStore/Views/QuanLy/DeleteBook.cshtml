@@ -1,0 +1,77 @@
+﻿@model WebStore.Models.SachDTO
+
+@{
+    ViewData["Title"] = "DeleteBook";
+    Layout = "~/Views/Shared/_ManagerLayout.cshtml";
+}
+
+<div>
+    <h2>Bạn có muốn xóa cuốn sách này không?</h2>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <img src="/images/@Model.Image" class="img-fluid" alt="">
+        </div>
+        <div class="col-md-8">
+            <div class="row">
+                <div class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.BookID)
+                </div>
+                <div class="col-sm-10">
+                    @Html.DisplayFor(model => model.BookID)
+                </div>
+                <div class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.BookName)
+                </div>
+                <div class="col-sm-10">
+                    @Html.DisplayFor(model => model.BookName)
+                </div>
+                <div class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.BookTypeID)
+                </div>
+                <div class="col-sm-10">
+                    @Html.DisplayFor(model => model.BookTypeID)
+                </div>
+                <div class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Author)
+                </div>
+                <div class="col-sm-10">
+                    @Html.DisplayFor(model => model.Author)
+                </div>
+                <div class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Nxb)
+                </div>
+                <div class="col-sm-10">
+                    @Html.DisplayFor(model => model.Nxb)
+                </div>
+                <div class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Description)
+                </div>
+                <div class="col-sm-10">
+                    @Html.DisplayFor(model => model.Description)
+                </div>
+                <div class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Image)
+                </div>
+                <div class="col-sm-10">
+                    @Html.DisplayFor(model => model.Image)
+                </div>
+                <div class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Price)
+                </div>
+                <div class="col-sm-10">
+                    @Html.DisplayFor(model => model.Price)
+                </div>
+            </div>
+            <br />
+            <form asp-action="DeleteBook">
+                <input type="submit" value="Delete" class="btn btn-danger" /> |
+                <input type="submit" name="CancelButton" value="Cancel" class="btn btn-danger" />
+            </form>
+        </div>
+    </div>
+    
+
+
+
+</div>

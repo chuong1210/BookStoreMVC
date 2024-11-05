@@ -1,0 +1,39 @@
+﻿
+
+<header id="header">
+	<div class="inner">
+		<!-- Logo -->
+		<a href="@Url.Action("Index", "Home")" class="logo">
+			<span class="fa fa-book"></span> <span class="title">Book Online Store Website</span>
+		</a>
+		<!-- Nav -->
+		<nav>
+			<ul>
+				<li><a href="#menu">Menu</a></li>
+			</ul>
+		</nav>
+	</div>
+</header>
+<nav id="menu">
+	<h2>Menu</h2>
+
+	<h4>@User.Identity.Name</h4>
+	<ul>
+		<li><a href="@Url.Action("Index", "Home")" class="active">Home</a></li>
+		@if (this.User.IsInRole("Admin") || this.User.IsInRole("SuperAdmin"))
+		{
+			<li><a href="@Url.Action("Index", "QuanLy")">Manager</a></li>
+		}
+		@if (User.Identity.IsAuthenticated)
+		{
+			<li><a href="@Url.Action("Cart", "Order")">Giỏ hàng</a></li>
+			<li><a href="@Url.Action("OrdersList", "Order")">Đơn hàng</a></li>
+			<li><a asp-controller="Account" asp-action="Logout">Logout</a></li>
+
+		}
+		else
+		{
+			<li><a href="@Url.Action("Login", "Account")">Đăng nhập</a></li>
+		}
+	</ul>
+</nav>

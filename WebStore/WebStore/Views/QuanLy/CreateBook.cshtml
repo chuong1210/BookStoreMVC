@@ -1,0 +1,70 @@
+﻿@*model WebStore.Models.Book*@
+@using WebStore.Models
+@model dynamic
+
+@{
+    ViewData["Title"] = "CreateBook";
+    Layout = "~/Views/Shared/_ManagerLayout.cshtml";
+}
+
+<h2>Thêm sách mới</h2>
+
+<hr />
+<div class="container">
+    <div class="col-md-10">
+        <form asp-action="CreateBook" enctype="multipart/form-data">
+            <span data-valmsg-for="BookName" class="text-danger field-validation-error" data-valmsg-replace="true">@ViewBag.ErrorMessage</span>
+            <div class="form-group">
+                <label for="BookName" class="control-label">Tên sách </label>
+                <input name="BookName" type="text" class="form-control" placeholder="Tên sách">
+            </div>
+            <div class="form-group">
+                <label for="BookTypeID" class="control-label">Loại sách</label>
+                <select name="BookTypeID" class="form-control">
+                    @foreach (var item in Model.booktypeNAV)
+                    {
+                        <option value="@item.BookTypeID">@item.BookTypeName</option>
+                    }
+                </select>
+                <span data-valmsg-for="BookTypeID" class="text-danger field-validation-error" data-valmsg-replace="true"></span>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="Author" class="control-label">Tác giả</label>
+                    <input name="Author" type="text" class="form-control" placeholder="Tác giả">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="Nxb" class="control-label">Nhà xuất bản</label>
+                    <input name="Nxb" type="text" class="form-control" placeholder="Nhà xuất bản">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Image" class="control-label">Image</label>
+                <input name="Image" type="file" accept="image/png, image/jpeg, image/jpg" class="form-control-file">
+            </div>
+            <div class="form-group">
+                <label for="Description" class="control-label">Mô tả</label>
+                <textarea name="Description" type="text" class="form-control" placeholder="Mô tả"></textarea>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="Price" class="control-label">Price</label>
+                    <input name="Price" type="number" class="form-control">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="Quantity" class="control-label">Quantity</label>
+                    <input name="Quantity" type="number" class="form-control">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-outline-success">Create New</button>
+        </form>
+        <hr />
+        <div>
+            <a class="button" asp-action="Index">Back to List</a>
+        </div>
+    </div>
+</div>
+
+
+

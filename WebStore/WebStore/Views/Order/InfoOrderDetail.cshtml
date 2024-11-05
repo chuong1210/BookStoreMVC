@@ -1,0 +1,85 @@
+﻿@using WebStore.Models
+@model dynamic
+
+@{
+    ViewData["Title"] = "InfoOrderDetail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Chi tiết đơn đặt hàng</h1>
+
+<div>
+    <div class="row">
+        <div class="col-sm-7">
+            <div class="row">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th class="col-md-2"></th>
+                            <th class="col-md-6">
+                                Tên sách
+                            </th>
+                            <th class="col-md-4">
+                                Số lượng
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach (var item in @Model.orderItem)
+                        {
+                            <tr>
+                                @foreach (var book in Model.lstBook)
+                                {
+                                    if (item.BookID == book.BookID)
+                                    {
+                                        <td>
+                                            <span class="image">
+                                                <img src="/images/@book.Image" height="120" width="110" alt="" />
+                                            </span>
+                                        </td>
+                                        <td>
+                                            @book.BookName
+                                        </td>
+                                    }
+                                }
+                                <td>
+                                    @item.Quantity
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+        <div class="col-sm-5">
+            <div class="row">
+                <label class="col-sm-4">Mã đơn hàng</label>
+                <div class="col-sm-8">: @Model.infoOrder.InfoOrderID</div>
+
+                <label class="col-sm-4">Họ tên</label>
+                <div class="col-sm-8">: @Model.infoOrder.Name</div>
+
+                <label class="col-sm-4">Email</label>
+                <div class="col-sm-8">: @Model.infoOrder.Email</div>
+
+                <label class="col-sm-4">Số điện thoại</label>
+                <div class="col-sm-8">: @Model.infoOrder.Phone</div>
+
+                <label class="col-sm-4">Địa chỉ</label>
+                <p class="col-sm-8">: @Model.infoOrder.Address</p>
+
+                <label class="col-sm-4">Tổng tiền</label>
+                <div class="col-sm-8">: @Model.infoOrder.TotalPrice</div>
+
+                <label class="col-sm-4">Trạng thái</label>
+                <div class="col-sm-8">: @Model.infoOrder.Status</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+    <a asp-action="OrdersList">Back to List</a>
+</div>

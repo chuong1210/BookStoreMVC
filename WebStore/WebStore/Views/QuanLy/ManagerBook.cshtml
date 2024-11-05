@@ -1,0 +1,66 @@
+﻿@model IEnumerable<WebStore.Models.SachDTO>
+
+@{
+    ViewData["Title"] = "ManagerBook";
+    Layout = "~/Views/Shared/_ManagerLayout.cshtml";
+}
+
+<h1>ManagerBook</h1>
+
+<p>
+    <a asp-action="CreateBook">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.BookID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookTypeID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quantity)
+            </th>
+            <th>
+                Ordered
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookTypeID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderedQuantity)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "EditBook", new { id = item.BookID }) |
+                @Html.ActionLink("Details", "DetailsBook", new { id = item.BookID }) |
+                @Html.ActionLink("Delete", "DeleteBook", new {  id=item.BookID  })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

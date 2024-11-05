@@ -1,0 +1,63 @@
+﻿@model IEnumerable<WedStore.Models.InfoOrder>
+
+@{
+    ViewData["Title"] = "ManagerOrder";
+    Layout = "~/Views/Shared/_ManagerLayout.cshtml";
+}
+
+<h1>ManagerOrder</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Mã đơn hàng 
+            </th>
+            <th>
+                Họ tên 
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                Tổng tiền 
+            </th>
+            <th>
+                Trạng thái
+            </th>
+            <th>Cập nhật trạng thái</th>
+            <th>Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                <a href="@Url.Action("DetailOrder", "Manager", new { id = item.InfoOrderID })">
+                    @Html.DisplayFor(modelItem => item.InfoOrderID)
+                </a>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <th>
+                @Html.ActionLink("Complete", "InfoOrderComplete", new { id = item.InfoOrderID }) |
+                @Html.ActionLink("Incomplete", "InfoOrderIncomplete", new { id = item.InfoOrderID })
+            </th>
+            <th>
+                @Html.ActionLink("Edit", "EditOrder", new { id = item.InfoOrderID }) |
+                @Html.ActionLink("Delete", "DeleteOrder", new { id = item.InfoOrderID })
+            </th>
+        </tr>
+}
+    </tbody>
+</table>

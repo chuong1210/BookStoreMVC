@@ -1,0 +1,33 @@
+﻿@using WebStore.Models
+@model dynamic
+
+@{
+    ViewData["Title"] = "OrdersList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Danh sách đơn hàng</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Mã đơn hàng</th>
+
+            <th>số tiền</th>
+            <th>Trạng thái</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in @Model.lstOrder)
+        {
+            <tr>
+                <td>@item.InfoOrderID</td>
+                <td>@item.TotalPrice</td>
+                <td>@item.Status</td>
+                <td>
+                    @Html.ActionLink("Chi tiết đơn hàng", "InfoOrderDetail", new { id = item.InfoOrderID })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

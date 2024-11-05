@@ -1,0 +1,76 @@
+﻿@using WebStore.Models
+@model dynamic
+
+@{
+    ViewData["Title"] = "Cart";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Giỏ hàng</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th class="col-md-2"></th>
+            <th class="col-md-4">
+                Tên sách
+            </th>
+            <th class="col-md-1">
+                Số lượng
+            </th>
+            <th class="col-md-2">
+                Tổng giá
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in @Model.orderItem)
+        {
+        <tr>
+            @foreach (var book in @Model.lstBook)
+            {
+                if (item.BookID == book.BookID)
+                {
+                    <td>
+                        <span class="image">
+                            <img src="/images/@book.Image" height="120" width="110" alt="" />
+                        </span>
+                    </td>
+                    <td>
+                        @book.BookName
+                    </td>
+                }
+            }
+            
+            <td>
+                <form asp-action="EditItem">
+                    <input hidden type="text" name="ItemID" value="@item.ItemID" />
+                    <input name="Quantity" value="@item.Quantity" disabled />
+                    <br />
+                    <input type="submit" name="add" value="+" class="btn" /> |
+                    <input type="submit" name="sub" value="-" class="btn" />
+                </form>
+            </td>
+            <td>
+                @item.TotalPrice
+            </td>
+            <td>
+                @Html.ActionLink("Delete", "DeleteItem", new { id = item.ItemID })
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+<div class="row">
+    <div class="col-md-9"></div>
+    <div class="col-md-3">
+        <div class="field">
+            <label for="price">Price </label>
+
+            <input type="number" name="price" placeholder="TotalPrice" value="@Model.orders.OrderPrice" disabled>
+        </div>
+        <br />
+        <a class="button" asp-action="Checkout">Checkout</a>
+    </div>
+</div>

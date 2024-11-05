@@ -1,0 +1,57 @@
+﻿@using WebStore.Models
+@model dynamic
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+@*
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>*@
+<div id="main">
+    <div class="inner">
+        <h1>Products</h1>
+
+        <div class="image main">
+            <img src="images/banner-image-6-1920x500.jpg" class="img-fluid" alt="" />
+        </div>
+
+        <!-- Products -->
+        <section class="tiles">
+            @foreach (var item in Model.book)
+            {
+                <article class="style1">
+                    <span class="image">
+                        <img src="/images/@item.Image" width="300" height="325" alt="" />
+                    </span>
+                    <a href="@Url.Action("Details", "Book", new {id = @item.BookID })">
+                        <h2>
+                            @item.BookName
+                        </h2>
+                        <p><del>@item.Price đ</del> <strong>@item.Price đ</strong></p>
+                    </a>
+                </article>
+            }
+        </section>
+        <div class="row">
+            @*<div class="col-sm-5"></div>*@
+            <div class="col-sm-6">
+                <div class="pagination">
+                    @for (int i = 1; i <= Model.maxpage; i++)
+                    {
+                        if (i == Model.currentpage)
+                        {
+                            <a href="/Book/@i" class="active">@i</a>
+                        }
+                        else
+                        {
+                            <a href="/Book/@i">@i</a>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

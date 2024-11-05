@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_ManagerLayout.cshtml";
+}
+
+<div id="main">
+    <h1>Manager</h1>
+    <section class="tiles">
+
+        <article class="style1">
+            <span class="image">
+                <img src="images/banner-image-5-1920x500.jpg" alt="" width="300" height="325" />
+            </span>
+            <a asp-action="ManagerBook">
+                <h2>
+                    Quản lý Sản phẩm
+                </h2>
+            </a>
+        </article>
+        <article class="style1">
+            <span class="image">
+                <img src="images/banner-image-5-1920x500.jpg" alt="" width="300" height="325" />
+            </span>
+            <a asp-action="ManagerOrder">
+                <h2>
+                    Quản lý đơn hàng
+                </h2>
+            </a>
+        </article>
+        @if (this.User.IsInRole("SuperAdmin"))
+        {
+            <article class="style1">
+                <span class="image">
+                    <img src="images/banner-image-5-1920x500.jpg" alt="" width="300" height="325" />
+                </span>
+                <a asp-action="ManagerAccount">
+                    <h2>
+                        Quản lý tài khoản
+                    </h2>
+                </a>
+            </article>
+
+
+            <article class="style1">
+                <span class="image">
+                    <img src="images/banner-image-5-1920x500.jpg" alt="" width="300" height="325" />
+                </span>
+                <a asp-action="ManagerAccount">
+                    <h2>
+                        Quản lý nhà xuất bản
+                    </h2>
+                </a>
+            </article>
+        }
+
+    </section>
+</div>

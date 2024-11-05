@@ -1,0 +1,90 @@
+﻿@using WebStore.Models
+@model dynamic
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div id="main">
+    <div class="inner">
+        <h1>@Model.bookdetail.BookName <span class="pull-right"><del></del>@Model.bookdetail.Price đ</span></h1>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-5">
+                    <img src="/images/@Model.bookdetail.Image" class="img-fluid" alt="">
+                </div>
+
+                <div class="col-md-7">
+                    <div class="row">
+                        <div class="col-sm-3">Thể loại:</div>
+                        @foreach (var type in Model.booktypeNAV)
+                        {
+                            if (type.BookTypeID == Model.bookdetail.BookTypeID)
+                            {
+                                <div class="col-sm-9">@type.BookTypeName</div>
+
+                            }
+                        }
+                        <div class="col-sm-3">Tác giả:</div>
+                        <div class="col-sm-9">@Model.bookdetail.Author</div>
+                        <div class="col-sm-3">Nhà xuất bản:</div>
+                        <div class="col-sm-9">@Model.bookdetail.Nxb</div>
+                    </div>
+
+                    <div class="row">
+                        <form asp-controller="Order" asp-action="AddToCart" id="add_to_cart">
+                            <div class="col-sm-8">
+                                <input hidden type="text" name="BookID" value="@Model.bookdetail.BookID"/>
+                                <label class="control-label">Quantity</label>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <input type="text" name="quantity" id="quantity">
+                                            <span class="text-danger field-validation-error" id="add_to_cart_alert">vui lòng nhập số lượng</span>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <button type="submit" class="primary">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">Mô tả:</div>
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-11">@Model.bookdetail.Description</div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <br>
+        <br>
+
+        <div class="container-fluid">
+            <h2>Other Products</h2>
+            <!-- Products -->
+            <section class="tiles">
+                @foreach (var item in Model.lstBook)
+                {
+                    <article class="style1">
+                        <span class="image">
+                            <img src="/images/@item.Image" width="300" height="325" alt="" />
+                        </span>
+                        <a href="@Url.Action("Details", "Book", new {id = @item.BookID })">
+                            <h2>
+                                @item.BookName
+                            </h2>
+                            <p><del>@item.Price đ</del> <strong>@item.Price đ</strong></p>
+                        </a>
+                    </article>
+                }
+            </section>
+        </div>
+    </div>
+</div>

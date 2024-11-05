@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<!-- saved from url=(0100)https://s0.2mdn.net/sadbundle/15687224167128097677/fb_creators_levelup_vietnamese_300x600/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		
+		<meta name="ad.size" content="width=300,height=600">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<title>Facebook Gaming 300x600</title>
+		<link href="./main(1).css" rel="stylesheet">
+
+		<script type="text/javascript">
+			var clickTag = "https://www.google.com";
+		</script>
+	<script type="text/javascript">
+    
+  (function() {
+    var MAX_URL_PARAM_LENGTH = 34;
+    var CLICK_X_URL_KEY = 'nx';
+    var CLICK_Y_URL_KEY = 'ny';
+    var CREATIVE_DIMENSIONS_KEY = 'dim';
+    var AD_URL_PARAM = '&adurl=';
+
+    var relegateNavigation = '';
+    var urlParamMap = {};
+
+    urlParamMap[CLICK_X_URL_KEY] = null;
+    urlParamMap[CLICK_Y_URL_KEY] = null;
+    urlParamMap[CREATIVE_DIMENSIONS_KEY] = null;
+
+    var handleClickTagMessage = function(e) {
+      try {
+        var eventData = JSON.parse(e.data);
+      } catch (err) {
+        return;
+      }
+      if (eventData.isInitClickTag) {
+        if (eventData.clickTags) {
+          for (var i = 0; i < eventData.clickTags.length; i++) {
+            var clkTag = eventData.clickTags[i];
+            window[clkTag.name] = clkTag.url;
+          }
+        } else if (eventData.clickTag) {
+          window.clickTag = eventData.clickTag;
+        }
+        relegateNavigation = eventData.relegateNavigation;
+      }
+    };
+
+    var storeClickCoordinates = function(e) {
+      urlParamMap[CLICK_X_URL_KEY] = Math.round(e.clientX);
+      urlParamMap[CLICK_Y_URL_KEY] = Math.round(e.clientY);
+    };
+
+    var getCreativeDimensions = function() {
+      return window.innerWidth + 'x' + window.innerHeight;
+    }
+
+    var getExitClickParams = function(e) {
+      urlParamMap[CREATIVE_DIMENSIONS_KEY] = getCreativeDimensions();
+
+      var exitParams = '';
+      for (var key in urlParamMap) {
+        exitParams += '&' + key + '=';
+        if (urlParamMap[key] !== null) {
+          exitParams += urlParamMap[key];
+        }
+      }
+      return exitParams;
+    }
+
+    var appendExitClickParams = function(url) {
+      var adUrlIndex = url.toLowerCase().indexOf(AD_URL_PARAM);
+      var paramsToBeAdded = getExitClickParams();
+      if (adUrlIndex > -1 && paramsToBeAdded.length <= MAX_URL_PARAM_LENGTH) {
+        url = url.substr(0, adUrlIndex) + paramsToBeAdded +
+          url.substr(adUrlIndex);
+      };
+      return url;
+    };
+
+    if (open.call) {
+      window.open = function(open) {
+        return function(url, name, features) {
+          url = appendExitClickParams(url);
+          if (relegateNavigation === 'parent') {
+            var message = {'clickTag': url, 'isPostClickTag': true};
+            parent.postMessage(JSON.stringify(message), '*');
+          } else {
+            var args = [url, name];
+            if (features) {
+              args.push(features);
+            }
+            open.apply(window, args);
+          }
+        };
+      }(window.open);
+    }
+
+    if (window.addEventListener) {
+      window.addEventListener(
+          'message', handleClickTagMessage, false);
+      window.addEventListener('mousedown', storeClickCoordinates, true);
+    } else {
+      window.attachEvent('onmessage', handleClickTagMessage);
+    }
+  })();
+    
+  </script><style type="text/css" data-styled-components="FiaaB gTcftA caPIRE" data-styled-components-is-local="true">
+/* sc-component-id: sc-keyframes-FiaaB */
+@-webkit-keyframes FiaaB{100%{-webkit-transform:rotate(360deg);-ms-transform:rotate(360deg);transform:rotate(360deg);}}@keyframes FiaaB{100%{-webkit-transform:rotate(360deg);-ms-transform:rotate(360deg);transform:rotate(360deg);}}
+/* sc-component-id: sc-keyframes-gTcftA */
+@-webkit-keyframes gTcftA{10%,90%{-webkit-transform:translate3d(-1px,0,0);-ms-transform:translate3d(-1px,0,0);transform:translate3d(-1px,0,0);}20%,80%{-webkit-transform:translate3d(2px,0,0);-ms-transform:translate3d(2px,0,0);transform:translate3d(2px,0,0);}30%,50%,70%{-webkit-transform:translate3d(-4px,0,0);-ms-transform:translate3d(-4px,0,0);transform:translate3d(-4px,0,0);}40%,60%{-webkit-transform:translate3d(4px,0,0);-ms-transform:translate3d(4px,0,0);transform:translate3d(4px,0,0);}}@keyframes gTcftA{10%,90%{-webkit-transform:translate3d(-1px,0,0);-ms-transform:translate3d(-1px,0,0);transform:translate3d(-1px,0,0);}20%,80%{-webkit-transform:translate3d(2px,0,0);-ms-transform:translate3d(2px,0,0);transform:translate3d(2px,0,0);}30%,50%,70%{-webkit-transform:translate3d(-4px,0,0);-ms-transform:translate3d(-4px,0,0);transform:translate3d(-4px,0,0);}40%,60%{-webkit-transform:translate3d(4px,0,0);-ms-transform:translate3d(4px,0,0);transform:translate3d(4px,0,0);}}
+/* sc-component-id: sc-keyframes-caPIRE */
+@-webkit-keyframes caPIRE{0%{-webkit-transform:scale(.75);-ms-transform:scale(.75);transform:scale(.75);}20%{-webkit-transform:scale(1);-ms-transform:scale(1);transform:scale(1);}40%{-webkit-transform:scale(.75);-ms-transform:scale(.75);transform:scale(.75);}60%{-webkit-transform:scale(1);-ms-transform:scale(1);transform:scale(1);}80%{-webkit-transform:scale(.75);-ms-transform:scale(.75);transform:scale(.75);}100%{-webkit-transform:scale(.75);-ms-transform:scale(.75);transform:scale(.75);}}@keyframes caPIRE{0%{-webkit-transform:scale(.75);-ms-transform:scale(.75);transform:scale(.75);}20%{-webkit-transform:scale(1);-ms-transform:scale(1);transform:scale(1);}40%{-webkit-transform:scale(.75);-ms-transform:scale(.75);transform:scale(.75);}60%{-webkit-transform:scale(1);-ms-transform:scale(1);transform:scale(1);}80%{-webkit-transform:scale(.75);-ms-transform:scale(.75);transform:scale(.75);}100%{-webkit-transform:scale(.75);-ms-transform:scale(.75);transform:scale(.75);}}</style><style>
+      .glot-sub-active{
+        color: #1296ba !important;
+      }
+      
+      .glot-sub-hovered{
+        color: #1296ba !important;
+      }
+      .glot-sub-clzz{
+        cursor: pointer;
+        
+        lineHeight: 1.2;
+          font-size: 28px;
+          color: #FFCC00; background: rgba(17, 17, 17, 0.7);
+        
+      }
+      .glot-sub-clzz:hover{
+        color: #1296ba !important;
+      }
+      .ej-trans-sub{
+        position: absolute;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999999;
+        cursor: move;
+      }
+      .ej-trans-sub > span{
+        color: #3CF9ED;
+        font-size: 18px;
+        text-align: center;
+        padding: 0 16px;
+        line-height: 1.5;
+        background: rgba(32, 26, 25, 0.8);
+        // text-shadow: 0px 1px 4px black;
+        padding: 0 8px;
+        
+        lineHeight: 1.2;
+        font-size: 16px;
+        color: #0CB1C7; background: rgba(67, 65, 65, 0.7);
+      
+      }
+      .ej-main-sub{
+        position: absolute;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 99999999;
+        cursor: move;
+        padding: 0 8px;
+      }
+      .ej-main-sub > span{
+        color: white;
+        font-size: 20px;
+        line-height: 1.5;
+        text-align: center;
+        background: rgba(32, 26, 25, 0.8);
+        // text-shadow: 0px 1px 4px black;
+        padding: 2px 8px;
+        
+        lineHeight: 1.2;
+          font-size: 28px;
+          color: #FFCC00; background: rgba(17, 17, 17, 0.7);
+        
+      }
+
+      .ej-main-sub .glot-sub-clzz{
+        background: transparent !important
+      }
+
+      .tran-subtitle > .view-icon-edit-sub{
+        cursor: pointer;
+        padding-left: 10px;
+        top: 2px;
+        position: relative;
+      }
+
+      .tran-subtitle > .view-icon-edit-sub > svg{
+        width: 16px;
+        height: 16px;
+        pointer-events: none;
+      }
+      
+      </style></head>
+	<body>
+		<a id="myAdLink" href="javascript:void(window.open(window.clickTag))">	
+		<div id="border"></div>			
+			<div id="myAd">
+				<div class="myAd_Img" id="back" style="transform: matrix(1, 0, 0, 1, -1800, 0);"></div>
+				<div id="shadow" style="visibility: inherit; opacity: 0.3; transform: matrix(1.6, 0, 0, 1.2, -300, 0);"></div>
+				<div id="shadow02" style="visibility: inherit; opacity: 0.3; transform: matrix(1, 0, 0, 1, -300, 0);"></div>
+				<div id="helmet" style="transform: translate3d(-300px, 1.47px, 0px);">
+					<div id="star_mic" style="visibility: inherit; opacity: 1;"></div>
+					<div id="img01" style="visibility: inherit; opacity: 1;"></div>
+					<div id="ring" style="visibility: inherit; opacity: 1;"></div>
+				</div>
+				<div id="img02" style="visibility: inherit; opacity: 1; transform: translate3d(-300px, 3.55px, 0px);"></div>
+				<div id="img03" style="visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, -300, 0.925);"></div>
+				<div id="mask" style="transform: matrix(1, 0, 0, 1, 0, 0);">
+					<div id="lines" style="visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);"></div>
+				</div>
+				<div id="img04" style="transform: translate3d(0px, 4.38px, 0px);">
+					<div id="right_wing" style="display: block; transform-origin: 0% 100% 0px; visibility: inherit; opacity: 1; transform: matrix3d(0.875013, -0.241019, 0, 0, 0.241019, 0.875013, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);"></div>
+					<div id="left_wing" style="display: block; transform-origin: 100% 100% 0px; visibility: inherit; opacity: 1; transform: matrix3d(0.875013, 0.241019, 0, 0, -0.241019, 0.875013, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);"></div>
+					<div id="wings" style="visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);"></div>
+					<div id="btn01" style="display: block; transform-origin: 50% 50% 0px; visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);"></div>
+					<div id="btn02" style="display: block; transform-origin: 50% 50% 0px; visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);"></div>
+				</div>
+				<div id="star01" style="visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, -300, 0);"></div>
+				<div id="star02" style="visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, -300, 0);"></div>
+				<div id="star03" style="visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, -300, 0);"></div>
+				<div id="sparkle01" style="visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);"></div>
+				<div id="sparkle02" style="visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);"></div>
+				<div id="sparkle03" style="visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);"></div>
+				<div id="copy01" style="visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, -300, 0);"></div>
+				<div id="copy02" style="visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, -300, 0);"></div>
+				<div id="copy03" style="visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, -300, 0);"></div>
+				<div id="copy04" style="visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);"></div>
+				<div id="cta" style="visibility: inherit; opacity: 1; background-color: rgb(255, 3, 142);">
+					<div id="cta_copy01" style="visibility: hidden; opacity: 0;"></div>
+					<div id="cta_copy02" style="visibility: inherit; opacity: 1;"></div>
+					<div id="shine" class="shine" style="transform: matrix(1, 0, 0, 1, 300, 0);"></div>					
+				</div>
+				<div id="logo" style="visibility: inherit; opacity: 1;"></div>	
+
+			</div>
+		</a>
+		<script src="./TweenMax.min.js.download"></script>
+		<script type="text/javascript">
+		    var isIOS = (/iPhone|iPad|iPod/i).test(navigator.userAgent);			
+			function init() {
+				seq01();
+
+			}
+			function seq01() {
+				var	twnDelay = .3;
+				TweenMax.set(shadow, {autoAlpha:.3});
+				TweenMax.set([logo, cta, copy01, img01, star_mic, ring], {autoAlpha:1});	
+			    TweenMax.delayedCall(twnDelay, bounceObject, [helmet]);
+			    TweenMax.delayedCall(twnDelay, activateRollOver);
+			    twnDelay+=1.2;
+			    TweenMax.delayedCall(twnDelay, seq02);			
+			}
+
+			function seq02() {
+				var	twnDelay = 0;
+				TweenMax.set(shadow02, {autoAlpha:.3});
+				TweenMax.set([img02, copy02, star01, star02, star03], {autoAlpha:1});
+				TweenMax.to([copy01, shadow, helmet], .8, {x:-300, ease:Power3.easeOut, delay:twnDelay});
+				TweenMax.to(back, 2, {x:-600, ease:Power3.easeOut, delay:twnDelay});			
+				twnDelay+=.2;
+				TweenMax.from(copy02, .9, {x:300, ease:Power3.easeOut,  delay:twnDelay});
+				twnDelay+=.1;
+				TweenMax.from([star01, star02, star03, img02, shadow02], .9, {x:300, ease:Power3.easeOut,  delay:twnDelay});
+				TweenMax.delayedCall(twnDelay, bounceObject, [img02]);
+ 				twnDelay+=2.2;
+			    TweenMax.delayedCall(twnDelay, seq03);
+			    TweenMax.delayedCall(twnDelay, killTweens, [helmet]);
+			}
+			function seq03() {
+				var	twnDelay = 0;
+				TweenMax.set(shadow, {scaleX:1.6, scaleY:1.2, x:0});
+				TweenMax.set([img03, copy03], {autoAlpha:1});
+				TweenMax.to([star01, star02, star03, copy02, img02, shadow02], .8, {x:-300, ease:Power3.easeOut, delay:twnDelay});
+				TweenMax.to(back, 2, {x:-1200, ease:Power3.easeOut, delay:twnDelay});
+				twnDelay+=.2;
+				TweenMax.from(copy03, .9, {x:300, ease:Power3.easeOut,  delay:twnDelay});
+				twnDelay+=.1;
+				TweenMax.from([shadow, img03], .9, {x:300, ease:Power3.easeOut,  delay:twnDelay});
+				TweenMax.delayedCall(twnDelay, bounceObject, [img03]);
+ 				twnDelay+=2.2;
+			    TweenMax.delayedCall(twnDelay, seq04);
+			    TweenMax.delayedCall(twnDelay, killTweens, [img02]);
+			}
+
+		
+			function seq04() {
+				var	twnDelay = 0;
+				TweenMax.set([btn01, btn02], {autoAlpha:1, transformOrigin:"50% 50%", display:'block'});
+				TweenMax.set(right_wing, {autoAlpha:1, transformOrigin:"0% 100%", display:'block'});
+				TweenMax.set(left_wing, {autoAlpha:1, transformOrigin:"100% 100%", display:'block'});
+				TweenMax.killTweensOf(img03);
+				TweenMax.set([wings, copy04, lines], {autoAlpha:1});	
+				TweenMax.to([copy03, img03, shadow], .8, {x:-300, ease:Power3.easeOut, delay:twnDelay});
+				TweenMax.to(back, 2, {x:-1800, ease:Power3.easeOut, delay:twnDelay});
+				TweenMax.to(cta, 1, {backgroundColor:'#ff038e', delay:twnDelay});
+				TweenMax.to(cta_copy01, 1, {autoAlpha:0, delay:twnDelay});
+				TweenMax.to(cta_copy02, 1, {autoAlpha:1, delay:twnDelay});
+				twnDelay+=.2;
+				TweenMax.from(copy04, .9, {x:300, ease:Power3.easeOut,  delay:twnDelay});
+				twnDelay+=.1;
+				TweenMax.from([mask, img04], .8, {x:300, ease:Power3.easeOut, delay:twnDelay});
+				TweenMax.from([left_wing, right_wing, wings, btn01, btn02], .8, {y:150, delay:twnDelay});
+				TweenMax.from(mask, .8, {y:150, delay:twnDelay});
+				TweenMax.from(lines, .8, {y:-150, delay:twnDelay});
+			    TweenMax.delayedCall(twnDelay, bounceObject, [img04]);
+				twnDelay+=.5;
+				TweenMax.delayedCall(twnDelay, pushBtn, [btn01]);
+				TweenMax.delayedCall(twnDelay, wave_wing);
+				TweenMax.delayedCall(twnDelay, killTweens, [img03]);
+			    TweenMax.delayedCall(twnDelay, runSparkles, [sparkle01]);
+				twnDelay+=.5;
+				TweenMax.delayedCall(twnDelay, pushBtn, [btn02]);
+				TweenMax.delayedCall(twnDelay, btnOver);
+				TweenMax.delayedCall(twnDelay, runSparkles, [sparkle02]);
+				twnDelay+=.5;
+				TweenMax.delayedCall(twnDelay, runSparkles, [sparkle03]); 
+							 	
+			}
+			function wave_wing(){
+				 TweenMax.to(left_wing, 1, {scale:.85, rotationZ:25, yoyo:true, ease:Linear.easeNone, repeat:-1});
+				 TweenMax.to(right_wing, 1, {scale:.85, rotationZ:-25, yoyo:true, ease:Linear.easeNone, repeat:-1});
+			}
+			function runSparkles(mc){
+				var	twnDelay = 0;
+				TweenMax.set(mc, {autoAlpha:1, scale:1, rotation:0});
+				TweenMax.from(mc, .5, {scale:.1, autoAlpha:0,  rotation:130, ease:Power2.easeOut, delay:twnDelay,  overwrite:false});
+				twnDelay+=2;
+				TweenMax.to(mc, .5, {scale:.1, autoAlpha:0,  rotation:'-90', ease:Power2.easeIn, delay:twnDelay});
+				twnDelay+=1.5;
+				TweenMax.delayedCall(twnDelay, runSparkles, [mc]);
+			}
+
+			function bounceObject(mc){
+				TweenMax.to(mc, 1, {y:5, ease:Linear.easeNone, yoyo:true, repeat:-1});
+			}
+			function pushBtn(mc){
+				var	twnDelay = 0;
+				TweenMax.to(mc, .5, {scale:.8, ease:Back.easeOut.config(4),  delay:twnDelay, overwrite:false});
+				twnDelay+=.7;
+				TweenMax.to(mc, .5, {scale:1, ease:Back.easeOut.config(4), delay:twnDelay});
+			}
+			function btnOver(){
+	    		TweenMax.fromTo(shine, 1, {x:0}, {x:300});
+			}
+			function activateRollOver(){
+				if (!isIOS) {
+					myAdLink.addEventListener("mouseover", btnOver);
+				}else{
+					myAdLink.addEventListener("touchstart", btnOver);
+				}		
+			}
+			function killTweens(mc){
+				TweenMax.killTweensOf(mc);
+			}
+			var mediaReady = function ready(fn) {
+			  if (document.readyState !== "loading"){
+			    fn();
+			  } else {
+			    document.addEventListener("DOMContentLoaded", fn);
+			  }
+			};
+
+			mediaReady(init);
+
+		</script>
+
+	
+
+<div id="eJOY__extension_root" class="eJOY__extension_root_class" style="all: unset;"></div></body></html>

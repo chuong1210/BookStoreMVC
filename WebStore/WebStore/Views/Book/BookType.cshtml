@@ -1,0 +1,60 @@
+﻿@using WebStore.Models
+@model dynamic
+
+@{
+    ViewData["Title"] = "BookType";
+}
+
+<div id="main">
+    <div class="inner">
+
+        <div class="image main">
+            <img src="/images/banner-image-6-1920x500.jpg" class="img-fluid" alt="" />
+        </div>
+        <h1>@Model.booktype.BookTypeName</h1>
+
+        <hr />
+        <!-- Products -->
+        <section class="tiles">
+            @if (Model.booktypelist.Count <= 0)
+            {
+                <span class="mt-2">
+                    Hiện cửa hàng ko có sách có thể loại @Model.booktype.BookTypeName
+
+                </span>
+            }
+            @foreach (var item in Model.booktypelist)
+            {
+                <article class="style1">
+                    <span class="image">
+                        <img src="/images/@item.Image" width="300" height="325" alt="" />
+                    </span>
+                    <a href="@Url.Action("Details", "Book", new {id = @item.BookID })">
+                        <h2>
+                            @item.BookName
+                        </h2>
+
+                        <p><del>@item.Price đ</del> <strong>@item.Price đ</strong></p>
+                    </a>
+                </article>
+            }
+        </section>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="pagination">
+                    @for (int i = 1; i <= Model.maxpage; i++)
+                    {
+                        if (i == Model.currentpage)
+                        {
+                            <a href="/Book/BookType/@Model.booktype.BookTypeID/@i" class="active">@i</a>
+                        }
+                        else
+                        {
+                            <a href="/Book/BookType/@Model.booktype.BookTypeID/@i">@i</a>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

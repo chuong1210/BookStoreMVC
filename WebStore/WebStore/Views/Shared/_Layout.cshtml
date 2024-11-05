@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - WebApplication1</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/main.css" />
+    @*<link rel="stylesheet" href="~/css/site.css" />*@
+
+    <noscript><link rel="stylesheet" href="~/css/noscript.css" /></noscript>
+
+</head>
+<body class="is-preload">
+    <div id="wrapper">
+@*         @await Component.InvokeAsync("Cart") 
+ *@
+         @await Html.PartialAsync("_HeaderComponent") 
+        <div class="container">
+            <div>
+
+            </div>
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("Index", "Home")">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="@Url.Action("Index", "Book")" role="button" aria-haspopup="true" aria-expanded="false">Book</a>
+                    <div class="dropdown-menu" style="max-height: 300px; overflow-y: auto;">
+                        <a class="dropdown-item" asp-controller="Book" asp-action="Index">Tất cả</a>
+
+                        @foreach (var item in Model.booktypeNAV)
+                        {
+                            <a class="dropdown-item" href="@Url.Action("BookType", "Book",new { ID = item.BookTypeID })">@item.BookTypeName</a>
+                        }
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("About", "Home")">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("Contact", "Home")">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <div class="container">
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
+        </div>
+
+
+        <footer id="footer">
+            <div class="inner">
+                <ul class="copyright">
+                    <li>Copyright © 2021 Book Online Store </li>
+                    <li>Template by: PHPJabbers.com</li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="~/js/jquery.scrolly.min.js"></script>
+    <script src="~/js/jquery.scrollex.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <script src="~/js/main.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

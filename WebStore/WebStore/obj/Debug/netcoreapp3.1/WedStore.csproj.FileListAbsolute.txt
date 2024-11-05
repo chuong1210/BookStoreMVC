@@ -1,0 +1,614 @@
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\appsettings.Development.json
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\appsettings.json
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\bundleconfig.json
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\WedStore.exe
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\WedStore.deps.json
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\WedStore.runtimeconfig.json
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\WedStore.runtimeconfig.dev.json
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\WedStore.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\WedStore.pdb
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\WedStore.Views.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\WedStore.Views.pdb
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\BCrypt.Net-Next.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\CAIT.SQLHelper.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Razor.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Workspaces.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\dotnet-aspnet-codegenerator-design.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\System.Composition.AttributedModel.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\System.Composition.Convention.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\System.Composition.Hosting.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\System.Composition.Runtime.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\System.Composition.TypedParts.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.resources.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.resources.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.resources.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.resources.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.resources.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.resources.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.resources.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.resources.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.resources.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.resources.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.resources.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.GeneratedMSBuildEditorConfig.editorconfig
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.AssemblyInfoInputs.cache
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.AssemblyInfo.cs
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.csproj.CoreCompileInputs.cache
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.MvcApplicationPartsAssemblyInfo.cache
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.RazorAssemblyInfo.cache
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.RazorAssemblyInfo.cs
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\obj\Debug\netcoreapp3.1\staticwebassets\WedStore.StaticWebAssets.Manifest.cache
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\obj\Debug\netcoreapp3.1\staticwebassets\WedStore.StaticWebAssets.xml
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\obj\Debug\netcoreapp3.1\scopedcss\bundle\WedStore.styles.css
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.TagHelpers.input.cache
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.TagHelpers.output.cache
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.RazorCoreGenerate.cache
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Account\Index.cshtml.g.cs
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Account\SignUp.cshtml.g.cs
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Book\BookType.cshtml.g.cs
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Book\Details.cshtml.g.cs
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Book\Index.cshtml.g.cs
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Home\About.cshtml.g.cs
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Home\Contact.cshtml.g.cs
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Manager\CreateBook.cshtml.g.cs
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Manager\DeleteAccount.cshtml.g.cs
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Manager\DeleteBook.cshtml.g.cs
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Manager\DeleteOrder.cshtml.g.cs
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Manager\DetailAccount.cshtml.g.cs
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Manager\DetailOrder.cshtml.g.cs
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Manager\DetailsBook.cshtml.g.cs
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Manager\EditAccount.cshtml.g.cs
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Manager\EditBook.cshtml.g.cs
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Manager\EditOrder.cshtml.g.cs
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Manager\Index.cshtml.g.cs
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Manager\ManagerAccount.cshtml.g.cs
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Manager\ManagerBook.cshtml.g.cs
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Manager\ManagerOrder.cshtml.g.cs
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Order\Cart.cshtml.g.cs
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Order\Checkout.cshtml.g.cs
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Order\InfoOrderDetail.cshtml.g.cs
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Order\OrdersList.cshtml.g.cs
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LoginLayout.cshtml.g.cs
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ManagerLayout.cshtml.g.cs
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.RazorTargetAssemblyInfo.cache
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.RazorTargetAssemblyInfo.cs
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.Views.pdb
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.csproj.CopyComplete
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.dll
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.pdb
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.genruntimeconfig.cache
+D:\Chuyên đề công nghệ phần mềm\Giữa Kỳ\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.csproj.AssemblyReference.cache
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\bundleconfig.json
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\WedStore.StaticWebAssets.xml
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\WedStore.exe
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\WedStore.deps.json
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\WedStore.runtimeconfig.json
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\WedStore.runtimeconfig.dev.json
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\WedStore.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\WedStore.pdb
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\WedStore.Views.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\WedStore.Views.pdb
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\BCrypt.Net-Next.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\CAIT.SQLHelper.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Razor.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Workspaces.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\dotnet-aspnet-codegenerator-design.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\System.Composition.AttributedModel.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\System.Composition.Convention.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\System.Composition.Hosting.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\System.Composition.Runtime.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\System.Composition.TypedParts.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.resources.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.resources.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.resources.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.resources.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.resources.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.resources.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.resources.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.resources.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.resources.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.resources.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.resources.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.csproj.AssemblyReference.cache
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.AssemblyInfoInputs.cache
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.AssemblyInfo.cs
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.csproj.CoreCompileInputs.cache
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.RazorAssemblyInfo.cache
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.RazorAssemblyInfo.cs
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.TagHelpers.input.cache
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.TagHelpers.output.cache
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.RazorCoreGenerate.cache
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Account\Index.cshtml.g.cs
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Account\SignUp.cshtml.g.cs
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Book\BookType.cshtml.g.cs
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Book\Details.cshtml.g.cs
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Book\Index.cshtml.g.cs
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Home\About.cshtml.g.cs
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Home\Contact.cshtml.g.cs
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Manager\CreateBook.cshtml.g.cs
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Manager\DeleteAccount.cshtml.g.cs
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Manager\DeleteBook.cshtml.g.cs
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Manager\DeleteOrder.cshtml.g.cs
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Manager\DetailAccount.cshtml.g.cs
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Manager\DetailOrder.cshtml.g.cs
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Manager\DetailsBook.cshtml.g.cs
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Manager\EditAccount.cshtml.g.cs
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Manager\EditBook.cshtml.g.cs
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Manager\EditOrder.cshtml.g.cs
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Manager\Index.cshtml.g.cs
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Manager\ManagerAccount.cshtml.g.cs
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Manager\ManagerBook.cshtml.g.cs
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Manager\ManagerOrder.cshtml.g.cs
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Order\Cart.cshtml.g.cs
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Order\Checkout.cshtml.g.cs
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Order\InfoOrderDetail.cshtml.g.cs
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Order\OrdersList.cshtml.g.cs
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LoginLayout.cshtml.g.cs
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ManagerLayout.cshtml.g.cs
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.RazorTargetAssemblyInfo.cache
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.RazorTargetAssemblyInfo.cs
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.Views.pdb
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\staticwebassets\WedStore.StaticWebAssets.Manifest.cache
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\staticwebassets\WedStore.StaticWebAssets.Pack.cache
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\staticwebassets\msbuild.WedStore.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\staticwebassets\msbuild.build.WedStore.props
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\staticwebassets\msbuild.buildMultiTargeting.WedStore.props
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\staticwebassets\msbuild.buildTransitive.WedStore.props
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.csproj.Up2Date
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.dll
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.pdb
+C:\Users\chuon\Downloads\Website-b-n-s-ch-main\Website-b-n-s-ch-main\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.genruntimeconfig.cache
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\bundleconfig.json
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\WedStore.StaticWebAssets.xml
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\WedStore.exe
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\WedStore.deps.json
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\WedStore.runtimeconfig.json
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\WedStore.runtimeconfig.dev.json
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\WedStore.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\WedStore.pdb
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\WedStore.Views.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\WedStore.Views.pdb
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\BCrypt.Net-Next.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\CAIT.SQLHelper.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Razor.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Workspaces.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\dotnet-aspnet-codegenerator-design.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\System.Composition.AttributedModel.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\System.Composition.Convention.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\System.Composition.Hosting.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\System.Composition.Runtime.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\System.Composition.TypedParts.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.resources.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.resources.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.resources.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.resources.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.resources.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.resources.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.resources.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.resources.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.resources.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.resources.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.resources.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.csproj.AssemblyReference.cache
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.AssemblyInfoInputs.cache
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.AssemblyInfo.cs
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.csproj.CoreCompileInputs.cache
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.RazorAssemblyInfo.cache
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.RazorAssemblyInfo.cs
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.TagHelpers.input.cache
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.TagHelpers.output.cache
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.RazorCoreGenerate.cache
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Account\Index.cshtml.g.cs
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Account\SignUp.cshtml.g.cs
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Book\BookType.cshtml.g.cs
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Book\Details.cshtml.g.cs
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Book\Index.cshtml.g.cs
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Home\About.cshtml.g.cs
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Home\Contact.cshtml.g.cs
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Order\Cart.cshtml.g.cs
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Order\Checkout.cshtml.g.cs
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Order\InfoOrderDetail.cshtml.g.cs
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Order\OrdersList.cshtml.g.cs
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LoginLayout.cshtml.g.cs
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ManagerLayout.cshtml.g.cs
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.RazorTargetAssemblyInfo.cache
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.RazorTargetAssemblyInfo.cs
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.Views.pdb
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\staticwebassets\WedStore.StaticWebAssets.Manifest.cache
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\staticwebassets\WedStore.StaticWebAssets.Pack.cache
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\staticwebassets\msbuild.WedStore.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\staticwebassets\msbuild.build.WedStore.props
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\staticwebassets\msbuild.buildMultiTargeting.WedStore.props
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\staticwebassets\msbuild.buildTransitive.WedStore.props
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.csproj.Up2Date
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.pdb
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.genruntimeconfig.cache
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\QuanLy\CreateBook.cshtml.g.cs
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\QuanLy\DeleteAccount.cshtml.g.cs
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\QuanLy\DeleteBook.cshtml.g.cs
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\QuanLy\DeleteOrder.cshtml.g.cs
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\QuanLy\DetailAccount.cshtml.g.cs
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\QuanLy\DetailOrder.cshtml.g.cs
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\QuanLy\DetailsBook.cshtml.g.cs
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\QuanLy\EditAccount.cshtml.g.cs
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\QuanLy\EditBook.cshtml.g.cs
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\QuanLy\EditOrder.cshtml.g.cs
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\QuanLy\Index.cshtml.g.cs
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\QuanLy\ManagerAccount.cshtml.g.cs
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\QuanLy\ManagerBook.cshtml.g.cs
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\QuanLy\ManagerOrder.cshtml.g.cs
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_HeaderComponent.cshtml.g.cs
+C:\Users\chuon\Downloads\BookStore\BookStore\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Cart\Default.cshtml.g.cs
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\bundleconfig.json
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\WedStore.StaticWebAssets.xml
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\WedStore.exe
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\WedStore.deps.json
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\WedStore.runtimeconfig.json
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\WedStore.runtimeconfig.dev.json
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\WedStore.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\WedStore.pdb
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\WedStore.Views.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\WedStore.Views.pdb
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\BCrypt.Net-Next.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\CAIT.SQLHelper.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Razor.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Workspaces.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\dotnet-aspnet-codegenerator-design.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\System.Composition.AttributedModel.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\System.Composition.Convention.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\System.Composition.Hosting.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\System.Composition.Runtime.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\System.Composition.TypedParts.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.resources.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.resources.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.resources.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.resources.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.resources.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.resources.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.resources.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.resources.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.resources.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.resources.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.resources.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.csproj.AssemblyReference.cache
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.AssemblyInfoInputs.cache
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.AssemblyInfo.cs
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.csproj.CoreCompileInputs.cache
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.RazorAssemblyInfo.cache
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.RazorAssemblyInfo.cs
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.TagHelpers.input.cache
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.TagHelpers.output.cache
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.RazorCoreGenerate.cache
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Account\Index.cshtml.g.cs
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Account\SignUp.cshtml.g.cs
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Book\BookType.cshtml.g.cs
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Book\Details.cshtml.g.cs
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Book\Index.cshtml.g.cs
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Home\About.cshtml.g.cs
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Home\Contact.cshtml.g.cs
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Order\Cart.cshtml.g.cs
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Order\Checkout.cshtml.g.cs
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Order\InfoOrderDetail.cshtml.g.cs
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Order\OrdersList.cshtml.g.cs
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\QuanLy\CreateBook.cshtml.g.cs
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\QuanLy\DeleteAccount.cshtml.g.cs
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\QuanLy\DeleteBook.cshtml.g.cs
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\QuanLy\DeleteOrder.cshtml.g.cs
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\QuanLy\DetailAccount.cshtml.g.cs
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\QuanLy\DetailOrder.cshtml.g.cs
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\QuanLy\DetailsBook.cshtml.g.cs
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\QuanLy\EditAccount.cshtml.g.cs
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\QuanLy\EditBook.cshtml.g.cs
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\QuanLy\EditOrder.cshtml.g.cs
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\QuanLy\Index.cshtml.g.cs
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\QuanLy\ManagerAccount.cshtml.g.cs
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\QuanLy\ManagerBook.cshtml.g.cs
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\QuanLy\ManagerOrder.cshtml.g.cs
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Cart\Default.cshtml.g.cs
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_HeaderComponent.cshtml.g.cs
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LoginLayout.cshtml.g.cs
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ManagerLayout.cshtml.g.cs
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.RazorTargetAssemblyInfo.cache
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.RazorTargetAssemblyInfo.cs
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.Views.pdb
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\obj\Debug\netcoreapp3.1\staticwebassets\WedStore.StaticWebAssets.Manifest.cache
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\obj\Debug\netcoreapp3.1\staticwebassets\WedStore.StaticWebAssets.Pack.cache
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\obj\Debug\netcoreapp3.1\staticwebassets\msbuild.WedStore.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\obj\Debug\netcoreapp3.1\staticwebassets\msbuild.build.WedStore.props
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\obj\Debug\netcoreapp3.1\staticwebassets\msbuild.buildMultiTargeting.WedStore.props
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\obj\Debug\netcoreapp3.1\staticwebassets\msbuild.buildTransitive.WedStore.props
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.csproj.Up2Date
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.dll
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.pdb
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.genruntimeconfig.cache
