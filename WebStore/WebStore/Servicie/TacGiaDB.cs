@@ -2,7 +2,7 @@
 using System.Data.SqlClient;
 using System.Data;
 using WedStore.Const;
-using WedStore.Models;
+using WebStore.Models;
 using System;
 
 namespace WedStore.Repositories

@@ -612,3 +612,4 @@ C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\obj\Debug\netcoreapp3.1
 C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.dll
 C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.pdb
 C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.genruntimeconfig.cache
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\obj\Debug\netcoreapp3.1\WedStore.sourcelink.json

@@ -708,6 +708,7 @@ WHERE DATEDIFF(DAY, ngaynhap, GETDATE()) = 0;
 -- PROC
 -- Dang Nhap
 -- STORE PROC LẤY TẤT CẢ THỂ LOẠI
+-- STORE PROC LẤY TẤT CẢ THỂ LOẠI
 CREATE or alter PROCEDURE SP_Book_GetAllType
 AS
 BEGIN
@@ -758,33 +759,37 @@ BEGIN
 END
 GO
 -- lấy chi tiết thông tin sách
-
-CREATE or alter PROCEDURE SP_ThongTinSachDuocDatCuaKhTheoId
+CREATE OR ALTER PROCEDURE SP_ThongTinSachDuocDatCuaKhTheoId
     @SachId VARCHAR(50)
 AS
 BEGIN
     SELECT 
+        S.id AS SachId,
         S.tieude AS TenSach,
 		S.HinhAnh,
 		S.Gia,
 		S.SoLuongTon,
 		S.NamXuatBan,
 		S.MoTa,
+		S.theloai_id,
         TL.ten AS TenTheLoai,
-        TG.ten AS TenTacGia,
-		NXB.ten as TenNhaXuatBan
-
+		STRING_AGG(TG.ten, ', ') AS TenTacGias, -- Sử dụng STRING_AGG
+		STRING_AGG(TG.id, ', ') AS TacGiaIds, -- Sử dụng STRING_AGG
+		NXB.ten as TenNhaXuatBan,
+		NXB.id as NhaXuatBanId
     FROM 
         Sach S
         INNER JOIN TheLoai TL ON S.theloai_id = TL.id
         INNER JOIN TacGia_Sach TGS ON S.id = TGS.sach_id
         INNER JOIN TacGia TG ON TGS.tacgia_id = TG.id
         INNER JOIN NhaXuatBan NXB ON NXB.id = S.nxb_id
-
     WHERE 
-        S.id = @SachId;
+        S.id = @SachId
+	GROUP BY
+		S.id, S.tieude, S.HinhAnh, S.Gia, S.SoLuongTon, S.NamXuatBan, S.MoTa, S.theloai_id, TL.ten, NXB.ten, NXB.id;
 END;
 
+exec SP_ThongTinSachDuocDatCuaKhTheoId 'S001'
 -- lấy chi tiết thông tin sách theo thể loại
 
 CREATE or alter PROCEDURE SP_DanhSachSachTheoTheLoai
@@ -792,17 +797,19 @@ CREATE or alter PROCEDURE SP_DanhSachSachTheoTheLoai
 AS
 BEGIN
     SELECT 
+        S.id AS SachId,
         S.tieude AS TenSach,
 		S.HinhAnh,
 		S.Gia,
 		S.SoLuongTon,
 		S.NamXuatBan,
 		S.MoTa,
-		s.theloai_id,
-		s.nxb_id,
+		S.theloai_id,
         TL.ten AS TenTheLoai,
-        TG.ten AS TenTacGia,
-		NXB.ten as TenNhaXuatBan
+		STRING_AGG(TG.ten, ', ') AS TenTacGias, -- Sử dụng STRING_AGG
+		STRING_AGG(TG.id, ', ') AS TacGiaIds, -- Sử dụng STRING_AGG
+		NXB.ten as TenNhaXuatBan,
+		NXB.id as NhaXuatBanId
 
     FROM 
         Sach S
@@ -812,7 +819,9 @@ BEGIN
         INNER JOIN NhaXuatBan NXB ON NXB.id = S.nxb_id
 
     WHERE 
-        S.theloai_id = @TheLoaiId;
+        S.theloai_id = @TheLoaiId
+	GROUP BY
+		S.id, S.tieude, S.HinhAnh, S.Gia, S.SoLuongTon, S.NamXuatBan, S.MoTa, S.theloai_id, TL.ten, NXB.ten, NXB.id;
 END;
 
 
@@ -822,18 +831,19 @@ CREATE or alter PROCEDURE SP_DanhSachSach
 AS
 BEGIN
     SELECT 
-		s.id,
+	      S.id AS SachId,
         S.tieude AS TenSach,
 		S.HinhAnh,
 		S.Gia,
 		S.SoLuongTon,
 		S.NamXuatBan,
 		S.MoTa,
-		s.theloai_id,
-		s.nxb_id,
+		S.theloai_id,
         TL.ten AS TenTheLoai,
-        TG.ten AS TenTacGia,
-		NXB.ten as TenNhaXuatBan
+		STRING_AGG(TG.ten, ', ') AS TenTacGias, -- Sử dụng STRING_AGG
+		STRING_AGG(TG.id, ', ') AS TacGiaIds, -- Sử dụng STRING_AGG
+		NXB.ten as TenNhaXuatBan,
+		NXB.id as NhaXuatBanId
 
     FROM 
         Sach S
@@ -842,7 +852,11 @@ BEGIN
         INNER JOIN TacGia TG ON TGS.tacgia_id = TG.id
         INNER JOIN NhaXuatBan NXB ON NXB.id = S.nxb_id
 
+		GROUP BY
+		S.id, S.tieude, S.HinhAnh, S.Gia, S.SoLuongTon, S.NamXuatBan, S.MoTa, S.theloai_id, TL.ten, NXB.ten, NXB.id;
+
 END;
+
 -- Stored Procedure để cập nhật đơn hàng, đặt ngày đặt hàng là ngày hiện tại
 
 CREATE OR ALTER PROCEDURE SP_UpdateDonHang

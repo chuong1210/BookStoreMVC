@@ -17,6 +17,8 @@ namespace WebStore.Models
         public string BookTypeName { get; set; }
 
         public string Author { get; set; }
+        public List<String> AuthorIds { get; set; }
+
         [Required(ErrorMessage = "Vui lòng nhập tên tác giả")]
 
         public string AuthorId { get; set; }

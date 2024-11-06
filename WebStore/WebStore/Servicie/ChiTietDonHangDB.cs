@@ -6,8 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 using WedStore.Const;
-using WedStore.Models;
-
+using WebStore.Models;
 namespace WedStore.Repositories
 {
     public class ChiTietDonHangDB

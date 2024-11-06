@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fMh498uEUN4=",
+  "dgSpecHash": "KhuO7sDgoF0=",
   "success": true,
-  "projectFilePath": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\WedStore.csproj",
+  "projectFilePath": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\WebStore.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\chuon\\.nuget\\packages\\bcrypt.net-next\\4.0.2\\bcrypt.net-next.4.0.2.nupkg.sha512",
     "C:\\Users\\chuon\\.nuget\\packages\\cait.sqlhelper\\2.7.1\\cait.sqlhelper.2.7.1.nupkg.sha512",

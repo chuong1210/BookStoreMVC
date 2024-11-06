@@ -6824,9 +6824,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\WedStore.csproj",
-      "projectName": "WedStore",
-      "projectPath": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\WedStore.csproj",
+      "projectUniqueName": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\WebStore.csproj",
+      "projectName": "WebStore",
+      "projectPath": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\WebStore.csproj",
       "packagesPath": "C:\\Users\\chuon\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\obj\\",
       "projectStyle": "PackageReference",

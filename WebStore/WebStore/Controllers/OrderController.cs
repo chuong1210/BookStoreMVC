@@ -8,7 +8,6 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using WebStore.Models;
-using WedStore.Models;
 using WedStore.Repositories;
 
 namespace WedStore.Controllers

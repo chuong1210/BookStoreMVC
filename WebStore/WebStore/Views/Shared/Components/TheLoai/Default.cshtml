@@ -1,0 +1,11 @@
+﻿@model IEnumerable<WebStore.Models.BookType> 
+
+<div class="dropdown-menu" style="max-height: 300px; overflow-y: auto;">
+    <a class="dropdown-item" asp-controller="Book" asp-action="Index">Tất cả</a>
+    @foreach (var item in Model)
+    {
+        <a class="dropdown-item" asp-controller="Book" asp-action="BookType" asp-route-ID="@item.BookTypeID">
+            @item.BookTypeName
+        </a>
+    }
+</div>

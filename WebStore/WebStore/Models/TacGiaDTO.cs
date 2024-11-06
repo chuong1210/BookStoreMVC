@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace WedStore.Models
+namespace WebStore.Models
 {
     public class TacGiaDTO
     {

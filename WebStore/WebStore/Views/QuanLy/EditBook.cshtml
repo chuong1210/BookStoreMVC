@@ -1,93 +1,157 @@
-﻿@using WebStore.Models
-@model dynamic
-
+﻿@model WebStore.Models.EditBookViewModel
 @{
     ViewData["Title"] = "EditBook";
     Layout = "~/Views/Shared/_ManagerLayout.cshtml";
 }
+<style>
+    /* Add some styling for the selected authors */
+    .selected-author-item {
+        border: 2px solid blue; /* Or any other style you prefer */
+        margin: 5px;
+        padding: 5px;
+        border-radius: 5px; /* For rounded corners */
+    }
 
-<h2>Sửa Sách</h2>
+    .selectedAuthor {
+        color: blue;
+    }
+
+ 
+</style>
+<h2 class="mt-2">Sửa Sách</h2>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <img src="/images/@Model.book.Image" class="img-fluid" alt="">
+        <img src="/images/@Model.Book.Image" class="img-fluid" alt="">
     </div>
     <div class="col-md-8">
         <form asp-action="EditBook" enctype="multipart/form-data">
-            <span data-valmsg-for="BookName" class="text-danger field-validation-error" data-valmsg-replace="true">@ViewBag.ErrorMessage</span>
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
             <div class="form-group">
                 <label for="BookName" class="control-label">Tên sách </label>
-                <input name="BookName" type="text" class="form-control" placeholder="Tên sách" value="@Model.book.BookName">
-            </div>
-            <div class="form-group">
-                <label for="BookTypeID" class="control-label">Loại sách</label>
-                <select name="BookTypeID" class="form-control">
-                    @foreach (var item in Model.booktypeNAV)
-                    {
-                        <option  value="@item.BookTypeID">@item.BookTypeName</option>
-                    }
-                </select>
-                <span data-valmsg-for="BookTypeID" class="text-danger field-validation-error" data-valmsg-replace="true"></span>
+                <input asp-for="Book.BookName" type="text" class="form-control" placeholder="Tên sách">
+                <span asp-validation-for="Book.BookName" class="text-danger"></span>
             </div>
 
+            <div class="form-group">
+                <label asp-for="Book.BookTypeID" class="control-label">Loại sách</label>
+                <select asp-for="Book.BookTypeID" asp-items="Model.BookTypes" class="form-control"></select>
+                <span asp-validation-for="Book.BookTypeID" class="text-danger"></span>
+            </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label for="Author" class="control-label">Tác giả</label>
-                    <select name="AuthorId" style="max-height: 260px;max-width:250px" class="form-control" 
-@*                     asp-items="Model.TGs"
- *@                    >
-                        <option value="">Chọn tác giả</option>
-                        @foreach (var item in Model.TGs)
-                        {
-                            <option value="@item.IdTG">@item.TenTacGia</option>
-                        }
-                   
-                    </select>
+                    <label asp-for="Book.AuthorIds" class="control-label">Tác giả</label>
+                    <select asp-for="Book.AuthorIds" asp-items="Model.Authors" class="form-control js-example-basic-multiple" id="authorSelect" multiple="multiple"></select>
+                    <span asp-validation-for="Book.AuthorIds" class="text-danger"></span>
+                    <div id="selectedAuthors"></div>
+                
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="Nxb" class="control-label">Nhà xuất bản</label>
-                    <select name="NXBId" class="form-control selectpicker " data-dropup-auto="false" style="max-height: 260px;max-width:200px">
-                        <option value="">Chọn nhà xuất bản</option>  <!--Thêm option mặc định-->
-                        @foreach (var item in Model.NXBs)
-                        {
-                            <option value="@item.IdNXB">@item.Ten</option>
-                        }
-                    </select>
+                    <label asp-for="Book.NxbId" class="control-label">Nhà xuất bản</label>
+                    <select asp-for="Book.NxbId" asp-items="Model.Publishers" class="form-control"></select>
+                    <span asp-validation-for="Book.NxbId" class="text-danger"></span>
                 </div>
             </div>
+
             <div class="form-group">
                 <label for="Image" class="control-label">Image</label>
-                <input name="Image" type="file" accept="image/png, image/jpeg, image/jpg" class="form-control-file">
+                <input asp-for="Book.Image" type="file" accept="image/png, image/jpeg, image/jpg" class="form-control-file">
+                <span asp-validation-for="Book.Image" class="text-danger"></span>
             </div>
+
             <div class="form-group">
                 <label for="Description" class="control-label">Mô tả</label>
-                <textarea name="Description" type="text" class="form-control" placeholder="Mô tả"> @Model.book.Description</textarea>
+                <textarea asp-for="Book.Description" class="form-control" placeholder="Mô tả"></textarea>
+                <span asp-validation-for="Book.Description" class="text-danger"></span>
             </div>
+
             <div class="form-row">
                 <div class="form-group col-md-4">
                     <label for="Price" class="control-label">Price</label>
-                    <input name="Price" type="number" class="form-control" value="@Model.book.Price">
+                    <input asp-for="Book.Price" type="number" class="form-control">
+                    <span asp-validation-for="Book.Price" class="text-danger"></span>
                 </div>
                 <div class="form-group col-md-4">
                     <label for="Quantity" class="control-label">Quantity</label>
-                    <input name="Quantity" type="number" class="form-control" value="@Model.book.Quantity">
+                    <input asp-for="Book.Quantity" type="number" class="form-control">
+                    <span asp-validation-for="Book.Quantity" class="text-danger"></span>
                 </div>
                 <div class="form-group col-md-4">
-                    <label for="Ordered" class="control-label">Ordered</label>
-                    <input name="Ordered" type="number" class="form-control" value="@Model.book.OrderedQuantity">
+                    <label for="OrderedQuantity" class="control-label">Ordered</label>
+                    <input asp-for="Book.OrderedQuantity" type="number" class="form-control">
+                    <span asp-validation-for="Book.OrderedQuantity" class="text-danger"></span>
                 </div>
             </div>
             <button type="submit" class="btn btn-outline-success">Edit</button>
-            <br />
             <hr />
-            <div>
-                <a class="button" asp-action="ManagerBook">Back to List</a>
-            </div>
+            <a class="button" asp-action="ManagerBook">Back to List</a>
         </form>
     </div>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<!-- ... other head tags ... -->
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script> <!-- Link to jQuery -->
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.js-example-basic-multiple').select2({
+            placeholder: "Chọn tác giả",
+            allowClear: true,
+            closeOnSelect: false,
+            templateResult: formatAuthors,
+           templateSelection: formatAuthors,
+            dropdownAutoWidth: true //Important, adjust width to avoid overflow
 
-<div>
-    <a asp-action="ManagerBook">Back to List</a>
-</div>
+        });
+
+
+        function formatAuthors(repo) {
+            if (!repo.id) {
+                return repo.text;
+            }
+            return repo.text 
+        }
+
+
+
+        $('.js-example-basic-multiple').on('change', function () {
+            updateSelectedAuthors();
+            $('.select2-selection__choice').hide(); //Hides the select2-selection__choice.
+            $('.select2-selection').css('border', '1px solid black');
+
+
+        });
+
+        function updateSelectedAuthors() {
+            const selectedOptions = $('.js-example-basic-multiple').select2('data');
+            let authorsHTML = "";
+
+            if (selectedOptions.length > 0) {
+                for (let i = 0; i < selectedOptions.length; i++) {
+                    authorsHTML += '<div class="selected-author-item">' + selectedOptions[i].text + '</div>';
+                }
+            } else {
+                authorsHTML = ""; // Reset if nothing is selected
+            }
+
+            $('#selectedAuthors').html(authorsHTML);
+        }
+        //Initial update for the first selection
+        updateSelectedAuthors();
+        $('.js-example-basic-multiple').on('select2:unselecting', function (e) {
+            updateSelectedAuthors();
+        });
+
+        $('.js-example-basic-multiple').on('select2:clearing', function (e) {
+            updateSelectedAuthors();
+        });
+
+        $('.select2-selection').css('border', '1px solid black');
+        $('.select2-selection__choice').hide(); //Hides the select2-selection__choice.
+
+        // Crucial fix to prevent selection choices from overlaying the select element
+    });
+</script>
 

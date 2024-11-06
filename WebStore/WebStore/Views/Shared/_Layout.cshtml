@@ -25,15 +25,11 @@
                     <a class="nav-link" href="@Url.Action("Index", "Home")">Home</a>
                 </li>
                 <li class="nav-item dropdown">
+                <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="@Url.Action("Index", "Book")" role="button" aria-haspopup="true" aria-expanded="false">Book</a>
-                    <div class="dropdown-menu" style="max-height: 300px; overflow-y: auto;">
-                        <a class="dropdown-item" asp-controller="Book" asp-action="Index">Tất cả</a>
+                        @await Component.InvokeAsync("TheLoai") <!-- This calls the View Component -->
+                </li>
 
-                        @foreach (var item in Model.booktypeNAV)
-                        {
-                            <a class="dropdown-item" href="@Url.Action("BookType", "Book",new { ID = item.BookTypeID })">@item.BookTypeName</a>
-                        }
-                    </div>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="@Url.Action("About", "Home")">About</a>
@@ -68,6 +64,7 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
 
     <script src="~/js/main.js" asp-append-version="true"></script>
+
     @RenderSection("Scripts", required: false)
 </body>
 </html>

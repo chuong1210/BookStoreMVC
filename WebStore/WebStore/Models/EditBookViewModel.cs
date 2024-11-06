@@ -3,16 +3,19 @@ using System.ComponentModel;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using WebStore.Models;
 
-namespace WedStore.Models
+namespace WebStore.Models
 {
     public class EditBookViewModel
     {
-        [DisplayName("Sách")]
-        public SachDTO book { get; set; }
-        public IEnumerable<SelectListItem> BookTypes { get; set; }
-        public IEnumerable<SelectListItem> NXBs { get; set; }
-        public IEnumerable<SelectListItem> Authors { get; set; }
+        //[DisplayName("Sách")]
+        public SachDTO Book { get; set; }
+        public SelectList BookTypes { get; set; }
+        public SelectList Authors { get; set; }
+        //public List<SelectListItem> Authors { get; set; }
+        public SelectList Publishers { get; set; }
         public string ErrorMessage { get; set; }
+        public List<string> AuthorIds { get; set; } // crucial
+
 
 
     }

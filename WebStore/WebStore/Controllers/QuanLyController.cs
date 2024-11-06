@@ -9,9 +9,9 @@ using System.Dynamic;
 using System.IO;
 using System.Linq;
 using System.Security.Claims;
+using System.Security.Policy;
 using System.Threading.Tasks;
 using WebStore.Models;
-using WedStore.Models;
 using WedStore.Repositories;
 using WedStore.Servicie;
 
@@ -163,7 +163,7 @@ namespace WedStore.Controllers
             return View(dy);
         }
         //Edit Book
-        public ActionResult EditBook(string id)
+        public ActionResult EditBook1(string id)
         {
           //  var book = SachDB.BookWithID(id);
             var book = SachDB.SachTheoId(id);
@@ -186,7 +186,7 @@ namespace WedStore.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult EditBook(string id,SachDTO book, IFormCollection collection, IFormFile Image)
+        public ActionResult EditBook1(string id,SachDTO book, IFormCollection collection, IFormFile Image)
         {
            
                 if (ModelState.IsValid)
@@ -342,6 +342,105 @@ namespace WedStore.Controllers
 
     }
 }
+
+
+
+
+        [HttpGet]
+        public ActionResult EditBook(string id)
+        {
+           var book = SachDB.SachTheoId(id);
+            var authors = TacGiaDB.ListTacGias();
+            var publishers = NhaXuatBanDB.ListNhaXuatBans();
+            var bookTypes = TheLoaiSachDB.ListTheLoai();
+            var viewModel = new EditBookViewModel
+            {
+                Book = book,
+                Authors = new SelectList(authors, "IdTG", "TenTacGia", book.AuthorIds),
+                Publishers = new SelectList(publishers, "IdNXB", "Ten", book.NxbId),
+                BookTypes = new SelectList(bookTypes, "BookTypeID", "BookTypeName", book.BookTypeID),
+
+            };
+
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditBook(string id, SachDTO book, IFormFile Image)
+        {
+            if (!ModelState.IsValid)
+            {
+                return ReloadEditView(id, book);
+            }
+
+            if (string.IsNullOrEmpty(book.BookName))
+            {
+                ModelState.AddModelError(nameof(book.BookName), "Vui lòng không để trống tên sách");
+                return ReloadEditView(id, book);
+            }
+
+            if (string.IsNullOrEmpty(book.BookTypeID))
+            {
+                ModelState.AddModelError(nameof(book.BookTypeID), "Vui lòng chọn loại sách");
+                return ReloadEditView(id, book);
+            }
+
+            if (string.IsNullOrEmpty(book.AuthorId))
+            {
+                ModelState.AddModelError(nameof(book.AuthorId), "Vui lòng không để trống tên tác giả");
+                return ReloadEditView(id, book);
+            }
+
+            if (string.IsNullOrEmpty(book.NxbId))
+            {
+                ModelState.AddModelError(nameof(book.NxbId), "Vui lòng không để trống tên nhà xuất bản");
+                return ReloadEditView(id, book);
+            }
+
+            if (string.IsNullOrEmpty(book.Description))
+            {
+                ModelState.AddModelError(nameof(book.Description), "Vui lòng không để trống mô tả sách");
+                return ReloadEditView(id, book);
+            }
+
+            if (Image == null)
+            {
+                book.Image = SachDB.SachTheoId(id).Image;
+            }
+            else
+            {
+                var fileName = Path.Combine(he.WebRootPath + "/images", Path.GetFileName(Image.FileName));
+                Image.CopyTo(new FileStream(fileName, FileMode.Create));
+                book.Image = Image.FileName;
+            }
+
+            book.BookID = id;
+            SachDB.CapNhat_Sach(book);
+
+            return RedirectToAction(nameof(ManagerBook));
+        }
+
+        private ActionResult ReloadEditView(string id, SachDTO book)
+        {
+             book = SachDB.SachTheoId(id);
+            var authors = TacGiaDB.ListTacGias();
+            var publishers = NhaXuatBanDB.ListNhaXuatBans();
+            var bookTypes = TheLoaiSachDB.ListTheLoai();
+
+           var viewModel = new EditBookViewModel
+            {
+               Book = book,
+               Authors = new SelectList(authors, "IdTG", "TenTacGia", book.AuthorId),
+               Publishers = new SelectList(publishers, "IdNXB", "Ten", book.NxbId),
+               BookTypes = new SelectList(bookTypes, "BookTypeID", "BookTypeName", book.BookTypeID)
+           };
+            return View("EditBook", viewModel);
+        }
+
+
+
+
         //Create Book
         public ActionResult CreateBook()
         {

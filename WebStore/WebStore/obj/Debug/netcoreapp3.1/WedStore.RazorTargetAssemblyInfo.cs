@@ -17,7 +17,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyProductAttribute("WedStore")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b9d782fd53fa9235c7ef59dabe3e276fd3fe09d6")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WedStore.Views")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 using WebStore.Models;
@@ -51,10 +52,10 @@ namespace WedStore.Repositories
                 foreach (DataRow dr in result.Rows)
                 {
                     SachDTO book = new SachDTO();
-                    book.BookID = dr["id"].ToString();
+                    book.BookID = dr["SachId"].ToString();
                     book.BookName = dr["TenSach"].ToString();
                     book.BookTypeName = dr["TenTheLoai"].ToString();
-                    book.Author = dr["TenTacGia"].ToString();
+                    book.Author = dr["TenTacGias"].ToString();
                     book.BookTypeID = dr["theloai_id"].ToString();
 
                     book.Nxb = dr["TenNhaXuatBan"].ToString();
@@ -139,11 +140,11 @@ namespace WedStore.Repositories
                 foreach (DataRow dr in result.Rows)
                 {
                     SachDTO book = new SachDTO();
-                    book.BookID = ID;
+                    book.BookID = dr["SachId"].ToString();
                     book.BookName = dr["TenSach"].ToString();
                     book.BookTypeName = dr["TenTheLoai"].ToString();
-                    book.Author = dr["TenTacGia"].ToString();
-                    book.BookTypeID = dr["theloai_id"].ToString();
+                    book.Author = dr["TenTacGias"].ToString();
+                    book.BookTypeID = ID;
 
                     book.Nxb = dr["TenNhaXuatBan"].ToString();
                     book.Description = dr["MoTa"].ToString();
@@ -185,35 +186,72 @@ namespace WedStore.Repositories
             }
             return null;
         }
+        public static SachDTO SachTheoId(string ID)
+        {
+            SachDTO book = null;
+            using (SqlConnection connection = new SqlConnection(ConnectStringValue.ConnectStringMyDB))
+            {
+                try
+                {
+                    connection.Open();
+                    using (SqlCommand command = new SqlCommand("SP_ThongTinSachDuocDatCuaKhTheoId", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("@SachId", ID);
 
-		public static SachDTO SachTheoId(string ID)//type ID
-		{
-			object[] value = { ID };
-			SQLCommand connection = new SQLCommand(ConnectStringValue.ConnectStringMyDB);
-			DataTable result = connection.Select("SP_ThongTinSachDuocDatCuaKhTheoId", value);
-			//List<Book> lstResult = new List<Book>();
-			if (connection.errorCode == 0 && result.Rows.Count > 0)
-			{
-				foreach (DataRow dr in result.Rows)
-				{
-					SachDTO book = new SachDTO();
-					book.BookID = ID;
-					book.BookName = dr["TenSach"].ToString();
-					book.BookTypeName = dr["TenTheLoai"].ToString();
-					book.Author = dr["TenTacGia"].ToString();
-					book.Nxb = dr["TenNhaXuatBan"].ToString();
-					book.Description = dr["MoTa"].ToString();
-					book.Image = dr["HinhAnh"].ToString();
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.HasRows)
+                            {
+                                reader.Read(); // Move to the first row
+                                book = new SachDTO
+                                {
+                                    BookID = ID,
+                                    BookName = reader["TenSach"].ToString(),
+                                    BookTypeName = reader["TenTheLoai"].ToString(),
+                                    BookTypeID = reader["theloai_id"].ToString(),
+                                    Nxb = reader["TenNhaXuatBan"].ToString(),
+                                    NxbId = reader["NhaXuatBanId"].ToString(), // Use the correct column name
+                                    Description = reader["MoTa"].ToString(),
+                                    Image = reader["HinhAnh"].ToString(),
+                                    Price = Convert.ToDecimal(reader["Gia"]),  // Correct conversion
+                                    Quantity = Convert.ToInt32(reader["SoLuongTon"])
+                                };
 
-					book.Price = string.IsNullOrEmpty(dr["Gia"].ToString()) ? 0 : Decimal.Parse(dr["Gia"].ToString());
-					book.Quantity = string.IsNullOrEmpty(dr["SoLuongTon"].ToString()) ? 0 : int.Parse(dr["SoLuongTon"].ToString());
-					return book;
-					//lstResult.Add(book);
-				}
-			}
-			return null;
-		}
-		public static int Book_Count()
+
+                                //Handles multiple authors.
+                                if (reader.GetDataTypeName("TenTacGias") != null)
+                                {
+                                    string authorString = reader["TenTacGias"].ToString();
+                                    string[] authors = authorString.Split(", "); // Split by comma and space
+                                    book.Author = authorString;
+                                }
+
+                                if (reader.GetDataTypeName("TacGiaIds") != null)
+                                {
+                                    string authorIdsString = reader["TacGiaIds"].ToString();
+                                    string[] authorIds = authorIdsString.Split(", "); // Split by comma and space
+                                    book.AuthorId = authorIdsString;
+                                    book.AuthorIds=authorIds.ToList();
+
+                                }
+
+
+
+                            }
+                        }
+                    }
+                }
+                catch (SqlException ex)
+                {
+                    // Handle SQL exceptions appropriately (logging, error handling)
+                    Console.WriteLine($"Error: {ex.Message}");
+                    // throw; // Consider re-throwing the exception if necessary
+                }
+            }
+            return book;
+        }
+        public static int Book_Count()
         {
             return GetAll().Count;
         }
