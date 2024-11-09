@@ -2,7 +2,7 @@
 using System.Data.SqlClient;
 using System.Data;
 using WedStore.Const;
-using WedStore.Models;
+using WebStore.Models;
 namespace WedStore.Servicie
 {
     public static class NhaXuatBanDB

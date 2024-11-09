@@ -40,21 +40,28 @@ namespace WedStore.Controllers
         [Authorize(Roles = "SuperAdmin")]
         public ActionResult ManagerAccount()
         {
-            var lstAcc = NguoiDungDB.GetAll();
-            return View(lstAcc);
+          //  var lstAcc = NguoiDungDB.GetAll();
+            var model = new EditAccountViewModel
+            {
+                NguoiDungs = NguoiDungDB.LayTatCaNguoiDung(),
+                KhachHangs = NguoiDungDB.LayTatCaKhachHang(),
+                NhanViens = NguoiDungDB.LayTatCaNhanVien()
+            };
+            return View(model);
+           // return View(lstAcc);
         }
         //Detail Account
         [Authorize(Roles = "SuperAdmin")]
         public ActionResult DetailAccount(string id)// username
         {
-            var acc = NguoiDungDB.GetAccountWithUser(id);
+            var acc = NguoiDungDB.LayChiTietNguoiDungTheoId(id);
             return View(acc);
         }
         // Edit Account
         [Authorize(Roles = "SuperAdmin")]
         public ActionResult EditAccount(string id)//username
         {
-            var acc = NguoiDungDB.GetAccountWithUser(id);
+            var acc = NguoiDungDB.LayChiTietNguoiDungTheoId(id);
             return View(acc);
         }
 
@@ -73,9 +80,9 @@ namespace WedStore.Controllers
                 ViewBag.ErrorMessage = "vui lòng nhập họ tên";
                 return View(account);
             }
-            else if (account.Age == 0)
+            else if (account.NgaySinh == null)
             {
-                ViewBag.ErrorMessage = "vui lòng nhập tuổi hoặc tuổi không được nhỏ hơn 0";
+                ViewBag.ErrorMessage = "vui lòng nhập ngày sinh phù hợp";
                 return View(account);
             }
             else if (account.Phone == null)
@@ -184,167 +191,7 @@ namespace WedStore.Controllers
             return View(dy);
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult EditBook1(string id,SachDTO book, IFormCollection collection, IFormFile Image)
-        {
-           
-                if (ModelState.IsValid)
-                {
-
-                    List<TacGiaDTO> authors = TacGiaDB.ListTacGias();
-
-                    //Book bookInData = BookRes.BookWithID(id);
-                    if (book.BookName == null)
-                    {
-                        //ModelState.AddModelError(nameof(book.BookName), "ID not found");
-                        ViewBag.ErrorMessage = "Vui lòng không để trống tên";
-                        dynamic dy = new ExpandoObject();
-                        //dy.booktypeNAV = TheLoaiSachDB.GetAllType();
-                        dy.booktypeNAV = TheLoaiSachDB.ListTheLoai();
-                        //    dy.book = SachDB.BookWithID(book.BookID);
-                        dy.book = SachDB.SachTheoId(book.BookID);
-                        dy.NXBs = NhaXuatBanDB.ListNhaXuatBans();
-                        dy.TGs = authors;
-
-                        return View(dy);
-                    }
-                    else if (book.BookTypeID == null)
-                    {
-                        ViewBag.ErrorMessage = "Vui lòng chọn loại sách";
-                        dynamic dy = new ExpandoObject();
-                        //dy.book = SachDB.BookWithID(book.BookID);
-                        dy.book = SachDB.SachTheoId(book.BookID);
-                        //  dy.booktypeNAV = TheLoaiSachDB.GetAllType();
-                        dy.booktypeNAV = TheLoaiSachDB.ListTheLoai();
-                        dy.NXBs = NhaXuatBanDB.ListNhaXuatBans();
-                        dy.TGs = authors;
-
-                        return View(dy);
-                    }
-                    else if (book.AuthorId == null)
-                    {
-                        ViewBag.ErrorMessage = "Vui lòng không để trống tên tác giả";
-                        dynamic dy = new ExpandoObject();
-                        //  dy.booktypeNAV = TheLoaiSachDB.GetAllType();
-                        dy.booktypeNAV = TheLoaiSachDB.ListTheLoai();
-
-                        //	dy.book = SachDB.BookWithID(book.BookID);
-                        dy.book = SachDB.SachTheoId(book.BookID);
-                        dy.NXBs = NhaXuatBanDB.ListNhaXuatBans();
-                        dy.TGs = authors;
-
-
-
-                        return View(dy);
-                    }
-                    else if (book.NxbId == null)
-                    {
-                        ViewBag.ErrorMessage = "Vui lòng không để trống tên nhà xuất bản";
-                        dynamic dy = new ExpandoObject();
-                        // dy.booktypeNAV = TheLoaiSachDB.GetAllType();
-                        dy.booktypeNAV = TheLoaiSachDB.ListTheLoai();
-
-                        //dy.book = SachDB.BookWithID(book.BookID);
-                        dy.book = SachDB.SachTheoId(book.BookID);
-                        dy.TGs = authors;
-
-                        dy.NXBs = NhaXuatBanDB.ListNhaXuatBans();
-
-                        return View(dy);
-                    }
-                    else if (book.Description == null)
-                    {
-                        ViewBag.ErrorMessage = "Vui lòng không để trống mô tả sách";
-                        dynamic dy = new ExpandoObject();
-                        //dy.booktypeNAV = TheLoaiSachDB.GetAllType();
-                        //dy.book = SachDB.BookWithID(book.BookID);
-
-                        dy.booktypeNAV = TheLoaiSachDB.ListTheLoai();
-                        dy.book = SachDB.SachTheoId(book.BookID);
-                        dy.TGs = authors;
-
-                        dy.NXBs = NhaXuatBanDB.ListNhaXuatBans();
-
-                        return View(dy);
-                    }
-                    else if (book.Price == null)
-                    {
-                        ViewBag.ErrorMessage = "Vui lòng không để trống giá bán";
-                        dynamic dy = new ExpandoObject();
-                        dy.booktypeNAV = TheLoaiSachDB.GetAllType();
-                        dy.book = SachDB.BookWithID(book.BookID);
-                        dy.TGs = authors;
-
-                        dy.NXBs = NhaXuatBanDB.ListNhaXuatBans();
-
-                        return View(dy);
-                    }
-                    else if (book.Quantity == null)
-                    {
-                        ViewBag.ErrorMessage = "Vui lòng không để trống số lượng";
-                        dynamic dy = new ExpandoObject();
-                        dy.booktypeNAV = TheLoaiSachDB.ListTheLoai();
-                        dy.book = SachDB.SachTheoId(book.BookID);
-                        dy.TGs = authors;
-
-                        dy.NXBs = NhaXuatBanDB.ListNhaXuatBans();
-
-                        return View(dy);
-                    }
-                    else if (book.OrderedQuantity == null)
-                    {
-                        ViewBag.ErrorMessage = "Vui lòng không để trống lượng đặt hàng";
-                        dynamic dy = new ExpandoObject();
-                        dy.booktypeNAV = TheLoaiSachDB.ListTheLoai();
-                        dy.book = SachDB.SachTheoId(book.BookID);
-                        dy.TGs = authors;
-
-                        dy.NXBs = NhaXuatBanDB.ListNhaXuatBans();
-
-                        return View(dy);
-                    }
-                    book.BookID = id;
-
-                    if (Image == null)
-                    {
-                        book.Image = SachDB.SachTheoId(id).Image;
-
-                      //  SachDB.Book_Update(book);
-                        SachDB.CapNhat_Sach(book);
-                    }
-                    else
-                    {
-                        var fileName = Path.Combine(he.WebRootPath + "/images", Path.GetFileName(Image.FileName));
-                        Image.CopyTo(new FileStream(fileName, FileMode.Create));
-                        book.Image = Image.FileName;
-
-                        // SachDB.Book_Update(book);
-                        SachDB.CapNhat_Sach(book);
-                    }
-                    return RedirectToAction(nameof(ManagerBook));
-                }
-         
-        else
-        {
-                 book = SachDB.SachTheoId(id);
-
-                dynamic dy = new ExpandoObject();
-                //   dy.booktypeNAV = TheLoaiSachDB.GetAllType();
-                dy.booktypeNAV = TheLoaiSachDB.ListTheLoai();
-                dy.NXBs = NhaXuatBanDB.ListNhaXuatBans();
-                dy.book = book;
-                List<TacGiaDTO> authors = TacGiaDB.ListTacGias();
-           
-                dy.TGs = authors;
-
-                return View(dy);
-
-    }
-}
-
-
-
+      
 
         [HttpGet]
         public ActionResult EditBook(string id)
@@ -386,7 +233,7 @@ namespace WedStore.Controllers
                 return ReloadEditView(id, book);
             }
 
-            if (string.IsNullOrEmpty(book.AuthorId))
+            if (book.AuthorIds.Count<=0)
             {
                 ModelState.AddModelError(nameof(book.AuthorId), "Vui lòng không để trống tên tác giả");
                 return ReloadEditView(id, book);
@@ -416,6 +263,7 @@ namespace WedStore.Controllers
             }
 
             book.BookID = id;
+         //   book.AuthorId=string.Join(",",book.AuthorIds);
             SachDB.CapNhat_Sach(book);
 
             return RedirectToAction(nameof(ManagerBook));
@@ -444,78 +292,102 @@ namespace WedStore.Controllers
         //Create Book
         public ActionResult CreateBook()
         {
-            dynamic dy = new ExpandoObject();
-            dy.book = new SachDTO();
-            dy.booktypeNAV = TheLoaiSachDB.GetAllType();
-            return View(dy);
-        }
+			var authors = TacGiaDB.ListTacGias();
+			var publishers = NhaXuatBanDB.ListNhaXuatBans();
+			var bookTypes = TheLoaiSachDB.ListTheLoai();
+			var viewModel = new EditBookViewModel
+			{
+				nhaXuatBanDTOs=publishers,
+                theloaiDTOs=bookTypes,
+                tacGiaDTOs=authors,
 
-        [HttpPost]
+			};
+   //         		var viewModel = new EditBookViewModel
+			//{
+			//	Authors = new SelectList(authors, "IdTG", "TenTacGia"),
+			//	Publishers = new SelectList(publishers, "IdNXB", "Ten"),
+			//	BookTypes = new SelectList(bookTypes, "BookTypeID", "BookTypeName"),
+
+			//};
+
+			return View(viewModel);
+
+		}
+
+		[HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult CreateBook(SachDTO book,IFormFile Image)
         {
             try
             {
+                var authors = TacGiaDB.ListTacGias();
+                var publishers = NhaXuatBanDB.ListNhaXuatBans();
+                var bookTypes = TheLoaiSachDB.ListTheLoai();
+                var viewModel = new EditBookViewModel
+                {
+                    nhaXuatBanDTOs = publishers,
+                    theloaiDTOs = bookTypes,
+                    tacGiaDTOs = authors,
+
+                };
                 //ViewData["MessageError"] = "";
                 if (book.BookName == null)
                 {
                     //ModelState.AddModelError(nameof(book.BookName), "ID not found");
                     ViewBag.ErrorMessage = "Vui lòng nhập tên";
-                    dynamic dy = new ExpandoObject();
-                    dy.booktypeNAV = TheLoaiSachDB.GetAllType();
-                    return View(dy);
+                    return View(viewModel);
                 }
                 else if(book.BookTypeID == null)
                 {
                     ViewBag.ErrorMessage = "Vui lòng chọn loại sách";
-                    dynamic dy = new ExpandoObject();
-                    dy.book = new SachDTO();
-                    dy.booktypeNAV = TheLoaiSachDB.GetAllType();
-                    return View(dy);
+
+                    return View(viewModel);
                 }
-                else if(book.Author == null)
+                else if(book.AuthorId == null)
                 {
                     ViewBag.ErrorMessage = "Vui lòng nhập tên tác giả";
-                    dynamic dy = new ExpandoObject();
-                    dy.booktypeNAV = TheLoaiSachDB.GetAllType();
-                    return View(dy);
+
+                    return View(viewModel);
                 }
-                else if (book.Nxb == null)
+                else if (book.NxbId == null)
                 {
                     ViewBag.ErrorMessage = "Vui lòng nhập tên nhà xuất bản";
-                    dynamic dy = new ExpandoObject();
-                    dy.booktypeNAV = TheLoaiSachDB.GetAllType();
-                    return View(dy);
+
+                    return View(viewModel);
                 }
                 else if (book.Description == null)
                 {
                     ViewBag.ErrorMessage = "Vui lòng nhập mô tả sách";
-                    dynamic dy = new ExpandoObject();
-                    dy.booktypeNAV = TheLoaiSachDB.GetAllType();
-                    return View(dy);
+                    return View(viewModel);
+
+
                 }
                 else if (book.Price == null)
                 {
                     ViewBag.ErrorMessage = "Vui lòng nhập giá bán";
-                    dynamic dy = new ExpandoObject();
-                    dy.booktypeNAV = TheLoaiSachDB.GetAllType();
-                    return View(dy);
+
+                    return View(viewModel);
                 }
 
                 //string fileName = Path.GetFileNameWithoutExtension(book.Image)
-                Random rnd = new Random();
-                int id = rnd.Next(10000, 99999);
-                // kiem tra id co ton tai trong database ko
-                while (SachDB.BookWithID(id.ToString()) != null)
+
+                // Kiểm tra nếu ảnh có được chọn
+                if (Image != null && Image.Length > 0)
                 {
-                    id = rnd.Next(10000, 99999);
+                    // Lưu ảnh vào thư mục images
+                    var filePath = Path.Combine(he.WebRootPath, "images", Path.GetFileName(Image.FileName));
+
+                    // Đảm bảo file không bị chiếm dụng bởi một process khác
+                    using (var fileStream = new FileStream(filePath, FileMode.Create))
+                    {
+                        Image.CopyTo(fileStream);
+                    }
+
+                    // Cập nhật ảnh vào thông tin sách
+                    book.Image = Path.GetFileName(Image.FileName);
                 }
 
-                var fileName = Path.Combine(he.WebRootPath+"/images", Path.GetFileName(Image.FileName));
-                Image.CopyTo(new FileStream(fileName, FileMode.Create));
-                book.BookID = id.ToString();
-                book.Image = Image.FileName;
-                SachDB.Book_CreateBook(book);
+                SachDB.ThemSach(book);
                 return RedirectToAction(nameof(ManagerBook));
             }
             catch
@@ -528,7 +400,7 @@ namespace WedStore.Controllers
         //Delete Book
         public ActionResult DeleteBook(string id)
         {
-            var book = SachDB.BookWithID(id);
+            var book = SachDB.SachTheoId(id);
             return View(book);
         }
 
@@ -542,7 +414,7 @@ namespace WedStore.Controllers
                 {
                     return RedirectToAction(nameof(ManagerBook));
                 }
-                SachDB.Book_Delete(id);
+                SachDB.XoaSach(id);
                 return RedirectToAction(nameof(ManagerBook));
             }
             catch
@@ -557,6 +429,11 @@ namespace WedStore.Controllers
         public ActionResult ManagerOrder()
         {
             var lstInfoOrder = ChiTietDonHangDB.InfoOrder_GetAll();
+            return View(lstInfoOrder);
+        }    
+        public ActionResult ManagerPublisher()
+        {
+            var lstInfoOrder = NhaXuatBanDB.ListNhaXuatBans();
             return View(lstInfoOrder);
         }
         // delete InfoOrder

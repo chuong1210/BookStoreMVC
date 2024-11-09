@@ -11,6 +11,13 @@
     <h4>Account</h4>
     <hr />
     <div class="row">
+        <div class="col-sm-12">
+            @if (Model.UserRole == "staff" || Model.UserRole == "admin")
+            {
+                <p><strong>Chức vụ:</strong> @Model.ChucVu</p>
+            }
+        </div>
+ 
         <div class = "col-sm-2">
             @Html.DisplayNameFor(model => model.UserName)
         </div>
@@ -24,10 +31,10 @@
             @Html.DisplayFor(model => model.FullName)
         </div>
         <div class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Age)
+            @Html.DisplayNameFor(model => model.Password)
         </div>
         <div class = "col-sm-10">
-            @Html.DisplayFor(model => model.Age)
+            @Html.DisplayFor(model => model.Password)
         </div>
         <div class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Gender)
@@ -61,22 +68,26 @@
             @Html.DisplayFor(model => model.Phone)
         </div>
         <div class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Authority)
+            @Html.DisplayNameFor(model => model.TypeRole)
         </div>
         <div class="col-sm-10">
-            @if (Model.Authority == 1)
+            @if (Model.UserRole == "admin")
             {
-                @:Admin
+                @:Nhân viên
             }
-            else if (Model.Authority == 2)
+            else if (Model.UserRole == "staff")
             {
-                @:SuperAdmin
+                @:Nhân viên
             }
-            else if(Model.Authority == 0)
+            else if (Model.UserRole == "customer")
             {
-                @:Customer
+                @:Khách hàng
             }
+
+       
         </div>
+
+
     </div>
 </div>
 <div>

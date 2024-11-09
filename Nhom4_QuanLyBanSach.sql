@@ -34,7 +34,9 @@ CREATE TABLE NguoiDung (
     id VARCHAR(50) PRIMARY KEY,
     username NVARCHAR(50) UNIQUE NOT NULL,
     password NVARCHAR(255) NOT NULL, -- Mật khẩu (nên được mã hóa)
-    role VARCHAR(10) NOT NULL -- Ví dụ: 'admin', 'staff', 'customer'
+    role VARCHAR(10) NOT NULL, -- Ví dụ: 'admin', 'staff', 'customer',
+    gioitinh INT,
+	NgaySinh DateTime
 );
 
 
@@ -46,6 +48,16 @@ CREATE TABLE Khachhang (
     sodienthoai VARCHAR(10),
     email VARCHAR(255),
 	id_NguoiDung VARCHAR(50) 
+);
+
+-- Bảng Nhân viên
+CREATE TABLE NhanVien (
+    id VARCHAR(50) PRIMARY KEY,
+    ten NVARCHAR(255),
+    chucVu NVARCHAR(255),
+    sodienthoai VARCHAR(10),
+    email VARCHAR(255),
+	id_NguoiDung  VARCHAR(50)  NULL
 );
 -- Bảng Đơn đặt hàng
 CREATE TABLE DonHang (
@@ -88,15 +100,7 @@ CREATE TABLE TacGia (
     quocTich NVARCHAR(255)
 );
 
--- Bảng Nhân viên
-CREATE TABLE NhanVien (
-    id VARCHAR(50) PRIMARY KEY,
-    ten NVARCHAR(255),
-    chucVu NVARCHAR(255),
-    sodienthoai VARCHAR(10),
-    email VARCHAR(255),
-	id_NguoiDung VARCHAR(50) 
-);
+
 
 CREATE TABLE HoaDon (
     id VARCHAR(50) PRIMARY KEY, 
@@ -212,25 +216,25 @@ INSERT INTO TacGia (id, ten, ngaySinh, quocTich) VALUES
 
 -- Thêm dữ liệu vào bảng Sách với mô tả đầy đủ
 INSERT INTO Sach (id, tieude, theloai_id, gia, soLuongTon, hinhAnh, namXuatBan, nxb_id, moTa) VALUES
-('S001', N'Dế Mèn Phiêu Lưu Ký', 'TL001', 50000, 100, 'https://example.com/images/book1.jpg', 1941, 'NXB001', N'Câu chuyện về một chú dế mèn đáng yêu và những cuộc phiêu lưu của nó trong thế giới tự nhiên.'),
-('S002', N'Kính vạn hoa', 'TL002', 75000, 50, 'https://example.com/images/book2.jpg', 1995, 'NXB002', N'Một cuốn sách tuyệt vời với những hình ảnh đẹp và những câu chuyện thú vị.'),
-('S003', N'Harry Potter và Hòn đá Phù thủy', 'TL002', 100000, 200, 'https://example.com/images/book3.jpg', 1997, 'NXB003', N'Câu chuyện về một cậu bé phù thủy tên là Harry Potter và những cuộc phiêu lưu kỳ diệu của cậu ấy tại trường Hogwarts.'),
-('S004', N'It',  'TL004', 80000, 30, 'https://example.com/images/book4.jpg', 1986, 'NXB004', N'Một câu chuyện kinh dị đáng sợ và hấp dẫn về một nhóm thiếu niên đối mặt với một thực thể đáng sợ.'),
-('S005', N'Rừng Na Uy', 'TL002', 90000, 70, 'https://example.com/images/book5.jpg', 1987, 'NXB005', N'Câu chuyện về cuộc sống của con người trong một khung cảnh thiên nhiên tuyệt đẹp.'),
-('S006', N'Nhà giả kim',  'TL006', 60000, 150, 'https://example.com/images/book6.jpg', 1988, 'NXB006', N'Một cuốn sách triết lý về cuộc hành trình tìm kiếm hạnh phúc.');
+('S001', N'Dế Mèn Phiêu Lưu Ký', 'TL001', 50000, 100, 'ToBinhYenVeHanhPhuc.jpg', 1941, 'NXB001', N'Câu chuyện về một chú dế mèn đáng yêu và những cuộc phiêu lưu của nó trong thế giới tự nhiên.'),
+('S002', N'Kính vạn hoa', 'TL002', 75000, 50, 'Kinhvanhoa.jpg', 1995, 'NXB002', N'Một cuốn sách tuyệt vời với những hình ảnh đẹp và những câu chuyện thú vị.'),
+('S003', N'Harry Potter và Hòn đá Phù thủy', 'TL002', 100000, 200, 'hdpt.jpg', 1997, 'NXB003', N'Câu chuyện về một cậu bé phù thủy tên là Harry Potter và những cuộc phiêu lưu kỳ diệu của cậu ấy tại trường Hogwarts.'),
+('S004', N'It',  'TL004', 80000, 30, 'it.jpg', 1986, 'NXB004', N'Một câu chuyện kinh dị đáng sợ và hấp dẫn về một nhóm thiếu niên đối mặt với một thực thể đáng sợ.'),
+('S005', N'Rừng Na Uy', 'TL002', 90000, 70, 'rungnauy.jpg', 1987, 'NXB005', N'Câu chuyện về cuộc sống của con người trong một khung cảnh thiên nhiên tuyệt đẹp.'),
+('S006', N'Nhà giả kim',  'TL006', 60000, 150, 'giakim.jpg', 1988, 'NXB006', N'Một cuốn sách triết lý về cuộc hành trình tìm kiếm hạnh phúc.');
 
 
 
-INSERT INTO NguoiDung (id, username, password, role) VALUES
-('user123', N'user123', '12345', 'customer'),
-('user456', N'user456', '12345', 'customer'),
-('user789', N'user789', '12345', 'customer'),
+INSERT INTO NguoiDung (id, username, password, role,gioitinh,ngaysinh) VALUES
+('user123', N'user123', '12345', 'customer',0,'2000-10-12'),
+('user456', N'user456', '12345', 'customer',1,'2000-08-23'),
+('user789', N'user789', '12345', 'customer',0,'1992-03-17'),
 
-('admin123', N'admin123', '12345', 'admin'),
+('admin123', N'admin123', '12345', 'admin',1,'1991-01-30'),
 
-('staff123', N'staff123', '12345', 'staff'),
-('staff456', N'staff456', '12345', 'staff'),
-('staff789', N'staff789', '12345', 'staff');
+('staff123', N'staff123', '12345', 'staff',1,'1999-04-04'),
+('staff456', N'staff456', '12345', 'staff',0,'1998-05-25'),
+('staff789', N'staff789', '12345', 'staff',0,'2003-07-16');
 -- Chèn dữ liệu vào bảng Khachhang
 INSERT INTO Khachhang (id, ten, diachi, sodienthoai, email, id_NguoiDung) VALUES
 ('KH001', N'Nguyễn Văn A', N'123 Đường Trần Hưng Đạo, Hà Nội', '0987654321', 'nguyenvana@example.com', 'user123'),
@@ -708,7 +712,6 @@ WHERE DATEDIFF(DAY, ngaynhap, GETDATE()) = 0;
 -- PROC
 -- Dang Nhap
 -- STORE PROC LẤY TẤT CẢ THỂ LOẠI
--- STORE PROC LẤY TẤT CẢ THỂ LOẠI
 CREATE or alter PROCEDURE SP_Book_GetAllType
 AS
 BEGIN
@@ -831,7 +834,7 @@ CREATE or alter PROCEDURE SP_DanhSachSach
 AS
 BEGIN
     SELECT 
-	      S.id AS SachId,
+	     S.id AS SachId,
         S.tieude AS TenSach,
 		S.HinhAnh,
 		S.Gia,
@@ -856,7 +859,6 @@ BEGIN
 		S.id, S.tieude, S.HinhAnh, S.Gia, S.SoLuongTon, S.NamXuatBan, S.MoTa, S.theloai_id, TL.ten, NXB.ten, NXB.id;
 
 END;
-
 -- Stored Procedure để cập nhật đơn hàng, đặt ngày đặt hàng là ngày hiện tại
 
 CREATE OR ALTER PROCEDURE SP_UpdateDonHang
@@ -944,170 +946,240 @@ BEGIN
 
     RETURN 0; -- Thành công
 END;
+-- PROC THEM SACH
+CREATE OR ALTER PROCEDURE SP_ThemSach
+    @TieuDe NVARCHAR(255),
+    @TheLoaiID VARCHAR(50),
+    @Gia DECIMAL(10, 2),
+    @SoLuongTon INT,
+    @HinhAnh VARCHAR(MAX),
+    @NamXuatBan INT,
+    @MoTa NVARCHAR(MAX),
+    @NXB_ID VARCHAR(50),
+    @TacGiaIDList NVARCHAR(MAX) -- Danh sách các ID tác giả, phân cách bởi dấu phẩy
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    -- Tạo ID cho sách tự động
+    DECLARE @SachID VARCHAR(50);
+    DECLARE @MaxSachID INT;
+
+    -- Lấy số lượng sách hiện tại và xác định ID sách tiếp theo
+    SELECT @MaxSachID = COUNT(*) + 1 FROM Sach; -- Tính số sách hiện tại và thêm 1 cho ID tiếp theo
+
+    -- Tạo SachID theo định dạng SP001, SP002, ...
+    SET @SachID = 'SP' + RIGHT('000' + CAST(@MaxSachID AS VARCHAR), 3);
+
+    -- Thêm thông tin sách vào bảng Sach
+    INSERT INTO Sach (id, tieude, theloai_id, gia, soLuongTon, hinhAnh, namXuatBan, MoTa, nxb_id)
+    VALUES (@SachID, @TieuDe, @TheLoaiID, @Gia, @SoLuongTon, @HinhAnh, @NamXuatBan, @MoTa, @NXB_ID);
+
+    -- Sử dụng CURSOR để thêm các tác giả vào bảng TacGia_Sach
+    DECLARE @TacGiaID VARCHAR(50);
+    DECLARE TacGiaCursor CURSOR FOR
+    SELECT value
+    FROM STRING_SPLIT(@TacGiaIDList, ',');
+
+    -- Mở CURSOR
+    OPEN TacGiaCursor;
+
+    -- Lặp qua từng tác giả trong danh sách và thêm vào TacGia_Sach
+    FETCH NEXT FROM TacGiaCursor INTO @TacGiaID;
+    WHILE @@FETCH_STATUS = 0
+    BEGIN
+        INSERT INTO TacGia_Sach (sach_id, tacgia_id)
+        VALUES (@SachID, @TacGiaID);
+
+        FETCH NEXT FROM TacGiaCursor INTO @TacGiaID;
+    END
+
+    -- Đóng và hủy CURSOR
+    CLOSE TacGiaCursor;
+    DEALLOCATE TacGiaCursor;
+
+    PRINT 'Thêm sách thành công với ID: ' + @SachID;
+END;
+
 
 -- PROC CAP NHAT SACH
-CREATE OR ALTER PROCEDURE SP_UpdateSach
-    @id VARCHAR(50),
-    @tieude NVARCHAR(255),
-	@theloai_id VARCHAR(50),
-    @gia DECIMAL(10, 2),
-    @soLuongTon INT,
-    @hinhAnh VARCHAR(max),
-    @namXuatBan INT,
-	@MoTa NVARCHAR(max),
-    @nxb_id VARCHAR(50)
+CREATE PROCEDURE SP_UpdateThongTinSach
+    @SachID VARCHAR(50),
+    @TieuDe NVARCHAR(255),
+    @TheLoaiID VARCHAR(50),
+    @Gia DECIMAL(10, 2),
+    @SoLuongTon INT,
+    @HinhAnh VARCHAR(MAX),
+    @NamXuatBan INT,
+    @MoTa NVARCHAR(MAX),
+    @NXB_ID VARCHAR(50),
+    @TacGiaIDList NVARCHAR(MAX) -- Danh sách các ID tác giả, phân cách bởi dấu phẩy
 AS
 BEGIN
+    SET NOCOUNT ON;
+
+    -- Kiểm tra xem sách có tồn tại hay không
+    IF NOT EXISTS (SELECT 1 FROM Sach WHERE id = @SachID)
+    BEGIN
+        PRINT 'Sách không tồn tại.';
+        RETURN;
+    END
+
+    -- Cập nhật thông tin chi tiết của sách trong bảng Sach
+    UPDATE Sach
+    SET 
+        tieude = @TieuDe,
+        theloai_id = @TheLoaiID,
+        gia = @Gia,
+        soLuongTon = @SoLuongTon,
+        hinhAnh = @HinhAnh,
+        namXuatBan = @NamXuatBan,
+        MoTa = @MoTa,
+        nxb_id = @NXB_ID
+    WHERE 
+        id = @SachID;
+
+    -- Xóa các tác giả hiện tại của sách trong bảng TacGia_Sach
+    DELETE FROM TacGia_Sach WHERE sach_id = @SachID;
+
+    -- Sử dụng CURSOR để thêm các tác giả mới vào bảng TacGia_Sach
+    DECLARE @TacGiaID VARCHAR(50);
+    DECLARE TacGiaCursor CURSOR FOR
+    SELECT value
+    FROM STRING_SPLIT(@TacGiaIDList, ',');
+
+    -- Mở CURSOR
+    OPEN TacGiaCursor;
+
+    -- Lặp qua từng tác giả trong danh sách và thêm vào TacGia_Sach
+    FETCH NEXT FROM TacGiaCursor INTO @TacGiaID;
+    WHILE @@FETCH_STATUS = 0
+    BEGIN
+        INSERT INTO TacGia_Sach (sach_id, tacgia_id)
+        VALUES (@SachID, @TacGiaID);
+
+        FETCH NEXT FROM TacGiaCursor INTO @TacGiaID;
+    END
+
+    -- Đóng và hủy CURSOR
+    CLOSE TacGiaCursor;
+    DEALLOCATE TacGiaCursor;
+
+    PRINT 'Cập nhật thông tin sách thành công.';
+END;
+-- PROC XOA SACH
+CREATE PROCEDURE SP_XoaSach
+    @SachID VARCHAR(50)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
     -- Kiểm tra xem sách có tồn tại không
-    IF NOT EXISTS (SELECT 1 FROM Sach WHERE id = @id)
+    IF NOT EXISTS (SELECT 1 FROM Sach WHERE id = @SachID)
     BEGIN
-        RAISERROR('Sách không tồn tại.', 16, 1);
+        PRINT 'Sách không tồn tại.';
         RETURN;
     END
 
-	-- Kiểm tra dữ liệu đầu vào. Cần thêm nhiều kiểm tra tùy theo yêu cầu.
-    -- Ví dụ, kiểm tra @gia phải lớn hơn 0, @soLuongTon phải >= 0, etc.
-    IF @gia < 0
-	BEGIN
-		RAISERROR('Giá phải lớn hơn hoặc bằng 0.', 16, 1);
-		RETURN;
-	END
+    -- Xóa các tác giả liên quan đến sách trong bảng TacGia_Sach
+    DELETE FROM TacGia_Sach WHERE sach_id = @SachID;
 
-    IF @soLuongTon < 0
-	BEGIN
-		RAISERROR('Số lượng tồn phải lớn hơn hoặc bằng 0.', 16, 1);
-		RETURN;
-	END
-    
-    -- Bắt đầu giao dịch để đảm bảo tính nguyên vẹn dữ liệu
-    BEGIN TRANSACTION
-    
+    -- Xóa sách trong bảng Sach
+    DELETE FROM Sach WHERE id = @SachID;
+
+    PRINT 'Xóa sách thành công.';
+END;
+
+-- PROC ĐẶT HÀNG THÀNH CÔNG
+CREATE PROCEDURE SP_DatHangThanhCong
+    @donhang_id VARCHAR(50)
+AS
+BEGIN
+    -- Bắt đầu transaction để đảm bảo tính toàn vẹn dữ liệu
+    BEGIN TRANSACTION;
+
     BEGIN TRY
-        UPDATE Sach
-        SET
-            tieude = @tieude,
-			theloai_id = @theloai_id,
-            gia = @gia,
-            soLuongTon = @soLuongTon,
-            hinhAnh = @hinhAnh,
-            namXuatBan = @namXuatBan,
-			MoTa = @MoTa,
-            nxb_id = @nxb_id
-        WHERE
-            id = @id;
+        -- Bước 1: Cập nhật trạng thái đơn hàng thành "1" (Đã đặt hàng thành công)
+        UPDATE DonHang
+        SET trangthaiDH = 1
+        WHERE id = @donhang_id;
 
-        -- Commit giao dịch nếu cập nhật thành công
+        -- Bước 2: Khai báo các biến để lưu mã sách và số lượng sách trong từng dòng chi tiết của đơn hàng
+        DECLARE @sach_id VARCHAR(50);
+        DECLARE @soLuong INT;
+
+        -- Bước 3: Khai báo cursor để duyệt qua từng dòng trong bảng ChiTietDonHang của đơn hàng
+        DECLARE sach_cursor CURSOR FOR
+        SELECT sach_id, soLuong
+        FROM ChiTietDonHang
+        WHERE donhang_id = @donhang_id;
+
+        OPEN sach_cursor;
+
+        -- Bước 4: Duyệt qua từng dòng và cập nhật số lượng tồn kho của sách
+        FETCH NEXT FROM sach_cursor INTO @sach_id, @soLuong;
+
+        WHILE @@FETCH_STATUS = 0
+        BEGIN
+            -- Kiểm tra xem sách có đủ tồn kho không
+            IF (SELECT soLuongTon FROM Sach WHERE id = @sach_id) >= @soLuong
+            BEGIN
+                -- Nếu đủ tồn kho, tiến hành trừ số lượng tồn kho
+                UPDATE Sach
+                SET soLuongTon = soLuongTon - @soLuong
+                WHERE id = @sach_id;
+            END
+            ELSE
+            BEGIN
+                -- Nếu không đủ tồn kho, thông báo lỗi và rollback transaction
+                RAISERROR ('Số lượng tồn kho của sách %s không đủ để thực hiện đơn hàng', 16, 1, @sach_id);
+                ROLLBACK TRANSACTION;
+                RETURN;
+            END
+
+            -- Tiếp tục duyệt qua dòng tiếp theo
+            FETCH NEXT FROM sach_cursor INTO @sach_id, @soLuong;
+        END;
+
+        -- Đóng và giải phóng cursor
+        CLOSE sach_cursor;
+        DEALLOCATE sach_cursor;
+
+        -- Nếu tất cả đều thành công, commit transaction
         COMMIT TRANSACTION;
-
-        SELECT 'Cập nhật sách thành công.';
-    END TRY
-    BEGIN CATCH
-        -- Nếu có lỗi xảy ra, rollback giao dịch
-        IF @@TRANCOUNT > 0
-            ROLLBACK TRANSACTION;
-		
-        -- Xử lý lỗi, ghi log, thông báo lỗi cho người dùng
-        DECLARE @ErrorMessage NVARCHAR(4000);
-        SET @ErrorMessage = ERROR_MESSAGE();
-		
-        -- Thêm thông tin lỗi chi tiết vào @ErrorMessage
-        SELECT @ErrorMessage += ' (' + CAST(ERROR_NUMBER() AS VARCHAR(10)) + '): ' +  
-               ISNULL(CAST(ERROR_PROCEDURE() AS VARCHAR(255)), '') + ' ' +
-               ISNULL(CAST(ERROR_LINE() AS VARCHAR(10)), '')
-
-        RAISERROR(@ErrorMessage, 16, 1);
-    END CATCH
-END;
--- Tính tổng tiền của một đơn hàng dùng function
-
-CREATE FUNCTION dbo.fn_TongTienDonHang (@donhang_id VARCHAR(50))
-RETURNS DECIMAL(10, 2)
-AS
-BEGIN
-    DECLARE @tongTien DECIMAL(10, 2)
-    
-    SELECT @tongTien = SUM(soLuong * giaDonVi)
-    FROM ChiTietDonHang
-    WHERE donhang_id = @donhang_id
-
-    RETURN @tongTien
-END
-
--- PROC CẬP NHẬT - TÁC GIẢ SÁCH
-Select * from tacgia
--- Procedure để cập nhật thông tin tác giả của một cuốn sách
-CREATE PROCEDURE SP_UpdateSachTacGia
-    @sachId VARCHAR(50),
-    @tacGiaIds VARCHAR(MAX)  -- Dữ liệu tác giả cần cập nhật
-AS
-BEGIN
-    -- Kiểm tra xem sách có tồn tại không.  Quan trọng!
-    IF NOT EXISTS (SELECT 1 FROM Sach WHERE id = @sachId)
-    BEGIN
-        RAISERROR('Sách không tồn tại.', 16, 1);
-        RETURN;
-    END
-    
-	-- Kiểm tra xem tác giả được đưa vào có tồn tại không?
-    -- (Thêm kiểm tra này nếu cần thiết).
-	
-    -- Bắt đầu giao dịch.
-    BEGIN TRANSACTION
-    BEGIN TRY
-
-        -- Xóa tất cả các mối quan hệ tác giả-sách hiện có cho cuốn sách này
-        DELETE FROM TacGia_Sach WHERE sach_id = @sachId;
-		
-		-- Tách chuỗi các ID tác giả.
-		DECLARE @tacGiaId VARCHAR(50)
-		DECLARE @tacGiaIdsCursor CURSOR FOR
-		SELECT value
-		FROM STRING_SPLIT(@tacGiaIds, ',')
-		
-		OPEN @tacGiaIdsCursor
-
-		FETCH NEXT FROM @tacGiaIdsCursor INTO @tacGiaId
-		
-		WHILE @@FETCH_STATUS = 0
-		BEGIN
-			-- Kiểm tra xem tác giả có tồn tại không
-			IF EXISTS(SELECT 1 FROM TacGia WHERE id = @tacGiaId)
-			BEGIN
-				INSERT INTO TacGia_Sach (sach_id, tacgia_id) VALUES (@sachId, @tacGiaId);
-			END
-			ELSE
-			BEGIN
-				--Xử lý trường hợp tác giả không tồn tại. Ví dụ báo lỗi
-				RAISERROR('Tác giả "%s" không tồn tại.', 16, 1, @tacGiaId);
-				-- Có thể rollback giao dịch tại đây nếu muốn
-				RETURN
-			END	
-            FETCH NEXT FROM @tacGiaIdsCursor INTO @tacGiaId
-		END
-		CLOSE @tacGiaIdsCursor;
-		DEALLOCATE @tacGiaIdsCursor;
-		-- Commit giao dịch
-		COMMIT TRANSACTION
-		
-		SELECT 'Cập nhật tác giả thành công';
-
-    END TRY
-    BEGIN CATCH
-        IF @@TRANCOUNT > 0
-            ROLLBACK TRANSACTION;
         
-        -- Xử lý lỗi, ghi log, thông báo lỗi cho người dùng.
+        PRINT 'Đặt hàng thành công và cập nhật số lượng tồn kho.';
+    END TRY
+    BEGIN CATCH
+        -- Xử lý lỗi và rollback nếu có lỗi
+        ROLLBACK TRANSACTION;
+        
+        -- Lấy thông tin lỗi
         DECLARE @ErrorMessage NVARCHAR(4000);
-        SET @ErrorMessage = ERROR_MESSAGE();
-		-- Thông tin lỗi chi tiết hơn
-		SELECT @ErrorMessage += ' (' + CAST(ERROR_NUMBER() AS VARCHAR(10)) + '): ' + 
-		ISNULL(CAST(ERROR_PROCEDURE() AS VARCHAR(255)), '') + ' ' + 
-		ISNULL(CAST(ERROR_LINE() AS VARCHAR(10)), '');
-		RAISERROR(@ErrorMessage, 16, 1);
-        RETURN;
-    END CATCH
+        DECLARE @ErrorSeverity INT;
+        DECLARE @ErrorState INT;
+
+        SELECT 
+            @ErrorMessage = ERROR_MESSAGE(),
+            @ErrorSeverity = ERROR_SEVERITY(),
+            @ErrorState = ERROR_STATE();
+
+        -- Thông báo lỗi
+        RAISERROR (@ErrorMessage, @ErrorSeverity, @ErrorState);
+    END CATCH;
 END;
-END;
+-- PROC
+CREATE FUNCTION FnKiemTraSachSapHetHang()
+RETURNS TABLE
+AS
+RETURN
+(
+    SELECT id, tieude, soLuongTon
+    FROM Sach
+    WHERE soLuongTon < 10
+);
+
+
 -- PROC LOGIN
 CREATE or alter PROCEDURE SP_LOGIN
     @Username NVARCHAR(50),
@@ -1259,44 +1331,6 @@ END;
 
 
 -- Lấy thông tin tài khoản
-
-CREATE PROCEDURE Account_GetAll
-AS
-BEGIN
-    -- Lấy thông tin tài khoản khách hàng
-    SELECT 
-        nd.id AS AccountID,
-        nd.username AS Username,
-        nd.role AS Role,
-        kh.ten AS FullName,
-        kh.diachi AS Address,
-        kh.sodienthoai AS PhoneNumber,
-        kh.email AS Email
-    FROM 
-        NguoiDung nd
-    JOIN 
-        Khachhang kh ON nd.id = kh.id_NguoiDung
-    WHERE 
-        nd.role = 'customer'
-
-    UNION ALL
-
-    -- Lấy thông tin tài khoản nhân viên
-    SELECT 
-        nd.id AS AccountID,
-        nd.username AS Username,
-        nd.role AS Role,
-        nv.ten AS FullName,
-        NULL AS Address, -- Nhân viên không có cột địa chỉ trong cấu trúc hiện tại
-        nv.sodienthoai AS PhoneNumber,
-        nv.email AS Email
-    FROM 
-        NguoiDung nd
-    JOIN 
-        NhanVien nv ON nd.id = nv.id_NguoiDung
-    WHERE 
-        nd.role IN ('staff', 'admin')
-END;
 
 
 -- PROCEDURE: Cập nhật trạng thái đơn hàng và số lượng tồn kho khi đơn hàng được thanh toán.

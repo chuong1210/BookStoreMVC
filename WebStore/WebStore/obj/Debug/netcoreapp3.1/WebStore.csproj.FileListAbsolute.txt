@@ -157,3 +157,4 @@ C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\obj\Debug\netcoreapp3.1
 C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\obj\Debug\netcoreapp3.1\WebStore.csproj.Up2Date
 C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\obj\Debug\netcoreapp3.1\WebStore.genruntimeconfig.cache
 C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\TheLoai\Default.cshtml.g.cs
+C:\Users\chuon\Downloads\QuanLyBanSach\WebStore\WebStore\obj\Debug\netcoreapp3.1\Razor\Views\QuanLy\ManagerPublisher.cshtml.g.cs

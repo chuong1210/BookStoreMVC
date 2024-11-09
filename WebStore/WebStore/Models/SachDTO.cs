@@ -17,11 +17,21 @@ namespace WebStore.Models
         public string BookTypeName { get; set; }
 
         public string Author { get; set; }
-        public List<String> AuthorIds { get; set; }
-
         [Required(ErrorMessage = "Vui lòng nhập tên tác giả")]
 
-        public string AuthorId { get; set; }
+        public List<String> AuthorIds { get; set; }
+
+        public string AuthorId
+        {
+            get
+            {
+                return AuthorIds != null && AuthorIds.Any() ? string.Join(",", AuthorIds) : string.Empty;
+            }
+        }
+        [RegularExpression(@"^\d+$", ErrorMessage = "Năm xuất bản phải là số.")]
+
+        //[Range(1000, 9999, ErrorMessage = "Năm xuất bản không hợp lệ.")]
+        public string NamXuatBan { get; set; }
 
         public string Nxb { get; set; }
         [Required(ErrorMessage = "Vui lòng chọn nhà xuất bản")]

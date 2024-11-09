@@ -1,7 +1,4 @@
-﻿@*model WebStore.Models.Book*@
-@using WebStore.Models
-@model dynamic
-
+﻿@model WebStore.Models.EditBookViewModel
 @{
     ViewData["Title"] = "CreateBook";
     Layout = "~/Views/Shared/_ManagerLayout.cshtml";
@@ -11,17 +8,19 @@
 
 <hr />
 <div class="container">
-    <div class="col-md-10">
+    <div class="col-md-12">
         <form asp-action="CreateBook" enctype="multipart/form-data">
             <span data-valmsg-for="BookName" class="text-danger field-validation-error" data-valmsg-replace="true">@ViewBag.ErrorMessage</span>
+
             <div class="form-group">
                 <label for="BookName" class="control-label">Tên sách </label>
                 <input name="BookName" type="text" class="form-control" placeholder="Tên sách">
             </div>
+
             <div class="form-group">
                 <label for="BookTypeID" class="control-label">Loại sách</label>
                 <select name="BookTypeID" class="form-control">
-                    @foreach (var item in Model.booktypeNAV)
+                    @foreach (var item in Model.theloaiDTOs)
                     {
                         <option value="@item.BookTypeID">@item.BookTypeName</option>
                     }
@@ -32,39 +31,114 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="Author" class="control-label">Tác giả</label>
-                    <input name="Author" type="text" class="form-control" placeholder="Tác giả">
+                    <select name="AuthorIds" class="form-control js-example-basic-multiple" id="authorSelect" multiple="multiple">
+                        @foreach (var author in Model.tacGiaDTOs)
+                        {
+                            <option value="@author.IdTG">@author.TenTacGia</option>
+                        }
+                    </select>
+                    <span data-valmsg-for="AuthorIds" class="text-danger field-validation-error" data-valmsg-replace="true"></span>
+                    <div id="selectedAuthors"></div>
                 </div>
+
                 <div class="form-group col-md-6">
                     <label for="Nxb" class="control-label">Nhà xuất bản</label>
-                    <input name="Nxb" type="text" class="form-control" placeholder="Nhà xuất bản">
+                    <select name="NxbId" class="form-control">
+                        @foreach (var publisher in Model.nhaXuatBanDTOs)
+                        {
+                            <option value="@publisher.IdNXB">@publisher.Ten</option>
+                        }
+                    </select>
+                    <span data-valmsg-for="NxbId" class="text-danger field-validation-error" data-valmsg-replace="true"></span>
                 </div>
             </div>
+
             <div class="form-group">
-                <label for="Image" class="control-label">Image</label>
+                <label for="Image" class="control-label">Ảnh</label>
                 <input name="Image" type="file" accept="image/png, image/jpeg, image/jpg" class="form-control-file">
             </div>
+
             <div class="form-group">
                 <label for="Description" class="control-label">Mô tả</label>
                 <textarea name="Description" type="text" class="form-control" placeholder="Mô tả"></textarea>
             </div>
+            <div class="form-group">
+                <label for="NamXuatBan" class="control-label">Năm xuất bả </label>
+                <input name="NamXuatBan" type="text" class="form-control" placeholder="Năm xuất bản">
+            </div>
+
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label for="Price" class="control-label">Price</label>
+                    <label for="Price" class="control-label">Giá</label>
                     <input name="Price" type="number" class="form-control">
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="Quantity" class="control-label">Quantity</label>
+                    <label for="Quantity" class="control-label">Số lượng</label>
                     <input name="Quantity" type="number" class="form-control">
                 </div>
             </div>
-            <button type="submit" class="btn btn-outline-success">Create New</button>
+
+            <button type="submit" class="btn btn-outline-success">Tạo mới</button>
         </form>
+
         <hr />
         <div>
-            <a class="button" asp-action="Index">Back to List</a>
+            <a class="button" asp-action="Index">Quay lại danh sách</a>
         </div>
     </div>
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.js-example-basic-multiple').select2({
+            placeholder: "Chọn tác giả",
+            allowClear: true,
+            closeOnSelect: false,
+            templateResult: formatAuthors,
+            templateSelection: formatAuthors,
+            width: 'resolve',
+            minimumResultsForSearch: -1,
+            dropdownAutoWidth: true,
+            dropdownCssClass: 'custom-dropdown',
+            containerCssClass: 'custom-select'
+        });
 
+        function formatAuthors(repo) {
+            if (!repo.id) {
+                return repo.text;
+            }
+            return repo.text;
+        }
 
+        $('.js-example-basic-multiple').on('change', function () {
+            updateSelectedAuthors();
+        });
+
+        function updateSelectedAuthors() {
+            const selectedOptions = $('.js-example-basic-multiple').select2('data');
+            let authorsHTML = "";
+
+            if (selectedOptions.length > 0) {
+                for (let i = 0; i < selectedOptions.length; i++) {
+                    authorsHTML += '<div class="selected-author-item">' + selectedOptions[i].text + '</div>';
+                }
+            } else {
+                authorsHTML = ""; // Reset if nothing is selected
+            }
+
+            $('#selectedAuthors').html(authorsHTML);
+        }
+
+        // Initial update for the first selection
+        updateSelectedAuthors();
+        $('.js-example-basic-multiple').on('select2:unselecting', function (e) {
+            updateSelectedAuthors();
+        });
+
+        $('.js-example-basic-multiple').on('select2:clearing', function (e) {
+            updateSelectedAuthors();
+        });
+    });
+</script>

@@ -211,6 +211,7 @@ namespace WedStore.Repositories
                                     BookTypeName = reader["TenTheLoai"].ToString(),
                                     BookTypeID = reader["theloai_id"].ToString(),
                                     Nxb = reader["TenNhaXuatBan"].ToString(),
+                                    NamXuatBan = reader["NamXuatBan"].ToString(),
                                     NxbId = reader["NhaXuatBanId"].ToString(), // Use the correct column name
                                     Description = reader["MoTa"].ToString(),
                                     Image = reader["HinhAnh"].ToString(),
@@ -231,7 +232,7 @@ namespace WedStore.Repositories
                                 {
                                     string authorIdsString = reader["TacGiaIds"].ToString();
                                     string[] authorIds = authorIdsString.Split(", "); // Split by comma and space
-                                    book.AuthorId = authorIdsString;
+                                  //  book.AuthorId = authorIdsString;
                                     book.AuthorIds=authorIds.ToList();
 
                                 }
@@ -266,6 +267,17 @@ namespace WedStore.Repositories
                 return true;
             }
             return false;
+        } public static bool ThemSach(SachDTO book)
+        {
+            object[] value = {  book.BookName, book.BookTypeID, book.Price, book.Quantity, book.Image, book.NamXuatBan, book.Description, book.NxbId, book.AuthorId };
+            SQLCommand connection = new SQLCommand(ConnectStringValue.ConnectStringMyDB);
+            DataTable result = connection.Select("SP_ThemSach", value);
+
+            if (connection.errorCode == 0 && connection.errorMessage == "")
+            {
+                return true;
+            }
+            return false;
         }
         public static bool Book_Update(SachDTO book)
         {
@@ -281,13 +293,13 @@ namespace WedStore.Repositories
         }
 		public static bool CapNhat_Sach(SachDTO book)
 		{
-			object[] value = { book.BookID, book.BookName, book.BookTypeID, book.Author, book.Nxb, book.Description, book.Image, book.Price, book.Quantity, book.OrderedQuantity };
+			object[] value = { book.BookID, book.BookName, book.BookTypeID, book.Price, book.Quantity, book.Image,book.NamXuatBan,   book.Description, book.NxbId, book.AuthorId};
 			SQLCommand connection = new SQLCommand(ConnectStringValue.ConnectStringMyDB);
-			DataTable result = connection.Select("SP_UpdateSach", value);
+			DataTable result = connection.Select("SP_UpdateThongTinSach", value);
 
 			if (connection.errorCode == 0 && connection.errorMessage == "")
-			{
-				return true;
+            {
+                    return true;
 			}
 			return false;
 		}
@@ -296,6 +308,17 @@ namespace WedStore.Repositories
             object[] value = { ID };
             SQLCommand connection = new SQLCommand(ConnectStringValue.ConnectString);
             DataTable result = connection.Select("Book_Delete", value);
+
+            if (connection.errorCode == 0 && connection.errorMessage == "")
+            {
+                return true;
+            }
+            return false;
+        }		public static bool XoaSach(string ID)
+        {
+            object[] value = { ID };
+            SQLCommand connection = new SQLCommand(ConnectStringValue.ConnectStringMyDB);
+            DataTable result = connection.Select("SP_XoaSach", value);
 
             if (connection.errorCode == 0 && connection.errorMessage == "")
             {

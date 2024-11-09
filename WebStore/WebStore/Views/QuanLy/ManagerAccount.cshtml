@@ -1,50 +1,86 @@
-﻿@model IEnumerable<WebStore.Models.NguoiDungDTO>
+﻿@model WebStore.Models.EditAccountViewModel
 
 @{
     ViewData["Title"] = "ManagerAccount";
     Layout = "~/Views/Shared/_ManagerLayout.cshtml";
 }
-
 <h1>ManagerAccount</h1>
+
+<!-- Danh sách tài khoản -->
+<h2>Danh sách Tài khoản</h2>
 <table class="table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.UserName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FullName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Email)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Authority)
-            </th>
+            <th>@Html.DisplayNameFor(model => model.NguoiDungs.FirstOrDefault().idND)</th>
+            <th>@Html.DisplayNameFor(model => model.NguoiDungs.FirstOrDefault().UserName)</th>
+            <th>@Html.DisplayNameFor(model => model.NguoiDungs.FirstOrDefault().Password)</th>
+            <th>@Html.DisplayNameFor(model => model.NguoiDungs.FirstOrDefault().TypeRole)</th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+        @foreach (var item in Model.NguoiDungs)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.idND)</td>
+                <td>@Html.DisplayFor(modelItem => item.UserName)</td>
+                <td>@Html.DisplayFor(modelItem => item.Password)</td>
+                <td>@Html.DisplayFor(modelItem => item.TypeRole)</td>
+                <td>
+                    @Html.ActionLink("Edit", "EditAccount", new { id = item.idND }) |
+                    @Html.ActionLink("Details", "DetailAccount", new { id = item.idND }) |
+                    @Html.ActionLink("Delete", "DeleteAccount", new { id = item.idND })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+<!-- Danh sách khách hàng -->
+<h2>Danh sách Khách hàng</h2>
+<table class="table">
+    <thead>
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.UserName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FullName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Authority)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "EditAccount", new { id = item.UserName }) |
-                @Html.ActionLink("Details", "DetailAccount", new { id = item.UserName }) |
-                @Html.ActionLink("Delete", "DeleteAccount", new { id = item.UserName })
-            </td>
+            <th>@Html.DisplayNameFor(model => model.KhachHangs.FirstOrDefault().Id)</th>
+            <th>@Html.DisplayNameFor(model => model.KhachHangs.FirstOrDefault().Ten)</th>
+            <th>@Html.DisplayNameFor(model => model.KhachHangs.FirstOrDefault().Diachi)</th>
+            <th>@Html.DisplayNameFor(model => model.KhachHangs.FirstOrDefault().Sodienthoai)</th>
         </tr>
-}
+    </thead>
+    <tbody>
+        @foreach (var item in Model.KhachHangs)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Id)</td>
+                <td>@Html.DisplayFor(modelItem => item.Ten)</td>
+                <td>@Html.DisplayFor(modelItem => item.Diachi)</td>
+                <td>@Html.DisplayFor(modelItem => item.Sodienthoai)</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<!-- Danh sách nhân viên -->
+<h2>Danh sách Nhân viên</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.NhanViens.FirstOrDefault().Id)</th>
+            <th>@Html.DisplayNameFor(model => model.NhanViens.FirstOrDefault().Ten)</th>
+            <th>@Html.DisplayNameFor(model => model.NhanViens.FirstOrDefault().ChucVu)</th>
+            <th>@Html.DisplayNameFor(model => model.NhanViens.FirstOrDefault().Sodienthoai)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.NhanViens)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Id)</td>
+                <td>@Html.DisplayFor(modelItem => item.Ten)</td>
+                <td>@Html.DisplayFor(modelItem => item.ChucVu)</td>
+                <td>@Html.DisplayFor(modelItem => item.Sodienthoai)</td>
+            </tr>
+        }
     </tbody>
 </table>

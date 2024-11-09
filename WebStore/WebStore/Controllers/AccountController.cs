@@ -31,71 +31,7 @@ namespace WedStore.Controllers
             return View();
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Login1(NguoiDungDTO account, string returnUrl) 
-        {
-            if (account.UserName == null)
-            {
-                ViewBag.ErrorMessage = "Vui lòng nhập tên tài khoản";
-                return View(account);
-            }
-            else if(account.Password == null)
-            {
-                ViewBag.ErrorMessage = "Vui lòng nhập password";
-                return View(account);
-            }
-
-            var result = NguoiDungDB.CheckLogin(account.UserName, account.Password);
-            if(result != null)
-            {
-                if (result.Authority == 0)
-                {
-                    role.Add("Customer");            
-                }
-                else if (result.Authority == 1)
-                {
-                    role.Add("Customer");
-                    role.Add("Admin");
-                }
-                else if (result.Authority == 2)
-                {
-                    role.Add("Customer");
-                    role.Add("Admin");
-                    role.Add("SuperAdmin");
-                }
-                if (!string.IsNullOrEmpty(result.UserName))
-                {
-                    ClaimsIdentity userIdentity = new ClaimsIdentity(CookieAuthenticationDefaults.AuthenticationScheme);
-                    ClaimsPrincipal claimsPrincipal = new ClaimsPrincipal(userIdentity);
-                    userIdentity.AddClaim(new Claim(ClaimTypes.Name, result.FullName));
-                    foreach (var r in role)
-                    {
-                        userIdentity.AddClaim(new Claim(ClaimTypes.Role, r));
-                    }
-                    userIdentity.AddClaim(new Claim(ClaimTypes.NameIdentifier, result.UserName));
-                    //userIdentity.AddClaim(new Claim(ClaimTypes.Authentication, result.Authority));
-
-                    await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, claimsPrincipal);
-                    if (returnUrl == "/Order/AddToCart")
-                    {
-                        return Redirect("/Book");
-                    }
-
-                    if (!string.IsNullOrEmpty(returnUrl))
-                    {
-                        return Redirect(returnUrl);
-                    }
-                    else
-                    {
-                        return Redirect(" / ");
-                    }
-                }
-            }
-            ViewBag.ErrorMessage = "Tài khoản hoặc password không đúng";
-            return View(account);
-        }
-
+        
 
         [HttpPost]
         [ValidateAntiForgeryToken]

@@ -16,9 +16,14 @@
             <span class="text-danger field-validation-error" data-valmsg-replace="true">@ViewBag.ErrorMessage</span>
             <div class="form-group">
                 <label asp-for="UserName" class="control-label"></label>
-                <input asp-for="UserName" class="form-control" disabled />
-                <input hidden asp-for="UserName" class="form-control" />
-                <span asp-validation-for="UserName" class="text-danger"></span>
+                <input asp-for="UserName" class="form-control"  />
+@*                  <input hidden asp-for="UserName" class="form-control" />
+ *@                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" type="password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="FullName" class="control-label"></label>
@@ -27,11 +32,12 @@
             </div>
             <div class="form-group">
                 <div class="row">
-                    <div class="col-sm-3">
-                        <label asp-for="Age" class="control-label"></label>
-                        <input asp-for="Age" class="form-control" />
+                    <div class="col-sm-4">
+                        <label asp-for="NgaySinh" class="control-label">Ngày Sinh:</label>
+                        <input asp-for="NgaySinh" type="date" class="form-control" />
+                        <span asp-validation-for="NgaySinh" class="text-danger"></span>
                     </div>
-                    <div class="col-sm-9">
+                    <div class="col-sm-8">
                         <div class="row">
                             <div class="col-sm-12">
                                 <label asp-for="Gender" class="control-label"></label>
@@ -64,11 +70,22 @@
                 </div>
 
             </div>
+               @if (Model.UserRole == "customer")
+                    {
             <div class="form-group">
                 <label asp-for="Address" class="control-label"></label>
                 <input asp-for="Address" class="form-control" />
                 <span asp-validation-for="Address" class="text-danger"></span>
             </div>
+                    }
+                    else
+                    {
+            <div class="form-group">
+                    <label asp-for="ChucVu" class="control-label"></label>
+                    <input asp-for="ChucVu" class="form-control" />
+                    <span asp-validation-for="ChucVu" class="text-danger"></span>
+            </div>
+                    }
             <div class="form-group">
                 <label asp-for="Email" class="control-label"></label>
                 <input asp-for="Email" class="form-control" />
@@ -80,29 +97,32 @@
                 <span asp-validation-for="Phone" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Authority" class="control-label"></label>
-                <select asp-for="Authority" class="form-control">
-                    @if (Model.Authority == 0)
+                <label asp-for="UserRole" class="control-label"></label>
+                <select asp-for="UserRole" class="form-control">
+                    @if (Model.UserRole == "customer")
                     {
-                    <option value="0" checked>Customer</option>
-                    <option value="1">Admin</option>
-                    <option value="2">SuperAdmin</option>
+                        <option value="customer" selected>Khách hàng</option>
+                        <option value="admin">Quản trị viên</option>
+                        <option value="staff">Nhân viên</option>
                     }
-                    else if (Model.Authority == 1)
+                    else if (Model.UserRole == "admin")
                     {
-                    <option value="0">Customer</option>
-                    <option value="1" checked>Admin</option>
-                    <option value="2">SuperAdmin</option>
+                        <option value="customer">Khách hàng</option>
+                        <option value="admin" selected>Quản trị viên</option>
+                        <option value="staff">Nhân viên</option>
                     }
-                    else if (Model.Authority == 2)
+                    else if (Model.UserRole == "staff")
                     {
-                    <option value="0">Customer</option>
-                    <option value="1">Admin</option>
-                    <option value="2" checked>SuperAdmin</option>
+                        <option value="customer">Khách hàng</option>
+                        <option value="admin">Quản trị viên</option>
+                        <option value="staff" selected>Nhân viên</option>
                     }
                 </select>
-                <span asp-validation-for="Authority" class="text-danger"></span>
+                <span asp-validation-for="UserRole" class="text-danger"></span>
+
             </div>
+         
+
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
