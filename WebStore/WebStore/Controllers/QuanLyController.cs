@@ -90,19 +90,15 @@ namespace WedStore.Controllers
                 ViewBag.ErrorMessage = "vui lòng nhập số điện thoại";
                 return View(account);
             }
-            else if (account.Address == null)
-            {
-                ViewBag.ErrorMessage = "vui lòng nhập địa chỉ";
-                return View(account);
-            }
+    
             else if (account.Email == null)
             {
                 ViewBag.ErrorMessage = "vui lòng nhập email";
                 return View(account);
             }
             //kiểm tra email tồn tại
-            var acc = NguoiDungDB.GetAccountWithUser(account.UserName);
-            var lstAccount = NguoiDungDB.GetAll();
+            var acc = NguoiDungDB.LayChiTietNguoiDungTheoId(account.idND);
+            var lstAccount = NguoiDungDB.LayTatCaNguoiDung();
             var itemToRemove = lstAccount.Single(r => r.Email == acc.Email);
             lstAccount.Remove(itemToRemove);
 
@@ -114,14 +110,14 @@ namespace WedStore.Controllers
                     return View(account);
                 }
             }
-            NguoiDungDB.Account_Update(account);
+            NguoiDungDB.CapNhatNguoiDung(account);
             return RedirectToAction(nameof(ManagerAccount));
         }
         //Delete Account
         [Authorize(Roles = "SuperAdmin")]
         public ActionResult DeleteAccount(string id)//username
         {
-            var acc = NguoiDungDB.GetAccountWithUser(id);
+            var acc = NguoiDungDB.LayChiTietNguoiDungTheoId(id);
             return View(acc);
         }
         [Authorize(Roles = "SuperAdmin")]
@@ -130,23 +126,32 @@ namespace WedStore.Controllers
         public ActionResult DeleteAccount(string id, IFormCollection collection)
         {
             // xóa dữ liệu của account
-            var lstOrders = DonHangDB.GetOrdersUser(id);
-            foreach (var i in lstOrders)
-            {
-                //đơn hàng
-                InfoOrder infoOrder = ChiTietDonHangDB.InfoOrder_GetInfoOrdersWithOrderID(i.OrderID);
-                ChiTietDonHangDB.InfoOrder_Delete(infoOrder.InfoOrderID);
-                //item trong giỏ hàng
-                var listOrderItem = OrderItemRes.GetOrderItemsWithOrderID(i.OrderID);
-                foreach (var item in listOrderItem)
-                {
-                    OrderItemRes.deleteOrderItem(item.ItemID);
-                }
-                //giỏ hàng
-                DonHangDB.Orders_Delete(i.OrderID);
-            }
-            NguoiDungDB.Account_Delete(id);
+            //var lstOrders = DonHangDB.GetOrdersUser(id);
+            //foreach (var i in lstOrders)
+            //{
+            //    //đơn hàng
+            //    InfoOrder infoOrder = ChiTietDonHangDB.InfoOrder_GetInfoOrdersWithOrderID(i.OrderID);
+            //    ChiTietDonHangDB.InfoOrder_Delete(infoOrder.InfoOrderID);
+            //    //item trong giỏ hàng
+            //    var listOrderItem = OrderItemRes.GetOrderItemsWithOrderID(i.OrderID);
+            //    foreach (var item in listOrderItem)
+            //    {
+            //        OrderItemRes.deleteOrderItem(item.ItemID);
+            //    }
+            //    //giỏ hàng
+            //    DonHangDB.Orders_Delete(i.OrderID);
+            //}
+           bool ab= NguoiDungDB.XoaNguoiDung(id);
+            if(ab)
             return RedirectToAction(nameof(ManagerAccount));
+            else
+            {
+                var acc = NguoiDungDB.LayChiTietNguoiDungTheoId(id);
+                ViewBag.msgErr = "Xóa thất bại";
+                return View(acc);
+
+
+            }
         }
         /////
         /////

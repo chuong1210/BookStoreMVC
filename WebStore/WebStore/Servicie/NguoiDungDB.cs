@@ -210,17 +210,40 @@ namespace WedStore.Repositories
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
-                using (SqlCommand cmd = new SqlCommand("SELECT Id, Username,Password, Role,GioiTinh,NgaySinh FROM NguoiDung", conn))
+
+                // Câu truy vấn SQL với JOIN để lấy thông tin từ bảng KhachHang hoặc NhanVien
+                string query = @"
+            SELECT 
+                nd.Id, 
+                nd.Username, 
+                nd.Password, 
+                nd.Role, 
+                nd.GioiTinh, 
+                nd.NgaySinh,
+                CASE 
+                    WHEN nd.Role = 'customer' THEN kh.Ten 
+                    ELSE nv.Ten 
+                END AS Ten,
+                CASE 
+                    WHEN nd.Role = 'customer' THEN kh.Email 
+                    ELSE nv.Email 
+                END AS Email
+            FROM 
+                NguoiDung nd
+            LEFT JOIN 
+                KhachHang kh ON nd.Id = kh.Id_NguoiDung AND nd.Role = 'customer'
+            LEFT JOIN 
+                NhanVien nv ON nd.Id = nv.Id_NguoiDung AND (nd.Role = 'staff' OR nd.Role = 'admin')";
+
+                using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
-                     
-
                         while (reader.Read())
                         {
                             string role = reader["Role"].ToString();
-
                             string loaiTaiKhoan = role == "customer" ? "Khách hàng" : "Nhân viên";
+
                             list.Add(new NguoiDungDTO
                             {
                                 idND = reader["Id"].ToString(),
@@ -228,8 +251,10 @@ namespace WedStore.Repositories
                                 UserRole = role,
                                 TypeRole = loaiTaiKhoan,
                                 Password = reader["Password"].ToString(),
-                                Gender = int.Parse(reader["GioiTinh"].ToString())
-
+                                Gender = int.Parse(reader["GioiTinh"].ToString()),
+                                NgaySinh = reader["NgaySinh"] != DBNull.Value ? (DateTime?)reader["NgaySinh"] : null,
+                                FullName = reader["Ten"].ToString(),
+                                Email = reader["Email"].ToString()
                             });
                         }
                     }
@@ -237,6 +262,7 @@ namespace WedStore.Repositories
             }
             return list;
         }
+
 
 
         public static NguoiDungDTO LayChiTietNguoiDungTheoId(string id)
@@ -248,7 +274,7 @@ namespace WedStore.Repositories
                 conn.Open();
 
                 // Lấy thông tin cơ bản từ bảng NguoiDung
-                using (SqlCommand cmd = new SqlCommand("SELECT Id, Username,Password, Role,GioiTinh,NgaySinh FROM NguoiDung WHERE Id = @Id", conn))
+                using (SqlCommand cmd = new SqlCommand("SELECT  Username,Password, Role,GioiTinh,NgaySinh FROM NguoiDung WHERE Id = @Id", conn))
                 {
                     cmd.Parameters.AddWithValue("@Id", id);
                     using (SqlDataReader reader = cmd.ExecuteReader())
@@ -259,12 +285,16 @@ namespace WedStore.Repositories
                         {
                             string role = reader["Role"].ToString();
                             string loaiTaiKhoan = role == "customer" ? "Khách hàng" : "Nhân viên";
-                            nguoiDung.idND = reader["Id"].ToString();
+                            nguoiDung.idND = id;
                             nguoiDung.UserName = reader["Username"].ToString();
                             nguoiDung.UserRole = reader["Role"].ToString();
                             nguoiDung.TypeRole = loaiTaiKhoan;
                             nguoiDung.Gender=int.Parse(reader["GioiTinh"].ToString());
                             nguoiDung.Password= reader["Password"].ToString();
+                            nguoiDung.NgaySinh = reader["NgaySinh"] != DBNull.Value ? (DateTime?)reader["NgaySinh"] : null;
+
+
+
 
                         }
                     }
@@ -454,49 +484,23 @@ namespace WedStore.Repositories
         }
         public static bool XoaNguoiDung(string idNguoiDung)
         {
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            try
             {
-                conn.Open();
-                using (var transaction = conn.BeginTransaction())
+                object[] value = { idNguoiDung };
+                SQLCommand connection = new SQLCommand(ConnectStringValue.ConnectStringMyDB);
+                DataTable result = connection.Select("SP_XoaNguoiDungVaLienQuan", value);
+
+                if (connection.errorCode == 0 && connection.errorMessage == "")
                 {
-                    try
-                    {
-                        // Xóa thông tin trong bảng NhanVien nếu người dùng là nhân viên (staff hoặc admin)
-                        string deleteNhanVienQuery = "DELETE FROM NhanVien WHERE Id_NguoiDung = @Id_NguoiDung";
-                        using (SqlCommand cmd = new SqlCommand(deleteNhanVienQuery, conn, transaction))
-                        {
-                            cmd.Parameters.AddWithValue("@Id_NguoiDung", idNguoiDung);
-                            cmd.ExecuteNonQuery();
-                        }
-
-                        // Xóa thông tin trong bảng KhachHang nếu người dùng là khách hàng (customer)
-                        string deleteKhachHangQuery = "DELETE FROM KhachHang WHERE Id_NguoiDung = @Id_NguoiDung";
-                        using (SqlCommand cmd = new SqlCommand(deleteKhachHangQuery, conn, transaction))
-                        {
-                            cmd.Parameters.AddWithValue("@Id_NguoiDung", idNguoiDung);
-                            cmd.ExecuteNonQuery();
-                        }
-
-                        // Xóa người dùng trong bảng NguoiDung
-                        string deleteNguoiDungQuery = "DELETE FROM NguoiDung WHERE Id = @Id";
-                        using (SqlCommand cmd = new SqlCommand(deleteNguoiDungQuery, conn, transaction))
-                        {
-                            cmd.Parameters.AddWithValue("@Id", idNguoiDung);
-                            cmd.ExecuteNonQuery();
-                        }
-
-                        // Commit transaction nếu không có lỗi
-                        transaction.Commit();
-                        return true;
-                    }
-                    catch (Exception)
-                    {
-                        // Nếu có lỗi, rollback transaction
-                        transaction.Rollback();
-                        return false;
-                    }
+                    return true;
                 }
+                return false;
             }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        
         }
 
     

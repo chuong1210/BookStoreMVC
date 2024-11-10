@@ -711,6 +711,77 @@ WHERE DATEDIFF(DAY, ngaynhap, GETDATE()) = 0;
 
 -- PROC
 -- Dang Nhap
+
+
+
+-- STORE PROC XOA NGUOI DUNG
+CREATE or alter PROCEDURE SP_XoaNguoiDungVaLienQuan
+    @NguoiDungId VARCHAR(50)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    DECLARE @Role VARCHAR(10);
+
+    -- Lấy role của người dùng
+    SELECT @Role = role FROM NguoiDung WHERE id = @NguoiDungId;
+
+    -- Kiểm tra nếu người dùng không tồn tại thì thoát
+    IF @Role IS NULL
+    BEGIN
+        PRINT 'Người dùng không tồn tại.';
+    END
+
+    BEGIN TRY
+        BEGIN TRANSACTION;
+
+        -- Xóa các bản ghi trong bảng ChiTietDonHang nếu tồn tại đơn hàng liên quan
+        IF EXISTS (SELECT 1 FROM DonHang WHERE nguoidung_id = @NguoiDungId)
+        BEGIN
+            DELETE FROM ChiTietDonHang
+            WHERE donhang_id IN (SELECT id FROM DonHang WHERE nguoidung_id = @NguoiDungId);
+        END
+
+        -- Xóa các bản ghi trong bảng HoaDon nếu tồn tại đơn hàng liên quan
+        IF EXISTS (SELECT 1 FROM DonHang WHERE nguoidung_id = @NguoiDungId)
+        BEGIN
+            DELETE FROM HoaDon
+            WHERE donhang_id IN (SELECT id FROM DonHang WHERE nguoidung_id = @NguoiDungId);
+        END
+
+        -- Xóa các bản ghi trong bảng DonHang nếu tồn tại
+        IF EXISTS (SELECT 1 FROM DonHang WHERE nguoidung_id = @NguoiDungId)
+        BEGIN
+            DELETE FROM DonHang
+            WHERE nguoidung_id = @NguoiDungId;
+        END
+
+        -- Xóa khách hàng hoặc nhân viên dựa trên role của người dùng
+        IF @Role = 'customer'
+        BEGIN
+            DELETE FROM KhachHang WHERE id_NguoiDung = @NguoiDungId;
+        END
+        ELSE IF @Role = 'staff' OR @Role = 'admin'
+        BEGIN
+            DELETE FROM NhanVien WHERE id_NguoiDung = @NguoiDungId;
+        END
+
+        -- Xóa người dùng
+        DELETE FROM NguoiDung WHERE id = @NguoiDungId
+
+        -- Commit transaction nếu không có lỗi
+        COMMIT TRANSACTION;
+
+        PRINT 'Xóa người dùng và các bản ghi liên quan thành công.';
+    END TRY
+    BEGIN CATCH
+        -- Rollback transaction nếu có lỗi
+        ROLLBACK TRANSACTION;
+        PRINT 'Lỗi xảy ra trong quá trình xóa người dùng. Đã rollback.';
+    END CATCH
+END;
+GO
+
 -- STORE PROC LẤY TẤT CẢ THỂ LOẠI
 CREATE or alter PROCEDURE SP_Book_GetAllType
 AS
