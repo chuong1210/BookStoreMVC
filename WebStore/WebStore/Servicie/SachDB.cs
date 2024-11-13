@@ -69,7 +69,33 @@ namespace WedStore.Repositories
             }
             return lstResult;
         }
-        public static List<SachDTO> GetBookWithSelling()
+        public static List<SachDTO> LaySachTheoSoLuongTon()
+        {
+            object[] value = { };
+            SQLCommand connection = new SQLCommand(ConnectStringValue.ConnectStringMyDB);
+            DataTable result = connection.Select("SP_SapXepSachTheoSoLuongTon", value);
+            List<SachDTO> lstResult = new List<SachDTO>();
+            if (connection.errorCode == 0 && result.Rows.Count > 0)
+            {
+                foreach (DataRow dr in result.Rows)
+                {
+                    SachDTO book = new SachDTO();
+                    book.BookID = dr["SachId"].ToString();
+                    book.BookName = dr["TenSach"].ToString();
+                    book.BookTypeName = dr["TenTheLoai"].ToString();
+                    book.Author = dr["TenTacGias"].ToString();
+                    book.Nxb = dr["TenNhaXuatBan"].ToString();
+                    book.Description = dr["MoTa"].ToString();
+                    book.Image = dr["HinhAnh"].ToString();
+
+                    book.Price = string.IsNullOrEmpty(dr["Gia"].ToString()) ? 0 : Decimal.Parse(dr["Gia"].ToString());
+                    book.Quantity = string.IsNullOrEmpty(dr["SoLuongTon"].ToString()) ? 0 : int.Parse(dr["SoLuongTon"].ToString());
+
+                    lstResult.Add(book);
+                }
+            }
+            return lstResult;
+        }   public static List<SachDTO> GetBookWithSelling()
         {
             object[] value = { };
             SQLCommand connection = new SQLCommand(ConnectStringValue.ConnectString);
@@ -117,7 +143,7 @@ namespace WedStore.Repositories
                     book.Description = dr["Description"].ToString();
                     book.Image = dr["Image"].ToString();
 
-                    book.Price = string.IsNullOrEmpty(dr["Price"].ToString()) ? 0 : int.Parse(dr["Price"].ToString());
+                    book.Price = string.IsNullOrEmpty(dr["Price"].ToString()) ? 0 : Decimal.Parse(dr["Price"].ToString());
                     book.Quantity = string.IsNullOrEmpty(dr["Quantity"].ToString()) ? 0 : int.Parse(dr["Quantity"].ToString());
                     book.OrderedQuantity = string.IsNullOrEmpty(dr["OrderedQuantity"].ToString()) ? 0 : int.Parse(dr["OrderedQuantity"].ToString());
 
@@ -251,6 +277,45 @@ namespace WedStore.Repositories
                 }
             }
             return book;
+        }
+
+
+        public static List<SachDTO> LaySachTheoOrderId(string orderId)
+        {
+            List<SachDTO> books = new List<SachDTO>();
+
+            using (SqlConnection connection = new SqlConnection(ConnectStringValue.ConnectStringMyDB))
+            {
+                connection.Open();
+
+                using (SqlCommand cmd = new SqlCommand("SP_LaySachTheoIdDonHang", connection))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add(new SqlParameter("@OrderID", SqlDbType.VarChar)).Value = orderId;
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            SachDTO bookDetails = new SachDTO
+                            {
+                                BookID = reader["SachId"].ToString(),
+                                BookName = reader["TenSach"].ToString(),
+                                Image = reader["HinhAnh"].ToString(),
+                                Price = Convert.ToDecimal(reader["Gia"]),
+                                OrderedQuantity = Convert.ToInt32(reader["SoLuongDat"]),
+                                NamXuatBan = reader["NamXuatBan"].ToString(),
+                                Description = reader["MoTa"].ToString(),
+                                BookTypeName = reader["TenTheLoai"].ToString(),
+                                Author = reader["TenTacGias"].ToString(),
+                                Nxb = reader["TenNhaXuatBan"].ToString()
+                            };
+                            books.Add(bookDetails);
+                        }
+                    }
+                }
+            }
+            return books;
         }
         public static int Book_Count()
         {

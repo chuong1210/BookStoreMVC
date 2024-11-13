@@ -1,4 +1,4 @@
-﻿@model IEnumerable<WebStore.Models.InfoOrder>
+﻿@model IEnumerable<WebStore.Models.OrderDetails>
 
 @{
     ViewData["Title"] = "ManagerOrder";
@@ -33,8 +33,8 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                <a href="@Url.Action("DetailOrder", "Manager", new { id = item.InfoOrderID })">
-                    @Html.DisplayFor(modelItem => item.InfoOrderID)
+                <a href="@Url.Action("DetailOrder", "QuanLy", new { id = item.OrderID })">
+                    @Html.DisplayFor(modelItem => item.OrderID)
                 </a>
             </td>
             <td>
@@ -50,12 +50,12 @@
                 @Html.DisplayFor(modelItem => item.Status)
             </td>
             <th>
-                @Html.ActionLink("Complete", "InfoOrderComplete", new { id = item.InfoOrderID }) |
-                @Html.ActionLink("Incomplete", "InfoOrderIncomplete", new { id = item.InfoOrderID })
+                @Html.ActionLink("Complete", "InfoOrderComplete", new { id = item.OrderID }) |
+                    @Html.ActionLink("Incomplete", "InfoOrderIncomplete", new { id = item.OrderID })
             </th>
             <th>
-                @Html.ActionLink("Edit", "EditOrder", new { id = item.InfoOrderID }) |
-                @Html.ActionLink("Delete", "DeleteOrder", new { id = item.InfoOrderID })
+                    @Html.ActionLink("Edit", "EditOrder", new { id = item.OrderID }) |
+                    @Html.ActionLink("Delete", "DeleteOrder", new { id = item.OrderID })
             </th>
         </tr>
 }

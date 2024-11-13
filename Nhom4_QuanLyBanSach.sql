@@ -50,6 +50,9 @@ CREATE TABLE Khachhang (
 	id_NguoiDung VARCHAR(50) 
 );
 
+
+
+ 
 -- Bảng Nhân viên
 CREATE TABLE NhanVien (
     id VARCHAR(50) PRIMARY KEY,
@@ -104,11 +107,15 @@ CREATE TABLE TacGia (
 
 CREATE TABLE HoaDon (
     id VARCHAR(50) PRIMARY KEY, 
-	donhang_id VARCHAR(50) UNIQUE,
+    donhang_id VARCHAR(50) UNIQUE,
     ngayLap DATETIME,          
-    tongTien DECIMAL(10, 2)   , 
-	phuongThucTT nvarchar(50),
-	trangthaiTT nvarchar(50)
+    tongTien DECIMAL(10, 2), 
+    phuongThucTT NVARCHAR(50),
+    trangthaiTT NVARCHAR(50),
+    email NVARCHAR(255),         -- Email của người nhận
+    sodienthoai VARCHAR(10),     -- Số điện thoại của người nhận
+    diachi NVARCHAR(255),        -- Địa chỉ của người nhận
+    tenNguoiDatHang NVARCHAR(255)   -- Tên của người nhận
 );
 
 
@@ -274,6 +281,7 @@ INSERT INTO TacGia_Sach (sach_id, tacgia_id) VALUES
 ('S004', 'TG004'),
 ('S005', 'TG005'),
 ('S006', 'TG006');
+
 -- TRIGGER START
 -- INSTEAD OF trigger ngăn chặn hành động trước khi nó xảy ra. AFTER (hoặc FOR) trigger thực hiện kiểm tra sau khi hành động đã diễn ra. 
 
@@ -807,6 +815,17 @@ select * from DonHang dh  where  dh.trangthaiDH=@TrangThai AND @idND =dh.nguoidu
 end
 
 exec SP_LayTrangThaiDonHang 0, 'user123'
+-- lay chi tietdon hang
+CREATE OR ALTER PROCEDURE SP_LayChiTietDonHangTheoSachId
+    @OrderID NVARCHAR(50),
+    @SachId NVARCHAR(50)
+AS
+BEGIN
+    SELECT *
+    FROM ChiTietDonHang 
+    WHERE donhang_id = @OrderID AND sach_id = @SachId;
+END
+
 --  Lấy Chi Tiết Đơn Hàng Theo Đơn Hàng ID
 
 CREATE OR ALTER PROCEDURE SP_LayChiTietDonHangTheoDH
@@ -864,10 +883,73 @@ BEGIN
 END;
 
 exec SP_ThongTinSachDuocDatCuaKhTheoId 'S001'
+-- LẤY SÁCH THEO ĐƠN HÀNG ID
+CREATE OR ALTER PROCEDURE SP_LaySachTheoIdDonHang
+    @OrderID VARCHAR(50) -- Tham số đầu vào: ID đơn hàng
+AS
+BEGIN
+    SELECT 
+        S.id AS SachId,
+        S.tieude AS TenSach,
+        S.HinhAnh,
+        S.Gia,
+        CD.soLuong AS SoLuongDat,
+        S.NamXuatBan,
+        S.MoTa,
+        TL.ten AS TenTheLoai,
+        STRING_AGG(TG.ten, ', ') AS TenTacGias, -- Kết hợp tên tác giả bằng dấu phẩy
+        NXB.ten AS TenNhaXuatBan,
+        NXB.id AS NhaXuatBanId
+    FROM 
+        ChiTietDonHang CD
+        INNER JOIN Sach S ON CD.sach_id = S.id
+        INNER JOIN TheLoai TL ON S.theloai_id = TL.id
+        INNER JOIN TacGia_Sach TGS ON S.id = TGS.sach_id
+        INNER JOIN TacGia TG ON TGS.tacgia_id = TG.id
+        INNER JOIN NhaXuatBan NXB ON S.nxb_id = NXB.id
+    WHERE 
+        CD.donhang_id = @OrderID -- Lọc theo OrderID
+    GROUP BY
+        S.id, S.tieude, S.HinhAnh, S.Gia, CD.soLuong, S.NamXuatBan, S.MoTa, S.theloai_id, TL.ten, NXB.ten, NXB.id
+    ORDER BY
+        CD.soLuong DESC; -- Sắp xếp theo số lượng đặt giảm dần
+END;
+
+
+-- Lấy sách theo số lượng tồn
+CREATE OR ALTER PROCEDURE SP_SapXepSachTheoSoLuongTon
+AS
+BEGIN
+    SELECT 
+	     S.id AS SachId,
+        S.tieude AS TenSach,
+		S.HinhAnh,
+		S.Gia,
+		S.SoLuongTon,
+		S.NamXuatBan,
+		S.MoTa,
+		S.theloai_id,
+        TL.ten AS TenTheLoai,
+		STRING_AGG(TG.ten, ', ') AS TenTacGias, -- Sử dụng STRING_AGG
+		STRING_AGG(TG.id, ', ') AS TacGiaIds, -- Sử dụng STRING_AGG
+		NXB.ten as TenNhaXuatBan,
+		NXB.id as NhaXuatBanId
+
+    FROM 
+        Sach S
+        INNER JOIN TheLoai TL ON S.theloai_id = TL.id
+        INNER JOIN TacGia_Sach TGS ON S.id = TGS.sach_id
+        INNER JOIN TacGia TG ON TGS.tacgia_id = TG.id
+        INNER JOIN NhaXuatBan NXB ON NXB.id = S.nxb_id
+
+		GROUP BY
+		S.id, S.tieude, S.HinhAnh, S.Gia, S.SoLuongTon, S.NamXuatBan, S.MoTa, S.theloai_id, TL.ten, NXB.ten, NXB.id
+		order by soLuongTon DESC;
+
+END;
 -- lấy chi tiết thông tin sách theo thể loại
 
 CREATE or alter PROCEDURE SP_DanhSachSachTheoTheLoai
-    @TheLoaiId VARCHAR(50)
 AS
 BEGIN
     SELECT 
@@ -1017,6 +1099,45 @@ BEGIN
 
     RETURN 0; -- Thành công
 END;
+-- PROC TAO DON HANG
+
+CREATE PROCEDURE SP_TaoDonHang
+    @OrderID NVARCHAR(50),
+    @UserName NVARCHAR(50),
+    @OrderPrice DECIMAL(18, 2),
+    @OrderStatus INT,
+    @NGAYDATHANG DATETIME = NULL -- tham số ngày đặt hàng
+AS
+BEGIN
+    -- Nếu @NGAYDATHANG không được truyền vào, sử dụng ngày hiện tại
+    IF @NGAYDATHANG IS NULL
+    BEGIN
+        SET @NGAYDATHANG = GETDATE(); -- Lấy ngày giờ hiện tại
+    END
+
+    -- Thực hiện INSERT vào bảng DonHang
+    INSERT INTO DonHang (id, nguoidung_id, tongTien, trangthaiDH, ngayDatHang)
+    VALUES (@OrderID, @UserName, @OrderPrice, @OrderStatus, @NGAYDATHANG);
+END
+
+
+-- PROC TẠO CTHDH
+CREATE PROCEDURE SP_TaoChiTietDonHang
+    @OrderID NVARCHAR(50),
+    @SachId NVARCHAR(50),
+    @SoLuong INT,
+    @GiaDonVi DECIMAL(10, 2)
+AS
+BEGIN
+    -- Tạo ID mới cho ChiTietDonHang, bắt đầu với 'CTDH' và theo sau là giá trị số tự động
+    DECLARE @NewId NVARCHAR(50);
+    SET @NewId = 'CTDH' + CAST((SELECT ISNULL(MAX(CAST(SUBSTRING(Id, 5, LEN(Id)) AS INT)), 0) + 1 FROM ChiTietDonHang) AS NVARCHAR(50));
+
+    -- Thực hiện INSERT vào bảng ChiTietDonHang
+    INSERT INTO ChiTietDonHang (Id, donhang_id, sach_id, soLuong, giaDonVi)
+    VALUES (@NewId, @OrderID, @SachId, @SoLuong, @GiaDonVi);
+END;
+
 -- PROC THEM SACH
 CREATE OR ALTER PROCEDURE SP_ThemSach
     @TieuDe NVARCHAR(255),
@@ -1239,7 +1360,20 @@ BEGIN
         RAISERROR (@ErrorMessage, @ErrorSeverity, @ErrorState);
     END CATCH;
 END;
--- PROC
+-- FUNTION
+CREATE FUNCTION fn_TongTienDonHang(@donhang_id NVARCHAR(50))
+RETURNS DECIMAL(18, 2)
+AS
+BEGIN
+    DECLARE @TongTien DECIMAL(18, 2);
+
+    SELECT @TongTien = SUM(cd.soLuong * cd.giaDonVi)
+    FROM ChiTietDonHang cd
+    WHERE cd.donhang_id = @donhang_id;
+
+    RETURN ISNULL(@TongTien, 0);
+END;
+
 CREATE FUNCTION FnKiemTraSachSapHetHang()
 RETURNS TABLE
 AS

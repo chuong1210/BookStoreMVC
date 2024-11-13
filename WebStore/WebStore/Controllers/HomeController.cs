@@ -23,7 +23,8 @@ namespace WebStore.Controllers
 
         public IActionResult Index()
         {
-            var lstBook = SachDB.GetBookWithSelling();
+          //  var lstBook = SachDB.GetBookWithSelling();
+            var lstBook = SachDB.LaySachTheoSoLuongTon();
           //  var lstBookType = TheLoaiSachDB.GetAllType();
             var lstBookType = TheLoaiSachDB.ListTheLoai();
             List<SachDTO> books = new List<SachDTO>();
@@ -40,20 +41,20 @@ namespace WebStore.Controllers
         public IActionResult Privacy()
         {
             dynamic dy = new ExpandoObject();
-            dy.booktypeNAV = TheLoaiSachDB.GetAllType();
+            dy.booktypeNAV = TheLoaiSachDB.ListTheLoai();
 
             return View(dy);
         }
         public IActionResult About()
         {
             dynamic dy = new ExpandoObject();
-            dy.booktypeNAV = TheLoaiSachDB.GetAllType();
+            dy.booktypeNAV = TheLoaiSachDB.ListTheLoai();
             return View(dy);
         }
         public IActionResult Contact()
         {
             dynamic dy = new ExpandoObject();
-            dy.booktypeNAV = TheLoaiSachDB.GetAllType();
+            dy.booktypeNAV = TheLoaiSachDB.ListTheLoai();
             return View(dy);
         }
 

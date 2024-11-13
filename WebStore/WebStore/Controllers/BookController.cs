@@ -102,11 +102,14 @@ namespace WedStore.Controllers
         public ActionResult Details(string id)
         {
 
-            var book = SachDB.BookWithID(id);
+           // var book = SachDB.BookWithID(id);
+            var book = SachDB.SachTheoId(id);
             dynamic dy = new ExpandoObject();
-            dy.booktypeNAV = TheLoaiSachDB.GetAllType();
-            dy.bookdetail = SachDB.BookWithID(id);
-            var lstBookWithType = SachDB.GetAll();
+         //   dy.booktypeNAV = TheLoaiSachDB.GetAllType();
+            dy.booktypeNAV = TheLoaiSachDB.ListTheLoai();
+            dy.bookdetail = book;
+           // var lstBookWithType = SachDB.GetAll();
+            var lstBookWithType = SachDB.LayTatCaSach();
             List<SachDTO> lstBook = new List<SachDTO>();
             int tr = 0;
             var it = lstBookWithType.Single(r => r.BookID == book.BookID);

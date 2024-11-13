@@ -1,5 +1,4 @@
-﻿@using WebStore.Models
-@model dynamic
+﻿@model WebStore.Models.OrderDetailViewModel
 
 @{
     ViewData["Title"] = "EditOrder";
@@ -27,12 +26,12 @@
                 </thead>
                 <tbody>
 
-                    @foreach (var item in @Model.orderItem)
+                    @foreach (var item in @Model.OrderItem)
                     {
                         <tr>
-                            @foreach (var book in Model.lstBook)
+                            @foreach (var book in Model.LstBook)
                             {
-                                if (item.BookID == book.BookID)
+                                if (item.BookId == book.BookID)
                                 {
                                     <td>
                                         <span class="image">
@@ -45,7 +44,7 @@
                                 }
                             }
                             <td>
-                                @item.Quantity
+                                @item.SoLuong
                             </td>
                         </tr>
                     }
@@ -57,38 +56,38 @@
         <form asp-action="EditOrder">
             <div class="form-group">
                 <label for="InfoOrderID" class="control-label">InfoOrderID</label>
-                <input name="InfoOrderID" class="form-control" value="@Model.infoOrder.InfoOrderID"/>
+                <input name="InfoOrderID" class="form-control" value="@Model.InfoOrder.OrderID" />
             </div>
             <div class="form-group">
                 <label for="OrderID" class="control-label">OrderID</label>
-                <input class="form-control" value="@Model.infoOrder.OrderID" disabled />
-                <input hidden name="OrderID" class="form-control" value="@Model.infoOrder.OrderID" />
+                <input class="form-control" value="@Model.InfoOrder.OrderID" disabled />
+                <input hidden name="OrderID" class="form-control" value="@Model.InfoOrder.OrderID" />
             </div>
             <div class="form-group">
                 <label for="Name" class="control-label">Name</label>
-                <input name="Name" class="form-control" value="@Model.infoOrder.Name"/>
+                <input name="Name" class="form-control" value="@Model.InfoOrder.Name" />
             </div>
             <div class="form-group">
                 <label for="Email" class="control-label">Email</label>
-                <input name="Email" class="form-control" value="@Model.infoOrder.Email"/>
+                <input name="Email" class="form-control" value="@Model.InfoOrder.Email" />
             </div>
             <div class="form-group">
                 <label for="Phone" class="control-label">Phone</label>
-                <input name="Phone" class="form-control" value="@Model.infoOrder.Phone"/>
+                <input name="Phone" class="form-control" value="@Model.InfoOrder.Phone" />
             </div>
             <div class="form-group">
                 <label for="Address" class="control-label">Address</label>
-                <input name="Address" class="form-control" value="@Model.infoOrder.Address"/>
+                <input name="Address" class="form-control" value="@Model.InfoOrder.Address" />
             </div>
             <div class="form-group">
                 <label for="TotalPrice" class="control-label">TotalPrice</label>
-                <input name="TotalPrice" class="form-control" value="@Model.infoOrder.TotalPrice"/>
+                <input name="TotalPrice" class="form-control" value="@Model.InfoOrder.TotalPrice" />
             </div>
             <div class="form-group">
                 <label for="Status" class="control-label">Status</label>
-                <input class="form-control" class="form-control" value="@Model.infoOrder.Status" disabled />
+                <input class="form-control" class="form-control" value="@Model.InfoOrder.Status" disabled />
 
-                <input hidden name="Status" class="form-control" value="@Model.infoOrder.Status" />
+                <input hidden name="Status" class="form-control" value="@Model.InfoOrder.Status" />
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />

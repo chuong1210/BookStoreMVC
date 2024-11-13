@@ -131,7 +131,7 @@ namespace WedStore.Controllers
             //{
             //    //đơn hàng
             //    InfoOrder infoOrder = ChiTietDonHangDB.InfoOrder_GetInfoOrdersWithOrderID(i.OrderID);
-            //    ChiTietDonHangDB.InfoOrder_Delete(infoOrder.InfoOrderID);
+            //    ChiTietDonHangDB.InfoOrder_Delete(infoOrder.OrderDetailId);
             //    //item trong giỏ hàng
             //    var listOrderItem = OrderItemRes.GetOrderItemsWithOrderID(i.OrderID);
             //    foreach (var item in listOrderItem)
@@ -433,7 +433,8 @@ namespace WedStore.Controllers
         //ManagerOrder
         public ActionResult ManagerOrder()
         {
-            var lstInfoOrder = ChiTietDonHangDB.InfoOrder_GetAll();
+         //  var lstInfoOrder = ChiTietDonHangDB.InfoOrder_GetAll();
+          var lstInfoOrder = DonHangDB.LayDanhSachDonHangVoiThongTinND();
             return View(lstInfoOrder);
         }    
         public ActionResult ManagerPublisher()
@@ -441,8 +442,10 @@ namespace WedStore.Controllers
             var lstInfoOrder = NhaXuatBanDB.ListNhaXuatBans();
             return View(lstInfoOrder);
         }
+
+
         // delete InfoOrder
-        public ActionResult DeleteOrder(string id)//InfoOrderID
+        public ActionResult DeleteOrder(string id)//OrderDetailId
         {
             dynamic dy = new ExpandoObject();
             //lấy thông tin đơn hàng
@@ -462,7 +465,7 @@ namespace WedStore.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteOrder(string id, IFormCollection collection)//InfoOrderID
+        public ActionResult DeleteOrder(string id, IFormCollection collection)//OrderDetailId
         {
             var infoOrder = ChiTietDonHangDB.InfoOrder_GetInfoOrdersWithID(id);
             var orderItem = OrderItemRes.GetOrderItemsWithOrderID(infoOrder.OrderID);
@@ -479,7 +482,7 @@ namespace WedStore.Controllers
             return RedirectToAction(nameof(ManagerOrder));
         }
         //detail InfoOrder
-        public ActionResult DetailOrder(string id)//InfoOrderID
+        public ActionResult DetailOrder1(string id)//OrderDetailId
         {
             dynamic dy = new ExpandoObject();
             //lấy thông tin đơn hàng
@@ -496,9 +499,33 @@ namespace WedStore.Controllers
             }
             dy.lstBook = lstBook;
             return View(dy);
+        }        public ActionResult DetailOrder(string id)//OrderDetailId
+        {
+            if (string.IsNullOrEmpty(id))
+            {
+                return RedirectToAction("Index"); // Hoặc trả về một lỗi nếu id không hợp lệ
+            }
+
+            List<OrderDetail> orderDetails = ChiTietDonHangDB.LayChiTietDonHang(id); // Giả sử phương thức này lấy chi tiết đơn hàng
+            var orderInfo = DonHangDB.LayThongTinDonHangTheoId(id);
+
+            var model = new OrderDetailViewModel
+            {
+                InfoOrder = orderInfo,
+                OrderItem = orderDetails,
+                LstBook = SachDB.LaySachTheoOrderId(id)
+            };
+
+            if (orderDetails == null || orderDetails.Count == 0)
+            {
+                return NotFound(); // Trả về lỗi 404 nếu không tìm thấy chi tiết đơn hàng
+            }
+
+            // Trả về View và truyền dữ liệu chi tiết đơn hàng
+            return View(model); // Trả về View với model đã được cấu trúc đúng
         }
         // edit InfoOrder
-        public ActionResult EditOrder(string id)////InfoOrderID
+        public ActionResult EditOrder1(string id)////OrderDetailId
         {
             dynamic dy = new ExpandoObject();
             //lấy thông tin đơn hàng
@@ -515,28 +542,102 @@ namespace WedStore.Controllers
             }
             dy.lstBook = lstBook;
             return View(dy);
+
+
+        }   
+        
+        
+        public ActionResult EditOrder(string id)////OrderDetailId
+        {
+            if (string.IsNullOrEmpty(id))
+            {
+                return RedirectToAction("Index"); // Hoặc trả về một lỗi nếu id không hợp lệ
+            }
+
+            List<OrderDetail> orderDetails = ChiTietDonHangDB.LayChiTietDonHang(id); // Giả sử phương thức này lấy chi tiết đơn hàng
+            var orderInfo = DonHangDB.LayThongTinDonHangTheoId(id);
+
+            var model = new OrderDetailViewModel
+            {
+                InfoOrder = orderInfo,
+                OrderItem = orderDetails,
+                LstBook = SachDB.LaySachTheoOrderId(id)
+            };
+
+            if (orderDetails == null || orderDetails.Count == 0)
+            {
+                return NotFound(); // Trả về lỗi 404 nếu không tìm thấy chi tiết đơn hàng
+            }
+
+            // Trả về View và truyền dữ liệu chi tiết đơn hàng
+            return View(model); // Trả về View với model đã được cấu trúc đúng
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult EditOrder(InfoOrder infoOrder)
+        public ActionResult EditOrder(OrderDetails infoOrder)
         {
             ChiTietDonHangDB.InfoOrder_Update(infoOrder);
+
+
             return RedirectToAction(nameof(ManagerOrder));
         }
         //update status InfoOrder
-        public ActionResult InfoOrderComplete(string id)
+        public ActionResult InfoOrderComplete1(string id)
         {
             var infoOrder = ChiTietDonHangDB.InfoOrder_GetInfoOrdersWithID(id);
             infoOrder.Status = 1;
             ChiTietDonHangDB.InfoOrder_Update(infoOrder);
             return RedirectToAction(nameof(ManagerOrder));
+        }    public ActionResult InfoOrderComplete(string id)
+        {
+            if (string.IsNullOrEmpty(id))
+            {
+                return RedirectToAction("Index"); // Hoặc xử lý lỗi nếu orderId không hợp lệ
+            }
+
+            // Cập nhật trạng thái đơn hàng
+            bool isUpdated = DonHangDB.CapNhatTrangThaiDonHang(id,1);
+
+            if (isUpdated)
+            {
+                // Chuyển hướng đến trang quản lý đơn hàng hoặc thông báo thành công
+                return RedirectToAction("ManagerOrder");
+            }
+            else
+            {
+                // Xử lý lỗi nếu cập nhật không thành công
+                ViewBag.ErrorMessage = "Cập nhật trạng thái đơn hàng không thành công.";
+                return View("Error"); // Hoặc chuyển đến trang thông báo lỗi
+            }
         }
-        public ActionResult InfoOrderIncomplete(string id)
+        public ActionResult InfoOrderIncomplete1(string id)
         {
             var infoOrder = ChiTietDonHangDB.InfoOrder_GetInfoOrdersWithID(id);
             infoOrder.Status = 0;
             ChiTietDonHangDB.InfoOrder_Update(infoOrder);
             return RedirectToAction(nameof(ManagerOrder));
+        }        public ActionResult InfoOrderIncomplete(string id)
+        {
+            if (string.IsNullOrEmpty(id))
+            {
+                return RedirectToAction("Index"); // Hoặc xử lý lỗi nếu orderId không hợp lệ
+            }
+
+            // Cập nhật trạng thái đơn hàng
+            bool isUpdated = DonHangDB.CapNhatTrangThaiDonHang(id, 0);
+
+            if (isUpdated)
+            {
+                // Chuyển hướng đến trang quản lý đơn hàng hoặc thông báo thành công
+                return RedirectToAction(nameof(ManagerOrder));
+
+            }
+            else
+            {
+                // Xử lý lỗi nếu cập nhật không thành công
+                ViewBag.ErrorMessage = "Cập nhật trạng thái đơn hàng không thành công.";
+                return View("Error"); // Hoặc chuyển đến trang thông báo lỗi
+            }
         }
     }
 }

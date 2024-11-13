@@ -11,9 +11,9 @@ namespace WedStore.Repositories
 {
     public class ChiTietDonHangDB
     {
-        public static bool InfoOrder_create(InfoOrder infoOrder)// tạo đơn hàng mới
+        public static bool InfoOrder_create(OrderDetails infoOrder)// tạo đơn hàng mới
         {
-            object[] value = { infoOrder.InfoOrderID, infoOrder.OrderID, infoOrder.Name,
+            object[] value = { infoOrder.OrderDetailId, infoOrder.OrderID, infoOrder.Name,
                                infoOrder.Email, infoOrder.Phone,infoOrder. Address,
                                infoOrder.TotalPrice, infoOrder.Status };
             SQLCommand connection = new SQLCommand(ConnectStringValue.ConnectString);
@@ -25,7 +25,7 @@ namespace WedStore.Repositories
             }
             return false;
         }
-        public static InfoOrder InfoOrder_GetInfoOrdersWithID(string id)
+        public static OrderDetails InfoOrder_GetInfoOrdersWithID(string id)
         {
             object[] value = { id };
             SQLCommand connection = new SQLCommand(ConnectStringValue.ConnectString);
@@ -34,22 +34,22 @@ namespace WedStore.Repositories
             {
                 foreach (DataRow dr in result.Rows)
                 {
-                    InfoOrder infoOrder = new InfoOrder();
-                    infoOrder.InfoOrderID = dr["InfoOrderID"].ToString();
+                    OrderDetails infoOrder = new OrderDetails();
+                    infoOrder.OrderDetailId = dr["InfoOrderID"].ToString();
                     infoOrder.OrderID = dr["OrderID"].ToString();
                     infoOrder.Name = dr["Name"].ToString();
                     infoOrder.Email = dr["Email"].ToString();
                     infoOrder.Phone = dr["Phone"].ToString();
                     infoOrder.Address = dr["Address"].ToString();
 
-                    infoOrder.TotalPrice = string.IsNullOrEmpty(dr["TotalPrice"].ToString()) ? 0 : int.Parse(dr["TotalPrice"].ToString());
+                    infoOrder.TotalPrice = string.IsNullOrEmpty(dr["TotalPrice"].ToString()) ? 0 : Decimal.Parse(dr["TotalPrice"].ToString());
                     infoOrder.Status = string.IsNullOrEmpty(dr["Status"].ToString()) ? 0 : int.Parse(dr["Status"].ToString());
                     return infoOrder;
                 }
             }
             return null;
         }
-        public static InfoOrder InfoOrder_GetInfoOrdersWithOrderID(string id)
+        public static OrderDetails InfoOrder_GetInfoOrdersWithOrderID(string id)
         {
             object[] value = { id };
             SQLCommand connection = new SQLCommand(ConnectStringValue.ConnectString);
@@ -58,15 +58,15 @@ namespace WedStore.Repositories
             {
                 foreach (DataRow dr in result.Rows)
                 {
-                    InfoOrder infoOrder = new InfoOrder();
-                    infoOrder.InfoOrderID = dr["InfoOrderID"].ToString();
+                    OrderDetails infoOrder = new OrderDetails();
+                    infoOrder.OrderDetailId = dr["InfoOrderID"].ToString();
                     infoOrder.OrderID = dr["OrderID"].ToString();
                     infoOrder.Name = dr["Name"].ToString();
                     infoOrder.Email = dr["Email"].ToString();
                     infoOrder.Phone = dr["Phone"].ToString();
                     infoOrder.Address = dr["Address"].ToString();
 
-                    infoOrder.TotalPrice = string.IsNullOrEmpty(dr["TotalPrice"].ToString()) ? 0 : int.Parse(dr["TotalPrice"].ToString());
+                    infoOrder.TotalPrice = string.IsNullOrEmpty(dr["TotalPrice"].ToString()) ? 0 : Decimal.Parse(dr["TotalPrice"].ToString());
                     infoOrder.Status = string.IsNullOrEmpty(dr["Status"].ToString()) ? 0 : int.Parse(dr["Status"].ToString());
                     return infoOrder;
                 }
@@ -74,25 +74,25 @@ namespace WedStore.Repositories
             return null;
         }
 
-        public static List<InfoOrder> InfoOrder_GetInfoOrderWithEmail(string email)
+        public static List<OrderDetails> InfoOrder_GetInfoOrderWithEmail(string email)
         {
             object[] value = { email };
             SQLCommand connection = new SQLCommand(ConnectStringValue.ConnectString);
             DataTable result = connection.Select("InfoOrder_GetInfoOrderWithEmail", value);
-            List<InfoOrder> lstInfoOrder = new List<InfoOrder>();
+            List<OrderDetails> lstInfoOrder = new List<OrderDetails>();
             if (connection.errorCode == 0 && connection.errorMessage == "")
             {
                 foreach (DataRow dr in result.Rows)
                 {
-                    InfoOrder infoOrder = new InfoOrder();
-                    infoOrder.InfoOrderID = dr["InfoOrderID"].ToString();
+                    OrderDetails infoOrder = new OrderDetails();
+                    infoOrder.OrderDetailId = dr["InfoOrderID"].ToString();
                     infoOrder.OrderID = dr["OrderID"].ToString();
                     infoOrder.Name = dr["Name"].ToString();
                     infoOrder.Email = dr["Email"].ToString();
                     infoOrder.Phone = dr["Phone"].ToString();
                     infoOrder.Address = dr["Address"].ToString();
 
-                    infoOrder.TotalPrice = string.IsNullOrEmpty(dr["TotalPrice"].ToString()) ? 0 : int.Parse(dr["TotalPrice"].ToString());
+                    infoOrder.TotalPrice = string.IsNullOrEmpty(dr["TotalPrice"].ToString()) ? 0 : Decimal.Parse(dr["TotalPrice"].ToString());
                     infoOrder.Status = string.IsNullOrEmpty(dr["Status"].ToString()) ? 0 : int.Parse(dr["Status"].ToString());
 
                     lstInfoOrder.Add(infoOrder);
@@ -100,24 +100,24 @@ namespace WedStore.Repositories
             }
             return lstInfoOrder;
         }
-        public static List<InfoOrder> InfoOrder_GetAll() {
+        public static List<OrderDetails> InfoOrder_GetAll() {
             object[] value = { };
             SQLCommand connection = new SQLCommand(ConnectStringValue.ConnectString);
             DataTable result = connection.Select("InfoOrder_GetAll", value);
-            List<InfoOrder> lstInfoOrder = new List<InfoOrder>();
+            List<OrderDetails> lstInfoOrder = new List<OrderDetails>();
             if (connection.errorCode == 0 && connection.errorMessage == "")
             {
                 foreach (DataRow dr in result.Rows)
                 {
-                    InfoOrder infoOrder = new InfoOrder();
-                    infoOrder.InfoOrderID = dr["InfoOrderID"].ToString();
+                    OrderDetails infoOrder = new OrderDetails();
+                    infoOrder.OrderDetailId = dr["InfoOrderID"].ToString();
                     infoOrder.OrderID = dr["OrderID"].ToString();
                     infoOrder.Name = dr["Name"].ToString();
                     infoOrder.Email = dr["Email"].ToString();
                     infoOrder.Phone = dr["Phone"].ToString();
                     infoOrder.Address = dr["Address"].ToString();
 
-                    infoOrder.TotalPrice = string.IsNullOrEmpty(dr["TotalPrice"].ToString()) ? 0 : int.Parse(dr["TotalPrice"].ToString());
+                    infoOrder.TotalPrice = string.IsNullOrEmpty(dr["TotalPrice"].ToString()) ? 0 : decimal.Parse(dr["TotalPrice"].ToString());
                     infoOrder.Status = string.IsNullOrEmpty(dr["Status"].ToString()) ? 0 : int.Parse(dr["Status"].ToString());
 
                     lstInfoOrder.Add(infoOrder);
@@ -169,9 +169,65 @@ namespace WedStore.Repositories
 				}
 			}
 		}
-		public static bool InfoOrder_Update(InfoOrder infoOrder)
+
+        public static List<OrderDetail> LayChiTietDonHang(string orderId)
         {
-            object[] value = { infoOrder.InfoOrderID, infoOrder.OrderID, infoOrder.Name,
+            List<OrderDetail> orderDetails = new List<OrderDetail>();
+
+            // Mở kết nối đến cơ sở dữ liệu
+            using (SqlConnection connection = new SqlConnection(ConnectStringValue.ConnectStringMyDB))
+            {
+                connection.Open();
+
+                string query = @"
+        SELECT 
+            ctdh.id AS DetailID,
+            ctdh.sach_id,
+            s.tieude AS BookTitle,
+                s.moTa AS BookDescription,
+                s.HinhAnh AS BookImage,  -- Lấy ảnh sách từ cột 'anh'
+            ctdh.soLuong,
+            ctdh.giaDonVi,
+            (ctdh.soLuong * ctdh.giaDonVi) AS TotalPrice
+        FROM ChiTietDonHang ctdh
+        JOIN Sach s ON ctdh.sach_id = s.id
+        WHERE ctdh.donhang_id = @OrderID;
+        ";
+
+                // Thực thi truy vấn và lấy dữ liệu
+                using (SqlCommand cmd = new SqlCommand(query, connection))
+                {
+                    // Thêm tham số OrderID vào câu lệnh SQL
+                    cmd.Parameters.AddWithValue("@OrderID", orderId);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            OrderDetail detail = new OrderDetail
+                            {
+                                DetailID = reader["DetailID"].ToString(),
+                                BookId = reader["sach_id"].ToString(),
+                                BookTitle = reader["BookTitle"].ToString(),
+                                SoLuong = Convert.ToInt32(reader["soLuong"]),
+                                BookDescription = reader["BookDescription"].ToString(),
+                                BookImage = reader["BookImage"].ToString(),
+                                GiaDonVi = Convert.ToDecimal(reader["giaDonVi"]),
+                                TotalPrice = Convert.ToDecimal(reader["TotalPrice"])
+                            };
+
+                            orderDetails.Add(detail);
+                        }
+                    }
+                }
+            }
+
+            return orderDetails;
+        }
+
+        public static bool InfoOrder_Update(OrderDetails infoOrder)
+        {
+            object[] value = { infoOrder.OrderDetailId, infoOrder.OrderID, infoOrder.Name,
                                infoOrder.Email, infoOrder.Phone,infoOrder. Address,
                                infoOrder.TotalPrice, infoOrder.Status };
             SQLCommand connection = new SQLCommand(ConnectStringValue.ConnectString);

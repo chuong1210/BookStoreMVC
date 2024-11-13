@@ -1,15 +1,14 @@
-﻿@using WebStore.Models
-@model dynamic
+﻿@model WebStore.Models.OrderDetailViewModel
 
 @{
-    ViewData["Title"] = "DeleteOrder";
+    ViewData["Title"] = "DetailOrder";
     Layout = "~/Views/Shared/_ManagerLayout.cshtml";
 }
 
 <h1>Detail</h1>
 
 <div>
-    <h4>InfoOrder</h4>
+    <h4>Order Information</h4>
     <hr />
     <div class="row">
         <div class="col-sm-8">
@@ -17,25 +16,20 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <th class="col-md-2"></th>
-                            <th class="col-md-6">
-                                Tên sách
-                            </th>
-                            <th class="col-md-4">
-                                Số lượng
-                            </th>
+                            <th class="col-md-2">Image</th>
+                            <th class="col-md-6">Book Title</th>
+                            <th class="col-md-4">Quantity</th>
                             <th></th>
                         </tr>
                     </thead>
                     <tbody>
-
-                        @foreach (var item in @Model.orderItem)
+                        @foreach (var item in Model.OrderItem)
                         {
-                            <tr>
-                                @foreach (var book in Model.lstBook)
+                            @foreach (var book in Model.LstBook)
+                            {
+                                if (item.BookId == book.BookID)
                                 {
-                                    if (item.BookID == book.BookID)
-                                    {
+                                    <tr>
                                         <td>
                                             <span class="image">
                                                 <img src="/images/@book.Image" height="120" width="110" alt="" />
@@ -44,65 +38,52 @@
                                         <td>
                                             @book.BookName
                                         </td>
-                                    }
+                                        <td>
+                                            @item.SoLuong
+                                        </td>
+                                    </tr>
                                 }
-                                <td>
-                                    @item.Quantity
-                                </td>
-                            </tr>
+                            }
                         }
                     </tbody>
                 </table>
             </div>
         </div>
+
         <div class="col-sm-4">
             <div class="row">
-                <label class="col-sm-3">
-                    InfoOrderID
-                </label>
+                <label class="col-sm-3">Order ID</label>
                 <div class="col-sm-9">
-                    @Model.infoOrder.InfoOrderID
+                    @Model.InfoOrder.OrderID
                 </div>
-                <label class="col-sm-3">
-                    Name
-                </label>
+                <label class="col-sm-3">Name</label>
                 <div class="col-sm-9">
-                    @Model.infoOrder.Name
+                    @Model.InfoOrder.Name
                 </div>
-                <label class="col-sm-3">
-                    Email
-                </label>
+                <label class="col-sm-3">Email</label>
                 <div class="col-sm-9">
-                    @Model.infoOrder.Email
+                    @Model.InfoOrder.Email
                 </div>
-                <label class="col-sm-3">
-                    Phone
-                </label>
+                <label class="col-sm-3">Phone</label>
                 <div class="col-sm-9">
-                    @Model.infoOrder.Phone
+                    @Model.InfoOrder.Phone
                 </div>
-                <label class="col-sm-3">
-                    Address
-                </label>
+                <label class="col-sm-3">Address</label>
                 <div class="col-sm-9">
-                    @Model.infoOrder.Address
+                    @Model.InfoOrder.Address
                 </div>
-                <label class="col-sm-3">
-                    TotalPrice
-                </label>
+                <label class="col-sm-3">Total Price</label>
                 <div class="col-sm-9">
-                    @Model.infoOrder.TotalPrice
+                    @Model.InfoOrder.TotalPrice.ToString("C")
                 </div>
-                <label class="col-sm-3">
-                    Status
-                </label>
+                <label class="col-sm-3">Status</label>
                 <div class="col-sm-9">
-                    @Model.infoOrder.Status
+                    @Model.InfoOrder.StatusString
                 </div>
             </div>
         </div>
     </div>
 
-    <a class="button" href="@Url.Action("EditOrder",new { id = @Model.infoOrder.InfoOrderID })">Edit</a>
-    <a class="button" asp-action="ManagerOrder">Back to List</a>
+    <a class="button" href="@Url.Action("EditOrder", new { id = Model.InfoOrder.OrderID })">Edit</a>
+    <a class="button" href="@Url.Action("ManagerOrder")">Back to List</a>
 </div>

@@ -39,4 +39,12 @@ namespace WebStore.Models
 
     }
 
+    public class OrderDetailViewModel
+    {
+        public OrderDetails InfoOrder { get; set; }
+        public List<OrderDetail> OrderItem { get; set; }
+        public List<SachDTO> LstBook { get; set; }
+    }
+
+
 }

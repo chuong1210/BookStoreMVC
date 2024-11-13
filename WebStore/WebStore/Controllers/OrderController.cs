@@ -25,9 +25,11 @@ namespace WedStore.Controllers
 
 		}
 
+
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult AddToCart(OrderItem orderItem)
+        public ActionResult AddToCart1(OrderItem orderItem)
         {
             bool result1 = DonHangDB.checkOrders(userName);// kiểm tra có giỏ hàng chưa
 
@@ -55,6 +57,14 @@ namespace WedStore.Controllers
                 OrderItemRes.createOrderItem(orderItem);
             }
             return RedirectToAction("Cart", "Order");
+        } [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult AddToCart(OrderItem orderItem)
+        {
+            bool ab=DonHangDB.AddToCart(idND, orderItem.BookID, orderItem.Quantity);
+            if (ab)
+            return RedirectToAction("Cart", "Order");
+            return RedirectToAction("Index", "Home");
         }
         public ActionResult Cart()
         {
@@ -130,7 +140,7 @@ namespace WedStore.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Checkout(InfoOrder infoOrder)
+        public ActionResult Checkout(OrderDetails infoOrder)
         {
             Orders orders = DonHangDB.GetOrdersUserOnStatus(userName, 1);
 
@@ -143,7 +153,7 @@ namespace WedStore.Controllers
             {
                 id = rnd.Next(100000, 999999);
             }
-            infoOrder.InfoOrderID = id.ToString();
+            infoOrder.OrderDetailId = id.ToString();
             //tạo đơn hàng
             ChiTietDonHangDB.InfoOrder_create(infoOrder);
             //cập nhật trạng thái giỏ hàng = 2
@@ -157,7 +167,7 @@ namespace WedStore.Controllers
             dynamic dy = new ExpandoObject();
             dy.booktypeNAV = TheLoaiSachDB.GetAllType();
             //lấy danh sách các giỏ hàng của user bằng email
-            List<InfoOrder> lstOrder = ChiTietDonHangDB.InfoOrder_GetInfoOrderWithEmail(
+            List<OrderDetails> lstOrder = ChiTietDonHangDB.InfoOrder_GetInfoOrderWithEmail(
                                         NguoiDungDB.GetAccountWithUser(userName).Email);
             dy.lstOrder = lstOrder;
             return View(dy);
