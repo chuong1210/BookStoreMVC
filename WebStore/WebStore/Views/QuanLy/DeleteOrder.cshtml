@@ -4,6 +4,18 @@
 @{
     ViewData["Title"] = "DeleteOrder";
     Layout = "~/Views/Shared/_ManagerLayout.cshtml";
+
+    string GetPaymentMethodDisplayName(string method)
+    {
+        return method switch
+        {
+            "TheTinDung" => "Thẻ tín dụng",
+            "ChuyenKhoan" => "Chuyển khoản",
+            "TienMat" => "Tiền mặt",
+            "TheMomo" => "Thẻ MoMo",
+            _ => "Không xác định"
+        };
+    }
 }
 
 <h1>Xóa đơn hàng</h1>
@@ -57,16 +69,16 @@
         <div class="col-sm-4">
             <div class="row">
                 <label class="col-sm-3">
-                    InfoOrderID
+                    Hóa đơn ID
                 </label>
                 <div class="col-sm-9">
-                    @Model.infoOrder.InfoOrderID
+                    @Model.infoOrder.DonHangId
                 </div>
                 <label class="col-sm-3">
-                    Name
+                    Tên người đặthàng
                 </label>
                 <div class="col-sm-9">
-                    @Model.infoOrder.Name
+                    @Model.infoOrder.TenNguoiDatHang
                 </div>
                 <label class="col-sm-3">
                     Email
@@ -75,32 +87,44 @@
                     @Model.infoOrder.Email
                 </div>
                 <label class="col-sm-3">
-                    Phone
+                    Số điện thoại
                 </label>
                 <div class="col-sm-9">
-                    @Model.infoOrder.Phone
+                    @Model.infoOrder.SoDienThoai
                 </div>
                 <label class="col-sm-3">
-                    Address
+                    Địa chỉ nhận hàng
                 </label>
                 <div class="col-sm-9">
-                    @Model.infoOrder.Address
+                    @Model.infoOrder.DiaChi
                 </div>
                 <label class="col-sm-3">
-                    TotalPrice
+                    Tổng tiền
                 </label>
                 <div class="col-sm-9">
-                    @Model.infoOrder.TotalPrice
+                    @Model.infoOrder.TongTien
                 </div>
                 <label class="col-sm-3">
-                    Status
+                    Trạng thái thanh toán
                 </label>
                 <div class="col-sm-9">
-                    @Model.infoOrder.Status
+                    @Model.infoOrder.TrangThaiTT
+                </div>  
+                <label class="col-sm-3">
+                    Ngày mua hàng
+                </label>
+                <div class="col-sm-9">
+                    @Model.infoOrder.NgayLap
+                </div>
+                <label class="col-sm-3">
+                   Phương thức thanh toán
+                </label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" value="@GetPaymentMethodDisplayName(Model.infoOrder.PhuongThucTT)" readonly />
                 </div>
             </div>
             <form asp-action="DeleteOrder">
-                <input hidden name="InfoOrderID" value="@Model.infoOrder.InfoOrderID" />
+                <input hidden name="Id" value="@Model.infoOrder.Id" />
                 <input type="submit" value="Delete" class="btn btn-danger" />
             </form>
         </div>

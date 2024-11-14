@@ -9,6 +9,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using WebStore.Models;
 using WedStore.Repositories;
+using WedStore.Servicie;
 
 namespace WedStore.Controllers
 {
@@ -26,38 +27,7 @@ namespace WedStore.Controllers
 		}
 
 
-
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult AddToCart1(OrderItem orderItem)
-        {
-            bool result1 = DonHangDB.checkOrders(userName);// kiểm tra có giỏ hàng chưa
-
-            Orders orders = DonHangDB.GetOrdersUserOnStatus(userName, 1);
-
-            OrderItem item = OrderItemRes.GetOrderItemWithOrderIDBookID(orders.OrderID, orderItem.BookID);
-            if(item != null)
-            {
-                item.Quantity += orderItem.Quantity;
-                item.TotalPrice = item.Quantity * SachDB.BookWithID(orderItem.BookID).Price;
-                OrderItemRes.updateOrderItem(item);
-            }
-            else
-            {
-                Random rnd = new Random();
-                int id = rnd.Next(100000, 999999);
-                while (OrderItemRes.GetOrderItemWithID(id.ToString()) != null)
-                {
-                    id = rnd.Next(100000, 999999);
-                }
-                orderItem.ItemID = id.ToString();
-                orderItem.OrderID = orders.OrderID;
-                orderItem.TotalPrice = orderItem.Quantity * SachDB.BookWithID(orderItem.BookID).Price;
-                orderItem.Discount = 0;
-                OrderItemRes.createOrderItem(orderItem);
-            }
-            return RedirectToAction("Cart", "Order");
-        } [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult AddToCart(OrderItem orderItem)
         {
@@ -74,12 +44,18 @@ namespace WedStore.Controllers
 
 			//bool result1 = DonHangDB.checkOrders(userName);
 
-			//   Orders orders =DonHangDB.GetOrdersUserOnStatus(userName, 1);
-			  Orders orders =DonHangDB.LayDanhSachOrderTheoTrangThai(userName, 0);
+			//   DonHang orders =DonHangDB.GetOrdersUserOnStatus(userName, 1);
+			  DonHang orders =DonHangDB.LayOrderTheoTrangThai(userName, 0);
+            if (orders == null)
+            {
+                // Nếu không có đơn hàng nào có trạng thái = 0, truyền thông báo cho View
+                dy.emptyCart = true;
+                return View(dy);
+            }
+            dy.emptyCart = false;
 
-
-		//	List<OrderItem> lstOrderItem = OrderItemRes.GetOrderItemsWithOrderID(orders.OrderID);
-			List<OrderItem> lstOrderItem = OrderItemRes.LayChiTietDonHangTheoDonHang(orders.OrderID);
+            //	List<OrderItem> lstOrderItem = ChiTietHoaDonDB.GetOrderItemsWithOrderID(orders.OrderID);
+            List<OrderItem> lstOrderItem = ChiTietHoaDonDB.LayChiTietDonHangTheoDonHang(orders.OrderID);
             dy.orderItem = lstOrderItem;
             decimal totalPrice = 0; 
             List<SachDTO> lstBook = new List<SachDTO>();//danh sách thông tin sách từ Item
@@ -87,7 +63,7 @@ namespace WedStore.Controllers
             {
                 foreach (var item in lstOrderItem)
                 {
-                    //cộng giá Item vào Orders
+                    //cộng giá Item vào DonHang
                     totalPrice += item.TotalPrice;
                     // cập nhật tổng giá thì giỏ hàng
                     orders.OrderPrice = totalPrice;
@@ -119,13 +95,14 @@ namespace WedStore.Controllers
             dy.orders = orders;
             return View(dy);
         }
+       
         public ActionResult Checkout()
         {
             dynamic dy = new ExpandoObject();
-            dy.booktypeNAV = TheLoaiSachDB.GetAllType();
-            dy.account = NguoiDungDB.GetAccountWithUser(userName);
-            //tìm giỏ hàng của user trạng thái =1
-            Orders orders = DonHangDB.GetOrdersUserOnStatus(userName, 1);
+            dy.booktypeNAV = TheLoaiSachDB.ListTheLoai();
+            dy.account = NguoiDungDB.LayChiTietNguoiDungTheoId(idND);
+            //tìm giỏ hàng của user trạng thái =0
+            DonHang orders = DonHangDB.LayOrderTheoTrangThai(idND, 0);
             if(orders == null)
             {
                 return Redirect("/");
@@ -138,56 +115,59 @@ namespace WedStore.Controllers
             dy.totalPrice = orders.OrderPrice + 20000;
             return View(dy);
         }
+       
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Checkout(OrderDetails infoOrder)
+        public ActionResult Checkout(HoaDonDTO hd)
         {
-            Orders orders = DonHangDB.GetOrdersUserOnStatus(userName, 1);
+            // Lấy phương thức thanh toán từ form
+            var paymentMethod = Request.Form["PaymentMethod"];
+            DonHang orders = DonHangDB.LayOrderTheoTrangThai(idND, 0);
+            hd.NgayLap = DateTime.Now;
+            hd.PhuongThucTT = paymentMethod.ToString();
+            hd.DonHangId = orders.OrderID;
+            hd.TongTien = orders.OrderPrice + 20000;
 
-            infoOrder.OrderID = orders.OrderID;
-            infoOrder.TotalPrice = orders.OrderPrice + 20000;
-            //random id cho thông tin đơn hàng
-            Random rnd = new Random();
-            int id = rnd.Next(100000, 999999);
-            while (ChiTietDonHangDB.InfoOrder_GetInfoOrdersWithID(id.ToString()) != null)
-            {
-                id = rnd.Next(100000, 999999);
-            }
-            infoOrder.OrderDetailId = id.ToString();
-            //tạo đơn hàng
-            ChiTietDonHangDB.InfoOrder_create(infoOrder);
-            //cập nhật trạng thái giỏ hàng = 2
-            orders.OrderStatus = 2;
-            DonHangDB.Orders_Update(orders);
+            bool rs = HoaDonDB.ThanhToanDonHang(hd);
+
+
             return Redirect("OrdersList");
         }
 
         public ActionResult OrdersList()// danh sách đơn hàng
         {
             dynamic dy = new ExpandoObject();
-            dy.booktypeNAV = TheLoaiSachDB.GetAllType();
+            dy.booktypeNAV = TheLoaiSachDB.ListTheLoai();
             //lấy danh sách các giỏ hàng của user bằng email
-            List<OrderDetails> lstOrder = ChiTietDonHangDB.InfoOrder_GetInfoOrderWithEmail(
-                                        NguoiDungDB.GetAccountWithUser(userName).Email);
+            //List<DonHang> lstOrder = DonHangDB.LayDanhSachOrderTheoTrangThai(idND,1);
+            List<HoaDonDTO> lstOrder = HoaDonDB.LayHoaDonTheoUserId(idND);
+            if(lstOrder==null)
+            {
+                ViewBag.msgErr = true;
+                return View();
+            }
+          
+            ViewBag.msgErr = false;
+
             dy.lstOrder = lstOrder;
             return View(dy);
         }
         public ActionResult InfoOrderDetail(string id)
         {
             dynamic dy = new ExpandoObject();
-            dy.booktypeNAV = TheLoaiSachDB.GetAllType();
+            dy.booktypeNAV = TheLoaiSachDB.ListTheLoai();
 
-            var infoOrder = ChiTietDonHangDB.InfoOrder_GetInfoOrdersWithID(id);
+            var infoOrder = HoaDonDB.LayHoaDonTheoId(id);
             
             //lấy danh sách item trong giỏ hàng bằng OrderID
-            List<OrderItem> lstOrderItem = OrderItemRes.GetOrderItemsWithOrderID(infoOrder.OrderID);
+            List<OrderItem> lstOrderItem = ChiTietHoaDonDB.LayChiTietDonHangTheoDonHang(infoOrder.DonHangId);
             dy.orderItem = lstOrderItem;
 
             //tìm thông tin sách từ List OrderItem trong giỏ hàng
             List<SachDTO> lstBook = new List<SachDTO>();
             foreach (var item in lstOrderItem)
             {
-                lstBook.Add(SachDB.BookWithID(item.BookID));
+                lstBook.Add(SachDB.SachTheoId(item.BookID));
             }
             dy.lstBook = lstBook;
             dy.infoOrder = infoOrder;
@@ -196,7 +176,7 @@ namespace WedStore.Controllers
         public ActionResult DeleteItem(string id)
         {
             //xóa item trong giỏ hàng
-            OrderItemRes.deleteOrderItem(id);//ItemID
+            ChiTietHoaDonDB.deleteOrderItem(id);//ItemID
             return RedirectToAction("Cart");
         }
         [HttpPost]
@@ -204,8 +184,8 @@ namespace WedStore.Controllers
         public ActionResult EditItem(OrderItem orderItem,string add, string sub)
         {
             //lấy thông tin item bằng ItemID
-           // OrderItem orderItem1 = OrderItemRes.GetOrderItemWithID(orderItem.ItemID);
-            OrderItem orderItem1 = OrderItemRes.LayChiTietDonHangTheoIdCTDH(orderItem.ItemID);
+           // OrderItem orderItem1 = ChiTietHoaDonDB.GetOrderItemWithID(orderItem.ItemID);
+            OrderItem orderItem1 = ChiTietHoaDonDB.LayChiTietDonHangTheoIdCTDH(orderItem.ItemID);
             //qiá sản phẩm
             decimal price = orderItem1.TotalPrice / orderItem1.Quantity;
             //nếu nhấm button "add" thì tăng sản phẩm lên 1 ngược lại "sub"  giảm 1
@@ -213,8 +193,8 @@ namespace WedStore.Controllers
             {
                 orderItem1.Quantity ++;
                 //orderItem1.TotalPrice = price * orderItem1.Quantity;
-				//OrderItemRes.updateOrderItem(orderItem1);
-				OrderItemRes.capnhatChiTietDonHang(orderItem1);
+				//ChiTietHoaDonDB.updateOrderItem(orderItem1);
+				ChiTietHoaDonDB.capnhatChiTietDonHang(orderItem1);
 
 			}
 			else if(sub != null)
@@ -223,13 +203,13 @@ namespace WedStore.Controllers
                 if(orderItem1.Quantity != 0)
                 {
                    // orderItem1.TotalPrice = price * orderItem1.Quantity;
-                    //OrderItemRes.updateOrderItem(orderItem1);
-                    OrderItemRes.capnhatChiTietDonHang(orderItem1);
+                    //ChiTietHoaDonDB.updateOrderItem(orderItem1);
+                    ChiTietHoaDonDB.capnhatChiTietDonHang(orderItem1);
                 }
                 else
                 {
-                   // OrderItemRes.deleteOrderItem(orderItem1.ItemID);
-                    OrderItemRes.xoaChiTietDonHang(orderItem1.ItemID);
+                   // ChiTietHoaDonDB.deleteOrderItem(orderItem1.ItemID);
+                    ChiTietHoaDonDB.xoaChiTietDonHang(orderItem1.ItemID);
                 }
             }
             return RedirectToAction("Cart");

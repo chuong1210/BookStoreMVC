@@ -281,7 +281,275 @@ INSERT INTO TacGia_Sach (sach_id, tacgia_id) VALUES
 ('S004', 'TG004'),
 ('S005', 'TG005'),
 ('S006', 'TG006');
+-- BACK UP AND RESTORE
 
+-- BACK UP
+
+---Bài 2) Viết câu lệnh backup và restore cho database đủ 3 trạng thái 
+--là full-backup, diff-backup và log-backup. Có minh họa ví dụ phục hồi dữ liệu
+
+--phuc hoi du lieu voi mo hinh simple
+--chon mo hinh phuc hoi la simple recovery
+ALTER DATABASE QL_BANSACH SET RECOVERY SIMPLE;
+--FULL BACKUP
+
+backup database QL_BANSACH
+TO DISK ='C:\LUUDULIEUSINHVIEN\HEQTCLDL\NHOM4\saoluu_simple\QL_BANSACH_FULLBACKUP.bak'
+with init, description ='Backup db QL_BANSACH at 7:00 PM'
+
+--thêm dữ liệu vào bảng sách
+INSERT INTO Sach (id, tieude, theloai_id, gia, soLuongTon, hinhAnh, namXuatBan, nxb_id, moTa) VALUES
+('S007', N'Cuốn theo chiều gió', 'TL009', 85000, 120, 'cuon_theo_chieu_gio.jpg', 1936, 'NXB008', N'Tác phẩm nổi tiếng về tình yêu và chiến tranh.')
+--DIFF-BACKUP
+BACKUP DATABASE QL_BANSACH
+TO DISK ='C:\LUUDULIEUSINHVIEN\HEQTCLDL\NHOM4\saoluu_simple\QL_BANSACH_DIFFBACKUP.bak'
+with differential;
+--RESTORE
+
+restore database QL_BANSACH
+FROM DISK ='C:\LUUDULIEUSINHVIEN\HEQTCLDL\NHOM4\saoluu_simple\QL_BANSACH_FULLBACKUP.bak'
+WITH NORECOVERY
+
+restore database QL_BANSACH
+FROM DISK='C:\LUUDULIEUSINHVIEN\HEQTCLDL\NHOM4\saoluu_simple\QL_BANSACH_DIFFBACKUP.bak'
+WITH RECOVERY
+
+--chon mo hinh phuc hoi la full recovery
+ALTER DATABASE QL_BANSACH SET RECOVERY FULL;
+--FULL-BACKUP
+backup database QL_BANSACH
+TO DISK ='C:\LUUDULIEUSINHVIEN\HEQTCLDL\NHOM4\saoluu\QL_BANSACH_FULLBACKUP.bak'
+with init, description ='Backup db QL_BANSACH at 7:00 PM'
+
+--thêm dữ liệu vào bảng sách
+INSERT INTO Sach (id, tieude, theloai_id, gia, soLuongTon, hinhAnh, namXuatBan, nxb_id, moTa) VALUES
+('S007', N'Cuốn theo chiều gió', 'TL009', 85000, 120, 'cuon_theo_chieu_gio.jpg', 1936, 'NXB008', N'Tác phẩm nổi tiếng về tình yêu và chiến tranh.')
+--DIFF-BACKUP
+BACKUP DATABASE QL_BANSACH
+TO DISK ='C:\LUUDULIEUSINHVIEN\HEQTCLDL\NHOM4\saoluu\QL_BANSACH_DIFFBACKUP.bak'
+with differential;
+--them du lieu vao bang sach
+INSERT INTO Sach (id, tieude, theloai_id, gia, soLuongTon, hinhAnh, namXuatBan, nxb_id, moTa) VALUES
+('S008', N'Hoa vàng trên cỏ xanh', 'TL013', 68000, 90, 'hoa_vang_tren_co_xanh.jpg', 2010, 'NXB001', N'Câu chuyện tuổi thơ ở vùng nông thôn yên bình Việt Nam.');
+--LOG-BACKUP
+BACKUP LOG QL_BANSACH
+TO DISK='C:\LUUDULIEUSINHVIEN\HEQTCLDL\NHOM4\saoluu\QL_BANSACH_LOGBACKUP.trn'
+WITH DESCRIPTION ='QL_BANSACH log backup'
+--them du lieu vao bang sach
+INSERT INTO Sach (id, tieude, theloai_id, gia, soLuongTon, hinhAnh, namXuatBan, nxb_id, moTa) VALUES
+('S009', N'Bí mật của Phan Thiên Ân', 'TL010', 95000, 100, 'bi_mat_cua_phan_thien_an.jpg', 2003, 'NXB002', N'Cuốn sách chứa những bài học sâu sắc về cuộc sống.');
+
+--LOG-BACKUP
+BACKUP LOG QL_BANSACH
+TO DISK='C:\LUUDULIEUSINHVIEN\HEQTCLDL\NHOM4\saoluu\QL_BANSACH_LOGBACKUP.trn'
+WITH DESCRIPTION ='QL_BANSACH log backup'
+
+INSERT INTO Sach (id, tieude, theloai_id, gia, soLuongTon, hinhAnh, namXuatBan, nxb_id, moTa) VALUES
+('S0010', N'Bí mật của Phan Thiên Ân', 'TL010', 95000, 100, 'bi_mat_cua_phan_thien_an.jpg', 2003, 'NXB002', N'Cuốn sách chứa những bài học sâu sắc về cuộc sống.');
+
+--sao luu taillog
+BACKUP LOG QL_BANSACH
+TO DISK ='C:\LUUDULIEUSINHVIEN\HEQTCLDL\NHOM4\saoluu\QL_BANSACH_taillog.trn'
+with norecovery
+
+--sau khi xay ra su co
+--phuc hoi du lieu voi mo hinh full
+
+
+--phuc hoi file backup gan nhat
+restore database QL_BANSACH
+FROM DISK ='C:\LUUDULIEUSINHVIEN\HEQTCLDL\NHOM4\saoluu\QL_BANSACH_FULLBACKUP.bak'
+WITH NORECOVERY
+--Phuc hoi file differential backup
+restore database QL_BANSACH
+FROM DISK='C:\LUUDULIEUSINHVIEN\HEQTCLDL\NHOM4\saoluu\QL_BANSACH_DIFFBACKUP.bak'
+WITH NORECOVERY
+--Phuc hoi cac log backup tu lan differential backup gan nhat
+restore database QL_BANSACH
+from disk='C:\LUUDULIEUSINHVIEN\HEQTCLDL\NHOM4\saoluu\QL_BANSACH_LOGBACKUP.trn'
+with norecovery
+--phuc hoi file taillog
+restore database QL_BANSACH
+from disk='C:\LUUDULIEUSINHVIEN\HEQTCLDL\NHOM4\saoluu\QL_BANSACH_taillog.trn'
+with recovery
+
+
+
+
+SELECT*FROM Sach
+
+use master 
+
+
+-- RESTORE
+
+
+--A) Tạo 3 login với username lần lượt là User_Admin, User_Backup, User_Staff
+CREATE LOGIN User_Admin WITH PASSWORD = 'Password@123';
+CREATE LOGIN User_Backup WITH PASSWORD = 'Password@123';
+CREATE LOGIN User_Staff WITH PASSWORD = 'Password@123';
+
+--B) Từ 3 tài khoản login tạo 3 người dùng User_Admin, User_Backup, User_Staff và phân quyền cho cả 3 chỉ thao tác trên cơ sở dữ liệu QL_BanSach
+USE QL_BANSACH;
+
+-- Tạo người dùng trong CSDL QL_BanSach
+CREATE USER User_Admin FOR LOGIN User_Admin;
+CREATE USER User_Backup FOR LOGIN User_Backup;
+CREATE USER User_Staff FOR LOGIN User_Staff;
+
+--C) Phân quyền 1. Phân quyền User_Admin với toàn quyền (FULL quyền) trên Database QL_BanSach
+-- Cấp quyền db_owner cho User_Admin
+ALTER ROLE db_owner ADD MEMBER User_Admin;
+
+--2. Phân quyền User_Backup chỉ được quyền sao lưu (backup)
+-- Cấp quyền BACKUP DATABASE cho User_Backup
+GRANT BACKUP DATABASE TO User_Backup;
+
+--3. Phân quyền User_Staff
+-- Cấp quyền Insert, Delete, Update cho bảng Sach
+GRANT INSERT, DELETE, UPDATE ON Sach TO User_Staff;
+
+-- Cấp quyền Insert, Delete, Update cho bảng Khachhang
+GRANT INSERT, DELETE, UPDATE ON Khachhang TO User_Staff;
+
+-- Cấp quyền Insert, Delete, Update cho bảng DonHang
+GRANT INSERT, DELETE, UPDATE ON DonHang TO User_Staff;
+
+-- Cấp quyền Insert, Delete, Update cho bảng ChiTietDonHang
+GRANT INSERT, DELETE, UPDATE ON ChiTietDonHang TO User_Staff;
+
+-- Cấp quyền Insert, Delete, Update cho bảng HoaDon
+GRANT INSERT, DELETE, UPDATE ON HoaDon TO User_Staff;
+
+-- Cấp quyền SELECT cho bảng Sach, Khachhang, DonHang, ChiTietDonHang, HoaDon
+GRANT SELECT ON Sach TO User_Staff;
+GRANT SELECT ON Khachhang TO User_Staff;
+GRANT SELECT ON DonHang TO User_Staff;
+GRANT SELECT ON ChiTietDonHang TO User_Staff;
+GRANT SELECT ON HoaDon TO User_Staff;
+
+-- Cấp quyền DELETE cho tất cả các bảng trên
+GRANT DELETE ON Sach TO User_Staff;
+GRANT DELETE ON Khachhang TO User_Staff;
+GRANT DELETE ON DonHang TO User_Staff;
+GRANT DELETE ON ChiTietDonHang TO User_Staff;
+GRANT DELETE ON HoaDon TO User_Staff;
+
+--D) Thay đổi mật khẩu cho User_Admin
+ALTER LOGIN User_Admin WITH PASSWORD = 'NewPassword@456';
+
+--test
+USE QL_BANSACH;
+
+SELECT 
+    dp.name AS user_name,
+    dp.type_desc AS user_type,
+    p.class_desc,
+    o.name AS object_name,
+    p.permission_name,
+    p.state_desc AS permission_state
+FROM 
+    sys.database_principals dp
+JOIN 
+    sys.database_permissions p ON dp.principal_id = p.grantee_principal_id
+LEFT JOIN 
+    sys.objects o ON p.major_id = o.object_id
+WHERE 
+    dp.name = 'User_Staff';
+
+--Kiểm tra quyền trên bảng Sach
+USE QL_BANSACH;
+
+EXECUTE AS USER = 'User_Staff';
+
+SELECT 
+    OBJECT_NAME(major_id) AS object_name,
+    permission_name,
+    state_desc
+FROM 
+    sys.database_permissions
+WHERE 
+    major_id = OBJECT_ID('Sach');
+
+REVERT;
+
+-- Kiểm tra quyền User_Staff ở cấp độ cơ sở dữ liệu
+USE QL_BANSACH;
+
+SELECT 
+    dp.name AS user_name,
+    dp.type_desc AS user_type,
+    p.permission_name,
+    p.state_desc
+FROM 
+    sys.database_principals dp
+JOIN 
+    sys.database_permissions p ON dp.principal_id = p.grantee_principal_id
+WHERE 
+    dp.name = 'User_Staff'
+    AND p.class_desc = 'DATABASE';
+
+--Kiểm tra các quyền bị từ chối (DENY)
+USE QL_BANSACH;
+
+SELECT 
+    dp.name AS user_name,
+    dp.type_desc AS user_type,
+    p.class_desc,
+    o.name AS object_name,
+    p.permission_name,
+    p.state_desc
+FROM 
+    sys.database_principals dp
+JOIN 
+    sys.database_permissions p ON dp.principal_id = p.grantee_principal_id
+LEFT JOIN 
+    sys.objects o ON p.major_id = o.object_id
+WHERE 
+    dp.name = 'User_Staff'
+    AND p.state_desc = 'DENY';
+
+--C�u E
+
+GRANT SELECT, INSERT ON [ViewName] TO User_Staff;
+GRANT EXECUTE ON [StoredProcedureName] TO User_Staff;
+
+REVOKE SELECT, INSERT ON DonHang TO User_Staff;
+REVOKE EXECUTE ON [StoredProcedureName] TO User_Staff;
+
+--GRANT SELECT, INSERT ON DonHang TO User_Staff;
+--GRANT EXECUTE ON  TO User_Staff;
+
+--C�u F
+
+SELECT name, create_date, modify_date 
+FROM sys.database_principals 
+WHERE name = 'User_Staff';
+
+SELECT 
+    dp.name AS UserName,
+    dp.type_desc AS UserType,
+    o.name AS ObjectName,
+    p.permission_name,
+    p.state_desc AS PermissionState
+FROM 
+    sys.database_permissions p
+JOIN 
+    sys.objects o ON p.major_id = o.object_id
+JOIN 
+    sys.database_principals dp ON p.grantee_principal_id = dp.principal_id
+WHERE 
+    dp.name = 'User_Staff';
+
+--SHOW GRANTS FOR  'User_Staff';
+
+--C�u G
+
+DROP USER User_Staff;
+
+--C�u H
+
+DROP LOGIN User_Staff;
 -- TRIGGER START
 -- INSTEAD OF trigger ngăn chặn hành động trước khi nó xảy ra. AFTER (hoặc FOR) trigger thực hiện kiểm tra sau khi hành động đã diễn ra. 
 
@@ -619,7 +887,341 @@ ENABLE TRIGGER TR_KiemTraEmailKH ON KhachHang;
 
 
 -- TRIGGER END
+-- STORE PROCEDURE START
 
+--C) FUNCTION: Lấy danh sách các đơn hàng chưa thanh toán của khách hàng (trạng thái của hóa đơn là chưa thanh toán)
+CREATE FUNCTION GetUnpaidOrdersByCustomer(@customerId VARCHAR(50))
+RETURNS TABLE
+AS
+RETURN 
+(
+    SELECT dh.id AS DonHangID,
+           dh.ngayDatHang AS NgayDatHang,
+           dh.tongTien AS TongTien,
+           hd.trangthaiTT AS TrangThaiThanhToan
+    FROM DonHang dh
+    INNER JOIN HoaDon hd ON dh.id = hd.donhang_id
+    WHERE dh.nguoidung_id = @customerId
+      AND hd.trangthaiTT = N'Chưa thanh toán'
+);
+--
+INSERT INTO DonHang (id, nguoidung_id, trangthaiDH, ngayDatHang, tongTien) VALUES
+('DH005', 'user123',0, '2023-03-01', 150000)
+
+INSERT INTO HoaDon (id, donhang_id, ngayLap, tongTien, phuongThucTT, trangthaiTT) VALUES
+('HD001', 'DH001', '2023-03-02', 150000, N'Tiền mặt', N'Đã thanh toán'),
+('HD002', 'DH002', '2023-03-06', 75000, N'Chuyển khoản', N'Đã thanh toán'),
+('HD003', 'DH003', '2023-03-11', 180000, N'Tiền mặt', N'Đã thanh toán'),
+('HD004', 'DH004', '2023-04-13', 110000, N'Thẻ tín dụng', N'Chưa thanh toán'),
+('HD005', 'DH005', '2023-04-13', 150000, N'Thẻ tín dụng', N'Chưa thanh toán');
+
+--xem ket qua cau c:
+SELECT * FROM GetUnpaidOrdersByCustomer('user123');
+
+--G) PROCEDURE: Lấy danh sách khách hàng theo tổng giá trị đơn hàng đã mua.
+
+CREATE PROCEDURE GetCustomersByTotalOrderValue
+AS
+BEGIN
+    SELECT kh.id AS KhachHangID,
+           kh.ten AS TenKhachHang,
+           kh.diachi AS DiaChi,
+           kh.sodienthoai AS SoDienThoai,
+           kh.email AS Email,
+           SUM(hd.tongTien) AS TongGiaTriDonHang
+    FROM Khachhang kh
+    INNER JOIN DonHang dh ON kh.id_NguoiDung = dh.nguoidung_id
+    INNER JOIN HoaDon hd ON dh.id = hd.donhang_id
+    WHERE hd.trangthaiTT = N'Đã thanh toán'
+    GROUP BY kh.id, kh.ten, kh.diachi, kh.sodienthoai, kh.email
+    ORDER BY TongGiaTriDonHang DESC;
+END;
+
+ 
+ INSERT INTO DonHang (id, nguoidung_id, trangthaiDH, ngayDatHang, tongTien) VALUES
+('DH006', 'user789',0, '2023-03-01', 150000),
+('DH007', 'user456',0, '2023-03-01', 150000);
+
+ INSERT INTO HoaDon (id, donhang_id, ngayLap, tongTien, phuongThucTT, trangthaiTT) VALUES
+('HD006', 'DH006', '2023-04-13', 150000, N'Thẻ tín dụng', N'Đã thanh toán'),
+('HD007', 'DH007', '2023-04-13', 150000, N'Thẻ tín dụng', N'Đã thanh toán');
+
+--xem ket qua cau g
+EXEC GetCustomersByTotalOrderValue;
+
+
+--K) Procedure & Cursor: Thống kê doanh thu theo từng tháng
+CREATE PROCEDURE sp_ThongKeDoanhThuTheoThang
+AS
+BEGIN
+    DECLARE @Thang INT,
+            @Nam INT,
+            @TongDoanhThu MONEY
+    DECLARE cur_DoanhThu CURSOR FOR
+                SELECT MONTH(NgayLap) AS Thang, YEAR(NgayLap) AS Nam, SUM(TongTien) AS TongDoanhThu
+                FROM HoaDon
+                GROUP BY MONTH(NgayLap), YEAR(NgayLap);
+
+    OPEN cur_DoanhThu;
+
+    FETCH NEXT FROM cur_DoanhThu INTO @Thang, @Nam, @TongDoanhThu;
+
+    WHILE @@FETCH_STATUS = 0
+    BEGIN
+        PRINT 'Tháng ' + CAST(@Thang AS VARCHAR) + ' năm ' + CAST(@Nam AS VARCHAR) + ': ' + CAST(@TongDoanhThu AS VARCHAR);
+
+        FETCH NEXT FROM cur_DoanhThu INTO @Thang, @Nam, @TongDoanhThu;
+    END
+
+    CLOSE cur_DoanhThu;
+    DEALLOCATE cur_DoanhThu;
+END;
+
+--xem ket qua cau k
+EXEC sp_ThongKeDoanhThuTheoThang;
+
+
+--B
+CREATE FUNCTION dbo.TinhTongTienDonHang (@donhang_id VARCHAR(50))
+RETURNS DECIMAL(18, 2)
+AS
+BEGIN
+    DECLARE @tongTien DECIMAL(18, 2);
+
+    SELECT @tongTien = SUM(soLuong * giaDonVi)
+    FROM ChiTietDonHang
+    WHERE donhang_id = @donhang_id;
+
+    RETURN ISNULL(@tongTien, 0);
+
+END;
+GO
+
+SELECT dbo.TinhTongTienDonHang('DH001') AS TongTienDonHang;
+
+--F
+
+CREATE PROCEDURE dbo.TimKiemSachTheoTheLoaiVaKhoangGia
+    @theloai_id VARCHAR(50),
+    @giaMin INT,
+    @giaMax INT
+AS
+BEGIN
+    
+    --SET NOCOUNT ON;
+
+    SELECT 
+        id,
+        tieude,
+        gia,
+        soLuongTon,
+        namXuatBan,
+        moTa
+    FROM 
+        Sach
+    WHERE 
+        theloai_id = @theloai_id
+        AND gia BETWEEN @giaMin AND @giaMax;
+
+END;
+GO
+
+EXEC dbo.TimKiemSachTheoTheLoaiVaKhoangGia 'TL002', 50000, 100000;
+
+--J
+
+CREATE PROCEDURE dbo.BaoCaoSoLuongBanRaCuaTungTacGia
+AS
+BEGIN
+
+    DECLARE @tacgia_id VARCHAR(50);
+    DECLARE @tenTacGia NVARCHAR(255);
+    DECLARE @soLuongBanRa INT;
+
+    DECLARE TacGiaCursor CURSOR FOR
+    SELECT id, ten
+    FROM TacGia;
+
+    OPEN TacGiaCursor;
+
+    FETCH NEXT FROM TacGiaCursor INTO @tacgia_id, @tenTacGia;
+    WHILE @@FETCH_STATUS = 0
+    BEGIN
+
+        SELECT @soLuongBanRa = SUM(CTDH.soLuong)
+        FROM TacGia_Sach TGS
+        JOIN ChiTietDonHang CTDH ON TGS.sach_id = CTDH.sach_id
+        WHERE TGS.tacgia_id = @tacgia_id;
+
+        PRINT N'Tác giả: ' + @tenTacGia + N' - Số lượng bán ra: ' + ISNULL(CAST(@soLuongBanRa AS NVARCHAR), N'0');
+
+        FETCH NEXT FROM TacGiaCursor INTO @tacgia_id, @tenTacGia;
+    END;
+
+    CLOSE TacGiaCursor;
+    DEALLOCATE TacGiaCursor;
+END;
+GO
+
+EXEC dbo.BaoCaoSoLuongBanRaCuaTungTacGia;
+
+
+
+
+
+
+
+-- D) FUNCTION: Tính tổng số lượng sách đã bán của một mã sách cụ thể.
+DROP FUNCTION IF EXISTS dbo.FnTinhTongSoLuongSachDaBan;
+
+CREATE FUNCTION dbo.FnTinhTongSoLuongSachDaBan (@SachId VARCHAR(50))
+RETURNS INT
+AS
+BEGIN
+    DECLARE @TongSoLuong INT;
+
+    -- Tính tổng số lượng sách đã bán cho mã sách cụ thể khi trạng thái hóa đơn là 1 (thành công)
+    SELECT @TongSoLuong = SUM(ctd.soLuong) 
+    FROM ChiTietDonHang ctd
+    JOIN DonHang dh ON ctd.donhang_id = dh.id
+    WHERE ctd.sach_id = @SachId
+    AND dh.trangthaiDH = '1';  -- '1' là trạng thái đã thanh toán thành công
+
+    -- Nếu không có đơn hàng nào thì trả về 0
+    IF @TongSoLuong IS NULL
+    BEGIN
+        SET @TongSoLuong = 0;
+    END
+
+    RETURN @TongSoLuong;
+END;
+
+SELECT dbo.FnTinhTongSoLuongSachDaBan('S004');
+-- M) Procedure & Cursor cập nhật số lượng tồn kho khi có đơn hàng hoàn thành ( trạng thái đơn hàng chuyển sang = 1) -> đặt thành công 
+
+CREATE PROCEDURE SP_CapNhatDonHang
+    @donhang_id VARCHAR(50)
+AS
+BEGIN
+    DECLARE @sach_id VARCHAR(50), @soLuong INT;
+
+    -- Cập nhật trạng thái đơn hàng
+    UPDATE DonHang
+    SET trangthaiDH = 1 -- Đã thanh toán
+    WHERE id = @donhang_id;
+
+    -- Giảm số lượng tồn kho của từng sách trong đơn hàng
+    DECLARE cur CURSOR FOR
+        SELECT sach_id, soLuong
+        FROM ChiTietDonHang
+        WHERE donhang_id = @donhang_id;
+
+    OPEN cur;
+    FETCH NEXT FROM cur INTO @sach_id, @soLuong;
+    WHILE @@FETCH_STATUS = 0
+    BEGIN
+        UPDATE Sach
+        SET soLuongTon = soLuongTon - @soLuong
+        WHERE id = @sach_id;
+
+        FETCH NEXT FROM cur INTO @sach_id, @soLuong;
+    END;
+    CLOSE cur;
+    DEALLOCATE cur;
+END;
+
+
+EXEC CapNhatDonHang ‘DH003’
+
+
+
+
+
+H) PROCEDURE: tạo hóa đơn cho đơn hàng  khi đơn hàng hoàn thành -> chuyển trạng thái từ 0 sang 1
+CREATE SEQUENCE dbo.Seq_HoaDon
+    AS INT
+    START WITH 1
+    INCREMENT BY 1;
+
+CREATE OR ALTER PROCEDURE SP_ThanhToanDonHang
+    @DonHangId VARCHAR(50),
+    @PhuongThucTT NVARCHAR(50),
+    @Email NVARCHAR(255),
+    @SoDienThoai VARCHAR(10),
+    @DiaChi NVARCHAR(255),
+    @TenNguoiDatHang NVARCHAR(255),
+    @TongTien DECIMAL(10, 2) OUTPUT
+AS
+BEGIN
+    -- Bắt đầu transaction
+    BEGIN TRANSACTION;
+
+    BEGIN TRY
+        -- Kiểm tra xem đơn hàng có tồn tại và chưa thanh toán
+        IF EXISTS (SELECT 1 FROM DonHang WHERE id = @DonHangId AND trangthaiDH = 0)
+        BEGIN
+            -- Cập nhật trạng thái đơn hàng thành đã thanh toán
+            UPDATE DonHang
+            SET trangthaiDH = 1
+            WHERE id = @DonHangId;
+
+            -- Lấy tổng tiền của đơn hàng và trả về qua tham số đầu ra
+            -- SELECT @TongTien = tongTien FROM DonHang WHERE id = @DonHangId;
+
+            -- Tạo ID cho hóa đơn với tiền tố "HD" và số tự động tăng
+            DECLARE @HoaDonId VARCHAR(50);
+            SET @HoaDonId = 'HD' + RIGHT('000' + CAST(NEXT VALUE FOR dbo.Seq_HoaDon AS VARCHAR), 4);
+
+            -- Tạo mới hóa đơn cho đơn hàng
+            INSERT INTO HoaDon (
+                id,
+                donhang_id,
+                ngayLap,
+                tongTien,
+                phuongThucTT,
+                trangthaiTT,
+                email,
+                sodienthoai,
+                diachi,
+                tenNguoiDatHang
+            )
+            VALUES (
+                @HoaDonId,
+                @DonHangId,
+                GETDATE(),
+                @TongTien,
+                @PhuongThucTT,
+                N'Đặt hàng thành ông',
+                @Email,
+                @SoDienThoai,
+                @DiaChi,
+                @TenNguoiDatHang
+            );
+
+            -- Xác nhận giao dịch
+            COMMIT TRANSACTION;
+            PRINT 'Thanh toán thành công và hóa đơn đã được tạo.';
+        END
+        ELSE
+        BEGIN
+            -- Nếu đơn hàng không tồn tại hoặc đã thanh toán, báo lỗi
+            RAISERROR ('Đơn hàng không tồn tại hoặc đã thanh toán.', 16, 1);
+            ROLLBACK TRANSACTION;
+        END
+    END TRY
+    BEGIN CATCH
+        -- Bắt lỗi nếu có vấn đề
+        ROLLBACK TRANSACTION;
+        DECLARE @ErrorMessage NVARCHAR(4000) = ERROR_MESSAGE();
+        DECLARE @ErrorSeverity INT = ERROR_SEVERITY();
+        DECLARE @ErrorState INT = ERROR_STATE();
+        RAISERROR (@ErrorMessage, @ErrorSeverity, @ErrorState);
+    END CATCH
+END;
+
+
+
+-- STORE PROCEDURE END
 -- Khai báo biến cục bộ
 DECLARE @bien1 INT;
 DECLARE @bien2 NVARCHAR(50);
@@ -719,6 +1321,7 @@ WHERE DATEDIFF(DAY, ngaynhap, GETDATE()) = 0;
 
 -- PROC
 -- Dang Nhap
+
 
 
 
@@ -1012,6 +1615,126 @@ BEGIN
 		S.id, S.tieude, S.HinhAnh, S.Gia, S.SoLuongTon, S.NamXuatBan, S.MoTa, S.theloai_id, TL.ten, NXB.ten, NXB.id;
 
 END;
+
+
+
+-- PROC THANH TOÁN
+CREATE SEQUENCE dbo.Seq_HoaDon
+    AS INT
+    START WITH 1
+    INCREMENT BY 1;
+
+CREATE OR ALTER PROCEDURE SP_ThanhToanDonHang
+    @DonHangId VARCHAR(50),
+    @PhuongThucTT NVARCHAR(50),
+    @Email NVARCHAR(255),
+    @SoDienThoai VARCHAR(10),
+    @DiaChi NVARCHAR(255),
+    @TenNguoiDatHang NVARCHAR(255),
+    @TongTien DECIMAL(10, 2) OUTPUT
+AS
+BEGIN
+    -- Bắt đầu transaction
+    BEGIN TRANSACTION;
+
+    BEGIN TRY
+        -- Kiểm tra xem đơn hàng có tồn tại và chưa thanh toán
+        IF EXISTS (SELECT 1 FROM DonHang WHERE id = @DonHangId AND trangthaiDH = 0)
+        BEGIN
+            -- Cập nhật trạng thái đơn hàng thành đã thanh toán
+            UPDATE DonHang
+            SET trangthaiDH = 1
+            WHERE id = @DonHangId;
+
+            -- Lấy tổng tiền của đơn hàng và trả về qua tham số đầu ra
+            -- SELECT @TongTien = tongTien FROM DonHang WHERE id = @DonHangId;
+
+            -- Tạo ID cho hóa đơn với tiền tố "HD" và số tự động tăng
+            DECLARE @HoaDonId VARCHAR(50);
+            SET @HoaDonId = 'HD' + RIGHT('000' + CAST(NEXT VALUE FOR dbo.Seq_HoaDon AS VARCHAR), 4);
+
+            -- Tạo mới hóa đơn cho đơn hàng
+            INSERT INTO HoaDon (
+                id,
+                donhang_id,
+                ngayLap,
+                tongTien,
+                phuongThucTT,
+                trangthaiTT,
+                email,
+                sodienthoai,
+                diachi,
+                tenNguoiDatHang
+            )
+            VALUES (
+                @HoaDonId,
+                @DonHangId,
+                GETDATE(),
+                @TongTien,
+                @PhuongThucTT,
+                N'Đặt hàng thành ông',
+                @Email,
+                @SoDienThoai,
+                @DiaChi,
+                @TenNguoiDatHang
+            );
+
+            -- Xác nhận giao dịch
+            COMMIT TRANSACTION;
+            PRINT 'Thanh toán thành công và hóa đơn đã được tạo.';
+        END
+        ELSE
+        BEGIN
+            -- Nếu đơn hàng không tồn tại hoặc đã thanh toán, báo lỗi
+            RAISERROR ('Đơn hàng không tồn tại hoặc đã thanh toán.', 16, 1);
+            ROLLBACK TRANSACTION;
+        END
+    END TRY
+    BEGIN CATCH
+        -- Bắt lỗi nếu có vấn đề
+        ROLLBACK TRANSACTION;
+        DECLARE @ErrorMessage NVARCHAR(4000) = ERROR_MESSAGE();
+        DECLARE @ErrorSeverity INT = ERROR_SEVERITY();
+        DECLARE @ErrorState INT = ERROR_STATE();
+        RAISERROR (@ErrorMessage, @ErrorSeverity, @ErrorState);
+    END CATCH
+END;
+
+-- PROCEDURE: Cập nhật trạng thái đơn hàng và số lượng tồn kho khi đơn hàng được thanh toán.
+
+
+CREATE PROCEDURE SP_CapNhatDonHang
+    @donhang_id VARCHAR(50)
+AS
+BEGIN
+    DECLARE @sach_id VARCHAR(50), @soLuong INT;
+
+    -- Cập nhật trạng thái đơn hàng
+    UPDATE DonHang
+    SET trangthaiDH = 1 -- Đã thanh toán
+    WHERE id = @donhang_id;
+
+    -- Giảm số lượng tồn kho của từng sách trong đơn hàng
+    DECLARE cur CURSOR FOR
+        SELECT sach_id, soLuong
+        FROM ChiTietDonHang
+        WHERE donhang_id = @donhang_id;
+
+    OPEN cur;
+    FETCH NEXT FROM cur INTO @sach_id, @soLuong;
+    WHILE @@FETCH_STATUS = 0
+    BEGIN
+        UPDATE Sach
+        SET soLuongTon = soLuongTon - @soLuong
+        WHERE id = @sach_id;
+
+        FETCH NEXT FROM cur INTO @sach_id, @soLuong;
+    END;
+    CLOSE cur;
+    DEALLOCATE cur;
+END;
+
+
 -- Stored Procedure để cập nhật đơn hàng, đặt ngày đặt hàng là ngày hiện tại
 
 CREATE OR ALTER PROCEDURE SP_UpdateDonHang
@@ -1085,6 +1808,69 @@ BEGIN
 
     RETURN 0; -- Trả về 0 nếu cập nhật thành công
 END;
+-- Store procedure xóa hóa đơn
+CREATE OR ALTER PROCEDURE SP_DeleteHoaDonVaCapNhatDonHang
+    @hoaDonId VARCHAR(50)
+AS
+BEGIN
+    -- Bắt đầu một giao dịch để đảm bảo tính toàn vẹn dữ liệu
+    BEGIN TRANSACTION;
+
+    -- Lấy DonHangId từ hóa đơn trước khi xóa
+    DECLARE @donHangId VARCHAR(50);
+    SELECT @donHangId = donhang_id FROM HoaDon WHERE id = @hoaDonId;
+
+    -- Kiểm tra nếu hóa đơn tồn tại và lấy các chi tiết đơn hàng (sách và số lượng)
+    DECLARE @SachId VARCHAR(50);
+    DECLARE @SoLuong INT;
+
+    -- Duyệt qua các chi tiết của hóa đơn để trả lại số lượng sách vào kho
+    DECLARE ChiTietCursor CURSOR FOR
+        SELECT ct.sach_id, ct.soLuong
+        FROM ChiTietDonHang ct
+        JOIN HoaDon hd ON ct.donhang_id = hd.donhang_id
+        WHERE hd.id = @hoaDonId;
+
+    OPEN ChiTietCursor;
+    FETCH NEXT FROM ChiTietCursor INTO @SachId, @SoLuong;
+
+    -- Cập nhật số lượng tồn kho của sách
+    WHILE @@FETCH_STATUS = 0
+    BEGIN
+        -- Tăng số lượng tồn kho của sách
+        UPDATE Sach
+        SET soLuongTon = soLuongTon + @SoLuong
+        WHERE id = @SachId;
+
+        FETCH NEXT FROM ChiTietCursor INTO @SachId, @SoLuong;
+    END
+
+    -- Đóng con trỏ
+    CLOSE ChiTietCursor;
+    DEALLOCATE ChiTietCursor;
+
+    -- Xóa hóa đơn
+    DELETE FROM HoaDon WHERE id = @hoaDonId;
+
+    -- Cập nhật trạng thái đơn hàng thành 0 (chưa thanh toán) nếu đơn hàng có tồn tại
+    IF @donHangId IS NOT NULL
+    BEGIN
+        UPDATE DonHang
+        SET trangthaiDH = 0
+        WHERE id = @donHangId;
+    END
+
+    -- Kiểm tra và hoàn thành giao dịch
+    IF @@ERROR = 0
+    BEGIN
+        COMMIT TRANSACTION;
+    END
+    ELSE
+    BEGIN
+        ROLLBACK TRANSACTION;
+    END
+END
+
 -- store procedure xóa ctdh
 CREATE PROCEDURE SP_DeleteChiTietDonHang
     @id VARCHAR(50)
@@ -1383,6 +2169,32 @@ RETURN
     FROM Sach
     WHERE soLuongTon < 10
 );
+-- D) FUNCTION: Tính tổng số lượng sách đã bán của một mã sách cụ thể.
+DROP FUNCTION IF EXISTS dbo.FnTinhTongSoLuongSachDaBan;
+
+CREATE FUNCTION dbo.FnTinhTongSoLuongSachDaBan (@SachId VARCHAR(50))
+RETURNS INT
+AS
+BEGIN
+    DECLARE @TongSoLuong INT;
+
+    -- Tính tổng số lượng sách đã bán cho mã sách cụ thể khi trạng thái hóa đơn là 1 (thành công)
+    SELECT @TongSoLuong = SUM(ctd.soLuong) 
+    FROM ChiTietDonHang ctd
+    JOIN DonHang dh ON ctd.donhang_id = dh.id
+    WHERE ctd.sach_id = @SachId
+    AND dh.trangthaiDH = '1';  -- '1' là trạng thái đã thanh toán thành công
+
+    -- Nếu không có đơn hàng nào thì trả về 0
+    IF @TongSoLuong IS NULL
+    BEGIN
+        SET @TongSoLuong = 0;
+    END
+
+    RETURN @TongSoLuong;
+END;
+
+SELECT dbo.FnTinhTongSoLuongSachDaBan('S004');
 
 
 -- PROC LOGIN
@@ -1538,40 +2350,6 @@ END;
 -- Lấy thông tin tài khoản
 
 
--- PROCEDURE: Cập nhật trạng thái đơn hàng và số lượng tồn kho khi đơn hàng được thanh toán.
-
-
-CREATE PROCEDURE sp_CapNhatDonHang
-    @donhang_id VARCHAR(50)
-AS
-BEGIN
-    DECLARE @sach_id VARCHAR(50), @soLuong INT;
-
-    -- Cập nhật trạng thái đơn hàng
-    UPDATE DonHang
-    SET trangthaiDH = 1 -- Đã thanh toán
-    WHERE id = @donhang_id;
-
-    -- Giảm số lượng tồn kho của từng sách trong đơn hàng
-    DECLARE cur CURSOR FOR
-        SELECT sach_id, soLuong
-        FROM ChiTietDonHang
-        WHERE donhang_id = @donhang_id;
-
-    OPEN cur;
-    FETCH NEXT FROM cur INTO @sach_id, @soLuong;
-    WHILE @@FETCH_STATUS = 0
-    BEGIN
-        UPDATE Sach
-        SET soLuongTon = soLuongTon - @soLuong
-        WHERE id = @sach_id;
-
-        FETCH NEXT FROM cur INTO @sach_id, @soLuong;
-    END;
-    CLOSE cur;
-    DEALLOCATE cur;
-END;
-
 
 -- FUNCTION: Tính tổng doanh thu từ tất cả các đơn hàng đã thanh toán.
 CREATE FUNCTION fn_TongDoanhThu()
@@ -1658,3 +2436,17 @@ BEGIN
     CLOSE cur;
     DEALLOCATE cur;
 END;
+
+
+
+   SELECT hd.id, hd.donhang_id, hd.ngayLap, hd.tongTien, hd.phuongThucTT, 
+          hd.trangthaiTT, hd.email, hd.sodienthoai, hd.diachi, hd.tenNguoiDatHang
+   FROM HoaDon hd
+   INNER JOIN DonHang dh ON hd.donhang_id = dh.id
+   WHERE dh.nguoidung_id = @hoadonid
+
+
+
+
+
+

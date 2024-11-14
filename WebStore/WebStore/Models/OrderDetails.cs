@@ -21,16 +21,5 @@ namespace WebStore.Models
     
     }
 
-    public class OrderDetail
-    {
-        public string DetailID { get; set; }
-        public string BookTitle { get; set; }
-        public string BookId { get; set; }
-        public string BookDescription { get; set; }
-        public string BookImage { get; set; }  // Đường dẫn đến ảnh sách
-        public int SoLuong { get; set; }
-        public decimal GiaDonVi { get; set; }
-        public decimal TotalPrice { get; set; }
-    }
 
 }

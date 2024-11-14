@@ -7,6 +7,12 @@
 }
 
 <h1>Giỏ hàng</h1>
+@if (@Model.emptyCart)
+{
+    <p>Giỏ hàng của bạn hiện tại đang trống. Vui lòng thêm sản phẩm vào giỏ hàng.</p>
+}
+else
+{
 <table class="table">
     <thead>
         <tr>
@@ -71,6 +77,7 @@
             <input type="number" name="price" placeholder="TotalPrice" value="@Model.orders.OrderPrice" disabled>
         </div>
         <br />
-        <a class="button" asp-action="Checkout">Checkout</a>
+        <a class="button" asp-controller="Order" asp-action="Checkout">Checkout</a>
     </div>
 </div>
+}

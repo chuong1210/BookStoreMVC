@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<WebStore.Models.NhaXuatBanDTO>
 
 @{
-    ViewData["Title"] = "ManagerAccount";
+    ViewData["Title"] = "Quản lý nhà xuât bản";
     Layout = "~/Views/Shared/_ManagerLayout.cshtml";
 }
 
@@ -41,9 +41,9 @@
                     @Html.DisplayFor(modelItem => item.Email)
                 </td>
                 <td>
-                    @Html.ActionLink("Edit", "EditAccount", new { id = item.IdNXB }) |
-                    @Html.ActionLink("Details", "DetailAccount", new { id = item.IdNXB }) |
-                    @Html.ActionLink("Delete", "DeleteAccount", new { id = item.IdNXB })
+                    @Html.ActionLink("Edit", "EditPublisher", new { id = item.IdNXB }) |
+                    @Html.ActionLink("Details", "DetailPublisher", new { id = item.IdNXB }) |
+                    @Html.ActionLink("Delete", "DeletePublisher", new { id = item.IdNXB })
                 </td>
             </tr>
         }

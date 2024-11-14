@@ -11,6 +11,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Security.Policy;
 using System.Threading.Tasks;
+using WebStore.Constraint;
 using WebStore.Models;
 using WedStore.Repositories;
 using WedStore.Servicie;
@@ -133,10 +134,10 @@ namespace WedStore.Controllers
             //    InfoOrder infoOrder = ChiTietDonHangDB.InfoOrder_GetInfoOrdersWithOrderID(i.OrderID);
             //    ChiTietDonHangDB.InfoOrder_Delete(infoOrder.OrderDetailId);
             //    //item trong giỏ hàng
-            //    var listOrderItem = OrderItemRes.GetOrderItemsWithOrderID(i.OrderID);
+            //    var listOrderItem = ChiTietHoaDonDB.GetOrderItemsWithOrderID(i.OrderID);
             //    foreach (var item in listOrderItem)
             //    {
-            //        OrderItemRes.deleteOrderItem(item.ItemID);
+            //        ChiTietHoaDonDB.deleteOrderItem(item.ItemID);
             //    }
             //    //giỏ hàng
             //    DonHangDB.Orders_Delete(i.OrderID);
@@ -174,28 +175,7 @@ namespace WedStore.Controllers
             dy.bookType = TheLoaiSachDB.LayThongTinTheLoai(book.BookTypeID);
             return View(dy);
         }
-        //Edit Book
-        public ActionResult EditBook1(string id)
-        {
-          //  var book = SachDB.BookWithID(id);
-            var book = SachDB.SachTheoId(id);
-
-            dynamic dy = new ExpandoObject();
-         //   dy.booktypeNAV = TheLoaiSachDB.GetAllType();
-            dy.booktypeNAV = TheLoaiSachDB.ListTheLoai();
-            dy.NXBs=NhaXuatBanDB.ListNhaXuatBans();
-            dy.book = book;
-             List <TacGiaDTO> authors=TacGiaDB.ListTacGias();
-            List<SelectListItem>  authorList = authors.Select(a => new SelectListItem
-            {
-                Value = a.IdTG.ToString(), // Crucial: Convert Id to string
-                Text = a.TenTacGia.ToString()
-            }).ToList();
-            dy.TGs = authors;
-
-            return View(dy);
-        }
-
+     
       
 
         [HttpGet]
@@ -434,7 +414,8 @@ namespace WedStore.Controllers
         public ActionResult ManagerOrder()
         {
          //  var lstInfoOrder = ChiTietDonHangDB.InfoOrder_GetAll();
-          var lstInfoOrder = DonHangDB.LayDanhSachDonHangVoiThongTinND();
+          //var lstInfoOrder = DonHangDB.LayDanhSachDonHangVoiThongTinND();
+          var lstInfoOrder = HoaDonDB.LayTatCaHoaDon();
             return View(lstInfoOrder);
         }    
         public ActionResult ManagerPublisher()
@@ -442,23 +423,25 @@ namespace WedStore.Controllers
             var lstInfoOrder = NhaXuatBanDB.ListNhaXuatBans();
             return View(lstInfoOrder);
         }
+                public ActionResult ManagerAuthor()
+        {
+            var lstInfoAuthor = TacGiaDB.ListTacGias();
+            return View(lstInfoAuthor);
+        }
 
 
         // delete InfoOrder
-        public ActionResult DeleteOrder(string id)//OrderDetailId
+        public ActionResult DeleteOrder(string id)
         {
             dynamic dy = new ExpandoObject();
-            //lấy thông tin đơn hàng
-            var infoOrder =  ChiTietDonHangDB.InfoOrder_GetInfoOrdersWithID(id);
+            var infoOrder =  HoaDonDB.LayHoaDonTheoId(id);
             dy.infoOrder = infoOrder;
-            //lấy danh sách  OrderItem 
-            var orderItem = OrderItemRes.GetOrderItemsWithOrderID(infoOrder.OrderID);
+            var orderItem = ChiTietHoaDonDB.LayChiTietDonHangTheoDonHang(infoOrder.DonHangId);
             dy.orderItem = orderItem;
-            //lấy danh sách Book
             List<SachDTO> lstBook = new List<SachDTO>();
             foreach(var i in orderItem)
             {
-                lstBook.Add(SachDB.BookWithID(i.BookID));
+                lstBook.Add(SachDB.SachTheoId(i.BookID));
             }
             dy.lstBook = lstBook;
             return View(dy);
@@ -467,48 +450,31 @@ namespace WedStore.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteOrder(string id, IFormCollection collection)//OrderDetailId
         {
-            var infoOrder = ChiTietDonHangDB.InfoOrder_GetInfoOrdersWithID(id);
-            var orderItem = OrderItemRes.GetOrderItemsWithOrderID(infoOrder.OrderID);
-            //delete all Order Item
-            foreach(var i in orderItem)
+            bool isDeleted = HoaDonDB.XoaHoaDonVaCapNhatDonHang(id);
+
+            if (isDeleted)
             {
-                OrderItemRes.deleteOrderItem(i.ItemID);
+                TempData["Message"] = "Hóa đơn đã được xóa thành công và trạng thái đơn hàng đã được cập nhật.";
             }
-            //delete InfoOrder
-            ChiTietDonHangDB.InfoOrder_Delete(id);
-            //delete Order
-            DonHangDB.Orders_Delete(infoOrder.OrderID);
+            else
+            {
+                TempData["Error"] = "Lỗi khi xóa hóa đơn.";
+            }
 
             return RedirectToAction(nameof(ManagerOrder));
         }
-        //detail InfoOrder
-        public ActionResult DetailOrder1(string id)//OrderDetailId
-        {
-            dynamic dy = new ExpandoObject();
-            //lấy thông tin đơn hàng
-            var infoOrder = ChiTietDonHangDB.InfoOrder_GetInfoOrdersWithID(id);
-            dy.infoOrder = infoOrder;
-            //lấy danh sách  OrderItem 
-            var orderItem = OrderItemRes.GetOrderItemsWithOrderID(infoOrder.OrderID);
-            dy.orderItem = orderItem;
-            //lấy danh sách Book
-            List<SachDTO> lstBook = new List<SachDTO>();
-            foreach (var i in orderItem)
-            {
-                lstBook.Add(SachDB.BookWithID(i.BookID));
-            }
-            dy.lstBook = lstBook;
-            return View(dy);
-        }        public ActionResult DetailOrder(string id)//OrderDetailId
+        
+        public ActionResult DetailOrder(string id)//OrderDetailId
         {
             if (string.IsNullOrEmpty(id))
             {
                 return RedirectToAction("Index"); // Hoặc trả về một lỗi nếu id không hợp lệ
             }
+            HoaDonDTO  orderInfo = HoaDonDB.LayHoaDonTheoId(id);
+            List<OrderItem> orderDetails = ChiTietHoaDonDB.LayChiTietDonHangTheoDonHang(orderInfo.DonHangId);
+         //   var bookdetail = SachDB.LaySachTheoOrderId(orderInfo.DonHangId);
 
-            List<OrderDetail> orderDetails = ChiTietDonHangDB.LayChiTietDonHang(id); // Giả sử phương thức này lấy chi tiết đơn hàng
-            var orderInfo = DonHangDB.LayThongTinDonHangTheoId(id);
-
+     
             var model = new OrderDetailViewModel
             {
                 InfoOrder = orderInfo,
@@ -524,27 +490,7 @@ namespace WedStore.Controllers
             // Trả về View và truyền dữ liệu chi tiết đơn hàng
             return View(model); // Trả về View với model đã được cấu trúc đúng
         }
-        // edit InfoOrder
-        public ActionResult EditOrder1(string id)////OrderDetailId
-        {
-            dynamic dy = new ExpandoObject();
-            //lấy thông tin đơn hàng
-            var infoOrder = ChiTietDonHangDB.InfoOrder_GetInfoOrdersWithID(id);
-            dy.infoOrder = infoOrder;
-            //lấy danh sách  OrderItem 
-            var orderItem = OrderItemRes.GetOrderItemsWithOrderID(infoOrder.OrderID);
-            dy.orderItem = orderItem;
-            //lấy danh sách Book
-            List<SachDTO> lstBook = new List<SachDTO>();
-            foreach (var i in orderItem)
-            {
-                lstBook.Add(SachDB.BookWithID(i.BookID));
-            }
-            dy.lstBook = lstBook;
-            return View(dy);
-
-
-        }   
+   
         
         
         public ActionResult EditOrder(string id)////OrderDetailId
@@ -553,16 +499,18 @@ namespace WedStore.Controllers
             {
                 return RedirectToAction("Index"); // Hoặc trả về một lỗi nếu id không hợp lệ
             }
+            HoaDonDTO orderInfo = HoaDonDB.LayHoaDonTheoId(id);
 
-            List<OrderDetail> orderDetails = ChiTietDonHangDB.LayChiTietDonHang(id); // Giả sử phương thức này lấy chi tiết đơn hàng
-            var orderInfo = DonHangDB.LayThongTinDonHangTheoId(id);
+            List<OrderItem> orderDetails = ChiTietHoaDonDB.LayChiTietDonHangTheoDonHang(orderInfo.DonHangId); // Giả sử phương thức này lấy chi tiết đơn hàng
 
             var model = new OrderDetailViewModel
             {
                 InfoOrder = orderInfo,
                 OrderItem = orderDetails,
-                LstBook = SachDB.LaySachTheoOrderId(id)
+                LstBook = SachDB.LaySachTheoOrderId(orderInfo.DonHangId)
             };
+            model.PhuongThucTT = (PhuongThucThanhToan)Enum.Parse(typeof(PhuongThucThanhToan), model.InfoOrder.PhuongThucTT);
+
 
             if (orderDetails == null || orderDetails.Count == 0)
             {
@@ -574,21 +522,15 @@ namespace WedStore.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult EditOrder(OrderDetails infoOrder)
+        public ActionResult EditOrder(HoaDonDTO infoOrder)
         {
-            ChiTietDonHangDB.InfoOrder_Update(infoOrder);
+          //  ChiTietDonHangDB.InfoOrder_Update(infoOrder);
 
-
+            HoaDonDB.CapNhatHoaDon(infoOrder);
             return RedirectToAction(nameof(ManagerOrder));
         }
-        //update status InfoOrder
-        public ActionResult InfoOrderComplete1(string id)
-        {
-            var infoOrder = ChiTietDonHangDB.InfoOrder_GetInfoOrdersWithID(id);
-            infoOrder.Status = 1;
-            ChiTietDonHangDB.InfoOrder_Update(infoOrder);
-            return RedirectToAction(nameof(ManagerOrder));
-        }    public ActionResult InfoOrderComplete(string id)
+    
+        public ActionResult InfoOrderComplete(string id)
         {
             if (string.IsNullOrEmpty(id))
             {
@@ -596,7 +538,7 @@ namespace WedStore.Controllers
             }
 
             // Cập nhật trạng thái đơn hàng
-            bool isUpdated = DonHangDB.CapNhatTrangThaiDonHang(id,1);
+            bool isUpdated = HoaDonDB.CapNhatTrangThaiHoaDon(id,"Đã thanh toán");
 
             if (isUpdated)
             {
@@ -610,13 +552,8 @@ namespace WedStore.Controllers
                 return View("Error"); // Hoặc chuyển đến trang thông báo lỗi
             }
         }
-        public ActionResult InfoOrderIncomplete1(string id)
-        {
-            var infoOrder = ChiTietDonHangDB.InfoOrder_GetInfoOrdersWithID(id);
-            infoOrder.Status = 0;
-            ChiTietDonHangDB.InfoOrder_Update(infoOrder);
-            return RedirectToAction(nameof(ManagerOrder));
-        }        public ActionResult InfoOrderIncomplete(string id)
+          
+        public ActionResult InfoOrderIncomplete(string id)
         {
             if (string.IsNullOrEmpty(id))
             {
@@ -624,7 +561,7 @@ namespace WedStore.Controllers
             }
 
             // Cập nhật trạng thái đơn hàng
-            bool isUpdated = DonHangDB.CapNhatTrangThaiDonHang(id, 0);
+            bool isUpdated = HoaDonDB.CapNhatTrangThaiHoaDon(id, "Chưa thanh toán");
 
             if (isUpdated)
             {

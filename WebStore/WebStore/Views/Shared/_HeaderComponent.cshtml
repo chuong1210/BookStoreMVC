@@ -19,9 +19,12 @@
 	<h4>@User.Identity.Name</h4>
 	<ul>
 		<li><a href="@Url.Action("Index", "Home")" class="active">Home</a></li>
+
 		@if (this.User.IsInRole("Admin") || this.User.IsInRole("SuperAdmin"))
 		{
-			<li><a href="@Url.Action("Index", "QuanLy")">Manager</a></li>
+			<li><a href="@Url.Action("Index", "QuanLy")">Quản lý</a></li>
+			<li><a href="@Url.Action("Index", "ThongKe")">Thống kê</a></li>
+
 		}
 		@if (User.Identity.IsAuthenticated)
 		{

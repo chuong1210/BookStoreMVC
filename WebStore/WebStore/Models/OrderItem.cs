@@ -5,11 +5,17 @@ using System.Threading.Tasks;
 
 namespace WebStore.Models
 {
+   
+
     public class OrderItem
     {
         public string ItemID { get; set; }
         public string OrderID { get; set; }
         public string BookID { get; set; }
+        public string BookTitle { get; set; }
+
+        public string BookDescription { get; set; }
+        public string BookImage { get; set; }  // Đường dẫn đến ảnh sách
         public int Quantity { get; set; }
 		public decimal Price { get; set; }
 		public decimal TotalPrice { get { return Quantity * Price; } set { } }

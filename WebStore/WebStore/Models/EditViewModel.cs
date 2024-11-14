@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using WebStore.Constraint;
 using WebStore.Models;
 using WedStore.Servicie;
 
@@ -41,9 +42,10 @@ namespace WebStore.Models
 
     public class OrderDetailViewModel
     {
-        public OrderDetails InfoOrder { get; set; }
-        public List<OrderDetail> OrderItem { get; set; }
+        public HoaDonDTO InfoOrder { get; set; }
+        public List<OrderItem> OrderItem { get; set; }
         public List<SachDTO> LstBook { get; set; }
+        public PhuongThucThanhToan PhuongThucTT { get; set; }
     }
 
 

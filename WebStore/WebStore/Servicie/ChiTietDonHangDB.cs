@@ -170,9 +170,9 @@ namespace WedStore.Repositories
 			}
 		}
 
-        public static List<OrderDetail> LayChiTietDonHang(string orderId)
+        public static List<OrderItem> LayChiTietDonHang(string orderId)
         {
-            List<OrderDetail> orderDetails = new List<OrderDetail>();
+            List<OrderItem> orderDetails = new List<OrderItem>();
 
             // Mở kết nối đến cơ sở dữ liệu
             using (SqlConnection connection = new SqlConnection(ConnectStringValue.ConnectStringMyDB))
@@ -204,15 +204,15 @@ namespace WedStore.Repositories
                     {
                         while (reader.Read())
                         {
-                            OrderDetail detail = new OrderDetail
+                            OrderItem detail = new OrderItem
                             {
-                                DetailID = reader["DetailID"].ToString(),
-                                BookId = reader["sach_id"].ToString(),
+                                ItemID = reader["DetailID"].ToString(),
+                                BookID = reader["sach_id"].ToString(),
                                 BookTitle = reader["BookTitle"].ToString(),
-                                SoLuong = Convert.ToInt32(reader["soLuong"]),
+                                Quantity = Convert.ToInt32(reader["soLuong"]),
                                 BookDescription = reader["BookDescription"].ToString(),
                                 BookImage = reader["BookImage"].ToString(),
-                                GiaDonVi = Convert.ToDecimal(reader["giaDonVi"]),
+                                Price = Convert.ToDecimal(reader["giaDonVi"]),
                                 TotalPrice = Convert.ToDecimal(reader["TotalPrice"])
                             };
 

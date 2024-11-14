@@ -1,4 +1,4 @@
-﻿@model IEnumerable<WebStore.Models.OrderDetails>
+﻿@model IEnumerable<WebStore.Models.HoaDonDTO>
 
 @{
     ViewData["Title"] = "ManagerOrder";
@@ -13,17 +13,18 @@
             <th>
                 Mã đơn hàng 
             </th>
+
             <th>
-                Họ tên 
-            </th>
-            <th>
-                Email
+                Email khách hàng
             </th>
             <th>
                 Tổng tiền 
             </th>
             <th>
-                Trạng thái
+                Phương thức thanh toán
+            </th>
+            <th>
+                Trạng thái thanh toán
             </th>
             <th>Cập nhật trạng thái</th>
             <th>Thao tác</th>
@@ -33,29 +34,53 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                <a href="@Url.Action("DetailOrder", "QuanLy", new { id = item.OrderID })">
-                    @Html.DisplayFor(modelItem => item.OrderID)
+                <a href="@Url.Action("DetailOrder", "QuanLy", new { id = item.Id })">
+                    @Html.DisplayFor(modelItem => item.Id)
                 </a>
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
+       
             <td>
                 @Html.DisplayFor(modelItem => item.Email)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.TotalPrice)
+                @Html.DisplayFor(modelItem => item.TongTien)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Status)
-            </td>
+                @{
+                    string paymentMethodDisplay = "";
+                    switch (item.PhuongThucTT)
+                    {
+                        case "TheTinDung":
+                            paymentMethodDisplay = "Thẻ tín dụng";
+                            break;
+                        case "ChuyenKhoan":
+                            paymentMethodDisplay = "Chuyển khoản";
+                            break;
+                        case "TienMat":
+                            paymentMethodDisplay = "Tiền mặt";
+                            break;
+                        case "TheMomo":
+                            paymentMethodDisplay = "Thẻ Momo";
+                            break;
+                        default:
+                            paymentMethodDisplay = "Không xác định";
+                            break;
+                    }
+                }
+                <td>
+                    @paymentMethodDisplay
+                </td>
+                <td>
+                    @item.TrangThaiTT
+                </td>
+
+
             <th>
-                @Html.ActionLink("Complete", "InfoOrderComplete", new { id = item.OrderID }) |
-                    @Html.ActionLink("Incomplete", "InfoOrderIncomplete", new { id = item.OrderID })
+                @Html.ActionLink("Complete", "InfoOrderComplete", new { id = item.Id }) |
+                    @Html.ActionLink("Incomplete", "InfoOrderIncomplete", new { id = item.Id })
             </th>
             <th>
-                    @Html.ActionLink("Edit", "EditOrder", new { id = item.OrderID }) |
-                    @Html.ActionLink("Delete", "DeleteOrder", new { id = item.OrderID })
+                    @Html.ActionLink("Edit", "EditOrder", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "DeleteOrder", new { id = item.Id })
             </th>
         </tr>
 }

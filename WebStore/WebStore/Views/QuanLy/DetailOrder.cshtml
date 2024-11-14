@@ -25,25 +25,22 @@
                     <tbody>
                         @foreach (var item in Model.OrderItem)
                         {
-                            @foreach (var book in Model.LstBook)
-                            {
-                                if (item.BookId == book.BookID)
-                                {
+                           
                                     <tr>
                                         <td>
                                             <span class="image">
-                                                <img src="/images/@book.Image" height="120" width="110" alt="" />
+                                                <img src="/images/@item.BookImage" height="120" width="110" alt="" />
                                             </span>
                                         </td>
                                         <td>
-                                            @book.BookName
+                                            @item.BookTitle
                                         </td>
                                         <td>
-                                            @item.SoLuong
+                                            @item.Quantity
                                         </td>
                                     </tr>
-                                }
-                            }
+                                
+                            
                         }
                     </tbody>
                 </table>
@@ -54,11 +51,11 @@
             <div class="row">
                 <label class="col-sm-3">Order ID</label>
                 <div class="col-sm-9">
-                    @Model.InfoOrder.OrderID
+                    @Model.InfoOrder.Id
                 </div>
                 <label class="col-sm-3">Name</label>
                 <div class="col-sm-9">
-                    @Model.InfoOrder.Name
+                    @Model.InfoOrder.TenNguoiDatHang
                 </div>
                 <label class="col-sm-3">Email</label>
                 <div class="col-sm-9">
@@ -66,24 +63,24 @@
                 </div>
                 <label class="col-sm-3">Phone</label>
                 <div class="col-sm-9">
-                    @Model.InfoOrder.Phone
+                    @Model.InfoOrder.SoDienThoai
                 </div>
                 <label class="col-sm-3">Address</label>
                 <div class="col-sm-9">
-                    @Model.InfoOrder.Address
+                    @Model.InfoOrder.DiaChi
                 </div>
                 <label class="col-sm-3">Total Price</label>
                 <div class="col-sm-9">
-                    @Model.InfoOrder.TotalPrice.ToString("C")
+                    @Model.InfoOrder.TongTien.ToString("C")
                 </div>
                 <label class="col-sm-3">Status</label>
                 <div class="col-sm-9">
-                    @Model.InfoOrder.StatusString
+                    @Model.InfoOrder.TrangThaiTT
                 </div>
             </div>
         </div>
     </div>
 
-    <a class="button" href="@Url.Action("EditOrder", new { id = Model.InfoOrder.OrderID })">Edit</a>
+    <a class="button" href="@Url.Action("EditOrder", new { id = Model.InfoOrder.DonHangId })">Edit</a>
     <a class="button" href="@Url.Action("ManagerOrder")">Back to List</a>
 </div>

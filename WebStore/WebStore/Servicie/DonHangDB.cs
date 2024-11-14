@@ -13,7 +13,7 @@ namespace WedStore.Repositories
     public class DonHangDB
     {
         private readonly static string connectionString = ConnectStringValue.ConnectStringMyDB;
-        public static bool createOrdersOld(Orders orders)
+        public static bool createOrdersOld(DonHang orders)
         {
             object[] value = { orders.OrderID, orders.UserName, orders.OrderPrice, orders.OrderStatus };
             SQLCommand connection = new SQLCommand(ConnectStringValue.ConnectString);
@@ -26,7 +26,7 @@ namespace WedStore.Repositories
             return false;
         }
 
-        public static bool createOrders(Orders orders)
+        public static bool createOrders(DonHang orders)
         {
             object[] value = { orders.OrderID, orders.UserName, orders.OrderPrice, orders.OrderStatus };
             SQLCommand connection = new SQLCommand(connectionString);
@@ -38,17 +38,17 @@ namespace WedStore.Repositories
             }
             return false;
         }
-        public static List<Orders> GetOrdersUser(string userName) 
+        public static List<DonHang> GetOrdersUser(string userName) 
         {
             object[] value = { userName };
             SQLCommand connection = new SQLCommand(ConnectStringValue.ConnectString);
             DataTable result = connection.Select("Orders_GetOrdersUser", value);
-            List<Orders> lstResult = new List<Orders>();
+            List<DonHang> lstResult = new List<DonHang>();
             if (connection.errorCode == 0 && connection.errorMessage == "")
             {
                 foreach (DataRow dr in result.Rows)
                 {
-                    Orders orders = new Orders();
+                    DonHang orders = new DonHang();
                     orders.OrderID = dr["OrderID"].ToString();
                     orders.UserName = dr["UserName"].ToString();
                     orders.OrderPrice = string.IsNullOrEmpty(dr["OrderPrice"].ToString()) ? 0 : int.Parse(dr["OrderPrice"].ToString());
@@ -58,7 +58,7 @@ namespace WedStore.Repositories
             }
             return lstResult;
         }
-        public static Orders GetOrdersUserOnStatus(string userName,int status)
+        public static DonHang GetOrdersUserOnStatus(string userName,int status)
         {
             object[] value = { userName, status };
             SQLCommand connection = new SQLCommand(ConnectStringValue.ConnectString);
@@ -67,7 +67,7 @@ namespace WedStore.Repositories
             {
                 foreach (DataRow dr in result.Rows)
                 {
-                    Orders orders = new Orders();
+                    DonHang orders = new DonHang();
                     orders.OrderID = dr["OrderID"].ToString();
                     orders.UserName = dr["UserName"].ToString();
                     orders.OrderPrice = string.IsNullOrEmpty(dr["OrderPrice"].ToString()) ? 0 : int.Parse(dr["OrderPrice"].ToString());
@@ -78,26 +78,50 @@ namespace WedStore.Repositories
             return null;
         }
 
-		public static Orders LayDanhSachOrderTheoTrangThai(string idKH, int status)
+		public static DonHang LayOrderTheoTrangThai(string idKH, int status)
 		{
 			object[] value = { status, idKH };
 			SQLCommand connection = new SQLCommand(ConnectStringValue.ConnectStringMyDB);
 			DataTable result = connection.Select("SP_LayTrangThaiDonHang", value);
-			if (connection.errorCode == 0 && connection.errorMessage == "")
-			{
-				foreach (DataRow dr in result.Rows)
-				{
-					Orders orders = new Orders();
-					orders.OrderID = dr["id"].ToString();
-					orders.UserId = dr["nguoidung_id"].ToString();
-					orders.OrderPrice = string.IsNullOrEmpty(dr["TongTien"].ToString()) ? 0 : decimal.Parse(dr["TongTien"].ToString());
-					orders.OrderStatus = string.IsNullOrEmpty(dr["trangthaiDH"].ToString()) ? 0 : int.Parse(dr["trangthaiDH"].ToString());
-					return orders;
-				}
-			}
+         
+                if (connection.errorCode == 0 && connection.errorMessage == "")
+                {
+                    foreach (DataRow dr in result.Rows)
+                    {
+                        DonHang orders = new DonHang();
+                        orders.OrderID = dr["id"].ToString();
+                        orders.UserId = dr["nguoidung_id"].ToString();
+                        orders.OrderPrice = string.IsNullOrEmpty(dr["TongTien"].ToString()) ? 0 : decimal.Parse(dr["TongTien"].ToString());
+                        orders.OrderStatus = string.IsNullOrEmpty(dr["trangthaiDH"].ToString()) ? 0 : int.Parse(dr["trangthaiDH"].ToString());
+                        return orders;
+                    }
+                }
+           
 			return null;
 		}
-		public static Orders GetOrdersWithID(string id) 
+        public static List<DonHang> LayDanhSachOrderTheoTrangThai(string idKH, int status)
+		{
+			object[] value = { status, idKH };
+            List<DonHang> orders1 = new List<DonHang>();
+			SQLCommand connection = new SQLCommand(ConnectStringValue.ConnectStringMyDB);
+			DataTable result = connection.Select("SP_LayTrangThaiDonHang", value);
+         
+                if (connection.errorCode == 0 && connection.errorMessage == "")
+                {
+                    foreach (DataRow dr in result.Rows)
+                    {
+                        DonHang orders = new DonHang();
+                        orders.OrderID = dr["id"].ToString();
+                        orders.UserId = dr["nguoidung_id"].ToString();
+                        orders.OrderPrice = string.IsNullOrEmpty(dr["TongTien"].ToString()) ? 0 : decimal.Parse(dr["TongTien"].ToString());
+                        orders.OrderStatus = string.IsNullOrEmpty(dr["trangthaiDH"].ToString()) ? 0 : int.Parse(dr["trangthaiDH"].ToString());
+					orders1.Add( orders);
+                    }
+                }
+           
+			return orders1;
+		}
+		public static DonHang GetOrdersWithID(string id) 
         {
             object[] value = { id };
             SQLCommand connection = new SQLCommand(ConnectStringValue.ConnectString);
@@ -106,7 +130,7 @@ namespace WedStore.Repositories
             {
                 foreach (DataRow dr in result.Rows)
                 {
-                    Orders orders = new Orders();
+                    DonHang orders = new DonHang();
                     orders.OrderID = dr["OrderID"].ToString();
                     orders.UserName = dr["UserName"].ToString();
                     orders.OrderPrice = string.IsNullOrEmpty(dr["OrderPrice"].ToString()) ? 0 : int.Parse(dr["OrderPrice"].ToString());
@@ -117,7 +141,7 @@ namespace WedStore.Repositories
             return null;
         }
 
-        public static OrderDetails LayThongTinDonHangTheoId(string orderId)
+        public static OrderItem LayThongTinDonHangTheoId(string orderId)
         {
             // Tạo đối tượng kết nối SQL
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -167,15 +191,8 @@ namespace WedStore.Repositories
                 // Kiểm tra kết quả truy vấn
                 if (reader.Read())
                 {
-                    return new OrderDetails
+                    return new OrderItem
                     {
-                        OrderID = reader["OrderId"].ToString(),
-                        Name = reader["Name"].ToString(),
-                        Email = reader["Email"].ToString(),
-                        Phone = reader["Phone"].ToString(),
-                        Address = reader["Address"].ToString(),
-                        TotalPrice = Convert.ToDecimal(reader["TotalPrice"]),
-                        StatusString = reader["StatusString"].ToString()
                     };
                 }
             }
@@ -190,10 +207,10 @@ namespace WedStore.Repositories
             */
             /*status = 1: đã có đơn hàng sẵn sàng
             =>kiểm tra khách hàng có đơn hàng sẵn sàng không*/
-            Orders orders = GetOrdersUserOnStatus(userName, 1);
+            DonHang orders = GetOrdersUserOnStatus(userName, 1);
             if(orders == null)
             {
-                Orders orders1 = new Orders();
+                DonHang orders1 = new DonHang();
 
                 Random rnd = new Random();
                 int id = rnd.Next(100000,999999);
@@ -211,7 +228,7 @@ namespace WedStore.Repositories
 
             return true;
         }
-        public static bool Orders_Update(Orders orders)
+        public static bool Orders_Update(DonHang orders)
         {
             object[] value = { orders.OrderID, orders.UserName,orders.OrderPrice,orders.OrderStatus};
             SQLCommand connection = new SQLCommand(ConnectStringValue.ConnectString);
@@ -224,10 +241,10 @@ namespace WedStore.Repositories
             return false;
         }
 
-		public static bool Capnhat_DH(Orders orders)
+		public static bool Capnhat_DH(DonHang orders)
 		{
 			object[] value = { orders.OrderID, orders.UserId,  orders.OrderStatus, orders.OrderPrice };
-			SQLCommand connection = new SQLCommand(ConnectStringValue.ConnectString);
+			SQLCommand connection = new SQLCommand(connectionString);
 			DataTable result = connection.Select("SP_UpdateDonHang", value);
 
 			if (connection.errorCode == 0 && connection.errorMessage == "")
@@ -264,12 +281,12 @@ namespace WedStore.Repositories
 
                 SQLCommand connection = new SQLCommand(connectionString);
                 DataTable result;
-                Orders existingOrder = LayDanhSachOrderTheoTrangThai(nguoiDungId, 0); // Tìm đơn hàng có trạng thái 0
+                DonHang existingOrder = LayOrderTheoTrangThai(nguoiDungId, 0); // Tìm đơn hàng có trạng thái 0
 
                 if (existingOrder == null)
                 {
                     // Nếu chưa có đơn hàng trạng thái = 0, tạo mới đơn hàng
-                    Orders newOrder = new Orders
+                    DonHang newOrder = new DonHang
                     {
                         OrderID = Guid.NewGuid().ToString(),
                         UserId = nguoiDungId,

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -18,10 +19,11 @@ namespace WebStore.Models
         [DisplayName("Mật khẩu")]
 
         public string Password { get; set; }
+        public string RetypePassword { get; set; }
         public string FullName { get; set; }
         public int Age { get; set; }
         public int Gender { get; set; }
-        public string Address { get; set; }
+        public string Address { get; set; } = "Tân Phú";
         public string Email { get; set; }
         public string Phone { get; set; }
         public int Authority { get; set; }
@@ -38,6 +40,35 @@ namespace WebStore.Models
 
 
 
+		[PasswordMatch(ErrorMessage = "Mật khẩu và mật khẩu xác nhận phải giống nhau.")]
+		public bool IsPasswordMatching { get; set; } 
+	}
 
-    }
+
+   
+		public class PasswordMatchAttribute : ValidationAttribute
+		{
+			// Kiểm tra nếu Password và RetypePassword giống nhau
+			public override bool IsValid(object value)
+			{
+				var obj = value as NguoiDungDTO;
+				if (obj != null)
+				{
+					if (obj.Password != obj.RetypePassword)
+					{
+						// Nếu không giống nhau, trả về lỗi
+						return false;
+					}
+				}
+				return true;
+			}
+
+			public override string FormatErrorMessage(string name)
+			{
+				// Định nghĩa thông báo lỗi khi Password và RetypePassword không giống nhau
+				return "Mật khẩu và mật khẩu xác nhận phải giống nhau.";
+			}
+		}
+	
+
 }

@@ -1,0 +1,51 @@
+﻿@model IEnumerable<WebStore.Models.TacGiaDTO>
+
+@{
+    ViewData["Title"] = "Quản lý tác giả";
+    Layout = "~/Views/Shared/_ManagerLayout.cshtml";
+}
+
+<h1>Quản lý tác giả</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdTG)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TenTacGia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NgaySinh)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QuocTich)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdTG)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenTacGia)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NgaySinh)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.QuocTich)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "EditAuthor", new { id = item.IdTG }) |
+                    @Html.ActionLink("Details", "DetailAuthor", new { id = item.IdTG }) |
+                    @Html.ActionLink("Delete", "DeleteAuthor", new { id = item.IdTG })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

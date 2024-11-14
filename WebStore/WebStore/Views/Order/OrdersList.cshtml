@@ -5,15 +5,22 @@
     ViewData["Title"] = "OrdersList";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h1>Danh sách đơn hàng</h1>
+@if (ViewBag.msgErr)
+{
+    <h2 class="text-danger">Khách hàng hiện chưa có lịch sử mua hàng</h2>
+}
+else
+{
+    
+<h1>Lịch sử mua hàng</h1>
 <table class="table">
     <thead>
         <tr>
-            <th>Mã đơn hàng</th>
+            <th>Mã hóa đơn</th>
 
-            <th>số tiền</th>
-            <th>Trạng thái</th>
+            <th>Số tiền</th>
+            <th>Trạng thái hóa đơn</th>
+            <th>Ngày đặt hàng</th>
             <th></th>
         </tr>
     </thead>
@@ -21,13 +28,22 @@
         @foreach (var item in @Model.lstOrder)
         {
             <tr>
-                <td>@item.InfoOrderID</td>
-                <td>@item.TotalPrice</td>
-                <td>@item.Status</td>
+                    <td>@item.Id</td>
+                    <td>@item.TongTien</td>
                 <td>
-                    @Html.ActionLink("Chi tiết đơn hàng", "InfoOrderDetail", new { id = item.InfoOrderID })
+
+
+                        <h3> @item.TrangThaiTT</h3>
+                    
+                    </td>
+                    <td> @item.NgayLap</td>
+
+                <td>
+                        @Html.ActionLink("Chi tiết đơn hàng", "InfoOrderDetail", new { id = item.Id })
                 </td>
+
             </tr>
         }
     </tbody>
 </table>
+}

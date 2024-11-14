@@ -16,7 +16,7 @@
 
                     <div class="field half">
                         <label for="Name">Họ Tên</label>
-                        <input type="text" name="Name" id="Checkout_name" placeholder="Name" value="@Model.account.FullName">
+                        <input type="text" name="TenNguoiDatHang" id="Checkout_name" placeholder="Name" value="@Model.account.FullName">
                     </div>
 
                     <div class="field half">
@@ -26,18 +26,28 @@
 
                     <div class="field col-md-3">
                         <label for="Phone">Số điện thoại</label>
-                        <input type="text" name="Phone" id="Checkout_phone"  placeholder="Phone" value="@Model.account.Phone">
+                        <input type="text" name="SoDienThoai" id="Checkout_phone" placeholder="Phone" value="@Model.account.Phone">
                     </div>
 
                     <div class="field col-md-6">
                         <label for="Address">Địa chỉ</label>
 
-                        <input type="text" name="Address" id="Checkout_address" placeholder="Address" value="@Model.account.Address">
+                        <input type="text" name="DiaChi" id="Checkout_address" placeholder="Address" value="@Model.account.Address">
                     </div>
 
                     <div class="field col-md-3">
                         <label for="ship">Phí giao hàng</label>
                         <input type="number" name="ship" placeholder="ShipCost" value="20000" disabled>
+                    </div>
+
+                    <div class="field half">
+                        <label for="PaymentMethod">Phương thức thanh toán</label>
+                        <select name="PaymentMethod" id="Checkout_paymentMethod">
+                            <option value="TheTinDung">Thẻ tín dụng</option>
+                            <option value="ChuyenKhoan">Chuyển khoản</option>
+                            <option value="TienMat">Tiền mặt</option>
+                            <option value="TheMomo">Thẻ Momo</option>
+                        </select>
                     </div>
 
                     <div class="field half">
