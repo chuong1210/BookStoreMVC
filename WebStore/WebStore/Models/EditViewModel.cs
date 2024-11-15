@@ -43,7 +43,7 @@ namespace WebStore.Models
     public class OrderDetailViewModel
     {
         public HoaDonDTO InfoOrder { get; set; }
-        public List<OrderItem> OrderItem { get; set; }
+        public List<ChiTietVatPhamDTO> OrderItem { get; set; }
         public List<SachDTO> LstBook { get; set; }
         public PhuongThucThanhToan PhuongThucTT { get; set; }
     }

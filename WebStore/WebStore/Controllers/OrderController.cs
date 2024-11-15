@@ -29,7 +29,7 @@ namespace WedStore.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult AddToCart(OrderItem orderItem)
+        public ActionResult AddToCart(ChiTietVatPhamDTO orderItem)
         {
             bool ab=DonHangDB.AddToCart(idND, orderItem.BookID, orderItem.Quantity);
             if (ab)
@@ -54,8 +54,8 @@ namespace WedStore.Controllers
             }
             dy.emptyCart = false;
 
-            //	List<OrderItem> lstOrderItem = ChiTietHoaDonDB.GetOrderItemsWithOrderID(orders.OrderID);
-            List<OrderItem> lstOrderItem = ChiTietHoaDonDB.LayChiTietDonHangTheoDonHang(orders.OrderID);
+            //	List<ChiTietVatPhamDTO> lstOrderItem = ChiTietHoaDonDB.GetOrderItemsWithOrderID(orders.OrderID);
+            List<ChiTietVatPhamDTO> lstOrderItem = ChiTietHoaDonDB.LayChiTietDonHangTheoDonHang(orders.OrderID);
             dy.orderItem = lstOrderItem;
             decimal totalPrice = 0; 
             List<SachDTO> lstBook = new List<SachDTO>();//danh sách thông tin sách từ Item
@@ -160,10 +160,10 @@ namespace WedStore.Controllers
             var infoOrder = HoaDonDB.LayHoaDonTheoId(id);
             
             //lấy danh sách item trong giỏ hàng bằng OrderID
-            List<OrderItem> lstOrderItem = ChiTietHoaDonDB.LayChiTietDonHangTheoDonHang(infoOrder.DonHangId);
+            List<ChiTietVatPhamDTO> lstOrderItem = ChiTietHoaDonDB.LayChiTietDonHangTheoDonHang(infoOrder.DonHangId);
             dy.orderItem = lstOrderItem;
 
-            //tìm thông tin sách từ List OrderItem trong giỏ hàng
+            //tìm thông tin sách từ List ChiTietVatPhamDTO trong giỏ hàng
             List<SachDTO> lstBook = new List<SachDTO>();
             foreach (var item in lstOrderItem)
             {
@@ -176,16 +176,16 @@ namespace WedStore.Controllers
         public ActionResult DeleteItem(string id)
         {
             //xóa item trong giỏ hàng
-            ChiTietHoaDonDB.deleteOrderItem(id);//ItemID
+            //ChiTietHoaDonDB.deleteOrderItem(id);//ItemID
             return RedirectToAction("Cart");
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult EditItem(OrderItem orderItem,string add, string sub)
+        public ActionResult EditItem(ChiTietVatPhamDTO orderItem,string add, string sub)
         {
             //lấy thông tin item bằng ItemID
-           // OrderItem orderItem1 = ChiTietHoaDonDB.GetOrderItemWithID(orderItem.ItemID);
-            OrderItem orderItem1 = ChiTietHoaDonDB.LayChiTietDonHangTheoIdCTDH(orderItem.ItemID);
+           // ChiTietVatPhamDTO orderItem1 = ChiTietHoaDonDB.GetOrderItemWithID(orderItem.ItemID);
+            ChiTietVatPhamDTO orderItem1 = ChiTietHoaDonDB.LayChiTietDonHangTheoIdCTDH(orderItem.ItemID);
             //qiá sản phẩm
             decimal price = orderItem1.TotalPrice / orderItem1.Quantity;
             //nếu nhấm button "add" thì tăng sản phẩm lên 1 ngược lại "sub"  giảm 1

@@ -12,35 +12,7 @@ namespace WedStore.Repositories
 {
     public class SachDB
     {
-        public static List<SachDTO> GetAll()
-        {
-            object[] value = { };
-            SQLCommand connection = new SQLCommand(ConnectStringValue.ConnectString);
-            DataTable result = connection.Select("Book_GetAll", value);
-            List<SachDTO> lstResult = new List<SachDTO>();
-            if (connection.errorCode == 0 && result.Rows.Count > 0)
-            {
-                foreach (DataRow dr in result.Rows)
-                {
-                    SachDTO book = new SachDTO();
-                    book.BookID = dr["BookID"].ToString();
-                    book.BookName = dr["BookName"].ToString();
-                    book.BookTypeID = dr["BookTypeID"].ToString();
-                    book.Author = dr["Author"].ToString();
-                    book.Nxb = dr["Nxb"].ToString();
-                    book.Description = dr["Description"].ToString();
-                    book.Image = dr["Image"].ToString();
-
-                    book.Price = string.IsNullOrEmpty(dr["Price"].ToString()) ? 0 : int.Parse(dr["Price"].ToString());
-                    book.Quantity = string.IsNullOrEmpty(dr["Quantity"].ToString()) ? 0 : int.Parse(dr["Quantity"].ToString());
-                    book.OrderedQuantity = string.IsNullOrEmpty(dr["OrderedQuantity"].ToString()) ? 0 : int.Parse(dr["OrderedQuantity"].ToString());
-
-                    lstResult.Add(book);
-                }
-            }
-            return lstResult;
-        }
-
+   
         public static List<SachDTO> LayTatCaSach()
         {
             object[] value = { };
@@ -95,65 +67,9 @@ namespace WedStore.Repositories
                 }
             }
             return lstResult;
-        }   public static List<SachDTO> GetBookWithSelling()
-        {
-            object[] value = { };
-            SQLCommand connection = new SQLCommand(ConnectStringValue.ConnectString);
-            DataTable result = connection.Select("Book_BookWithSelling", value);
-            List<SachDTO> lstResult = new List<SachDTO>();
-            if (connection.errorCode == 0 && result.Rows.Count > 0)
-            {
-                foreach (DataRow dr in result.Rows)
-                {
-                    SachDTO book = new SachDTO();
-                    book.BookID = dr["BookID"].ToString();
-                    book.BookName = dr["BookName"].ToString();
-                    book.BookTypeID = dr["BookTypeID"].ToString();
-                    book.Author = dr["Author"].ToString();
-                    book.Nxb = dr["Nxb"].ToString();
-                    book.Description = dr["Description"].ToString();
-                    book.Image = dr["Image"].ToString();
+        } 
 
-                    book.Price = string.IsNullOrEmpty(dr["Price"].ToString()) ? 0 : int.Parse(dr["Price"].ToString());
-                    book.Quantity = string.IsNullOrEmpty(dr["Quantity"].ToString()) ? 0 : int.Parse(dr["Quantity"].ToString());
-                    book.OrderedQuantity = string.IsNullOrEmpty(dr["OrderedQuantity"].ToString()) ? 0 : int.Parse(dr["OrderedQuantity"].ToString());
-
-                    lstResult.Add(book);
-                }
-            }
-            return lstResult;
-        }
-
-        public static List<SachDTO> GetTypeList(string ID)//type ID
-        {
-            object[] value = { ID };
-            SQLCommand connection = new SQLCommand(ConnectStringValue.ConnectString);
-            DataTable result = connection.Select("Book_GetTypeList", value);
-            List<SachDTO> lstResult = new List<SachDTO>();
-            if (connection.errorCode == 0 && result.Rows.Count > 0)
-            {
-                foreach (DataRow dr in result.Rows)
-                {
-                    SachDTO book = new SachDTO();
-                    book.BookID = dr["BookID"].ToString();
-                    book.BookName = dr["BookName"].ToString();
-                    book.BookTypeID = dr["BookTypeID"].ToString();
-                    book.Author = dr["Author"].ToString();
-                    book.Nxb = dr["Nxb"].ToString();
-                    book.Description = dr["Description"].ToString();
-                    book.Image = dr["Image"].ToString();
-
-                    book.Price = string.IsNullOrEmpty(dr["Price"].ToString()) ? 0 : Decimal.Parse(dr["Price"].ToString());
-                    book.Quantity = string.IsNullOrEmpty(dr["Quantity"].ToString()) ? 0 : int.Parse(dr["Quantity"].ToString());
-                    book.OrderedQuantity = string.IsNullOrEmpty(dr["OrderedQuantity"].ToString()) ? 0 : int.Parse(dr["OrderedQuantity"].ToString());
-
-                    lstResult.Add(book);
-                }
-            }
-            return lstResult;
-        }
-
-
+   
 
         public static List<SachDTO> LaySachTheoTheLoai(string ID)//type ID
         {
@@ -184,34 +100,7 @@ namespace WedStore.Repositories
             return lstResult;
         }
 
-        public static SachDTO BookWithID(string ID)//type ID
-        {
-            object[] value = { ID };
-            SQLCommand connection = new SQLCommand(ConnectStringValue.ConnectString);
-            DataTable result = connection.Select("Book_BookWithID", value);
-            //List<Book> lstResult = new List<Book>();
-            if (connection.errorCode == 0 && result.Rows.Count > 0)
-            {
-                foreach (DataRow dr in result.Rows)
-                {
-                    SachDTO book = new SachDTO();
-                    book.BookID = dr["BookID"].ToString();
-                    book.BookName = dr["BookName"].ToString();
-                    book.BookTypeID = dr["BookTypeID"].ToString();
-                    book.Author = dr["Author"].ToString();
-                    book.Nxb = dr["Nxb"].ToString();
-                    book.Description = dr["Description"].ToString();
-                    book.Image = dr["Image"].ToString();
-
-                    book.Price = string.IsNullOrEmpty(dr["Price"].ToString()) ? 0 : int.Parse(dr["Price"].ToString());
-                    book.Quantity = string.IsNullOrEmpty(dr["Quantity"].ToString()) ? 0 : int.Parse(dr["Quantity"].ToString());
-                    book.OrderedQuantity = string.IsNullOrEmpty(dr["OrderedQuantity"].ToString()) ? 0 : int.Parse(dr["OrderedQuantity"].ToString());
-                    return book;
-                    //lstResult.Add(book);
-                }
-            }
-            return null;
-        }
+ 
         public static SachDTO SachTheoId(string ID)
         {
             SachDTO book = null;
@@ -317,22 +206,9 @@ namespace WedStore.Repositories
             }
             return books;
         }
-        public static int Book_Count()
-        {
-            return GetAll().Count;
-        }
-        public static bool Book_CreateBook(SachDTO book)
-        {
-            object[] value = { book.BookID,book.BookName, book.BookTypeID, book.Author, book.Nxb, book.Description, book.Image, book.Price, book.Quantity, book.OrderedQuantity };
-            SQLCommand connection = new SQLCommand(ConnectStringValue.ConnectString);
-            DataTable result = connection.Select("Book_CreateBook", value);
-
-            if (connection.errorCode == 0 && connection.errorMessage == "")
-            {
-                return true;
-            }
-            return false;
-        } public static bool ThemSach(SachDTO book)
+    
+     
+         public static bool ThemSach(SachDTO book)
         {
             object[] value = {  book.BookName, book.BookTypeID, book.Price, book.Quantity, book.Image, book.NamXuatBan, book.Description, book.NxbId, book.AuthorId };
             SQLCommand connection = new SQLCommand(ConnectStringValue.ConnectStringMyDB);
@@ -344,18 +220,7 @@ namespace WedStore.Repositories
             }
             return false;
         }
-        public static bool Book_Update(SachDTO book)
-        {
-            object[] value = { book.BookID, book.BookName, book.BookTypeID, book.Author, book.Nxb, book.Description, book.Image, book.Price, book.Quantity, book.OrderedQuantity };
-            SQLCommand connection = new SQLCommand(ConnectStringValue.ConnectString);
-            DataTable result = connection.Select("Book_Update", value);
-
-            if (connection.errorCode == 0 && connection.errorMessage == "")
-            {
-                return true;
-            }
-            return false;
-        }
+    
 		public static bool CapNhat_Sach(SachDTO book)
 		{
 			object[] value = { book.BookID, book.BookName, book.BookTypeID, book.Price, book.Quantity, book.Image,book.NamXuatBan,   book.Description, book.NxbId, book.AuthorId};
@@ -368,18 +233,8 @@ namespace WedStore.Repositories
 			}
 			return false;
 		}
-		public static bool Book_Delete(string ID)
-        {
-            object[] value = { ID };
-            SQLCommand connection = new SQLCommand(ConnectStringValue.ConnectString);
-            DataTable result = connection.Select("Book_Delete", value);
 
-            if (connection.errorCode == 0 && connection.errorMessage == "")
-            {
-                return true;
-            }
-            return false;
-        }		public static bool XoaSach(string ID)
+        public static bool XoaSach(string ID)
         {
             object[] value = { ID };
             SQLCommand connection = new SQLCommand(ConnectStringValue.ConnectStringMyDB);

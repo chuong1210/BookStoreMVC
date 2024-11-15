@@ -11,25 +11,7 @@ namespace WedStore.Repositories
 {
     public class TheLoaiSachDB
     {
-        public static List<BookType> GetAllType()
-        {
-            object[] value = { };
-            SQLCommand connection = new SQLCommand(ConnectStringValue.ConnectString);
-            DataTable result = connection.Select("Book_GetAllType", value);
-            List<BookType> lstResult = new List<BookType>();
-            if (connection.errorCode == 0 && result.Rows.Count > 0)
-            {
-                foreach (DataRow dr in result.Rows)
-                {
-                    BookType bookType = new BookType();
-                    bookType.BookTypeID = dr["BookTypeID"].ToString();
-                    bookType.BookTypeName = dr["BookTypeName"].ToString();
-
-                    lstResult.Add(bookType);
-                }
-            }
-            return lstResult;
-        }
+       
 		public static List<BookType> ListTheLoai()
 		{
 			object[] value = { };
@@ -49,23 +31,8 @@ namespace WedStore.Repositories
 			}
 			return lstResult;
 		}
-		public static BookType BookTypeWithID(string ID)
-        {
-            object[] value = { ID};
-            SQLCommand connection = new SQLCommand(ConnectStringValue.ConnectString);
-            DataTable result = connection.Select("Book_BookTypeWithID", value);
-            if (connection.errorCode == 0 && result.Rows.Count > 0)
-            {
-                foreach (DataRow dr in result.Rows)
-                {
-                    BookType bookType = new BookType();
-                    bookType.BookTypeID = dr["BookTypeID"].ToString();
-                    bookType.BookTypeName = dr["BookTypeName"].ToString();
-                    return bookType;
-                }
-            }
-            return null;
-        }	public static BookType LayThongTinTheLoai(string ID)
+
+        	public static BookType LayThongTinTheLoai(string ID)
         {
             object[] value = { ID};
             SQLCommand connection = new SQLCommand(ConnectStringValue.ConnectStringMyDB);

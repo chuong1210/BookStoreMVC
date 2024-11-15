@@ -11,133 +11,8 @@ namespace WedStore.Repositories
 {
     public class ChiTietDonHangDB
     {
-        public static bool InfoOrder_create(OrderDetails infoOrder)// tạo đơn hàng mới
-        {
-            object[] value = { infoOrder.OrderDetailId, infoOrder.OrderID, infoOrder.Name,
-                               infoOrder.Email, infoOrder.Phone,infoOrder. Address,
-                               infoOrder.TotalPrice, infoOrder.Status };
-            SQLCommand connection = new SQLCommand(ConnectStringValue.ConnectString);
-            DataTable result = connection.Select("InfoOrder_Create", value);
-
-            if (connection.errorCode == 0 && connection.errorMessage == "")
-            {
-                return true;
-            }
-            return false;
-        }
-        public static OrderDetails InfoOrder_GetInfoOrdersWithID(string id)
-        {
-            object[] value = { id };
-            SQLCommand connection = new SQLCommand(ConnectStringValue.ConnectString);
-            DataTable result = connection.Select("InfoOrder_GetInfoOrdersWithID", value);
-            if (connection.errorCode == 0 && connection.errorMessage == "")
-            {
-                foreach (DataRow dr in result.Rows)
-                {
-                    OrderDetails infoOrder = new OrderDetails();
-                    infoOrder.OrderDetailId = dr["InfoOrderID"].ToString();
-                    infoOrder.OrderID = dr["OrderID"].ToString();
-                    infoOrder.Name = dr["Name"].ToString();
-                    infoOrder.Email = dr["Email"].ToString();
-                    infoOrder.Phone = dr["Phone"].ToString();
-                    infoOrder.Address = dr["Address"].ToString();
-
-                    infoOrder.TotalPrice = string.IsNullOrEmpty(dr["TotalPrice"].ToString()) ? 0 : Decimal.Parse(dr["TotalPrice"].ToString());
-                    infoOrder.Status = string.IsNullOrEmpty(dr["Status"].ToString()) ? 0 : int.Parse(dr["Status"].ToString());
-                    return infoOrder;
-                }
-            }
-            return null;
-        }
-        public static OrderDetails InfoOrder_GetInfoOrdersWithOrderID(string id)
-        {
-            object[] value = { id };
-            SQLCommand connection = new SQLCommand(ConnectStringValue.ConnectString);
-            DataTable result = connection.Select("InfoOrder_GetInfoOrderWithOrderID", value);
-            if (connection.errorCode == 0 && connection.errorMessage == "")
-            {
-                foreach (DataRow dr in result.Rows)
-                {
-                    OrderDetails infoOrder = new OrderDetails();
-                    infoOrder.OrderDetailId = dr["InfoOrderID"].ToString();
-                    infoOrder.OrderID = dr["OrderID"].ToString();
-                    infoOrder.Name = dr["Name"].ToString();
-                    infoOrder.Email = dr["Email"].ToString();
-                    infoOrder.Phone = dr["Phone"].ToString();
-                    infoOrder.Address = dr["Address"].ToString();
-
-                    infoOrder.TotalPrice = string.IsNullOrEmpty(dr["TotalPrice"].ToString()) ? 0 : Decimal.Parse(dr["TotalPrice"].ToString());
-                    infoOrder.Status = string.IsNullOrEmpty(dr["Status"].ToString()) ? 0 : int.Parse(dr["Status"].ToString());
-                    return infoOrder;
-                }
-            }
-            return null;
-        }
-
-        public static List<OrderDetails> InfoOrder_GetInfoOrderWithEmail(string email)
-        {
-            object[] value = { email };
-            SQLCommand connection = new SQLCommand(ConnectStringValue.ConnectString);
-            DataTable result = connection.Select("InfoOrder_GetInfoOrderWithEmail", value);
-            List<OrderDetails> lstInfoOrder = new List<OrderDetails>();
-            if (connection.errorCode == 0 && connection.errorMessage == "")
-            {
-                foreach (DataRow dr in result.Rows)
-                {
-                    OrderDetails infoOrder = new OrderDetails();
-                    infoOrder.OrderDetailId = dr["InfoOrderID"].ToString();
-                    infoOrder.OrderID = dr["OrderID"].ToString();
-                    infoOrder.Name = dr["Name"].ToString();
-                    infoOrder.Email = dr["Email"].ToString();
-                    infoOrder.Phone = dr["Phone"].ToString();
-                    infoOrder.Address = dr["Address"].ToString();
-
-                    infoOrder.TotalPrice = string.IsNullOrEmpty(dr["TotalPrice"].ToString()) ? 0 : Decimal.Parse(dr["TotalPrice"].ToString());
-                    infoOrder.Status = string.IsNullOrEmpty(dr["Status"].ToString()) ? 0 : int.Parse(dr["Status"].ToString());
-
-                    lstInfoOrder.Add(infoOrder);
-                }
-            }
-            return lstInfoOrder;
-        }
-        public static List<OrderDetails> InfoOrder_GetAll() {
-            object[] value = { };
-            SQLCommand connection = new SQLCommand(ConnectStringValue.ConnectString);
-            DataTable result = connection.Select("InfoOrder_GetAll", value);
-            List<OrderDetails> lstInfoOrder = new List<OrderDetails>();
-            if (connection.errorCode == 0 && connection.errorMessage == "")
-            {
-                foreach (DataRow dr in result.Rows)
-                {
-                    OrderDetails infoOrder = new OrderDetails();
-                    infoOrder.OrderDetailId = dr["InfoOrderID"].ToString();
-                    infoOrder.OrderID = dr["OrderID"].ToString();
-                    infoOrder.Name = dr["Name"].ToString();
-                    infoOrder.Email = dr["Email"].ToString();
-                    infoOrder.Phone = dr["Phone"].ToString();
-                    infoOrder.Address = dr["Address"].ToString();
-
-                    infoOrder.TotalPrice = string.IsNullOrEmpty(dr["TotalPrice"].ToString()) ? 0 : decimal.Parse(dr["TotalPrice"].ToString());
-                    infoOrder.Status = string.IsNullOrEmpty(dr["Status"].ToString()) ? 0 : int.Parse(dr["Status"].ToString());
-
-                    lstInfoOrder.Add(infoOrder);
-                }
-            }
-            return lstInfoOrder;
-        }
-        public static bool InfoOrder_Delete(string InfoOrderID)
-        {
-            object[] value = { InfoOrderID };
-            SQLCommand connection = new SQLCommand(ConnectStringValue.ConnectString);
-            DataTable result = connection.Select("InfoOrder_Delete", value);
-
-            if (connection.errorCode == 0 && connection.errorMessage == "")
-            {
-                return true;
-            }
-            return false;
-        }
-
+    
+   
 		public static decimal TongTienDH(string idOrder)
 		{
 
@@ -170,9 +45,9 @@ namespace WedStore.Repositories
 			}
 		}
 
-        public static List<OrderItem> LayChiTietDonHang(string orderId)
+        public static List<ChiTietVatPhamDTO> LayChiTietDonHang(string orderId)
         {
-            List<OrderItem> orderDetails = new List<OrderItem>();
+            List<ChiTietVatPhamDTO> orderDetails = new List<ChiTietVatPhamDTO>();
 
             // Mở kết nối đến cơ sở dữ liệu
             using (SqlConnection connection = new SqlConnection(ConnectStringValue.ConnectStringMyDB))
@@ -204,7 +79,7 @@ namespace WedStore.Repositories
                     {
                         while (reader.Read())
                         {
-                            OrderItem detail = new OrderItem
+                            ChiTietVatPhamDTO detail = new ChiTietVatPhamDTO
                             {
                                 ItemID = reader["DetailID"].ToString(),
                                 BookID = reader["sach_id"].ToString(),
@@ -225,19 +100,6 @@ namespace WedStore.Repositories
             return orderDetails;
         }
 
-        public static bool InfoOrder_Update(OrderDetails infoOrder)
-        {
-            object[] value = { infoOrder.OrderDetailId, infoOrder.OrderID, infoOrder.Name,
-                               infoOrder.Email, infoOrder.Phone,infoOrder. Address,
-                               infoOrder.TotalPrice, infoOrder.Status };
-            SQLCommand connection = new SQLCommand(ConnectStringValue.ConnectString);
-            DataTable result = connection.Select("InfoOrder_Update", value);
 
-            if (connection.errorCode == 0 && connection.errorMessage == "")
-            {
-                return true;
-            }
-            return false;
-        }
     }
 }

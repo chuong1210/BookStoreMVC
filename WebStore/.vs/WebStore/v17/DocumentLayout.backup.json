@@ -7,80 +7,44 @@
       "RelativeMoniker": "D:0:0:{B8C60009-B2A7-4947-91BD-4724D5064CB6}|WebStore\\WebStore.csproj|solutionrelative:webstore\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B8C60009-B2A7-4947-91BD-4724D5064CB6}|WebStore\\WebStore.csproj|c:\\users\\chuon\\downloads\\quanlybansach\\webstore\\webstore\\models\\donhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B8C60009-B2A7-4947-91BD-4724D5064CB6}|WebStore\\WebStore.csproj|solutionrelative:webstore\\models\\donhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B8C60009-B2A7-4947-91BD-4724D5064CB6}|WebStore\\WebStore.csproj|c:\\users\\chuon\\downloads\\quanlybansach\\webstore\\webstore\\views\\order\\orderslist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B8C60009-B2A7-4947-91BD-4724D5064CB6}|WebStore\\WebStore.csproj|solutionrelative:webstore\\views\\order\\orderslist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B8C60009-B2A7-4947-91BD-4724D5064CB6}|WebStore\\WebStore.csproj|c:\\users\\chuon\\downloads\\quanlybansach\\webstore\\webstore\\models\\hoadondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B8C60009-B2A7-4947-91BD-4724D5064CB6}|WebStore\\WebStore.csproj|solutionrelative:webstore\\models\\hoadondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B8C60009-B2A7-4947-91BD-4724D5064CB6}|WebStore\\WebStore.csproj|c:\\users\\chuon\\downloads\\quanlybansach\\webstore\\webstore\\views\\shared\\_managerlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B8C60009-B2A7-4947-91BD-4724D5064CB6}|WebStore\\WebStore.csproj|solutionrelative:webstore\\views\\shared\\_managerlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{B8C60009-B2A7-4947-91BD-4724D5064CB6}|WebStore\\WebStore.csproj|c:\\users\\chuon\\downloads\\quanlybansach\\webstore\\webstore\\servicie\\donhangdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B8C60009-B2A7-4947-91BD-4724D5064CB6}|WebStore\\WebStore.csproj|solutionrelative:webstore\\servicie\\donhangdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B8C60009-B2A7-4947-91BD-4724D5064CB6}|WebStore\\WebStore.csproj|c:\\users\\chuon\\downloads\\quanlybansach\\webstore\\webstore\\servicie\\hoadondb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B8C60009-B2A7-4947-91BD-4724D5064CB6}|WebStore\\WebStore.csproj|solutionrelative:webstore\\servicie\\hoadondb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B8C60009-B2A7-4947-91BD-4724D5064CB6}|WebStore\\WebStore.csproj|c:\\users\\chuon\\downloads\\quanlybansach\\webstore\\webstore\\servicie\\donhangdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B8C60009-B2A7-4947-91BD-4724D5064CB6}|WebStore\\WebStore.csproj|solutionrelative:webstore\\servicie\\donhangdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B8C60009-B2A7-4947-91BD-4724D5064CB6}|WebStore\\WebStore.csproj|c:\\users\\chuon\\downloads\\quanlybansach\\webstore\\webstore\\models\\donhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B8C60009-B2A7-4947-91BD-4724D5064CB6}|WebStore\\WebStore.csproj|solutionrelative:webstore\\models\\donhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B8C60009-B2A7-4947-91BD-4724D5064CB6}|WebStore\\WebStore.csproj|c:\\users\\chuon\\downloads\\quanlybansach\\webstore\\webstore\\views\\quanly\\managerpublisher.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B8C60009-B2A7-4947-91BD-4724D5064CB6}|WebStore\\WebStore.csproj|solutionrelative:webstore\\views\\quanly\\managerpublisher.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{B8C60009-B2A7-4947-91BD-4724D5064CB6}|WebStore\\WebStore.csproj|c:\\users\\chuon\\downloads\\quanlybansach\\webstore\\webstore\\views\\shared\\_managerlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B8C60009-B2A7-4947-91BD-4724D5064CB6}|WebStore\\WebStore.csproj|solutionrelative:webstore\\views\\shared\\_managerlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B8C60009-B2A7-4947-91BD-4724D5064CB6}|WebStore\\WebStore.csproj|c:\\users\\chuon\\downloads\\quanlybansach\\webstore\\webstore\\views\\quanly\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B8C60009-B2A7-4947-91BD-4724D5064CB6}|WebStore\\WebStore.csproj|solutionrelative:webstore\\views\\quanly\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{B8C60009-B2A7-4947-91BD-4724D5064CB6}|WebStore\\WebStore.csproj|c:\\users\\chuon\\downloads\\quanlybansach\\webstore\\webstore\\views\\order\\orderslist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B8C60009-B2A7-4947-91BD-4724D5064CB6}|WebStore\\WebStore.csproj|solutionrelative:webstore\\views\\order\\orderslist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B8C60009-B2A7-4947-91BD-4724D5064CB6}|WebStore\\WebStore.csproj|c:\\users\\chuon\\downloads\\quanlybansach\\webstore\\webstore\\views\\quanly\\managerauthor.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B8C60009-B2A7-4947-91BD-4724D5064CB6}|WebStore\\WebStore.csproj|solutionrelative:webstore\\views\\quanly\\managerauthor.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{B8C60009-B2A7-4947-91BD-4724D5064CB6}|WebStore\\WebStore.csproj|c:\\users\\chuon\\downloads\\quanlybansach\\webstore\\webstore\\views\\order\\infoorderdetail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B8C60009-B2A7-4947-91BD-4724D5064CB6}|WebStore\\WebStore.csproj|solutionrelative:webstore\\views\\order\\infoorderdetail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B8C60009-B2A7-4947-91BD-4724D5064CB6}|WebStore\\WebStore.csproj|c:\\users\\chuon\\downloads\\quanlybansach\\webstore\\webstore\\connectstringvalue\\connectstringvalue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B8C60009-B2A7-4947-91BD-4724D5064CB6}|WebStore\\WebStore.csproj|solutionrelative:webstore\\connectstringvalue\\connectstringvalue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B8C60009-B2A7-4947-91BD-4724D5064CB6}|WebStore\\WebStore.csproj|c:\\users\\chuon\\downloads\\quanlybansach\\webstore\\webstore\\models\\hoadondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B8C60009-B2A7-4947-91BD-4724D5064CB6}|WebStore\\WebStore.csproj|solutionrelative:webstore\\models\\hoadondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B8C60009-B2A7-4947-91BD-4724D5064CB6}|WebStore\\WebStore.csproj|c:\\users\\chuon\\downloads\\quanlybansach\\webstore\\webstore\\models\\nguoidungdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B8C60009-B2A7-4947-91BD-4724D5064CB6}|WebStore\\WebStore.csproj|solutionrelative:webstore\\models\\nguoidungdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B8C60009-B2A7-4947-91BD-4724D5064CB6}|WebStore\\WebStore.csproj|c:\\users\\chuon\\downloads\\quanlybansach\\webstore\\webstore\\models\\chitietvatphamdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B8C60009-B2A7-4947-91BD-4724D5064CB6}|WebStore\\WebStore.csproj|solutionrelative:webstore\\models\\chitietvatphamdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B8C60009-B2A7-4947-91BD-4724D5064CB6}|WebStore\\WebStore.csproj|c:\\users\\chuon\\downloads\\quanlybansach\\webstore\\webstore\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B8C60009-B2A7-4947-91BD-4724D5064CB6}|WebStore\\WebStore.csproj|solutionrelative:webstore\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B8C60009-B2A7-4947-91BD-4724D5064CB6}|WebStore\\WebStore.csproj|c:\\users\\chuon\\downloads\\quanlybansach\\webstore\\webstore\\models\\chitietdonhangdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B8C60009-B2A7-4947-91BD-4724D5064CB6}|WebStore\\WebStore.csproj|solutionrelative:webstore\\models\\chitietdonhangdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B8C60009-B2A7-4947-91BD-4724D5064CB6}|WebStore\\WebStore.csproj|c:\\users\\chuon\\downloads\\quanlybansach\\webstore\\webstore\\views\\account\\signup.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B8C60009-B2A7-4947-91BD-4724D5064CB6}|WebStore\\WebStore.csproj|solutionrelative:webstore\\views\\account\\signup.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B8C60009-B2A7-4947-91BD-4724D5064CB6}|WebStore\\WebStore.csproj|c:\\users\\chuon\\downloads\\quanlybansach\\webstore\\webstore\\views\\thongke\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B8C60009-B2A7-4947-91BD-4724D5064CB6}|WebStore\\WebStore.csproj|solutionrelative:webstore\\views\\thongke\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B8C60009-B2A7-4947-91BD-4724D5064CB6}|WebStore\\WebStore.csproj|c:\\users\\chuon\\downloads\\quanlybansach\\webstore\\webstore\\controllers\\thongkecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B8C60009-B2A7-4947-91BD-4724D5064CB6}|WebStore\\WebStore.csproj|solutionrelative:webstore\\controllers\\thongkecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B8C60009-B2A7-4947-91BD-4724D5064CB6}|WebStore\\WebStore.csproj|c:\\users\\chuon\\downloads\\quanlybansach\\webstore\\webstore\\views\\shared\\components\\cart\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B8C60009-B2A7-4947-91BD-4724D5064CB6}|WebStore\\WebStore.csproj|solutionrelative:webstore\\views\\shared\\components\\cart\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B8C60009-B2A7-4947-91BD-4724D5064CB6}|WebStore\\WebStore.csproj|c:\\users\\chuon\\downloads\\quanlybansach\\webstore\\webstore\\views\\quanly\\editorder.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B8C60009-B2A7-4947-91BD-4724D5064CB6}|WebStore\\WebStore.csproj|solutionrelative:webstore\\views\\quanly\\editorder.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B8C60009-B2A7-4947-91BD-4724D5064CB6}|WebStore\\WebStore.csproj|c:\\users\\chuon\\downloads\\quanlybansach\\webstore\\webstore\\models\\editviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B8C60009-B2A7-4947-91BD-4724D5064CB6}|WebStore\\WebStore.csproj|solutionrelative:webstore\\models\\editviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B8C60009-B2A7-4947-91BD-4724D5064CB6}|WebStore\\WebStore.csproj|c:\\users\\chuon\\downloads\\quanlybansach\\webstore\\webstore\\views\\quanly\\managerorder.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B8C60009-B2A7-4947-91BD-4724D5064CB6}|WebStore\\WebStore.csproj|solutionrelative:webstore\\views\\quanly\\managerorder.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{B8C60009-B2A7-4947-91BD-4724D5064CB6}|WebStore\\WebStore.csproj|c:\\users\\chuon\\downloads\\quanlybansach\\webstore\\webstore\\models\\booktype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B8C60009-B2A7-4947-91BD-4724D5064CB6}|WebStore\\WebStore.csproj|solutionrelative:webstore\\models\\booktype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -90,7 +54,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 11,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -122,15 +86,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "DonHang.cs",
-              "DocumentMoniker": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\Models\\DonHang.cs",
-              "RelativeDocumentMoniker": "WebStore\\Models\\DonHang.cs",
-              "ToolTip": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\Models\\DonHang.cs",
-              "RelativeToolTip": "WebStore\\Models\\DonHang.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAYAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "OrderController.cs",
+              "DocumentMoniker": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\Controllers\\OrderController.cs",
+              "RelativeDocumentMoniker": "WebStore\\Controllers\\OrderController.cs",
+              "ToolTip": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\Controllers\\OrderController.cs",
+              "RelativeToolTip": "WebStore\\Controllers\\OrderController.cs",
+              "ViewState": "AgIAALMAAAAAAAAAAAAuwCEAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T12:35:44.039Z",
+              "WhenOpened": "2024-11-15T08:59:54.177Z",
               "EditorCaption": ""
             },
             {
@@ -141,244 +105,117 @@
               "RelativeDocumentMoniker": "WebStore\\Views\\Shared\\_ManagerLayout.cshtml",
               "ToolTip": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\Views\\Shared\\_ManagerLayout.cshtml",
               "RelativeToolTip": "WebStore\\Views\\Shared\\_ManagerLayout.cshtml",
-              "ViewState": "AgIAACEAAAAAAAAAAAAAAC4AAAA3AAAAAAAAAA==",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAAC4AAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-14T12:25:28.969Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-15T08:58:00.042Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "OrdersList.cshtml",
-              "DocumentMoniker": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\Views\\Order\\OrdersList.cshtml",
-              "RelativeDocumentMoniker": "WebStore\\Views\\Order\\OrdersList.cshtml",
-              "ToolTip": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\Views\\Order\\OrdersList.cshtml",
-              "RelativeToolTip": "WebStore\\Views\\Order\\OrdersList.cshtml",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAABcAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-14T12:08:18.303Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "HoaDonDTO.cs",
-              "DocumentMoniker": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\Models\\HoaDonDTO.cs",
-              "RelativeDocumentMoniker": "WebStore\\Models\\HoaDonDTO.cs",
-              "ToolTip": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\Models\\HoaDonDTO.cs",
-              "RelativeToolTip": "WebStore\\Models\\HoaDonDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAoAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T10:19:57.56Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "OrderController.cs",
-              "DocumentMoniker": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\Controllers\\OrderController.cs",
-              "RelativeDocumentMoniker": "WebStore\\Controllers\\OrderController.cs",
-              "ToolTip": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\Controllers\\OrderController.cs",
-              "RelativeToolTip": "WebStore\\Controllers\\OrderController.cs",
-              "ViewState": "AgIAAJgAAAAAAAAAAAASwKkAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T10:34:01.534Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "HoaDonDB.cs",
-              "DocumentMoniker": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\Servicie\\HoaDonDB.cs",
-              "RelativeDocumentMoniker": "WebStore\\Servicie\\HoaDonDB.cs",
-              "ToolTip": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\Servicie\\HoaDonDB.cs",
-              "RelativeToolTip": "WebStore\\Servicie\\HoaDonDB.cs",
-              "ViewState": "AgIAACwAAAAAAAAAAAAAwEAAAABOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T10:25:51.598Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\Views\\QuanLy\\Index.cshtml",
-              "RelativeDocumentMoniker": "WebStore\\Views\\QuanLy\\Index.cshtml",
-              "ToolTip": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\Views\\QuanLy\\Index.cshtml",
-              "RelativeToolTip": "WebStore\\Views\\QuanLy\\Index.cshtml",
-              "ViewState": "AgIAAC4AAAAAAAAAAAAqwDsAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-14T11:57:02.049Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
               "Title": "DonHangDB.cs",
               "DocumentMoniker": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\Servicie\\DonHangDB.cs",
               "RelativeDocumentMoniker": "WebStore\\Servicie\\DonHangDB.cs",
               "ToolTip": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\Servicie\\DonHangDB.cs",
               "RelativeToolTip": "WebStore\\Servicie\\DonHangDB.cs",
-              "ViewState": "AgIAAGQAAAAAAAAAAAAYwHcAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAANEAAAAAAAAAAAAowNUAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T12:22:49.176Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-15T08:55:19.405Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ManagerPublisher.cshtml",
-              "DocumentMoniker": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\Views\\QuanLy\\ManagerPublisher.cshtml",
-              "RelativeDocumentMoniker": "WebStore\\Views\\QuanLy\\ManagerPublisher.cshtml",
-              "ToolTip": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\Views\\QuanLy\\ManagerPublisher.cshtml",
-              "RelativeToolTip": "WebStore\\Views\\QuanLy\\ManagerPublisher.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAlAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "OrdersList.cshtml",
+              "DocumentMoniker": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\Views\\Order\\OrdersList.cshtml",
+              "RelativeDocumentMoniker": "WebStore\\Views\\Order\\OrdersList.cshtml",
+              "ToolTip": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\Views\\Order\\OrdersList.cshtml",
+              "RelativeToolTip": "WebStore\\Views\\Order\\OrdersList.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABYAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-14T12:01:11.796Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-15T08:54:09.838Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ManagerAuthor.cshtml",
-              "DocumentMoniker": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\Views\\QuanLy\\ManagerAuthor.cshtml",
-              "RelativeDocumentMoniker": "WebStore\\Views\\QuanLy\\ManagerAuthor.cshtml",
-              "ToolTip": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\Views\\QuanLy\\ManagerAuthor.cshtml",
-              "RelativeToolTip": "WebStore\\Views\\QuanLy\\ManagerAuthor.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAlAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "InfoOrderDetail.cshtml",
+              "DocumentMoniker": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\Views\\Order\\InfoOrderDetail.cshtml",
+              "RelativeDocumentMoniker": "WebStore\\Views\\Order\\InfoOrderDetail.cshtml",
+              "ToolTip": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\Views\\Order\\InfoOrderDetail.cshtml",
+              "RelativeToolTip": "WebStore\\Views\\Order\\InfoOrderDetail.cshtml",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAE0AAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-14T12:00:48.989Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-15T08:53:16.23Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\Views\\ThongKe\\Index.cshtml",
-              "RelativeDocumentMoniker": "WebStore\\Views\\ThongKe\\Index.cshtml",
-              "ToolTip": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\Views\\ThongKe\\Index.cshtml",
-              "RelativeToolTip": "WebStore\\Views\\ThongKe\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-14T11:10:48.721Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "SignUp.cshtml",
-              "DocumentMoniker": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\Views\\Account\\SignUp.cshtml",
-              "RelativeDocumentMoniker": "WebStore\\Views\\Account\\SignUp.cshtml",
-              "ToolTip": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\Views\\Account\\SignUp.cshtml",
-              "RelativeToolTip": "WebStore\\Views\\Account\\SignUp.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-14T11:11:26.208Z",
-              "EditorCaption": ""
+              "DocumentIndex": 2,
+              "Title": "HoaDonDB.cs",
+              "DocumentMoniker": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\Servicie\\HoaDonDB.cs",
+              "RelativeDocumentMoniker": "WebStore\\Servicie\\HoaDonDB.cs",
+              "ToolTip": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\Servicie\\HoaDonDB.cs",
+              "RelativeToolTip": "WebStore\\Servicie\\HoaDonDB.cs",
+              "ViewState": "AgIAAAABAAAAAAAAAAAwwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-15T08:53:00.784Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "ConnectStringValue.cs",
-              "DocumentMoniker": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\ConnectStringValue\\ConnectStringValue.cs",
-              "RelativeDocumentMoniker": "WebStore\\ConnectStringValue\\ConnectStringValue.cs",
-              "ToolTip": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\ConnectStringValue\\ConnectStringValue.cs",
-              "RelativeToolTip": "WebStore\\ConnectStringValue\\ConnectStringValue.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAB+AAAAAAAAAA==",
+              "Title": "BookType.cs",
+              "DocumentMoniker": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\Models\\BookType.cs",
+              "RelativeDocumentMoniker": "WebStore\\Models\\BookType.cs",
+              "ToolTip": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\Models\\BookType.cs",
+              "RelativeToolTip": "WebStore\\Models\\BookType.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T11:55:38.645Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-15T08:49:07.245Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "AccountController.cs",
-              "DocumentMoniker": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\Controllers\\AccountController.cs",
-              "RelativeDocumentMoniker": "WebStore\\Controllers\\AccountController.cs",
-              "ToolTip": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\Controllers\\AccountController.cs",
-              "RelativeToolTip": "WebStore\\Controllers\\AccountController.cs",
-              "ViewState": "AgIAAGkAAAAAAAAAAAA7wHAAAAAvAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "DonHang.cs",
+              "DocumentMoniker": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\Models\\DonHang.cs",
+              "RelativeDocumentMoniker": "WebStore\\Models\\DonHang.cs",
+              "ToolTip": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\Models\\DonHang.cs",
+              "RelativeToolTip": "WebStore\\Models\\DonHang.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAcAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T11:13:10.814Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-15T08:48:21.17Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "ThongKeController.cs",
-              "DocumentMoniker": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\Controllers\\ThongKeController.cs",
-              "RelativeDocumentMoniker": "WebStore\\Controllers\\ThongKeController.cs",
-              "ToolTip": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\Controllers\\ThongKeController.cs",
-              "RelativeToolTip": "WebStore\\Controllers\\ThongKeController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAaAAAAAAAAAA==",
+              "DocumentIndex": 8,
+              "Title": "ChiTietVatPhamDTO.cs",
+              "DocumentMoniker": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\Models\\ChiTietVatPhamDTO.cs",
+              "RelativeDocumentMoniker": "WebStore\\Models\\ChiTietVatPhamDTO.cs",
+              "ToolTip": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\Models\\ChiTietVatPhamDTO.cs",
+              "RelativeToolTip": "WebStore\\Models\\ChiTietVatPhamDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T11:10:42.921Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-15T08:48:16.103Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "NguoiDungDTO.cs",
-              "DocumentMoniker": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\Models\\NguoiDungDTO.cs",
-              "RelativeDocumentMoniker": "WebStore\\Models\\NguoiDungDTO.cs",
-              "ToolTip": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\Models\\NguoiDungDTO.cs",
-              "RelativeToolTip": "WebStore\\Models\\NguoiDungDTO.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAAA6wCsAAAAvAAAAAAAAAA==",
+              "DocumentIndex": 9,
+              "Title": "ChiTietDonHangDTO.cs",
+              "DocumentMoniker": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\Models\\ChiTietDonHangDTO.cs",
+              "RelativeDocumentMoniker": "WebStore\\Models\\ChiTietDonHangDTO.cs",
+              "ToolTip": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\Models\\ChiTietDonHangDTO.cs",
+              "RelativeToolTip": "WebStore\\Models\\ChiTietDonHangDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T11:13:18.116Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-15T08:48:10.221Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "Default.cshtml",
-              "DocumentMoniker": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\Views\\Shared\\Components\\Cart\\Default.cshtml",
-              "RelativeDocumentMoniker": "WebStore\\Views\\Shared\\Components\\Cart\\Default.cshtml",
-              "ToolTip": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\Views\\Shared\\Components\\Cart\\Default.cshtml",
-              "RelativeToolTip": "WebStore\\Views\\Shared\\Components\\Cart\\Default.cshtml",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAABkAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-14T11:08:59.533Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "EditViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\Models\\EditViewModel.cs",
-              "RelativeDocumentMoniker": "WebStore\\Models\\EditViewModel.cs",
-              "ToolTip": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\Models\\EditViewModel.cs",
-              "RelativeToolTip": "WebStore\\Models\\EditViewModel.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAUwC8AAAAiAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "HoaDonDTO.cs",
+              "DocumentMoniker": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\Models\\HoaDonDTO.cs",
+              "RelativeDocumentMoniker": "WebStore\\Models\\HoaDonDTO.cs",
+              "ToolTip": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\Models\\HoaDonDTO.cs",
+              "RelativeToolTip": "WebStore\\Models\\HoaDonDTO.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAxwA0AAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T09:46:35.269Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "EditOrder.cshtml",
-              "DocumentMoniker": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\Views\\QuanLy\\EditOrder.cshtml",
-              "RelativeDocumentMoniker": "WebStore\\Views\\QuanLy\\EditOrder.cshtml",
-              "ToolTip": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\Views\\QuanLy\\EditOrder.cshtml",
-              "RelativeToolTip": "WebStore\\Views\\QuanLy\\EditOrder.cshtml",
-              "ViewState": "AgIAAFoAAAAAAAAAAAAAAGgAAAADAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-14T09:29:32.453Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "ManagerOrder.cshtml",
-              "DocumentMoniker": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\Views\\QuanLy\\ManagerOrder.cshtml",
-              "RelativeDocumentMoniker": "WebStore\\Views\\QuanLy\\ManagerOrder.cshtml",
-              "ToolTip": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\Views\\QuanLy\\ManagerOrder.cshtml",
-              "RelativeToolTip": "WebStore\\Views\\QuanLy\\ManagerOrder.cshtml",
-              "ViewState": "AgIAAEIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-14T09:24:42.689Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-15T08:48:07.547Z"
             }
           ]
         }

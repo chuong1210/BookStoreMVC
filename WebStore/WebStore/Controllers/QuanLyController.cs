@@ -471,7 +471,7 @@ namespace WedStore.Controllers
                 return RedirectToAction("Index"); // Hoặc trả về một lỗi nếu id không hợp lệ
             }
             HoaDonDTO  orderInfo = HoaDonDB.LayHoaDonTheoId(id);
-            List<OrderItem> orderDetails = ChiTietHoaDonDB.LayChiTietDonHangTheoDonHang(orderInfo.DonHangId);
+            List<ChiTietVatPhamDTO> orderDetails = ChiTietHoaDonDB.LayChiTietDonHangTheoDonHang(orderInfo.DonHangId);
          //   var bookdetail = SachDB.LaySachTheoOrderId(orderInfo.DonHangId);
 
      
@@ -501,7 +501,7 @@ namespace WedStore.Controllers
             }
             HoaDonDTO orderInfo = HoaDonDB.LayHoaDonTheoId(id);
 
-            List<OrderItem> orderDetails = ChiTietHoaDonDB.LayChiTietDonHangTheoDonHang(orderInfo.DonHangId); // Giả sử phương thức này lấy chi tiết đơn hàng
+            List<ChiTietVatPhamDTO> orderDetails = ChiTietHoaDonDB.LayChiTietDonHangTheoDonHang(orderInfo.DonHangId); // Giả sử phương thức này lấy chi tiết đơn hàng
 
             var model = new OrderDetailViewModel
             {

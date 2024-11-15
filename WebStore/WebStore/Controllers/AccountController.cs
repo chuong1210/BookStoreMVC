@@ -21,8 +21,8 @@ namespace WedStore.Controllers
         public ActionResult Index()
         {
             dynamic dy = new ExpandoObject();
-            dy.booktypeNAV = TheLoaiSachDB.GetAllType();
-            var account = NguoiDungDB.GetAll();
+            dy.booktypeNAV = TheLoaiSachDB.ListTheLoai();
+            var account = NguoiDungDB.LayTatCaNguoiDung();
             dy.account = account;
             return View(dy);
         }
@@ -154,22 +154,22 @@ namespace WedStore.Controllers
                     ViewBag.ErrorMessage = "vui lòng nhập email";
                     return View();
                 }
-                NguoiDungDTO acc = NguoiDungDB.GetAccountWithUser(account.UserName);
-                if(acc.UserName != null)// username tồn tại
-                {
-                    ViewBag.ErrorMessage = "tài khoản này đã tồn tại";
-                    return View();
-                }
-                acc = NguoiDungDB.GetAccountWithEmail(account.Email);
-                if (acc.Email != null)// email tồn tại
-                {
-                    ViewBag.ErrorMessage = "email này đã tồn tại";
-                    return View();
-                }
-                //hash password
-                string passhash = BCrypt.Net.BCrypt.HashPassword(account.Password);
-                account.Password = passhash;
-                NguoiDungDB.Account_Create(account);
+                //NguoiDungDTO acc = NguoiDungDB.GetAccountWithUser(account.UserName);
+                //if(acc.UserName != null)// username tồn tại
+                //{
+                //    ViewBag.ErrorMessage = "tài khoản này đã tồn tại";
+                //    return View();
+                //}
+                //acc = NguoiDungDB.GetAccountWithEmail(account.Email);
+                //if (acc.Email != null)// email tồn tại
+                //{
+                //    ViewBag.ErrorMessage = "email này đã tồn tại";
+                //    return View();
+                //}
+                ////hash password
+                //string passhash = BCrypt.Net.BCrypt.HashPassword(account.Password);
+                //account.Password = passhash;
+                //NguoiDungDB.Account_Create(account);
                 return RedirectToAction(nameof(Login));
             }
             catch

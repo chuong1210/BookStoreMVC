@@ -44,7 +44,7 @@
             <h2>Menu</h2>
             <h4>@User.Identity.Name</h4>
             <ul>
-                <li><a href="@Url.Action("Index", "Home")  class="active">Home</a></li>
+                <li><a asp-action="Index" asp-controller="Home" class="active">Home</a></li>
 
                 <li><a href="@Url.Action("Index", "QuanLy")">Manager</a></li>
 

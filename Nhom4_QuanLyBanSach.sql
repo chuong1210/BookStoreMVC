@@ -1324,7 +1324,6 @@ WHERE DATEDIFF(DAY, ngaynhap, GETDATE()) = 0;
 
 
 
-
 -- STORE PROC XOA NGUOI DUNG
 CREATE or alter PROCEDURE SP_XoaNguoiDungVaLienQuan
     @NguoiDungId VARCHAR(50)
@@ -1672,7 +1671,7 @@ BEGIN
                 GETDATE(),
                 @TongTien,
                 @PhuongThucTT,
-                N'Đặt hàng thành ông',
+                N'Đặt hàng thành công',
                 @Email,
                 @SoDienThoai,
                 @DiaChi,
@@ -1887,9 +1886,8 @@ BEGIN
 END;
 -- PROC TAO DON HANG
 
-CREATE PROCEDURE SP_TaoDonHang
-    @OrderID NVARCHAR(50),
-    @UserName NVARCHAR(50),
+CREATE OR ALTER PROCEDURE SP_TaoDonHang
+    @IDND NVARCHAR(50),
     @OrderPrice DECIMAL(18, 2),
     @OrderStatus INT,
     @NGAYDATHANG DATETIME = NULL -- tham số ngày đặt hàng
@@ -1901,12 +1899,30 @@ BEGIN
         SET @NGAYDATHANG = GETDATE(); -- Lấy ngày giờ hiện tại
     END
 
+    DECLARE @NewOrderID NVARCHAR(50);
+    DECLARE @MaxID NVARCHAR(50);
+
+    -- Lấy giá trị id lớn nhất hiện tại trong bảng DonHang
+    SELECT @MaxID = MAX(id) FROM DonHang WHERE id LIKE 'DH%';
+
+    -- Kiểm tra nếu không có id nào, đặt giá trị khởi tạo là 'DH001'
+    IF @MaxID IS NULL
+    BEGIN
+        SET @NewOrderID = 'DH001';
+    END
+    ELSE
+    BEGIN
+        -- Lấy phần số trong id, tăng số lên 1 và tạo lại id mới
+        SET @NewOrderID = 'DH' + RIGHT('000' + CAST(CAST(SUBSTRING(@MaxID, 3, LEN(@MaxID)) AS INT) + 1 AS VARCHAR), 3);
+    END
+
     -- Thực hiện INSERT vào bảng DonHang
     INSERT INTO DonHang (id, nguoidung_id, tongTien, trangthaiDH, ngayDatHang)
-    VALUES (@OrderID, @UserName, @OrderPrice, @OrderStatus, @NGAYDATHANG);
-END
+    VALUES (@NewOrderID, @IDND, @OrderPrice, @OrderStatus, @NGAYDATHANG);
+    
+END;
 
-
+exec SP_TaoDonHang 'admin123',0,0
 -- PROC TẠO CTHDH
 CREATE PROCEDURE SP_TaoChiTietDonHang
     @OrderID NVARCHAR(50),
@@ -2444,9 +2460,5 @@ END;
    FROM HoaDon hd
    INNER JOIN DonHang dh ON hd.donhang_id = dh.id
    WHERE dh.nguoidung_id = @hoadonid
-
-
-
-
 
 
