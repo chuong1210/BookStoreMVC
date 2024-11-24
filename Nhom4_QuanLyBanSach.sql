@@ -1,5 +1,4 @@
-﻿
--- Kiểm tra xem database có tồn tại hay không
+﻿-- Kiểm tra xem database có tồn tại hay không
 IF EXISTS (SELECT name FROM sys.databases WHERE name = N'QL_BANSACH')
 BEGIN
     -- Đóng tất cả các kết nối đến database (nếu có)
@@ -34,9 +33,41 @@ CREATE TABLE NguoiDung (
     id VARCHAR(50) PRIMARY KEY,
     username NVARCHAR(50) UNIQUE NOT NULL,
     password NVARCHAR(255) NOT NULL, -- Mật khẩu (nên được mã hóa)
-    role VARCHAR(10) NOT NULL, -- Ví dụ: 'admin', 'staff', 'customer',
+    --role VARCHAR(10) NOT NULL, -- Ví dụ: 'admin', 'staff', 'customer',
     gioitinh INT,
 	NgaySinh DateTime
+);
+
+
+-- Bảng Vai trò
+CREATE TABLE Roles (
+    id VARCHAR(50) PRIMARY KEY,
+    role_name NVARCHAR(50) NOT NULL UNIQUE
+);
+
+-- Bảng Quyền
+CREATE TABLE Permissions (
+    id VARCHAR(50) PRIMARY KEY,
+    permission_name NVARCHAR(50) NOT NULL UNIQUE,
+    description NVARCHAR(255)
+);
+
+-- Bảng Vai trò - Quyền
+CREATE TABLE Role_Permissions (
+    role_id VARCHAR(50),
+    permission_id VARCHAR(50),
+    PRIMARY KEY (role_id, permission_id),
+    FOREIGN KEY (role_id) REFERENCES Roles(id),
+    FOREIGN KEY (permission_id) REFERENCES Permissions(id)
+);
+
+-- Bảng Người dùng - Vai trò
+CREATE TABLE User_Roles (
+    user_id VARCHAR(50),
+    role_id VARCHAR(50),
+    PRIMARY KEY (user_id, role_id),
+    FOREIGN KEY (user_id) REFERENCES NguoiDung(id),
+    FOREIGN KEY (role_id) REFERENCES Roles(id)
 );
 
 
@@ -165,6 +196,7 @@ ALTER TABLE TacGia_Sach
 ADD CONSTRAINT FK_TacGia_Sach_Sach FOREIGN KEY (sach_id) REFERENCES Sach(id),
     CONSTRAINT FK_TacGia_Sach_TacGia FOREIGN KEY (tacgia_id) REFERENCES TacGia(id);
 
+
 -- Thêm dữ liệu cho các bảng
 
 -- Thêm dữ liệu vào bảng Nhà xuất bản
@@ -232,16 +264,72 @@ INSERT INTO Sach (id, tieude, theloai_id, gia, soLuongTon, hinhAnh, namXuatBan, 
 
 
 
-INSERT INTO NguoiDung (id, username, password, role,gioitinh,ngaysinh) VALUES
-('user123', N'user123', '12345', 'customer',0,'2000-10-12'),
-('user456', N'user456', '12345', 'customer',1,'2000-08-23'),
-('user789', N'user789', '12345', 'customer',0,'1992-03-17'),
+INSERT INTO NguoiDung (id, username, password,gioitinh,ngaysinh) VALUES
+('user123', N'user123', '12345',0,'2000-10-12'),
+('user456', N'user456', '12345', 1,'2000-08-23'),
+('user789', N'user789', '12345', 0,'1992-03-17'),
 
-('admin123', N'admin123', '12345', 'admin',1,'1991-01-30'),
+('admin123', N'admin123', '12345',1,'1991-01-30'),
 
-('staff123', N'staff123', '12345', 'staff',1,'1999-04-04'),
-('staff456', N'staff456', '12345', 'staff',0,'1998-05-25'),
-('staff789', N'staff789', '12345', 'staff',0,'2003-07-16');
+('staff123', N'staff123', '12345',1,'1999-04-04'),
+('staff456', N'staff456', '12345',0,'1998-05-25'),
+('staff789', N'staff789', '12345', '0','2003-07-16');
+
+-- Thêm vai trò
+INSERT INTO Roles (id, role_name) VALUES ('R1', 'Admin'), ('R2', 'Staff'), ('R3', 'Customer');
+
+-- Thêm quyền
+INSERT INTO Permissions (id, permission_name, description)
+VALUES 
+('P1', 'Manage_Books', 'Thêm, sửa, xóa sách'),
+('P2', 'Manage_Orders', 'Xem và xử lý đơn hàng'),
+('P3', 'View_Reports', 'Xem báo cáo doanh thu'),
+('P4', 'Place_Order', 'Đặt hàng'),
+('P5', 'Manage_Authors', 'Xem, thêm, sửa, xóa tác giả'),
+('P6', 'Manage_Publishers', 'Xem, thêm, sửa, xóa nhà xuất bản'),
+('P7', 'Manage_Users', 'Xem, thêm, sửa, xóa người dùng'),
+('P8', 'View_Order_History', 'Xem lịch sử đơn hàng đã mua');
+
+-- Cập nhật quyền cho Admin
+-- Admin có quyền thêm, sửa, xóa sách, tác giả, nhà xuất bản, người dùng
+INSERT INTO Role_Permissions (role_id, permission_id)
+VALUES 
+('R1', 'P1'),  -- Quản lý sách
+('R1', 'P2'),  -- Quản lý đơn hàng
+('R1', 'P3'),  -- Xem báo cáo
+('R1', 'P5'),  -- Quản lý tác giả (thêm, sửa, xóa)
+('R1', 'P6'),  -- Quản lý nhà xuất bản (thêm, sửa, xóa)
+('R1', 'P7');  -- Quản lý người dùng (thêm, sửa, xóa)
+
+-- Cập nhật quyền cho Staff
+-- Staff chỉ có quyền xem và xử lý đơn hàng
+-- Quyền tương tự như trước (P2 và P3)
+INSERT INTO Role_Permissions (role_id, permission_id)
+VALUES 
+('R2', 'P2'), -- Xử lý đơn hàng
+('R2', 'P3'); -- Xem báo cáo
+
+-- Cập nhật quyền cho User
+-- User có quyền xem sản phẩm, nhà xuất bản, tác giả và lịch sử đơn hàng
+INSERT INTO Role_Permissions (role_id, permission_id)
+VALUES 
+('R3', 'P4'), -- Đặt hàng (quyền này đã có)
+('R3', 'P5'), -- Xem tác giả
+('R3', 'P6'), -- Xem nhà xuất bản
+('R3', 'P8'); -- Xem lịch sử đơn hàng (quyền này cần thêm vào bảng Permissions)
+
+-- Gán vai trò cho người dùng
+INSERT INTO User_Roles (user_id, role_id)
+VALUES 
+('user123', 'R3'), -- Người dùng user123 là Customer
+('user456', 'R3'), -- Người dùng user456 là Customer
+('user789', 'R3'), -- Người dùng user789 là Customer
+('admin123', 'R1'), -- Người dùng admin123 là Admin
+('staff123', 'R2'), -- Người dùng staff123 là Staff
+('staff456', 'R2'), -- Người dùng staff456 là Staff
+('staff789', 'R2'); -- Người dùng staff789 là Staff
+
+
 -- Chèn dữ liệu vào bảng Khachhang
 INSERT INTO Khachhang (id, ten, diachi, sodienthoai, email, id_NguoiDung) VALUES
 ('KH001', N'Nguyễn Văn A', N'123 Đường Trần Hưng Đạo, Hà Nội', '0987654321', 'nguyenvana@example.com', 'user123'),
@@ -281,6 +369,8 @@ INSERT INTO TacGia_Sach (sach_id, tacgia_id) VALUES
 ('S004', 'TG004'),
 ('S005', 'TG005'),
 ('S006', 'TG006');
+
+
 -- BACK UP AND RESTORE
 
 -- BACK UP
@@ -1323,23 +1413,27 @@ WHERE DATEDIFF(DAY, ngaynhap, GETDATE()) = 0;
 -- Dang Nhap
 
 
-
 -- STORE PROC XOA NGUOI DUNG
-CREATE or alter PROCEDURE SP_XoaNguoiDungVaLienQuan
+CREATE OR ALTER PROCEDURE SP_XoaNguoiDungVaLienQuan
     @NguoiDungId VARCHAR(50)
 AS
 BEGIN
     SET NOCOUNT ON;
 
-    DECLARE @Role VARCHAR(10);
+    DECLARE @RoleId INT;
+    DECLARE @RoleName VARCHAR(50);
 
-    -- Lấy role của người dùng
-    SELECT @Role = role FROM NguoiDung WHERE id = @NguoiDungId;
+    -- Lấy role_id và role_name của người dùng
+    SELECT @RoleId = ur.role_id, @RoleName = r.role_name
+    FROM User_Roles ur
+    INNER JOIN Roles r ON ur.role_id = r.id
+    WHERE ur.user_id = @NguoiDungId;
 
-    -- Kiểm tra nếu người dùng không tồn tại thì thoát
-    IF @Role IS NULL
+    -- Kiểm tra nếu người dùng không tồn tại hoặc không có vai trò
+    IF @RoleName IS NULL
     BEGIN
-        PRINT 'Người dùng không tồn tại.';
+        PRINT 'Người dùng không tồn tại hoặc không có vai trò.';
+        RETURN;
     END
 
     BEGIN TRY
@@ -1366,18 +1460,21 @@ BEGIN
             WHERE nguoidung_id = @NguoiDungId;
         END
 
-        -- Xóa khách hàng hoặc nhân viên dựa trên role của người dùng
-        IF @Role = 'customer'
+        -- Xóa người dùng khỏi bảng User_Roles
+        DELETE FROM User_Roles WHERE user_id = @NguoiDungId;
+
+        -- Xóa khách hàng hoặc nhân viên dựa trên role_name của người dùng
+        IF @RoleName = 'customer'
         BEGIN
             DELETE FROM KhachHang WHERE id_NguoiDung = @NguoiDungId;
         END
-        ELSE IF @Role = 'staff' OR @Role = 'admin'
+        ELSE IF @RoleName IN ('staff', 'admin')
         BEGIN
             DELETE FROM NhanVien WHERE id_NguoiDung = @NguoiDungId;
         END
 
-        -- Xóa người dùng
-        DELETE FROM NguoiDung WHERE id = @NguoiDungId
+        -- Xóa người dùng khỏi bảng NguoiDung
+        DELETE FROM NguoiDung WHERE id = @NguoiDungId;
 
         -- Commit transaction nếu không có lỗi
         COMMIT TRANSACTION;
@@ -1392,8 +1489,9 @@ BEGIN
 END;
 GO
 
+
 -- STORE PROC LẤY TẤT CẢ THỂ LOẠI
-CREATE or alter PROCEDURE SP_Book_GetAllType
+CREATE  PROCEDURE SP_Book_GetAllType
 AS
 BEGIN
 	select *
@@ -1401,7 +1499,7 @@ BEGIN
 END
 GO
 -- STORE PROC LẤY THỂ LOẠI theo id
-CREATE or alter PROCEDURE SP_LayThongTinTheLoai @idTL VARCHAR(10)
+CREATE  PROCEDURE SP_LayThongTinTheLoai @idTL VARCHAR(10)
 AS
 BEGIN
 	select *
@@ -1409,6 +1507,7 @@ BEGIN
 	where tl.id=@idTL
 END
 GO
+
 
 CREATE or alter PROCEDURE  SP_LayTrangThaiDonHang  @TrangThai int,@idND VARCHAR(50)
 as
@@ -1430,7 +1529,7 @@ END
 
 --  Lấy Chi Tiết Đơn Hàng Theo Đơn Hàng ID
 
-CREATE OR ALTER PROCEDURE SP_LayChiTietDonHangTheoDH
+CREATE  PROCEDURE SP_LayChiTietDonHangTheoDH
 	@OrderID varchar(50)
 
 AS
@@ -1454,7 +1553,7 @@ BEGIN
 END
 GO
 -- lấy chi tiết thông tin sách
-CREATE OR ALTER PROCEDURE SP_ThongTinSachDuocDatCuaKhTheoId
+CREATE  PROCEDURE SP_ThongTinSachDuocDatCuaKhTheoId
     @SachId VARCHAR(50)
 AS
 BEGIN
@@ -1486,7 +1585,7 @@ END;
 
 exec SP_ThongTinSachDuocDatCuaKhTheoId 'S001'
 -- LẤY SÁCH THEO ĐƠN HÀNG ID
-CREATE OR ALTER PROCEDURE SP_LaySachTheoIdDonHang
+CREATE  PROCEDURE SP_LaySachTheoIdDonHang
     @OrderID VARCHAR(50) -- Tham số đầu vào: ID đơn hàng
 AS
 BEGIN
@@ -1551,7 +1650,7 @@ BEGIN
 END;
 -- lấy chi tiết thông tin sách theo thể loại
 
-CREATE or alter PROCEDURE SP_DanhSachSachTheoTheLoai
+CREATE or alter PROCEDURE SP_DanhSachSachTheoTheLoai @TheLoaiId VARCHAR(50)
 AS
 BEGIN
     SELECT 
@@ -1736,7 +1835,7 @@ END;
 
 -- Stored Procedure để cập nhật đơn hàng, đặt ngày đặt hàng là ngày hiện tại
 
-CREATE OR ALTER PROCEDURE SP_UpdateDonHang
+CREATE  PROCEDURE SP_UpdateDonHang
     @id VARCHAR(50),
     @nguoidung_id VARCHAR(50) = NULL,
     @trangthaiDH INT = NULL,
@@ -1886,7 +1985,7 @@ BEGIN
 END;
 -- PROC TAO DON HANG
 
-CREATE OR ALTER PROCEDURE SP_TaoDonHang
+CREATE  PROCEDURE SP_TaoDonHang
     @IDND NVARCHAR(50),
     @OrderPrice DECIMAL(18, 2),
     @OrderStatus INT,
@@ -2214,39 +2313,45 @@ SELECT dbo.FnTinhTongSoLuongSachDaBan('S004');
 
 
 -- PROC LOGIN
-CREATE or alter PROCEDURE SP_LOGIN
+CREATE OR ALTER PROCEDURE SP_LOGIN
     @Username NVARCHAR(50),
     @Password NVARCHAR(255),
-    @UserRole VARCHAR(10) OUTPUT,
-    @FullName NVARCHAR(255) OUTPUT,
-	@idND VARCHAR(50) OUTPUT
-
+    @UserRole NVARCHAR(MAX) OUTPUT, -- Trả về danh sách các vai trò (nếu có nhiều vai trò)
+    @FullName NVARCHAR(255) OUTPUT, -- Trả về tên người dùng
+    @UserId NVARCHAR(50) OUTPUT      -- Trả về ID người dùng
 AS
 BEGIN
-    SELECT  @UserRole = role,
-            @FullName = CASE
-                            WHEN role = 'customer' THEN k.ten
-                            WHEN role = 'staff' THEN n.ten
-                            WHEN role = 'admin' THEN n.ten
-
-                            ELSE NULL
-                        END,
-						   @idND = NguoiDung.id
-
+    -- Lấy thông tin người dùng
+    SELECT 
+        @UserId = NguoiDung.id,
+        @FullName = CASE
+                        WHEN EXISTS (SELECT 1 FROM Khachhang WHERE id_NguoiDung = NguoiDung.id) 
+                        THEN (SELECT ten FROM Khachhang WHERE id_NguoiDung = NguoiDung.id)
+                        WHEN EXISTS (SELECT 1 FROM NhanVien WHERE id_NguoiDung = NguoiDung.id) 
+                        THEN (SELECT ten FROM NhanVien WHERE id_NguoiDung = NguoiDung.id)
+                        ELSE NULL
+                    END
     FROM NguoiDung
-    LEFT JOIN Khachhang k ON NguoiDung.id = k.id_NguoiDung
-    LEFT JOIN NhanVien n ON NguoiDung.id = n.id_NguoiDung
     WHERE username = @Username AND password = @Password;
-    
-    IF @UserRole IS NULL
+
+    -- Kiểm tra nếu không tìm thấy thông tin người dùng
+    IF @UserId IS NULL
     BEGIN
         RAISERROR('Tên người dùng hoặc mật khẩu không chính xác.', 16, 1);
         RETURN;
     END
 
-    IF @FullName IS NULL
+    -- Lấy danh sách các vai trò của người dùng
+    SELECT 
+        @UserRole =  Roles.role_name
+    FROM User_Roles
+    INNER JOIN Roles ON User_Roles.role_id = Roles.id
+    WHERE User_Roles.user_id = @UserId;
+
+    -- Kiểm tra nếu không có vai trò nào được gán
+    IF @UserRole IS NULL
     BEGIN
-        RAISERROR('Không tìm thấy thông tin.', 16, 1);
+        RAISERROR('Người dùng chưa được gán vai trò.', 16, 1);
         RETURN;
     END
 
@@ -2254,6 +2359,21 @@ BEGIN
 END;
 
 
+DECLARE @Role NVARCHAR(MAX);
+DECLARE @FullName NVARCHAR(255);
+DECLARE @UserId NVARCHAR(50);
+
+EXEC SP_LOGIN 
+    @Username = 'admin123',
+    @Password = '12345',
+    @UserRole = @Role OUTPUT,
+    @FullName = @FullName OUTPUT,
+    @UserId = @UserId OUTPUT;
+
+-- Kết quả trả về
+PRINT 'User Role: ' + @Role;
+PRINT 'Full Name: ' + @FullName;
+PRINT 'User ID: ' + @UserId;
 -- procedure lấy danh sách nhà xuất bản
 
 CREATE PROCEDURE SP_DanhSachNXB
@@ -2320,16 +2440,6 @@ BEGIN
 END;
 
 
--- Lấy Thông Tin Khách Hàng Và Đơn Hàng Của Họ
-CREATE PROCEDURE ThongTinKhVaDH
-    @khachhang_id VARCHAR(50)
-AS
-BEGIN
-    SELECT k.id AS KhachHangID, k.ten AS TenKhachHang, d.id AS DonHangID, d.trangthaiDH AS TrangThaiDonHang, d.tongTien AS TongTien
-    FROM Khachhang k
-    LEFT JOIN DonHang d ON k.id = d.khachhang_id
-    WHERE k.id = @khachhang_id;
-END;
 
 -- Lay sach duoc dat nhieu nhat
 
@@ -2406,7 +2516,7 @@ AS
 BEGIN
     SELECT k.ten, k.diachi, k.sodienthoai, SUM(d.tongTien) AS TongGiaTriMua
     FROM Khachhang k
-    JOIN DonHang d ON k.id = d.khachhang_id
+    JOIN DonHang d ON k.id = d.nguoidung_id
     WHERE d.trangthaiDH = 1 -- Đã thanh toán
     GROUP BY k.ten, k.diachi, k.sodienthoai
     HAVING SUM(d.tongTien) BETWEEN @minValue AND @maxValue;
@@ -2460,5 +2570,7 @@ END;
    FROM HoaDon hd
    INNER JOIN DonHang dh ON hd.donhang_id = dh.id
    WHERE dh.nguoidung_id = @hoadonid
+
+
 
 

@@ -71,20 +71,22 @@
             @Html.DisplayNameFor(model => model.TypeRole)
         </div>
         <div class="col-sm-10">
-            @if (Model.UserRole == "admin")
-            {
-                @:Nhân viên
-            }
-            else if (Model.UserRole == "staff")
-            {
-                @:Nhân viên
-            }
-            else if (Model.UserRole == "customer")
-            {
-                @:Khách hàng
-            }
+             @if (Model.UserRole == "admin")
+             {
+                 @:Nhân viên
+             }
+             else if (Model.UserRole == "staff")
+             {
+                 @:Nhân viên
+             }
+             else if (Model.UserRole == "customer")
+             {
+                 @:Khách hàng
+             }
 
-       
+
+          
+
         </div>
 
 

@@ -17,6 +17,7 @@ namespace WedStore.Repositories
     {
         private readonly static string connectionString = ConnectStringValue.ConnectStringMyDB;
 
+
         private static string HashPassword(string password)
         {
             using (var sha256 = SHA256.Create())
@@ -58,7 +59,7 @@ namespace WedStore.Repositories
                         command.Parameters.Add(fullNameParam);
 
 
-						SqlParameter idUserParam = new SqlParameter("@idND", SqlDbType.VarChar, 50);
+						SqlParameter idUserParam = new SqlParameter("@UserId", SqlDbType.VarChar, 50);
 						idUserParam.Direction = ParameterDirection.Output;
 						command.Parameters.Add(idUserParam);
 
@@ -114,27 +115,36 @@ namespace WedStore.Repositories
 
                 // Câu truy vấn SQL với JOIN để lấy thông tin từ bảng KhachHang hoặc NhanVien
                 string query = @"
-            SELECT 
-                nd.Id, 
-                nd.Username, 
-                nd.Password, 
-                nd.Role, 
-                nd.GioiTinh, 
-                nd.NgaySinh,
-                CASE 
-                    WHEN nd.Role = 'customer' THEN kh.Ten 
-                    ELSE nv.Ten 
-                END AS Ten,
-                CASE 
-                    WHEN nd.Role = 'customer' THEN kh.Email 
-                    ELSE nv.Email 
-                END AS Email
-            FROM 
-                NguoiDung nd
-            LEFT JOIN 
-                KhachHang kh ON nd.Id = kh.Id_NguoiDung AND nd.Role = 'customer'
-            LEFT JOIN 
-                NhanVien nv ON nd.Id = nv.Id_NguoiDung AND (nd.Role = 'staff' OR nd.Role = 'admin')";
+          
+
+   SELECT 
+    nd.Id, 
+    nd.Username, 
+    nd.Password, 
+    r.role_name AS Role,  -- Thêm role_name từ bảng Roles
+    nd.GioiTinh, 
+    nd.NgaySinh,
+    CASE 
+        WHEN r.role_name = 'Customer' THEN kh.Ten 
+        WHEN r.role_name IN ('Staff', 'Admin') THEN nv.Ten 
+        ELSE NULL 
+    END AS Ten,
+    CASE 
+        WHEN r.role_name = 'Customer' THEN kh.Email 
+        WHEN r.role_name IN ('Staff', 'Admin') THEN nv.Email 
+        ELSE NULL 
+    END AS Email
+FROM 
+    NguoiDung nd
+JOIN 
+    User_Roles ur ON nd.Id = ur.user_id
+JOIN 
+    Roles r ON ur.role_id = r.id
+LEFT JOIN 
+    KhachHang kh ON nd.Id = kh.Id_NguoiDung AND r.role_name = 'Customer'
+LEFT JOIN 
+    NhanVien nv ON nd.Id = nv.Id_NguoiDung AND r.role_name IN ('Staff', 'Admin');
+";
 
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
@@ -175,7 +185,15 @@ namespace WedStore.Repositories
                 conn.Open();
 
                 // Lấy thông tin cơ bản từ bảng NguoiDung
-                using (SqlCommand cmd = new SqlCommand("SELECT  Username,Password, Role,GioiTinh,NgaySinh FROM NguoiDung WHERE Id = @Id", conn))
+                using (SqlCommand cmd = new SqlCommand("" +
+                    "   SELECT     nd.Username,    nd.Password,     r.role_name AS Role, r.id as role_id ,  nd.GioiTinh,     nd.NgaySinh," +
+                    "   CASE         WHEN r.role_name = 'Customer' THEN kh.Ten       WHEN r.role_name IN ('Staff', 'Admin') THEN nv.Ten " +
+                    "        ELSE NULL " +
+                    "   END AS Ten,    CASE " +
+                    "     WHEN r.role_name = 'Customer' THEN kh.Email         WHEN r.role_name IN ('Staff', 'Admin') THEN nv.Email" +
+                    "      ELSE NULL     END AS Email FROM     NguoiDung nd JOIN " +
+                    "   User_Roles ur ON nd.Id = ur.user_id JOIN    Roles r ON ur.role_id = r.id LEFT JOIN " +
+                    "  KhachHang kh ON nd.Id = kh.Id_NguoiDung AND r.role_name = 'Customer'\r\nLEFT JOIN \r\n    NhanVien nv ON nd.Id = nv.Id_NguoiDung AND r.role_name IN ('Staff', 'Admin') WHERE     nd.Id = @Id;", conn))
                 {
                     cmd.Parameters.AddWithValue("@Id", id);
                     using (SqlDataReader reader = cmd.ExecuteReader())
@@ -188,6 +206,7 @@ namespace WedStore.Repositories
                             string loaiTaiKhoan = role == "customer" ? "Khách hàng" : "Nhân viên";
                             nguoiDung.idND = id;
                             nguoiDung.UserName = reader["Username"].ToString();
+                            nguoiDung.RoleId = reader["role_id"].ToString();
                             nguoiDung.UserRole = reader["Role"].ToString();
                             nguoiDung.TypeRole = loaiTaiKhoan;
                             nguoiDung.Gender=int.Parse(reader["GioiTinh"].ToString());
@@ -244,8 +263,8 @@ namespace WedStore.Repositories
         }
         public static bool ThemMoiNguoiDung(NguoiDungDTO nguoiDung)
         {
-            using(SqlConnection conn = new SqlConnection(connectionString))
-        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
                 conn.Open();
                 using (var transaction = conn.BeginTransaction())
                 {
@@ -254,24 +273,38 @@ namespace WedStore.Repositories
                     try
                     {
                         // Insert vào bảng NguoiDung
-                        string insertNguoiDungQuery = "INSERT INTO NguoiDung (Id, Username, Password, Role,GioiTinh,NgaySinh) VALUES (@Id, @Username, @Password, @Role,@GioiTinh,@NgaySinh)";
+                        string insertNguoiDungQuery = @"
+                    INSERT INTO NguoiDung (Id, Username, Password, GioiTinh, NgaySinh) 
+                    VALUES (@Id, @Username, @Password, @GioiTinh, @NgaySinh)";
                         using (SqlCommand cmd = new SqlCommand(insertNguoiDungQuery, conn, transaction))
                         {
-
                             cmd.Parameters.AddWithValue("@Id", idNguoiDung);
                             cmd.Parameters.AddWithValue("@Username", nguoiDung.UserName);
-                            cmd.Parameters.AddWithValue("@Password", nguoiDung.Password);  // Lưu mật khẩu đã mã hóa
-                            cmd.Parameters.AddWithValue("@Role", nguoiDung.UserRole);
+                            cmd.Parameters.AddWithValue("@Password", nguoiDung.Password); // Lưu mật khẩu đã mã hóa
                             cmd.Parameters.AddWithValue("@GioiTinh", nguoiDung.Gender);
                             cmd.Parameters.AddWithValue("@NgaySinh", nguoiDung.NgaySinh);
 
                             cmd.ExecuteNonQuery();
                         }
 
-                        // Insert vào bảng KhachHang hoặc NhanVien tùy theo role
+                        // Gán vai trò cho người dùng
+                        string insertUserRoleQuery = @"
+                    INSERT INTO User_Roles (user_id, role_id) 
+                    VALUES (@UserId, @RoleId)";
+                        using (SqlCommand cmd = new SqlCommand(insertUserRoleQuery, conn, transaction))
+                        {
+                            cmd.Parameters.AddWithValue("@UserId", idNguoiDung);
+                            cmd.Parameters.AddWithValue("@RoleId", nguoiDung.RoleId); // RoleId cần được ánh xạ từ giao diện
+
+                            cmd.ExecuteNonQuery();
+                        }
+
+                        // Insert vào bảng KhachHang nếu vai trò là "customer"
                         if (nguoiDung.UserRole == "customer")
                         {
-                            string insertKhachHangQuery = "INSERT INTO KhachHang (Id, Ten, DiaChi, SoDienThoai, Email, Id_NguoiDung) VALUES (@Id, @Ten, @DiaChi, @SoDienThoai, @Email, @Id_NguoiDung)";
+                            string insertKhachHangQuery = @"
+                        INSERT INTO KhachHang (Id, Ten, DiaChi, SoDienThoai, Email, Id_NguoiDung) 
+                        VALUES (@Id, @Ten, @DiaChi, @SoDienThoai, @Email, @Id_NguoiDung)";
                             using (SqlCommand cmd = new SqlCommand(insertKhachHangQuery, conn, transaction))
                             {
                                 cmd.Parameters.AddWithValue("@Id", Guid.NewGuid().ToString());
@@ -284,14 +317,18 @@ namespace WedStore.Repositories
                                 cmd.ExecuteNonQuery();
                             }
                         }
-                        else if (nguoiDung.UserRole == "staff" || nguoiDung.UserRole == "admin")
+
+                        // Insert vào bảng NhanVien nếu vai trò là "staff" hoặc "admin"
+                        if (nguoiDung.UserRole == "staff" || nguoiDung.UserRole == "admin")
                         {
-                            string insertNhanVienQuery = "INSERT INTO NhanVien (Id, Ten, ChucVu, SoDienThoai, Email, Id_NguoiDung) VALUES (@Id, @Ten, @ChucVu, @SoDienThoai, @Email, @Id_NguoiDung)";
+                            string insertNhanVienQuery = @"
+                        INSERT INTO NhanVien (Id, Ten, ChucVu, SoDienThoai, Email, Id_NguoiDung) 
+                        VALUES (@Id, @Ten, @ChucVu, @SoDienThoai, @Email, @Id_NguoiDung)";
                             using (SqlCommand cmd = new SqlCommand(insertNhanVienQuery, conn, transaction))
                             {
                                 cmd.Parameters.AddWithValue("@Id", Guid.NewGuid().ToString());
                                 cmd.Parameters.AddWithValue("@Ten", nguoiDung.FullName);
-                                cmd.Parameters.AddWithValue("@ChucVu", nguoiDung.ChucVu);  // Chức vụ của nhân viên
+                                cmd.Parameters.AddWithValue("@ChucVu", nguoiDung.ChucVu); // Chức vụ của nhân viên
                                 cmd.Parameters.AddWithValue("@SoDienThoai", nguoiDung.Phone);
                                 cmd.Parameters.AddWithValue("@Email", nguoiDung.Email);
                                 cmd.Parameters.AddWithValue("@Id_NguoiDung", idNguoiDung);
@@ -304,15 +341,17 @@ namespace WedStore.Repositories
                         transaction.Commit();
                         return true;
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
-                        // Nếu có lỗi, rollback transaction
+                        // Rollback transaction nếu có lỗi
                         transaction.Rollback();
+                        Console.WriteLine($"Error: {ex.Message}");
                         return false;
                     }
-                } 
+                }
             }
-            }
+        }
+
 
         public static bool CapNhatNguoiDung(NguoiDungDTO nguoiDung)
         {
@@ -324,15 +363,18 @@ namespace WedStore.Repositories
                     try
                     {
                         // Cập nhật thông tin bảng NguoiDung
-                        string updateNguoiDungQuery = "UPDATE NguoiDung SET Username = @Username, Password = @Password,GioiTinh=@GioiTinh, Role = @Role, NgaySinh=@NgaySinh WHERE Id = @Id";
+                        string updateNguoiDungQuery = "UPDATE NguoiDung SET     Username = @Username, \r\n    Password = @Password, " +
+                            "    GioiTinh = @GioiTinh,    NgaySinh = @NgaySinh WHERE \r\n    Id = @Id; " +
+                            "UPDATE User_Roles SET    role_id = @RoleId WHERE \r\n    user_id = @user_Id;";
                         using (SqlCommand cmd = new SqlCommand(updateNguoiDungQuery, conn, transaction))
                         {
                             cmd.Parameters.AddWithValue("@Id", nguoiDung.idND);
+                            cmd.Parameters.AddWithValue("@user_Id", nguoiDung.idND);
 
                             cmd.Parameters.AddWithValue("@GioiTinh", nguoiDung.Gender);
                             cmd.Parameters.AddWithValue("@Username", nguoiDung.UserName);
                             cmd.Parameters.AddWithValue("@Password", nguoiDung.Password);  // Lưu mật khẩu đã mã hóa
-                            cmd.Parameters.AddWithValue("@Role", nguoiDung.UserRole);
+                            cmd.Parameters.AddWithValue("@RoleId", nguoiDung.RoleId);
                             cmd.Parameters.AddWithValue("@NgaySinh", nguoiDung.NgaySinh ?? (object)DBNull.Value);  // Kiểm tra null trước khi cập nhật
 
 

@@ -98,29 +98,33 @@
                 <input asp-for="Phone" class="form-control" />
                 <span asp-validation-for="Phone" class="text-danger"></span>
             </div>
+            <input asp-for="UserRole" hidden class="form-control" />
+
             <div class="form-group">
-                <label asp-for="UserRole" class="control-label"></label>
-                <select asp-for="UserRole" class="form-control">
+                <label asp-for="RoleId" class="control-label"></label>
+                <select asp-for="RoleId" class="form-control">
                     @if (Model.UserRole == "customer")
                     {
-                        <option value="customer" selected>Khách hàng</option>
-                        <option value="admin">Quản trị viên</option>
-                        <option value="staff">Nhân viên</option>
+                        <option value="R3" selected>Khách hàng</option>
+                        <option value="R1">Quản trị viên</option>
+                        <option value="R2">Nhân viên</option>
                     }
                     else if (Model.UserRole == "admin")
                     {
-                        <option value="customer">Khách hàng</option>
-                        <option value="admin" selected>Quản trị viên</option>
-                        <option value="staff">Nhân viên</option>
+                        <option value="R3">Khách hàng</option>
+                        <option value="R1" selected>Quản trị viên</option>
+                        <option value="R2">Nhân viên</option>
                     }
                     else if (Model.UserRole == "staff")
                     {
-                        <option value="customer">Khách hàng</option>
-                        <option value="admin">Quản trị viên</option>
-                        <option value="staff" selected>Nhân viên</option>
+                        <option value="R3">Khách hàng</option>
+                        <option value="R1">Quản trị viên</option>
+                        <option value="R2" selected>Nhân viên</option>
                     }
                 </select>
-                <span asp-validation-for="UserRole" class="text-danger"></span>
+
+            
+                <span asp-validation-for="RoleId" class="text-danger"></span>
 
             </div>
          

@@ -28,6 +28,7 @@ namespace WebStore.Models
         public string Phone { get; set; }
         public int Authority { get; set; }
         public string UserRole { get; set; }
+        public string RoleId { get; set; }
         [DisplayName("Loại tài khoản")]
 
         public string TypeRole { get; set; }

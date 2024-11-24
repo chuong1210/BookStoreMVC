@@ -8,11 +8,13 @@ using System.Collections.Generic;
 using System.Dynamic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Security.Claims;
 using System.Security.Policy;
 using System.Threading.Tasks;
 using WebStore.Constraint;
 using WebStore.Models;
+using WebStore.Servicie;
 using WedStore.Repositories;
 using WedStore.Servicie;
 
@@ -56,6 +58,16 @@ namespace WedStore.Controllers
         public ActionResult DetailAccount(string id)// username
         {
             var acc = NguoiDungDB.LayChiTietNguoiDungTheoId(id);
+            // Lấy danh sách các vai trò
+            var roles = RoleDB.ListRole(); // Trả về danh sách RoleDTO (id, role_name)
+
+            // Gán danh sách vai trò vào ViewBag
+            ViewBag.RoleList = roles.Select(r => new SelectListItem
+            {
+                Value = r.id,
+                Text = r.roleName,
+                //Selected = r.id == acc.RoleId
+            }).ToList();
             return View(acc);
         }
         // Edit Account
@@ -63,6 +75,15 @@ namespace WedStore.Controllers
         public ActionResult EditAccount(string id)//username
         {
             var acc = NguoiDungDB.LayChiTietNguoiDungTheoId(id);
+            var roles = RoleDB.ListRole(); // Trả về danh sách RoleDTO (id, role_name)
+
+            // Gán danh sách vai trò vào ViewBag
+            ViewBag.RoleList = roles.Select(r => new SelectListItem
+            {
+                Value = r.id,
+                Text = r.roleName,
+                //Selected = r.id == acc.RoleId
+            }).ToList();
             return View(acc);
         }
 
