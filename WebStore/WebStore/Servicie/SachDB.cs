@@ -246,5 +246,55 @@ namespace WedStore.Repositories
             }
             return false;
         }
-    }
+		public static List<SachDTO> TimKiemSachTheoTen(string tenSach)
+		{
+			object[] value = { tenSach };
+			SQLCommand connection = new SQLCommand(ConnectStringValue.ConnectStringMyDB);
+			DataTable result = connection.Select("SP_TimKiemSachTheoTen", value);
+
+			List<SachDTO> lstResult = new List<SachDTO>();
+			if (connection.errorCode == 0 && result.Rows.Count > 0)
+			{
+				foreach (DataRow dr in result.Rows)
+				{
+					SachDTO book = new SachDTO();
+					book.BookID = dr["id"].ToString();
+					book.BookName = dr["tieude"].ToString();
+                    book.Image = dr["hinhAnh"].ToString();
+
+                    book.Price = Convert.ToDecimal(dr["gia"]);
+					book.Quantity = Convert.ToInt32(dr["soLuongTon"]);
+					book.NamXuatBan = dr["namXuatBan"].ToString();
+					book.Description = dr["moTa"].ToString();
+					lstResult.Add(book);
+				}
+			}
+			return lstResult;
+		}
+
+		public static List<SachDTO> TimKiemSachTheoTheLoaiVaGia(string theloai_id, int giaMin, int giaMax)
+		{
+			object[] value = { theloai_id, giaMin, giaMax };
+			SQLCommand connection = new SQLCommand(ConnectStringValue.ConnectStringMyDB);
+			DataTable result = connection.Select("SP_TimKiemSachTheoTheLoaiVaKhoangGia", value);
+
+			List<SachDTO> lstResult = new List<SachDTO>();
+			if (connection.errorCode == 0 && result.Rows.Count > 0)
+			{
+				foreach (DataRow dr in result.Rows)
+				{
+					SachDTO book = new SachDTO();
+					book.BookID = dr["id"].ToString();
+					book.BookName = dr["tieude"].ToString();
+					book.Price = Convert.ToDecimal(dr["gia"]);
+					book.Quantity = Convert.ToInt32(dr["soLuongTon"]);
+					book.NamXuatBan = dr["namXuatBan"].ToString();
+					book.Description = dr["moTa"].ToString();
+					lstResult.Add(book);
+				}
+			}
+			return lstResult;
+		}
+
+	}
 }

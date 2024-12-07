@@ -1,0 +1,853 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\css\\font-awesome.min.css",
+      "PackagePath": "staticwebassets\\css\\font-awesome.min.css"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\css\\main.css",
+      "PackagePath": "staticwebassets\\css\\main.css"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\css\\noscript.css",
+      "PackagePath": "staticwebassets\\css\\noscript.css"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\fonts\\FontAwesome.otf",
+      "PackagePath": "staticwebassets\\fonts\\FontAwesome.otf"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\fonts\\fontawesome-webfont.eot",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome-webfont.eot"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\fonts\\fontawesome-webfont.svg",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome-webfont.svg"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\fonts\\fontawesome-webfont.ttf",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome-webfont.ttf"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\fonts\\fontawesome-webfont.woff",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome-webfont.woff"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\fonts\\fontawesome-webfont.woff2",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome-webfont.woff2"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\8934974145936.jpg",
+      "PackagePath": "staticwebassets\\images\\8934974145936.jpg"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\BoGia.jpg",
+      "PackagePath": "staticwebassets\\images\\BoGia.jpg"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\CaPheCungTony.jpg",
+      "PackagePath": "staticwebassets\\images\\CaPheCungTony.jpg"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\ConChimXanhBiecBayVe.jpg",
+      "PackagePath": "staticwebassets\\images\\ConChimXanhBiecBayVe.jpg"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\DacNhanTam.jpg",
+      "PackagePath": "staticwebassets\\images\\DacNhanTam.jpg"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\DocViBatKyAi.jpg",
+      "PackagePath": "staticwebassets\\images\\DocViBatKyAi.jpg"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\OngGiaVaBienCa.jpg",
+      "PackagePath": "staticwebassets\\images\\OngGiaVaBienCa.jpg"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\ToBinhYenVeHanhPhuc.jpg",
+      "PackagePath": "staticwebassets\\images\\ToBinhYenVeHanhPhuc.jpg"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks.html",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks.html"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\2000970.html",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\2000970.html"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\CIP_Icon1.png",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\CIP_Icon1.png"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\CP_ad_icon.png",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\CP_ad_icon.png"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\Enqz_20U(1).html",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\Enqz_20U(1).html"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\Enqz_20U(2).html",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\Enqz_20U(2).html"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\Enqz_20U(3).html",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\Enqz_20U(3).html"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\Enqz_20U(4).html",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\Enqz_20U(4).html"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\Enqz_20U.html",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\Enqz_20U.html"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\GC-LIve-Icon-1.png",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\GC-LIve-Icon-1.png"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\IL_.html",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\IL_.html"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\TweenMax.min.js.download",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\TweenMax.min.js.download"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\UFYwWwmt.js.download",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\UFYwWwmt.js.download"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\adpushup.js.download",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\adpushup.js.download"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\aframe.html",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\aframe.html"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\apstag.js.download",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\apstag.js.download"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\async_usersync.html",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\async_usersync.html"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\avatar.png",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\avatar.png"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\beacon.html",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\beacon.html"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\box-ad575b5823df97fc9725e14a57070642.html",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\box-ad575b5823df97fc9725e14a57070642.html"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\checksync.html",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\checksync.html"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\client",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\container(1).html",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\container(1).html"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\container(2).html",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\container(2).html"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\container(3).html",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\container(3).html"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\container(4).html",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\container(4).html"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\container(5).html",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\container(5).html"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\container.html",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\container.html"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\element.js.download",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\element.js.download"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\f(1).txt",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\f(1).txt"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\f(10).txt",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\f(10).txt"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\f(11).txt",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\f(11).txt"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\f(12).txt",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\f(12).txt"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\f(13).txt",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\f(13).txt"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\f(2).txt",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\f(2).txt"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\f(3).txt",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\f(3).txt"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\f(4).txt",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\f(4).txt"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\f(5).txt",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\f(5).txt"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\f(6).txt",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\f(6).txt"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\f(7).txt",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\f(7).txt"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\f(8).txt",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\f(8).txt"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\f(9).txt",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\f(9).txt"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\f.txt",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\f.txt"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\ga.js.download",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\ga.js.download"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\gen_204",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\gen_204(1)",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\gen_204(2)",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\gen_204(3)",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\gen_204(4)",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\gfg.min.css",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\gfg.min.css"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\gfg.min.js.download",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\gfg.min.js.download"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\googlelogo_color_42x16dp.png",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\googlelogo_color_42x16dp.png"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\gpt.js.download",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\gpt.js.download"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\home1.png",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\home1.png"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\hotjar-2048730.js.download",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\hotjar-2048730.js.download"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\img",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\img(1)",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\img(2)",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\img(3)",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\img(4)",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\index(1).html",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\index(1).html"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\index(2).html",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\index(2).html"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\index(3).html",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\index(3).html"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\index(4).html",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\index(4).html"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\index(5).html",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\index(5).html"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\index.html",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\index.html"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\ixmatch.html",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\ixmatch.html"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\jobs_ndi_20210312.svg",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\jobs_ndi_20210312.svg"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\jquery-2.2.2.min.js.download",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\jquery-2.2.2.min.js.download"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\jquery-3.1.1.min.js.download",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\jquery-3.1.1.min.js.download"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\jquery-migrate-3.0.0.min.js.download",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\jquery-migrate-3.0.0.min.js.download"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\js",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\l",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\l(1)",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\l(2)",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\l(3)",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\l(4)",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\m=el_main",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\main(1).css",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\main(1).css"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\main.css",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\main.css"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\modules.376dac12c7cbd03331c3.js.download",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\modules.376dac12c7cbd03331c3.js.download"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\monetization.js.download",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\monetization.js.download"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\mrg0hpc.css",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\mrg0hpc.css"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\pb.40792.1637058357255.js.download",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\pb.40792.1637058357255.js.download"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\pd.html",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\pd.html"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\pixel(1).html",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\pixel(1).html"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\pixel(2).html",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\pixel(2).html"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\pixel(3).html",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\pixel(3).html"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\pixel(4).html",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\pixel(4).html"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\pixel.html",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\pixel.html"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\platform.js.download",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\platform.js.download"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\practice_ndi_20210312.svg",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\practice_ndi_20210312.svg"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\premium_ndi_20210312.svg",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\premium_ndi_20210312.svg"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\pubads_impl_2021111601.js.download",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\pubads_impl_2021111601.js.download"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\quant.js.download",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\quant.js.download"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\quantcast.js.download",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\quantcast.js.download"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\require.min.js.download",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\require.min.js.download"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\rules-p-54Nt-1NAaEEe0.js.download",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\rules-p-54Nt-1NAaEEe0.js.download"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\rx_lidar.js.download",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\rx_lidar.js.download"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\saved_resource(1).html",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\saved_resource(1).html"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\saved_resource.html",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\saved_resource.html"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\sodar",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\style",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\sync.html",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\sync.html"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\translate_24dp.png",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\translate_24dp.png"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\translateelement.css",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\translateelement.css"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\usync.html",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\usync.html"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\wp-embed.min.js.download",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\wp-embed.min.js.download"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\wp-emoji-release.min.js.download",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\wp-emoji-release.min.js.download"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\write_ndi_20210312.svg",
+      "PackagePath": "staticwebassets\\images\\What's the effect of adding return false to a click event listener _ - GeeksforGeeks_files\\write_ndi_20210312.svg"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\YourName.jpg",
+      "PackagePath": "staticwebassets\\images\\YourName.jpg"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\banner-image-1-1920x500.jpg",
+      "PackagePath": "staticwebassets\\images\\banner-image-1-1920x500.jpg"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\banner-image-2-1920x500.jpg",
+      "PackagePath": "staticwebassets\\images\\banner-image-2-1920x500.jpg"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\banner-image-3-1920x500.jpg",
+      "PackagePath": "staticwebassets\\images\\banner-image-3-1920x500.jpg"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\banner-image-4-1920x500.jpg",
+      "PackagePath": "staticwebassets\\images\\banner-image-4-1920x500.jpg"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\banner-image-5-1920x500.jpg",
+      "PackagePath": "staticwebassets\\images\\banner-image-5-1920x500.jpg"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\banner-image-6-1920x500.jpg",
+      "PackagePath": "staticwebassets\\images\\banner-image-6-1920x500.jpg"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\blog-1-720x480.jpg",
+      "PackagePath": "staticwebassets\\images\\blog-1-720x480.jpg"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\blog-2-720x480.jpg",
+      "PackagePath": "staticwebassets\\images\\blog-2-720x480.jpg"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\blog-3-720x480.jpg",
+      "PackagePath": "staticwebassets\\images\\blog-3-720x480.jpg"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\blog-4-720x480.jpg",
+      "PackagePath": "staticwebassets\\images\\blog-4-720x480.jpg"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\blog-5-720x480.jpg",
+      "PackagePath": "staticwebassets\\images\\blog-5-720x480.jpg"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\blog-6-720x480.jpg",
+      "PackagePath": "staticwebassets\\images\\blog-6-720x480.jpg"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\blog-fullscreen-1-1920x700.jpg",
+      "PackagePath": "staticwebassets\\images\\blog-fullscreen-1-1920x700.jpg"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\doicobaonhieu.jpeg",
+      "PackagePath": "staticwebassets\\images\\doicobaonhieu.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\giakim.jpg",
+      "PackagePath": "staticwebassets\\images\\giakim.jpg"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\hdpt.jpg",
+      "PackagePath": "staticwebassets\\images\\hdpt.jpg"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\image_181945.jpg",
+      "PackagePath": "staticwebassets\\images\\image_181945.jpg"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\image_187866.jpg",
+      "PackagePath": "staticwebassets\\images\\image_187866.jpg"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\image_195509_1_14922.jpg",
+      "PackagePath": "staticwebassets\\images\\image_195509_1_14922.jpg"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\image_195509_1_18448.jpg",
+      "PackagePath": "staticwebassets\\images\\image_195509_1_18448.jpg"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\image_195509_1_6058_1_1.jpg",
+      "PackagePath": "staticwebassets\\images\\image_195509_1_6058_1_1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\image_220964.jpg",
+      "PackagePath": "staticwebassets\\images\\image_220964.jpg"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\image_226326.jpg",
+      "PackagePath": "staticwebassets\\images\\image_226326.jpg"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\image_83814.jpg",
+      "PackagePath": "staticwebassets\\images\\image_83814.jpg"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\it.jpg",
+      "PackagePath": "staticwebassets\\images\\it.jpg"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\kinhvanhoa.jpg",
+      "PackagePath": "staticwebassets\\images\\kinhvanhoa.jpg"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\map.jpg",
+      "PackagePath": "staticwebassets\\images\\map.jpg"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\nhagiakim.jpg",
+      "PackagePath": "staticwebassets\\images\\nhagiakim.jpg"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\nhalanhdaokhongchucdanh.jpg",
+      "PackagePath": "staticwebassets\\images\\nhalanhdaokhongchucdanh.jpg"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\nxbtre_full_09462021_024609.jpg",
+      "PackagePath": "staticwebassets\\images\\nxbtre_full_09462021_024609.jpg"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\rice.jpg",
+      "PackagePath": "staticwebassets\\images\\rice.jpg"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\rungnauy.jpg",
+      "PackagePath": "staticwebassets\\images\\rungnauy.jpg"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\sachlt.jpg",
+      "PackagePath": "staticwebassets\\images\\sachlt.jpg"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\slider-image-1-1920x700.jpg",
+      "PackagePath": "staticwebassets\\images\\slider-image-1-1920x700.jpg"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\slider-image-2-1920x700.jpg",
+      "PackagePath": "staticwebassets\\images\\slider-image-2-1920x700.jpg"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\images\\slider-image-3-1920x700.jpg",
+      "PackagePath": "staticwebassets\\images\\slider-image-3-1920x700.jpg"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\js\\jquery.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\js\\jquery.scrollex.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery.scrollex.min.js"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\js\\jquery.scrolly.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery.scrolly.min.js"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\js\\main.js",
+      "PackagePath": "staticwebassets\\js\\main.js"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-theme.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-theme.css"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-theme.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-theme.css.map"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-theme.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-theme.min.css"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-theme.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-theme.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\chuon\\Downloads\\QuanLyBanSach\\WebStore\\WebStore\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.WebStore.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.WebStore.props",
+      "PackagePath": "build\\WebStore.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.WebStore.props",
+      "PackagePath": "buildMultiTargeting\\WebStore.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.WebStore.props",
+      "PackagePath": "buildTransitive\\WebStore.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

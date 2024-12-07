@@ -1,0 +1,60 @@
+﻿@model WebStore.Models.ThongKeDoanhThuResult
+
+@{
+    ViewData["Title"] = "Thống Kê Doanh Thu";
+}
+
+<h2>Thống Kê Doanh Thu</h2>
+
+<form method="get" asp-action="ThongKe">
+    <div class="form-group">
+        <label for="thang">Chọn Tháng:</label>
+        <select class="form-control" id="thang" name="thang">
+            @for (int i = 1; i <= 12; i++)
+            {
+                <option value="@i">
+                    @i
+                </option>
+            }
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="nam">Chọn Năm:</label>
+        <input type="number" class="form-control" id="nam" name="nam" value="@DateTime.Now.Year" />
+    </div>
+    <button type="submit" class="btn btn-primary">Thống Kê</button>
+</form>
+
+<div>
+    <h4>Tháng: @Model.Thang / @Model.Nam</h4>
+    <p><strong>Tổng Doanh Thu:</strong> @Model.TongDoanhThu VND</p>
+    <p><strong>Số Hóa Đơn:</strong> @Model.SoHoaDon</p>
+</div>
+
+<h3>Danh Sách Hóa Đơn</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Mã Hóa Đơn</th>
+            <th>Tên Người Đặt Hàng</th>
+            <th>Ngày Lập</th>
+            <th>Tổng Tiền</th>
+            <th>Phương Thức Thanh Toán</th>
+            <th>Trạng Thái Thanh Toán</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var hoaDon in Model.HoaDons)
+        {
+            <tr>
+                <td>@hoaDon.Id</td>
+                <td>@hoaDon.TenNguoiDatHang</td>
+                <td>@hoaDon.NgayLap.ToString("dd/MM/yyyy")</td>
+                <td>@hoaDon.TongTien.ToString("N0")</td>
+                <td>@hoaDon.PhuongThucTT</td>
+                <td>@hoaDon.TrangThaiTT</td>
+            </tr>
+        }
+    </tbody>
+</table>
+

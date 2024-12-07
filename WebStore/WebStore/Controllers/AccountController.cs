@@ -4,11 +4,13 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Dynamic;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using WebStore.Models;
+using WedStore.Const;
 using WedStore.Repositories;
 
 namespace WedStore.Controllers
@@ -51,16 +53,16 @@ namespace WedStore.Controllers
             var result = NguoiDungDB.LoginUser(account.UserName, account.Password);
             if (result != null)
             {
-                if (result.UserRole == "customer")
+                if (result.UserRole == "Customer")
                 {
                     role.Add("Customer");
                 }
-                else if (result.UserRole == "staff")
+                else if (result.UserRole == "Staff")
                 {
                     role.Add("Customer");
                     role.Add("Admin");
                 }
-                else if (result.UserRole == "admin")
+                else if (result.UserRole == "Admin")
                 {
                     role.Add("Customer");
                     role.Add("Admin");
@@ -108,74 +110,64 @@ namespace WedStore.Controllers
             return View();
         }
 
+        // POST: Account/Register
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult SignUp(NguoiDungDTO account,IFormCollection collection)
+        public IActionResult SignUp(NguoiDungDTO model)
         {
-            try
+            if (ModelState.IsValid)
             {
-                if(account.UserName == null)
+                // Kiểm tra mật khẩu và xác nhận mật khẩu
+                if (model.Password != model.RetypePassword)
                 {
-                    ViewBag.ErrorMessage = "vui lòng nhập tên tài khoản";
-                    return View();
+                    ModelState.AddModelError("", "Mật khẩu và xác nhận mật khẩu không khớp.");
+                    return View(model);
                 }
-                else if (account.Password == null)
+
+                // Tạo ID ngẫu nhiên cho Người dùng và Khách hàng
+                string idNguoiDung = $"user{Guid.NewGuid().ToString().Substring(0, 8)}";
+                string idKhachHang = $"KH{Guid.NewGuid().ToString().Substring(0, 8)}";
+
+                using (SqlConnection connection = new SqlConnection(ConnectStringValue.ConnectStringMyDB))
                 {
-                    ViewBag.ErrorMessage = "vui lòng nhập mật khẩu";
-                    return View();
+                    connection.Open();
+
+                    // Thực hiện việc lưu thông tin người dùng và khách hàng vào cơ sở dữ liệu
+                    string execQuery = $@"
+                EXEC SP_ThemNguoiDungVaKhachHang
+                    @idNguoiDung = '{idNguoiDung}',
+                    @username = '{model.UserName}',
+                    @password = '{model.Password}',
+                    @role = 'customer', 
+                    @gioitinh = {model.Gender},
+                    @NgaySinh = '{model.NgaySinh?.ToString("yyyy-MM-dd")}',
+                    @idKhachHang = '{idKhachHang}',
+                    @ten = N'{model.FullName}',
+                    @diachi = N'{model.Address}',
+                    @sodienthoai = '{model.Phone}',
+                    @email = '{model.Email}'
+            ";
+
+                    using (SqlCommand command = new SqlCommand(execQuery, connection))
+                    {
+                        try
+                        {
+                            command.ExecuteNonQuery();
+
+                            // Chuyển hướng đến trang đăng nhập sau khi đăng ký thành công
+                            TempData["SuccessMessage"] = "Đăng ký thành công! Vui lòng đăng nhập.";
+                            return RedirectToAction("Login", "Account");
+                        }
+                        catch (Exception ex)
+                        {
+                            ModelState.AddModelError("", $"Lỗi: {ex.Message}");
+                        }
+                    }
                 }
-                else if (account.Password.Length <6)
-                {
-                    ViewBag.ErrorMessage = "mật khẩu ít nhất 6 ký tự";
-                    return View();
-                }
-                else if (account.FullName == null)
-                {
-                    ViewBag.ErrorMessage = "vui lòng nhập họ tên";
-                    return View();
-                }
-                else if (account.Age == 0)
-                {
-                    ViewBag.ErrorMessage = "vui lòng nhập tuổi hoặc tuổi không được nhỏ hơn 0";
-                    return View();
-                }
-                else if (account.Phone == null)
-                {
-                    ViewBag.ErrorMessage = "vui lòng nhập số điện thoại";
-                    return View();
-                }
-                else if (account.Address == null)
-                {
-                    ViewBag.ErrorMessage = "vui lòng nhập địa chỉ";
-                    return View();
-                }
-                else if (account.Email == null)
-                {
-                    ViewBag.ErrorMessage = "vui lòng nhập email";
-                    return View();
-                }
-                //NguoiDungDTO acc = NguoiDungDB.GetAccountWithUser(account.UserName);
-                //if(acc.UserName != null)// username tồn tại
-                //{
-                //    ViewBag.ErrorMessage = "tài khoản này đã tồn tại";
-                //    return View();
-                //}
-                //acc = NguoiDungDB.GetAccountWithEmail(account.Email);
-                //if (acc.Email != null)// email tồn tại
-                //{
-                //    ViewBag.ErrorMessage = "email này đã tồn tại";
-                //    return View();
-                //}
-                ////hash password
-                //string passhash = BCrypt.Net.BCrypt.HashPassword(account.Password);
-                //account.Password = passhash;
-                //NguoiDungDB.Account_Create(account);
-                return RedirectToAction(nameof(Login));
             }
-            catch
-            {
-                return View();
-            }
+
+            return View(model);
         }
+
+
     }
 }

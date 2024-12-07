@@ -13,7 +13,7 @@ using WedStore.Servicie;
 
 namespace WedStore.Controllers
 {
-    [Authorize(Roles = "Customer")]
+    //[Authorize(Roles = "Customer")]
     public class OrderController : Controller
     {
         private string userName;

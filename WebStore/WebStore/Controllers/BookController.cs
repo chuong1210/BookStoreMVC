@@ -15,45 +15,57 @@ namespace WedStore.Controllers
     
     public class BookController : Controller
     {
-        // GET: BookController
-        public ActionResult Index(int ?page)
-        {
-            if (page == null || page < 1)
-            {
-                page = 1;
-            }
-            //
-           // var lstBook = SachDB.GetAll();
-            var lstBook = SachDB.LayTatCaSach();
-            //var lstBookType = TheLoaiSachDB.GetAllType();
-            var lstBookType = TheLoaiSachDB.ListTheLoai();
-            //
-            List<SachDTO> books = new List<SachDTO>();
-            int i;
-            int bookPerPage = 6;
-            for (i = (int)(page - 1) * bookPerPage; i < page * bookPerPage; i++)
-            {
-                if (lstBook.Count == i)
-                {
-                    break;
-                }
-                books.Add(lstBook[i]);
-            }
-            int MaxPage = lstBook.Count / bookPerPage;
-            int tmp = lstBook.Count % bookPerPage;// so du
-            if (tmp >= 1) MaxPage += 1;
-
-            //
+		// GET: BookController
+		public ActionResult Index(int? page, string tenSach)
+		{
+			List<SachDTO> books;
+			int pageSize = 6;
+			int currentPage = page ?? 1; // Nếu page là null thì gán page = 1
             dynamic dy = new ExpandoObject();
-            dy.book = books;
+
+            // Lấy danh sách tất cả sách từ cơ sở dữ liệu
+            var lstBook = SachDB.LayTatCaSach();
+			var lstBookType = TheLoaiSachDB.ListTheLoai();
+
+			// Nếu tìm kiếm theo tên sách
+		
+		
+				// Phân trang
+				books = lstBook.Skip((currentPage - 1) * pageSize).Take(pageSize).ToList();
+
+				// Tính tổng số trang
+				int totalBooks = lstBook.Count;
+				int maxPage = (int)Math.Ceiling((double)totalBooks / pageSize); // Số trang tối đa
+
+				// Nếu currentPage lớn hơn số trang tối đa, gán lại currentPage là 1
+				if (currentPage > maxPage)
+				{
+					currentPage = 1;
+				}
+
+				// Tạo đối tượng dynamic để truyền vào view
+            if (!string.IsNullOrEmpty(tenSach))
+            {
+                // Tìm kiếm sách theo tên
+                books = SachDB.TimKiemSachTheoTen(tenSach);
+                dy.book = books;
+
+            }
+
+            else
+            {
+                dy.book = books;
+
+            }
             dy.booktypeNAV = lstBookType;
-            //
-            dy.maxpage = MaxPage;
-            dy.currentpage = page;
-            return View(dy);
-        }
-        
-        public ActionResult BookType(string ID,int? page)
+				dy.maxpage = maxPage;
+				dy.currentpage = currentPage;
+
+				return View(dy); // Trả về đối tượng dynamic
+			
+		}
+
+		public ActionResult BookType(string ID,int? page)
         {
             if (page == null || page < 1)
             {
@@ -139,5 +151,13 @@ namespace WedStore.Controllers
         }
 
 
-    }
+		public IActionResult Search(string theloai_id, int giaMin = 0, int giaMax = 1000000)
+		{
+			// Gọi phương thức tìm kiếm từ SachDB
+			var books = SachDB.TimKiemSachTheoTheLoaiVaGia(theloai_id, giaMin, giaMax);
+			return View(books); // Trả về danh sách sách tìm được
+		}
+
+
+	}
 }
